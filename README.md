@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# AI documentation templates
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Open-source templates for model documentation. Based on AI Act requirements and soft law frameworks, such as the Research framework Algorithms of the Netherlands Executive Audit Agency, the Algorithm framework of the Dutch Ministry of the Interior and the Dutch Fundamental Rights Impact Assessment (IAMA).
 
-Currently, two official plugins are available:
+The templates are available in JSON format and can be easily customized to fit the specific needs of an organization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How to run
 
-## Expanding the ESLint configuration
+1. Clone the repository.
+2. Install all the dependencies. `npm install`
+3. Run the development environment. `npm run dev`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# How it works.
 
-- Configure the top-level `parserOptions` property like this:
+This implementation extends the [React JSON Schema Form (RJSF) library](https://github.com/rjsf-team/react-jsonschema-form) to create a step-by-step wizard interface. Instead of displaying all form fields at once, it presents them one at a time, with validation and navigation controls.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The original specification is still applicable so please read the [RSJF documentation](https://rjsf-team.github.io/react-jsonschema-form/docs/) for information about how the forms work.
+
+Changes we made to the original specification:
+
+##### 1. Multi form support
+
+To show multiple forms on the starting page, we always place our form specifications inside an array. [See our forms](./src/assets/forms.json)
+
+##### 2. Output
+
+The templates should return an outcome after the questions, to show this result we trigger the results component when the question key is `output`. For example:
+
+```json
+"output": {
+    "type": "string",
+    "title": "Uitslag",
+    "default": "Uw toepassing is op basis van uw antwoorden waarschijnlijk een impactvol algoritme."
+}
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This allows us to have multiple different outcomes in one template that each are triggered based on a unique combination of dependencies.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+In case a form ends without an `output` question we automatically trigger an error component.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+##### 3. uiSchema integration
+
+To simplify importing the json templates into our front-end we specificy our [uiSchema](https://rjsf-team.github.io/react-jsonschema-form/docs/api-reference/uiSchema) inside the original [object properties](https://rjsf-team.github.io/react-jsonschema-form/docs/json-schema/objects)
+
+Example:
+
+```json
+{
+    "title": "Hello World",
+    "type": "object",
+    "required": ["question1"],
+    "properties": {...},
+    "dependencies": {...},
+    "uiSchema": {
+        "question1": {
+            "ui:autofocus": true
+        }
+    }
+}
 ```
