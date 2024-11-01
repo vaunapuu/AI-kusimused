@@ -27,15 +27,17 @@ export default function App() {
     setActiveForm(null);
   };
 
+  const { uiSchema, ...activeFormProps } = activeForm ?? {};
+
   return (
     <Container className="vh-100">
       <Row className="justify-content-center align-items-center h-100">
         <Col xs={12} className="">
           {activeForm ? (
             <WizardForm
-              id={activeForm.id}
-              schema={activeForm}
-              uiSchema={{}}
+              id={activeFormProps.id}
+              schema={activeFormProps}
+              uiSchema={uiSchema}
               formData={{}}
               onSubmit={onFormSubmit}
               onCancel={onFormSubmit}

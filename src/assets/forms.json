@@ -15,10 +15,6 @@
         "title": "Geef een korte beschrijving van de toepassing en hoe deze gebruikt wordt",
         "default": ""
       },
-      "Intro 3": {
-        "type": "string",
-        "enum": ["No", "Yes: One", "Yes: More than one"]
-      },
       "q1": {
         "type": "string",
         "title": "Automatisering van door mensen opgestelde regels",
@@ -180,6 +176,26 @@
             }
           }
         ]
+      }
+    },
+    "uiSchema": {
+      "q1": {
+        "ui:widget": "radio"
+      },
+      "q2": {
+        "ui:widget": "radio"
+      },
+      "q3": {
+        "ui:widget": "radio"
+      },
+      "q5": {
+        "ui:widget": "radio"
+      },
+      "q6": {
+        "ui:widget": "radio"
+      },
+      "q8": {
+        "ui:widget": "radio"
       }
     }
   },
