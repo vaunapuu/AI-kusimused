@@ -58,3 +58,16 @@ Example:
     }
 }
 ```
+
+# Styling overrides
+
+With these css variables defined in the root where the frontend is injected the default theming can be overriden.
+
+```css
+:root {
+  --host-primary: #4caf50;
+  --host-primary-dark: #388e3c;
+  --host-primary-darker: #2e7d32;
+  --host-body-bg: #e8f5e9;
+}
+```
