@@ -1,0 +1,7 @@
+/* Example of how CSS variables that can be set by the host to overwrite styling. */
+:root {
+  --host-primary: #005aa7;
+  --host-primary-dark: #003366;
+  --host-primary-darker: #00274d;
+  --host-body-bg: #deecf7;
+}
