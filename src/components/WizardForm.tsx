@@ -64,7 +64,7 @@ const WizardForm = ({
         }
       );
 
-      // Also include properties from dependencies that match current data
+      // Handle dependencies
       Object.entries(schemaObject.dependencies || {}).forEach(
         ([key, dependency]: [string, any]) => {
           if (data[key] && dependency.oneOf) {
@@ -74,10 +74,35 @@ const WizardForm = ({
             });
 
             if (matchingSchema?.properties) {
+              // Process each property in the matching dependency schema
               Object.entries(matchingSchema.properties).forEach(
                 ([depKey, depValue]) => {
                   if (depKey !== key) {
-                    flattenedProperties[depKey] = depValue;
+                    // If the dependency property is a reference, resolve and flatten it
+                    if (
+                      depValue &&
+                      typeof depValue === "object" &&
+                      "$ref" in depValue
+                    ) {
+                      const refPath = depValue.$ref.replace(
+                        "#/definitions/",
+                        ""
+                      );
+                      const refSchema = definitions[refPath];
+                      if (refSchema) {
+                        const resolvedRef = retrieveSchema(
+                          validator,
+                          refSchema,
+                          rootSchema,
+                          data
+                        );
+                        addProperties({
+                          properties: { [depKey]: resolvedRef },
+                        });
+                      }
+                    } else {
+                      flattenedProperties[depKey] = depValue;
+                    }
                   }
                 }
               );
