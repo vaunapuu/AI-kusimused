@@ -153,7 +153,9 @@ const WizardForm = ({
     if (flattenedSchema?.properties?.[property]) {
       return {
         type: "object",
-        required: flattenedSchema?.required?.filter((x) => x === property),
+        required: flattenedSchema?.required?.filter(
+          (x: string) => x === property
+        ),
         definitions: schema.definitions,
         properties: { [property]: flattenedSchema?.properties?.[property] },
       };
