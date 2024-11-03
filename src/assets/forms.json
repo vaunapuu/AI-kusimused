@@ -2,7 +2,6 @@
   {
     "title": "Identificatie AI-systeem en impactvolle algoritmes",
     "type": "object",
-    "required": ["intro1", "intro2"],
     "definitions": {
       "outputNoAI": {
         "type": "string",
@@ -34,6 +33,7 @@
             ]
           }
         },
+        "required": ["q8"],
         "dependencies": {
           "q8": {
             "oneOf": [
@@ -92,6 +92,7 @@
             ]
           }
         },
+        "required": ["q3"],
         "dependencies": {
           "q3": {
             "oneOf": [
@@ -125,7 +126,8 @@
                     "title": "Rol in beslissingproces",
                     "enum": ["Ja", "Nee"]
                   }
-                }
+                },
+                "required": ["q5"]
               }
             ]
           },
@@ -148,7 +150,8 @@
                       "Anders"
                     ]
                   }
-                }
+                },
+                "required": ["q6"]
               },
               {
                 "properties": {
@@ -160,7 +163,8 @@
                     "title": "Is er interactie met burgers?",
                     "enum": ["Ja", "Nee"]
                   }
-                }
+                },
+                "required": ["q7"]
               }
             ]
           },
@@ -226,6 +230,7 @@
         "enum": ["Ja, wet- of regelgeving", "Ja, door mensen opgesteld", "Nee"]
       }
     },
+    "required": ["q1"],
     "dependencies": {
       "q1": {
         "oneOf": [
@@ -267,7 +272,8 @@
                   "Nee"
                 ]
               }
-            }
+            },
+            "required": ["q2"]
           }
         ]
       },
@@ -282,7 +288,8 @@
                 ]
               },
               "categories": { "$ref": "#/definitions/categories" }
-            }
+            },
+            "required": ["q2"]
           },
           {
             "properties": {
