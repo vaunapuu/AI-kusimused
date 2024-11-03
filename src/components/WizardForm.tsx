@@ -30,7 +30,8 @@ const WizardForm = ({
 
   const flattenSchema = (
     resolvedSchema: any,
-    definitions: any
+    definitions: any,
+    rootSchema: any
   ): GenericObjectType => {
     const flattenedProperties: any = {};
 
@@ -41,15 +42,13 @@ const WizardForm = ({
         ([key, value]: [string, any]) => {
           if (value && typeof value === "object") {
             if ("$ref" in value) {
-              // Resolve nested reference using the full definitions
               const refPath = value.$ref.replace("#/definitions/", "");
               const refSchema = definitions[refPath];
               if (refSchema) {
-                // Recursively resolve any nested references
                 const resolvedRef = retrieveSchema(
                   validator,
                   refSchema,
-                  definitions,
+                  rootSchema,
                   data
                 );
                 addProperties({ properties: { [key]: resolvedRef } });
@@ -65,22 +64,23 @@ const WizardForm = ({
         }
       );
 
-      // Handle dependencies
+      // Also include properties from dependencies that match current data
       Object.entries(schemaObject.dependencies || {}).forEach(
         ([key, dependency]: [string, any]) => {
-          if (data[key]) {
-            if (dependency.oneOf) {
-              // Find matching oneOf schema based on the current data
-              const matchingSchema = dependency.oneOf.find(
-                (oneOfSchema: any) => {
-                  const enumValue = oneOfSchema.properties?.[key]?.enum?.[0];
-                  return enumValue === data[key];
+          if (data[key] && dependency.oneOf) {
+            const matchingSchema = dependency.oneOf.find((oneOfSchema: any) => {
+              const enumValue = oneOfSchema.properties?.[key]?.enum?.[0];
+              return enumValue === data[key];
+            });
+
+            if (matchingSchema?.properties) {
+              Object.entries(matchingSchema.properties).forEach(
+                ([depKey, depValue]) => {
+                  if (depKey !== key) {
+                    flattenedProperties[depKey] = depValue;
+                  }
                 }
               );
-
-              if (matchingSchema) {
-                addProperties(matchingSchema);
-              }
             }
           }
         }
@@ -101,26 +101,37 @@ const WizardForm = ({
     schema: FormProps<any, RJSFSchema, any>["schema"],
     currentData: FormProps<any, RJSFSchema, any>["formData"]
   ): GenericObjectType => {
-    // Calculate the step schema based on the current data and dependencies
+    // First resolve the schema with the full root schema
     const resolvedSchema = retrieveSchema(
       validator,
       schema,
       schema,
       currentData
     );
+    console.log("After retrieveSchema:", {
+      resolvedSchema: resolvedSchema,
+      resolvedProperties: resolvedSchema.properties,
+    });
 
-    const flattenedSchema = flattenSchema(resolvedSchema, schema.definitions);
+    // Then flatten it while maintaining access to the root schema for nested references
+    const flattenedSchema = flattenSchema(
+      resolvedSchema,
+      schema.definitions,
+      schema
+    );
 
     const keys = Object.keys(flattenedSchema?.properties ?? {});
     const property = keys[step];
-
-    console.log("test", resolvedSchema, flattenedSchema, property);
+    console.log("After flattenSchema:", {
+      flattenedProperties: flattenedSchema.properties,
+      propertySchema: flattenedSchema?.properties?.[property],
+    });
 
     if (flattenedSchema?.properties?.[property]) {
       return {
         type: "object",
         required: flattenedSchema?.required?.filter((x) => x === property),
-        definitions: flattenedSchema?.definitions,
+        definitions: schema.definitions,
         properties: { [property]: flattenedSchema?.properties?.[property] },
       };
     }
