@@ -28,28 +28,67 @@ const WizardForm = ({
   const [step, setStep] = useState(0);
   const [data, setData] = useState(formData || {});
 
-  const flattenSchema = (resolvedSchema: any): GenericObjectType => {
+  const flattenSchema = (
+    resolvedSchema: any,
+    definitions: any
+  ): GenericObjectType => {
     const flattenedProperties: any = {};
 
-    const addProperties = (properties: any) => {
-      Object.entries(properties).forEach(([key, value]: [string, any]) => {
-        if (value && typeof value === "object") {
-          if ("properties" in value) {
-            // If it's an object with properties, add those properties directly
-            addProperties(value.properties);
+    // Helper to add properties from a schema object
+    const addProperties = (schemaObject: any) => {
+      // Handle regular properties
+      Object.entries(schemaObject.properties || {}).forEach(
+        ([key, value]: [string, any]) => {
+          if (value && typeof value === "object") {
+            if ("$ref" in value) {
+              // Resolve nested reference using the full definitions
+              const refPath = value.$ref.replace("#/definitions/", "");
+              const refSchema = definitions[refPath];
+              if (refSchema) {
+                // Recursively resolve any nested references
+                const resolvedRef = retrieveSchema(
+                  validator,
+                  refSchema,
+                  definitions,
+                  data
+                );
+                addProperties({ properties: { [key]: resolvedRef } });
+              }
+            } else if ("properties" in value) {
+              addProperties(value);
+            } else {
+              flattenedProperties[key] = value;
+            }
           } else {
-            // If it's a leaf property (like enum, type, etc.), add it directly
             flattenedProperties[key] = value;
           }
-        } else {
-          flattenedProperties[key] = value;
         }
-      });
+      );
+
+      // Handle dependencies
+      Object.entries(schemaObject.dependencies || {}).forEach(
+        ([key, dependency]: [string, any]) => {
+          if (data[key]) {
+            if (dependency.oneOf) {
+              // Find matching oneOf schema based on the current data
+              const matchingSchema = dependency.oneOf.find(
+                (oneOfSchema: any) => {
+                  const enumValue = oneOfSchema.properties?.[key]?.enum?.[0];
+                  return enumValue === data[key];
+                }
+              );
+
+              if (matchingSchema) {
+                addProperties(matchingSchema);
+              }
+            }
+          }
+        }
+      );
     };
 
-    if (resolvedSchema.properties) {
-      addProperties(resolvedSchema.properties);
-    }
+    // Start with the main schema
+    addProperties(resolvedSchema);
 
     return {
       ...resolvedSchema,
@@ -70,7 +109,7 @@ const WizardForm = ({
       currentData
     );
 
-    const flattenedSchema = flattenSchema(resolvedSchema);
+    const flattenedSchema = flattenSchema(resolvedSchema, schema.definitions);
 
     const keys = Object.keys(flattenedSchema?.properties ?? {});
     const property = keys[step];
