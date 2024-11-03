@@ -3,18 +3,223 @@
     "title": "Identificatie AI-systeem en impactvolle algoritmes",
     "type": "object",
     "required": ["intro1", "intro2"],
+    "definitions": {
+      "outputNoAI": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Uw toepassing is op basis van uw antwoorden geen AI systeem of impactvol algoritme."
+      },
+      "outputAI": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Uw toepassing is op basis van uw antwoorden waarschijnlijk een AI-systeem"
+      },
+      "outputAlgorithm": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Uw toepassing is op basis van uw antwoorden waarschijnlijk impactvol algoritme"
+      },
+      "effect": {
+        "type": "object",
+        "properties": {
+          "q8": {
+            "type": "string",
+            "title": "Wat is het effect van de toepassing op de burger?",
+            "enum": [
+              "De uitkomst van het proces wordt direct bepaald door de toepassing",
+              "De uitkomst van het proces wordt in grote mate beïnvloed door de toepassing",
+              "De uitkomst van het proces wordt in zekere mate beïnvloed door de output van de toepassing",
+              "De uitkomst van het proces wordt volledig door een mens bepaald en wordt beïnvloed door meerdere factoren waarin de output slechts een van deze factoren is",
+              "Een ander soort effect"
+            ]
+          }
+        },
+        "dependencies": {
+          "q8": {
+            "oneOf": [
+              {
+                "properties": {
+                  "q8": {
+                    "enum": [
+                      "De uitkomst van het proces wordt volledig door een mens bepaald en wordt beïnvloed door meerdere factoren waarin de output slechts een van deze factoren is"
+                    ]
+                  },
+                  "output": { "$ref": "#/definitions/outputNoAI" }
+                }
+              },
+              {
+                "properties": {
+                  "q8": {
+                    "enum": ["Een ander soort effect"]
+                  },
+                  "q8_option5": {
+                    "type": "string",
+                    "title": "Beschrijf het effect van de toepassing op het proces"
+                  },
+                  "output": { "$ref": "#/definitions/outputAI" }
+                },
+                "required": ["q8_option5"]
+              },
+              {
+                "properties": {
+                  "q8": {
+                    "enum": [
+                      "De uitkomst van het proces wordt direct bepaald door de toepassing",
+                      "De uitkomst van het proces wordt in grote mate beïnvloed door de toepassing",
+                      "De uitkomst van het proces wordt in zekere mate beïnvloed door de output van de toepassing"
+                    ],
+                    "output": { "$ref": "#/definitions/outputAI" }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "categories": {
+        "type": "object",
+        "properties": {
+          "q3": {
+            "type": "string",
+            "title": "Tot welke van de volgende categorieën behoort de uitkomst van de toepassing?",
+            "enum": [
+              "Een ingeschatte score, rangschikking of kans",
+              "Een ingeschat label of classificatie",
+              "Een aanbeveling",
+              "Een beslissing",
+              "Content (geschreven tekst, video, audio of afbeeldingen)",
+              "Een ander soort output"
+            ]
+          }
+        },
+        "dependencies": {
+          "q3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "q3": {
+                    "enum": ["Een ander soort output"]
+                  },
+                  "q3_option6": {
+                    "type": "string",
+                    "title": "Geef een beschrijving van de output",
+                    "default": ""
+                  },
+                  "output": { "$ref": "#/definitions/outputNoAI" }
+                },
+                "required": ["q3_option6"]
+              },
+              {
+                "properties": {
+                  "q3": {
+                    "enum": [
+                      "Een ingeschatte score, rangschikking of kans",
+                      "Een ingeschat label of classificatie",
+                      "Een aanbeveling",
+                      "Een beslissing",
+                      "Content (geschreven tekst, video, audio of afbeeldingen)"
+                    ]
+                  },
+                  "q5": {
+                    "type": "string",
+                    "title": "Rol in beslissingproces",
+                    "enum": ["Ja", "Nee"]
+                  }
+                }
+              }
+            ]
+          },
+          "q5": {
+            "oneOf": [
+              {
+                "properties": {
+                  "q5": {
+                    "enum": ["Ja"]
+                  },
+                  "q6": {
+                    "type": "string",
+                    "title": "Soort beslissing",
+                    "enum": [
+                      "Beslissing met directe financiële gevolgen voor burger",
+                      "Beslissing over aanvragen en verzoeken zonder directe financiële gevolgen",
+                      "Beslissing over formele klachten en bezwaren",
+                      "Beslissing over prioritering of routering van aanvragen, verzoeken, klachten en bezwaren",
+                      "Beslissing over controle, onderzoek of verzoek tot aanvullende informatie verschaffing door de burger",
+                      "Anders"
+                    ]
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "q5": {
+                    "enum": ["Nee"]
+                  },
+                  "q7": {
+                    "type": "string",
+                    "title": "Is er interactie met burgers?",
+                    "enum": ["Ja", "Nee"]
+                  }
+                }
+              }
+            ]
+          },
+          "q6": {
+            "oneOf": [
+              {
+                "properties": {
+                  "q6": {
+                    "enum": ["Anders"]
+                  },
+                  "q6_option6": {
+                    "type": "string",
+                    "title": "Beschrijf het soort beslissing",
+                    "default": ""
+                  },
+                  "output": { "$ref": "#/definitions/outputNoAI" }
+                },
+                "required": ["q6_option6"]
+              },
+              {
+                "properties": {
+                  "q6": {
+                    "enum": [
+                      "Beslissing met directe financiële gevolgen voor burger",
+                      "Beslissing over aanvragen en verzoeken zonder directe financiële gevolgen",
+                      "Beslissing over formele klachten en bezwaren",
+                      "Beslissing over prioritering of routering van aanvragen, verzoeken, klachten en bezwaren",
+                      "Beslissing over controle, onderzoek of verzoek tot aanvullende informatie verschaffing door de burger"
+                    ]
+                  },
+                  "effect": { "$ref": "#/definitions/effect" }
+                }
+              }
+            ]
+          },
+          "q7": {
+            "oneOf": [
+              {
+                "properties": {
+                  "q7": {
+                    "enum": ["Ja"]
+                  },
+                  "effect": { "$ref": "#/definitions/effect" }
+                }
+              },
+              {
+                "properties": {
+                  "q7": {
+                    "enum": ["Nee"]
+                  },
+                  "output": { "$ref": "#/definitions/outputNoAI" }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
     "properties": {
-      "intro1": {
-        "type": "string",
-        "title": "Naam van de toepassing",
-        "description": "Als de toepassing geen formele naam heeft, geef dan een naam op die collega's onderling gebruiken om naar deze toepassing te verwijzen.",
-        "default": ""
-      },
-      "intro2": {
-        "type": "string",
-        "title": "Geef een korte beschrijving van de toepassing en hoe deze gebruikt wordt",
-        "default": ""
-      },
       "q1": {
         "type": "string",
         "title": "Automatisering van door mensen opgestelde regels",
@@ -33,9 +238,20 @@
                 "type": "string",
                 "title": "Welke wet of regelgeving?",
                 "default": ""
-              }
+              },
+              "output": { "$ref": "#/definitions/outputNoAI" }
             },
             "required": ["q1_yes1"]
+          },
+          {
+            "properties": {
+              "q1": {
+                "enum": ["Ja, door mensen opgesteld"]
+              },
+              "categories": {
+                "$ref": "#/definitions/categories"
+              }
+            }
           },
           {
             "properties": {
@@ -65,114 +281,15 @@
                   "Ja, door statistische methode"
                 ]
               },
-              "q3": {
-                "type": "string",
-                "title": "Tot welke van de volgende categorieën behoort de uitkomst van de toepassing?",
-                "enum": [
-                  "Een ingeschatte score, rangschikking of kans",
-                  "Een ingeschat label of classificatie",
-                  "Een aanbeveling",
-                  "Een beslissing",
-                  "Content (geschreven tekst, video, audio of afbeeldingen)",
-                  "Een ander soort output"
-                ]
-              }
+              "categories": { "$ref": "#/definitions/categories" }
             }
-          }
-        ]
-      },
-      "q3": {
-        "oneOf": [
+          },
           {
             "properties": {
-              "q3": {
-                "enum": ["Een ander soort output"]
+              "q2": {
+                "enum": ["Nee"]
               },
-              "q3_option6": {
-                "type": "string",
-                "title": "Geef een beschrijving van de output",
-                "default": ""
-              },
-              "output": {
-                "type": "string",
-                "title": "Uitslag",
-                "default": "Uw toepassing is op basis van uw antwoorden waarschijnlijk een impactvol algoritme."
-              }
-            },
-            "required": ["q3_option6"]
-          }
-        ]
-      },
-      "q5": {
-        "oneOf": [
-          {
-            "properties": {
-              "q5": {
-                "enum": ["Ja"]
-              },
-              "q6": {
-                "type": "string",
-                "title": "Soort beslissing",
-                "enum": [
-                  "Beslissing met directe financiële gevolgen voor burger",
-                  "Beslissing over aanvragen en verzoeken zonder directe financiële gevolgen",
-                  "Beslissing over formele klachten en bezwaren",
-                  "Beslissing over prioritering of routering van aanvragen, verzoeken, klachten en bezwaren",
-                  "Beslissing over controle, onderzoek of verzoek tot aanvullende informatie verschaffing door de burger",
-                  "Anders"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "q6": {
-        "oneOf": [
-          {
-            "properties": {
-              "q6": {
-                "enum": ["Anders"]
-              },
-              "q6_option6": {
-                "type": "string",
-                "title": "Beschrijf het soort beslissing",
-                "default": ""
-              }
-            },
-            "required": ["q6_option6"]
-          }
-        ]
-      },
-      "q8": {
-        "oneOf": [
-          {
-            "properties": {
-              "q8": {
-                "enum": [
-                  "Een ander soort effect",
-                  "De uitkomst van het proces wordt direct bepaald door de toepassing",
-                  "De uitkomst van het proces wordt in grote mate beïnvloed door de toepassing",
-                  "De uitkomst van het proces wordt in zekere mate beïnvloed door de output van de toepassing"
-                ]
-              },
-              "output2": {
-                "type": "string",
-                "title": "Uw toepassing is op basis van uw antwoorden waarschijnlijk impactvol algoritme.",
-                "default": ""
-              }
-            }
-          }
-        ]
-      },
-      "output": {
-        "oneOf": [
-          {
-            "properties": {
-              "outpu1t": {
-                "type": "string",
-                "title": "Uw toepassing is geen AI-systeem of impactvol algoritme",
-                "default": ""
-              }
+              "output": { "$ref": "#/definitions/outputNoAI" }
             }
           }
         ]
@@ -196,190 +313,6 @@
       },
       "q8": {
         "ui:widget": "radio"
-      }
-    }
-  },
-  {
-    "title": "Identificatie AI-systeem en impactvolle algoritmes 2",
-    "type": "object",
-    "required": ["intro1", "intro2"],
-    "properties": {
-      "intro1": {
-        "type": "string",
-        "title": "Naam van de toepassing",
-        "description": "Als de toepassing geen formele naam heeft, geef dan een naam op die collega's onderling gebruiken om naar deze toepassing te verwijzen.",
-        "default": ""
-      },
-      "intro2": {
-        "type": "string",
-        "title": "Geef een korte beschrijving van de toepassing en hoe deze gebruikt wordt",
-        "default": ""
-      },
-      "Intro 3": {
-        "type": "string",
-        "enum": ["No", "Yes: One", "Yes: More than one"]
-      },
-      "q1": {
-        "type": "string",
-        "title": "Automatisering van door mensen opgestelde regels",
-        "enum": ["Ja, wet- of regelgeving", "Ja, door mensen opgesteld", "Nee"]
-      }
-    },
-    "dependencies": {
-      "q1": {
-        "oneOf": [
-          {
-            "properties": {
-              "q1": {
-                "enum": ["Ja, wet- of regelgeving"]
-              },
-              "q1_yes1": {
-                "type": "string",
-                "title": "Welke wet of regelgeving?",
-                "default": ""
-              }
-            },
-            "required": ["q1_yes1"]
-          },
-          {
-            "properties": {
-              "q1": {
-                "enum": ["Nee"]
-              },
-              "q2": {
-                "type": "string",
-                "title": "Bevat de toepassing een model of beslisregels die uit data zijn afgeleid?",
-                "enum": [
-                  "Ja, handmatig opgesteld",
-                  "Ja, door statistische methode",
-                  "Nee"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "q2": {
-        "oneOf": [
-          {
-            "properties": {
-              "q2": {
-                "enum": [
-                  "Ja, handmatig opgesteld",
-                  "Ja, door statistische methode"
-                ]
-              },
-              "q3": {
-                "type": "string",
-                "title": "Tot welke van de volgende categorieën behoort de uitkomst van de toepassing?",
-                "enum": [
-                  "Een ingeschatte score, rangschikking of kans",
-                  "Een ingeschat label of classificatie",
-                  "Een aanbeveling",
-                  "Een beslissing",
-                  "Content (geschreven tekst, video, audio of afbeeldingen)",
-                  "Een ander soort output"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "q3": {
-        "oneOf": [
-          {
-            "properties": {
-              "q3": {
-                "enum": ["Een ander soort output"]
-              },
-              "q3_option6": {
-                "type": "string",
-                "title": "Geef een beschrijving van de output",
-                "default": ""
-              },
-              "output": {
-                "type": "string",
-                "title": "Uitslag",
-                "default": "Uw toepassing is op basis van uw antwoorden waarschijnlijk een impactvol algoritme."
-              }
-            },
-            "required": ["q3_option6"]
-          }
-        ]
-      },
-      "q5": {
-        "oneOf": [
-          {
-            "properties": {
-              "q5": {
-                "enum": ["Ja"]
-              },
-              "q6": {
-                "type": "string",
-                "title": "Soort beslissing",
-                "enum": [
-                  "Beslissing met directe financiële gevolgen voor burger",
-                  "Beslissing over aanvragen en verzoeken zonder directe financiële gevolgen",
-                  "Beslissing over formele klachten en bezwaren",
-                  "Beslissing over prioritering of routering van aanvragen, verzoeken, klachten en bezwaren",
-                  "Beslissing over controle, onderzoek of verzoek tot aanvullende informatie verschaffing door de burger",
-                  "Anders"
-                ]
-              }
-            }
-          }
-        ]
-      },
-      "q6": {
-        "oneOf": [
-          {
-            "properties": {
-              "q6": {
-                "enum": ["Anders"]
-              },
-              "q6_option6": {
-                "type": "string",
-                "title": "Beschrijf het soort beslissing",
-                "default": ""
-              }
-            },
-            "required": ["q6_option6"]
-          }
-        ]
-      },
-      "q8": {
-        "oneOf": [
-          {
-            "properties": {
-              "q8": {
-                "enum": [
-                  "Een ander soort effect",
-                  "De uitkomst van het proces wordt direct bepaald door de toepassing",
-                  "De uitkomst van het proces wordt in grote mate beïnvloed door de toepassing",
-                  "De uitkomst van het proces wordt in zekere mate beïnvloed door de output van de toepassing"
-                ]
-              },
-              "output2": {
-                "type": "string",
-                "title": "Uw toepassing is op basis van uw antwoorden waarschijnlijk een impactvol algoritme.",
-                "default": ""
-              }
-            }
-          }
-        ]
-      },
-      "output": {
-        "oneOf": [
-          {
-            "properties": {
-              "outpu1t": {
-                "type": "string",
-                "title": "Uw toepassing is geen AI-systeem of impactvol algoritme",
-                "default": ""
-              }
-            }
-          }
-        ]
       }
     }
   }

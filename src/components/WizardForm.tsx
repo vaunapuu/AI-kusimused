@@ -28,6 +28,35 @@ const WizardForm = ({
   const [step, setStep] = useState(0);
   const [data, setData] = useState(formData || {});
 
+  const flattenSchema = (resolvedSchema: any): GenericObjectType => {
+    const flattenedProperties: any = {};
+
+    const addProperties = (properties: any) => {
+      Object.entries(properties).forEach(([key, value]: [string, any]) => {
+        if (value && typeof value === "object") {
+          if ("properties" in value) {
+            // If it's an object with properties, add those properties directly
+            addProperties(value.properties);
+          } else {
+            // If it's a leaf property (like enum, type, etc.), add it directly
+            flattenedProperties[key] = value;
+          }
+        } else {
+          flattenedProperties[key] = value;
+        }
+      });
+    };
+
+    if (resolvedSchema.properties) {
+      addProperties(resolvedSchema.properties);
+    }
+
+    return {
+      ...resolvedSchema,
+      properties: flattenedProperties,
+    };
+  };
+
   const getCurrentStepSchema = (
     validator: FormProps<any, RJSFSchema, any>["validator"],
     schema: FormProps<any, RJSFSchema, any>["schema"],
@@ -37,18 +66,23 @@ const WizardForm = ({
     const resolvedSchema = retrieveSchema(
       validator,
       schema,
-      undefined,
+      schema,
       currentData
     );
 
-    const keys = Object.keys(resolvedSchema?.properties ?? {});
+    const flattenedSchema = flattenSchema(resolvedSchema);
+
+    const keys = Object.keys(flattenedSchema?.properties ?? {});
     const property = keys[step];
 
-    if (resolvedSchema?.properties?.[property]) {
+    console.log("test", resolvedSchema, flattenedSchema, property);
+
+    if (flattenedSchema?.properties?.[property]) {
       return {
         type: "object",
-        required: resolvedSchema?.required?.filter((x) => x === property),
-        properties: { [property]: resolvedSchema?.properties?.[property] },
+        required: flattenedSchema?.required?.filter((x) => x === property),
+        definitions: flattenedSchema?.definitions,
+        properties: { [property]: flattenedSchema?.properties?.[property] },
       };
     }
 
