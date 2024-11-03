@@ -67,9 +67,9 @@
                       "De uitkomst van het proces wordt direct bepaald door de toepassing",
                       "De uitkomst van het proces wordt in grote mate beïnvloed door de toepassing",
                       "De uitkomst van het proces wordt in zekere mate beïnvloed door de output van de toepassing"
-                    ],
-                    "output": { "$ref": "#/definitions/outputAI" }
-                  }
+                    ]
+                  },
+                  "output": { "$ref": "#/definitions/outputAI" }
                 }
               }
             ]
@@ -309,6 +309,9 @@
         "ui:widget": "radio"
       },
       "q6": {
+        "ui:widget": "radio"
+      },
+      "q7": {
         "ui:widget": "radio"
       },
       "q8": {

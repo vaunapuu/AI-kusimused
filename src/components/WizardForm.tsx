@@ -34,6 +34,28 @@ const WizardForm = ({
     rootSchema: any
   ): GenericObjectType => {
     const flattenedProperties: any = {};
+    const processedRefs = new Set<string>(); // Track processed refs to prevent infinite loops
+
+    // Helper to process a single reference
+    const processRef = (refValue: any, key: string) => {
+      const refPath = refValue.$ref.replace("#/definitions/", "");
+      // Prevent infinite loops
+      if (processedRefs.has(refPath)) {
+        return;
+      }
+      processedRefs.add(refPath);
+
+      const refSchema = definitions[refPath];
+      if (refSchema) {
+        const resolvedRef = retrieveSchema(
+          validator,
+          refSchema,
+          rootSchema,
+          data
+        );
+        addProperties({ properties: { [key]: resolvedRef } });
+      }
+    };
 
     // Helper to add properties from a schema object
     const addProperties = (schemaObject: any) => {
@@ -42,17 +64,7 @@ const WizardForm = ({
         ([key, value]: [string, any]) => {
           if (value && typeof value === "object") {
             if ("$ref" in value) {
-              const refPath = value.$ref.replace("#/definitions/", "");
-              const refSchema = definitions[refPath];
-              if (refSchema) {
-                const resolvedRef = retrieveSchema(
-                  validator,
-                  refSchema,
-                  rootSchema,
-                  data
-                );
-                addProperties({ properties: { [key]: resolvedRef } });
-              }
+              processRef(value, key);
             } else if ("properties" in value) {
               addProperties(value);
             } else {
@@ -78,27 +90,13 @@ const WizardForm = ({
               Object.entries(matchingSchema.properties).forEach(
                 ([depKey, depValue]) => {
                   if (depKey !== key) {
-                    // If the dependency property is a reference, resolve and flatten it
-                    if (
-                      depValue &&
-                      typeof depValue === "object" &&
-                      "$ref" in depValue
-                    ) {
-                      const refPath = depValue.$ref.replace(
-                        "#/definitions/",
-                        ""
-                      );
-                      const refSchema = definitions[refPath];
-                      if (refSchema) {
-                        const resolvedRef = retrieveSchema(
-                          validator,
-                          refSchema,
-                          rootSchema,
-                          data
-                        );
-                        addProperties({
-                          properties: { [depKey]: resolvedRef },
-                        });
+                    if (depValue && typeof depValue === "object") {
+                      if ("$ref" in depValue) {
+                        processRef(depValue, depKey);
+                      } else if ("properties" in depValue) {
+                        addProperties({ properties: { [depKey]: depValue } });
+                      } else {
+                        flattenedProperties[depKey] = depValue;
                       }
                     } else {
                       flattenedProperties[depKey] = depValue;
