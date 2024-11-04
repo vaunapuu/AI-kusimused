@@ -7,9 +7,12 @@ import App from "./App";
 
 // Import our custom styles.
 import "./styles/custom.scss";
+import ThemeHandler from "./components/ThemeHandler";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <ThemeHandler>
+      <App />
+    </ThemeHandler>
   </React.StrictMode>
 );
