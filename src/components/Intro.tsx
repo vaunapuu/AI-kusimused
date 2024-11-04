@@ -10,29 +10,30 @@ export default function ({
   return (
     <Card style={{ minHeight: "300px" }}>
       <Card.Body className="d-flex flex-column justify-content-between">
-        <Card.Title>Documentatie voor AI-systemen</Card.Title>
+        <Card.Title>Identificatie van AI-systemen en impactvolle algoritmes</Card.Title>
 
         <div className="mb-4">
           <p>
-            Open-source templates voor modeldocumentatie. Afgestemd op de eisen
-            uit de AI Verordening en Nederlandse soft law kaders, zoals het{" "}
-            <a href="https://www.rijksoverheid.nl/documenten/rapporten/2023/07/11/onderzoekskader-algoritmes-adr-2023#:~:text=De%20Auditdienst%20Rijk%20heeft%20een,risico%27s%20beheerst%20%5C(kunnen%5C)%20worden.">
-              Onderzoekskader Algoritmes
-            </a>{" "}
-            van de Audit Dienst Rijk, het{" "}
-            <a href="https://minbzk.github.io/Algoritmekader/">
-              Algoritmekader
-            </a>{" "}
-            van het Ministerie van Binnenlandse Zaken en de Impact Assessment
-            Mensenrechten en Algoritmes (
-            <a href="https://www.rijksoverheid.nl/documenten/rapporten/2021/02/25/impact-assessment-mensenrechten-en-algoritmes">
-              IAMA
-            </a>
-            ).
+            Aan de hand van maximaal 7 vragen kun je al een gedegen inschatting maken of een datagedreven toepassing een AI-systeem of impactvol algoritme betreft. Vul de dynamische vragenlijst in.
+          </p>
+          <p>
+            Dit open-source templates is afgestemd op eisen
+            uit de AI-verordening en Nederlandse soft law kaders, zoals:
+            <ul>
+              <li>{" "}
+                <a href="https://www.rijksoverheid.nl/documenten/rapporten/2023/07/11/onderzoekskader-algoritmes-adr-2023#:~:text=De%20Auditdienst%20Rijk%20heeft%20een,risico%27s%20beheerst%20%5C(kunnen%5C)%20worden." target="_blank"> Onderzoekskader Algoritmes</a> van de Audit Dienst Rijk (ADR)
+              </li>
+              <li>{" "}
+                <a href="https://minbzk.github.io/Algoritmekader/" target="_blank">Algoritmekader</a> van het Ministerie van Binnenlandse Zaken en Koninkrijksrelaties
+              </li>
+              <li>{" "}
+                <a href="https://www.rijksoverheid.nl/documenten/rapporten/2021/02/25/impact-assessment-mensenrechten-en-algoritmes" target="_blank">Impact Assessment Mensenrechten en Algoritmes</a> van het Binnenlandse Zaken en Koninkrijksrelaties.
+              </li>
+            </ul> 
           </p>
           <p>
             Help mee ontwikkelen, deel feedback middels{" "}
-            <a href="https://github.com/NGO-Algorithm-Audit/AlgorithmAudit_website">
+            <a href="https://github.com/NGO-Algorithm-Audit/AlgorithmAudit_website" target="_blank">
               Github
             </a>{" "}
             of via{" "}
