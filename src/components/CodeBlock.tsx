@@ -1,5 +1,7 @@
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useState } from "react";
 
 export default function CodeBlock({
   code,
@@ -16,27 +18,42 @@ export default function CodeBlock({
   wrapLines?: boolean;
   wrapLongLines?: boolean;
 }) {
+  const [copied, setCopied] = useState(false);
+
+  // Reset the copied state after 2 seconds.
+  if (copied) {
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  }
+
   return (
-    <Card bg={"secondary"} text="white" className="mt-2">
-      <Card.Body>
-        <Card.Text> {title}</Card.Text>
-        <SyntaxHighlighter
-          language={language}
-          style={style}
-          wrapLines={wrapLines}
-          wrapLongLines={wrapLongLines}
-          showLineNumbers={true}
-          showInlineLineNumbers={false}
-          header={"Code"}
-          customStyle={{
-            border: "1px solid #c3c3c3",
-            borderRadius: "5px",
-            marginBottom: 0,
-          }}
-        >
-          {code}
-        </SyntaxHighlighter>
-      </Card.Body>
-    </Card>
+    <div className="bg-primary mt-2 rounded">
+      <div className="d-flex flex-row justify-content-between align-items-center p-2">
+        <h6 className="mb-0 ml-2 text-white"> {title}</h6>
+        <CopyToClipboard text={code}>
+          <a className="btn btn-primary" onClick={() => setCopied(true)}>
+            <small>{copied ? "Gekopieerd" : "Kopieer"}</small>
+          </a>
+        </CopyToClipboard>
+      </div>
+
+      <SyntaxHighlighter
+        language={language}
+        style={style}
+        wrapLines={wrapLines}
+        wrapLongLines={wrapLongLines}
+        showLineNumbers={true}
+        showInlineLineNumbers={false}
+        header={"Code"}
+        customStyle={{
+          border: "1px solid #c3c3c3",
+          borderRadius: "5px",
+          marginBottom: 0,
+        }}
+      >
+        {code}
+      </SyntaxHighlighter>
+    </div>
   );
 }
