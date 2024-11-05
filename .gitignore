@@ -26,3 +26,7 @@ dist-ssr
 # package handlers.
 package-lock.json
 yarn.lock
+
+# build output
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
