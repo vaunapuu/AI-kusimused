@@ -30,32 +30,9 @@ const WizardForm = ({
 
   const flattenSchema = (
     resolvedSchema: any,
-    definitions: any,
     rootSchema: any
   ): GenericObjectType => {
     const flattenedProperties: any = {};
-    const processedRefs = new Set<string>(); // Track processed refs to prevent infinite loops
-
-    // Helper to process a single reference
-    const processRef = (refValue: any, key: string) => {
-      const refPath = refValue.$ref.replace("#/definitions/", "");
-      // Prevent infinite loops
-      if (processedRefs.has(refPath)) {
-        return;
-      }
-      processedRefs.add(refPath);
-
-      const refSchema = definitions[refPath];
-      if (refSchema) {
-        const resolvedRef = retrieveSchema(
-          validator,
-          refSchema,
-          rootSchema,
-          data
-        );
-        addProperties({ properties: { [key]: resolvedRef } });
-      }
-    };
 
     // Helper to add properties from a schema object
     const addProperties = (schemaObject: any) => {
@@ -63,10 +40,15 @@ const WizardForm = ({
       Object.entries(schemaObject.properties || {}).forEach(
         ([key, value]: [string, any]) => {
           if (value && typeof value === "object") {
-            if ("$ref" in value) {
-              processRef(value, key);
-            } else if ("properties" in value) {
-              addProperties(value);
+            if ("properties" in value) {
+              // If it's a nested object with properties, resolve and add its properties
+              const resolvedNestedSchema = retrieveSchema(
+                validator,
+                value,
+                rootSchema,
+                data
+              );
+              addProperties(resolvedNestedSchema);
             } else {
               flattenedProperties[key] = value;
             }
@@ -80,27 +62,26 @@ const WizardForm = ({
       Object.entries(schemaObject.dependencies || {}).forEach(
         ([key, dependency]: [string, any]) => {
           if (data[key] && dependency.oneOf) {
+            // Find matching schema in oneOf array
             const matchingSchema = dependency.oneOf.find((oneOfSchema: any) => {
               const enumValue = oneOfSchema.properties?.[key]?.enum?.[0];
               return enumValue === data[key];
             });
 
-            if (matchingSchema?.properties) {
-              // Process each property in the matching dependency schema
-              Object.entries(matchingSchema.properties).forEach(
+            if (matchingSchema) {
+              // Resolve the matching schema
+              const resolvedDependencySchema = retrieveSchema(
+                validator,
+                matchingSchema,
+                rootSchema,
+                data
+              );
+
+              // Add properties from the resolved dependency schema
+              Object.entries(resolvedDependencySchema.properties || {}).forEach(
                 ([depKey, depValue]) => {
                   if (depKey !== key) {
-                    if (depValue && typeof depValue === "object") {
-                      if ("$ref" in depValue) {
-                        processRef(depValue, depKey);
-                      } else if ("properties" in depValue) {
-                        addProperties({ properties: { [depKey]: depValue } });
-                      } else {
-                        flattenedProperties[depKey] = depValue;
-                      }
-                    } else {
-                      flattenedProperties[depKey] = depValue;
-                    }
+                    flattenedProperties[depKey] = depValue;
                   }
                 }
               );
@@ -131,24 +112,12 @@ const WizardForm = ({
       schema,
       currentData
     );
-    console.log("After retrieveSchema:", {
-      resolvedSchema: resolvedSchema,
-      resolvedProperties: resolvedSchema.properties,
-    });
 
     // Then flatten it while maintaining access to the root schema for nested references
-    const flattenedSchema = flattenSchema(
-      resolvedSchema,
-      schema.definitions,
-      schema
-    );
+    const flattenedSchema = flattenSchema(resolvedSchema, schema);
 
     const keys = Object.keys(flattenedSchema?.properties ?? {});
     const property = keys[step];
-    console.log("After flattenSchema:", {
-      flattenedProperties: flattenedSchema.properties,
-      propertySchema: flattenedSchema?.properties?.[property],
-    });
 
     if (flattenedSchema?.properties?.[property]) {
       return {
@@ -167,7 +136,7 @@ const WizardForm = ({
         error: {
           title: "Foutmelding",
           type: "string",
-          default: "Oeps, er is iets misgegaan. Geen uikomst gevonden.",
+          default: "Oeps, er is iets misgegaan. Geen uitkomst gevonden.",
         },
       },
     };

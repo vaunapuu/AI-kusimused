@@ -19,6 +19,7 @@
         "default": "Uw toepassing is op basis van uw antwoorden waarschijnlijk impactvol algoritme"
       },
       "effect": {
+        "title": "Effect",
         "type": "object",
         "properties": {
           "q8": {
@@ -34,47 +35,93 @@
           }
         },
         "required": ["q8"],
-        "dependencies": {
-          "q8": {
-            "oneOf": [
-              {
-                "properties": {
-                  "q8": {
-                    "enum": [
-                      "De uitkomst van het proces wordt volledig door een mens bepaald en wordt beïnvloed door meerdere factoren waarin de output slechts een van deze factoren is"
-                    ]
-                  },
-                  "output": { "$ref": "#/definitions/outputNoAI" }
-                }
-              },
-              {
-                "properties": {
-                  "q8": {
-                    "enum": ["Een ander soort effect"]
-                  },
-                  "q8_option5": {
-                    "type": "string",
-                    "title": "Beschrijf het effect van de toepassing op het proces"
-                  },
-                  "output": { "$ref": "#/definitions/outputAI" }
-                },
-                "required": ["q8_option5"]
-              },
-              {
-                "properties": {
-                  "q8": {
-                    "enum": [
-                      "De uitkomst van het proces wordt direct bepaald door de toepassing",
-                      "De uitkomst van het proces wordt in grote mate beïnvloed door de toepassing",
-                      "De uitkomst van het proces wordt in zekere mate beïnvloed door de output van de toepassing"
-                    ]
-                  },
-                  "output": { "$ref": "#/definitions/outputAI" }
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "q8": {
+                  "enum": [
+                    "De uitkomst van het proces wordt volledig door een mens bepaald en wordt beïnvloed door meerdere factoren waarin de output slechts een van deze factoren is"
+                  ]
                 }
               }
-            ]
+            },
+            "then": {
+              "properties": {
+                "output": { "$ref": "#/definitions/outputNoAI" }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "q8": { "enum": ["Een ander soort effect"] }
+              }
+            },
+            "then": {
+              "properties": {
+                "q8_option5": {
+                  "type": "string",
+                  "title": "Beschrijf het effect van de toepassing op het proces"
+                }
+              },
+              "required": ["q8_option5"],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "q2": { "enum": ["Ja, door statistische methode"] }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "output": { "$ref": "#/definitions/outputAI" }
+                    }
+                  },
+                  "else": {
+                    "properties": {
+                      "output": { "$ref": "#/definitions/outputAlgorithm" }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "q8": {
+                  "enum": [
+                    "De uitkomst van het proces wordt direct bepaald door de toepassing",
+                    "De uitkomst van het proces wordt in grote mate beïnvloed door de toepassing",
+                    "De uitkomst van het proces wordt in zekere mate beïnvloed door de output van de toepassing"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "q2": { "enum": ["Ja, door statistische methode"] }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "output": { "$ref": "#/definitions/outputAI" }
+                    }
+                  },
+                  "else": {
+                    "properties": {
+                      "output": { "$ref": "#/definitions/outputAlgorithm" }
+                    }
+                  }
+                }
+              ]
+            }
           }
-        }
+        ]
       },
       "categories": {
         "type": "object",
