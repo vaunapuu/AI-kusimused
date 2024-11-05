@@ -1,4 +1,3 @@
-import { Button, Card } from "react-bootstrap";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
