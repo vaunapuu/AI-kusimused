@@ -25,6 +25,9 @@ export default function Output({
   ) => void;
   data: FormProps<any, RJSFSchema, any>["schema"];
 }) {
+  // Enrich the data with the output.
+  data = { ...data, output: output.default };
+
   return (
     <>
       <Card bg={"light"} className="mb-4">
@@ -49,6 +52,7 @@ export default function Output({
                 code={JSON.stringify(data, null, 2)}
                 language={"json"}
                 title="JSON"
+                wrapLongLines={false}
               />
             </>
           )}
