@@ -1,6 +1,6 @@
-# AI documentation templates
+# AI Act Implementation Tool
 
-Open-source templates for model documentation. Based on AI Act requirements and soft law frameworks, such as the Research framework Algorithms of the Netherlands Executive Audit Agency, the Algorithm framework of the Dutch Ministry of the Interior and the Dutch Fundamental Rights Impact Assessment (IAMA).
+Open-source template for 1) AI system definition check and 2) high-risk classification. Based on AI Act requirements and soft law frameworks, such as the Research framework Algorithms of the Netherlands Executive Audit Agency, the Algorithm framework of the Dutch Ministry of the Interior and the Dutch Fundamental Rights Impact Assessment (IAMA).
 
 The templates are available in JSON format and can be easily customized to fit the specific needs of an organization.
 
