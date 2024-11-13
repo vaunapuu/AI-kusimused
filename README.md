@@ -1,14 +1,13 @@
 # AI Act Implementation Tool
 
-Open-source template for 1) AI system definition check and 2) high-risk classification. Based on AI Act requirements and soft law frameworks, such as the Research framework Algorithms of the Netherlands Executive Audit Agency, the Algorithm framework of the Dutch Ministry of the Interior and the Dutch Fundamental Rights Impact Assessment (IAMA).
-
-The templates are available in JSON format and can be easily customized to fit the specific needs of an organization.
+Opinionated implementation of [AI act questions](https://github.com/NGO-Algorithm-Audit/AI-Act-Questions) created by the Algorithm Audit team.
 
 # How to run
 
-Follow these steps to set up and run the application on your local machine.
+This project includes a Git submodule that references the JSON Schemas repository (LINK), allowing us to keep schema definitions separate while using them within this project. Follow these steps to setup everything correctly.
 
 ## Prerequisites
+
 Ensure the following are installed on your system:
 
 Node.js (version 14 or later)
@@ -20,14 +19,24 @@ node -v
 npm -v
 ```
 
-First, clone the repository to your local machine. Open your terminal and run:
+##### 1. Clone the repository to your local machine. Open your terminal and run:
 
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 ```
 
-Once inside the project directory, install the necessary packages by running:
+##### 2. JSON Schemas Submodule
+
+```bash
+# If you’re cloning this repository for the first time, or if you haven't initialized the submodule yet
+git submodule update --init --recursive
+
+# To update the submodule
+git submodule update --remote --merge
+```
+
+##### 3. Once inside the project directory, install the necessary packages by running:
 
 ```bash
 # If you use npm
@@ -37,7 +46,7 @@ npm install
 yarn install
 ```
 
-After the dependencies are installed, start the development server with:
+##### 4. After the dependencies are installed, start the development server with:
 
 ```bash
 # If using npm
