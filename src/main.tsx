@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import App from "./App";
+import "./i18n/config";
 
 // Import this in case we want to test the app with overriding the default styles.
 // import "./styles/variables.css";

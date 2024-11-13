@@ -1,6 +1,7 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function CodeBlock({
   code,
@@ -18,6 +19,7 @@ export default function CodeBlock({
   wrapLongLines?: boolean;
 }) {
   const [copied, setCopied] = useState(false);
+  const { t } = useTranslation();
 
   // Reset the copied state after 2 seconds.
   if (copied) {
@@ -32,7 +34,7 @@ export default function CodeBlock({
         <h6 className="mb-0 ml-2 text-white"> {title}</h6>
         <CopyToClipboard text={code}>
           <a className="btn btn-primary" onClick={() => setCopied(true)}>
-            <small>{copied ? "Gekopieerd" : "Kopieer"}</small>
+            <small>{copied ? t("copied") : t("copy")}</small>
           </a>
         </CopyToClipboard>
       </div>

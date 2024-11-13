@@ -1,0 +1,23 @@
+{
+  "cardTitle": "Identification of AI systems and impactful algorithms",
+  "description1": "With a maximum of 7 questions, you can already make a well-founded assessment of whether a data-driven application qualifies as an AI system or a significant algorithm. Fill out the dynamic questionnaire.",
+  "description2": "This open-source template is tailored to requirements from the AI regulation and Dutch soft law frameworks, such as:",
+  "framework1_text": "Algorithm Framework",
+  "framework1_author": "by the Audit Dienst Rijk (ADR)",
+  "framework2_text": "Algorithm Framework",
+  "framework2_author": "by the Ministry of the Interior and Kingdom Relations",
+  "framework3_text": "Impact Assessment Human Rights and Algorithms",
+  "framework3_author": "by the Ministry of the Interior...",
+  "feedback": "Help develop and share feedback via",
+  "startButton": "Start",
+  "or": "or",
+  "copy": "Copy",
+  "copied": "Copied",
+  "back": "Back",
+  "next": "Next",
+  "done": "Done",
+  "save output": "Save the outcome for future use:",
+  "error title": "Error occurred",
+  "error message": "An error occurred. No output was found.",
+  "required field": "This field is required"
+}
