@@ -12,9 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive # Fetches and initializes submodules
-          token: ${{ secrets.GITHUB_TOKEN }}
+        # with:
+        # submodules: recursive # Fetches and initializes submodules
 
       - name: Set up AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
