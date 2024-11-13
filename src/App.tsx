@@ -40,10 +40,10 @@ export default function App() {
     const loadJsonFiles = async () => {
       const forms = {} as { [key: string]: RJSFSchema[] };
 
-      const dataEntries = await Promise.all(
+      const dataEntries: [string, RJSFSchema][] = await Promise.all(
         Object.entries(jsonFiles).map(async ([path, importFile]) => {
           const module = await importFile();
-          return [path, module.default]; // Return file path and content
+          return [path, (module as { default: RJSFSchema }).default]; // Return file path and content
         })
       );
 
