@@ -172,6 +172,8 @@ const WizardForm = ({
 
   const firstQuestion = currentStepSchema?.properties?.[questions[0]];
 
+  console.log("currentStepSchema", currentStepSchema);
+
   return (
     <Card style={{ minHeight: "300px" }}>
       <Card.Header className="d-flex flex-row justify-content-between">
@@ -200,9 +202,13 @@ const WizardForm = ({
           <Form
             schema={currentStepSchema as RJSFSchema}
             uiSchema={uiSchema}
-            formData={{
-              [questions[0]]: data[questions[0]],
-            }}
+            formData={
+              data[questions[0]]
+                ? {
+                    [questions[0]]: data[questions[0]],
+                  }
+                : {}
+            }
             onSubmit={(data) => handleNext(data.formData)}
             validator={validator}
             customValidate={handleValidate}

@@ -39,6 +39,30 @@ a {
   }
 }
 
+// Style a textarea input like a normal paragraph with heading in case it is used for intermediate output.
+.intermediate-output {
+  label {
+    font-weight: 700;
+  }
+
+  textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    color: inherit;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
 // Body background using CSS variables
 body {
   background-color: var(--host-body-bg, #{$body-bg});

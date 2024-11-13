@@ -25,6 +25,11 @@ export default function Output({
   ) => void;
   data: FormProps<any, RJSFSchema, any>["schema"];
 }) {
+  // filter out intermediate output from the form data.
+  data = Object.fromEntries(
+    Object.entries(data).filter(([key]) => !key.startsWith("output"))
+  );
+
   // Enrich the data with the output.
   data = { ...data, output: output.default };
 
