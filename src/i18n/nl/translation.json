@@ -19,5 +19,7 @@
   "save output": "Sla de uitkomst op voor toekomstig gebruik:",
   "error title": "Foutmelding",
   "error message": "Er is een fout opgetreden. Er is geen uitkomst gevonden.",
-  "required field": "Dit veld is verplicht"
+  "required field": "Dit veld is verplicht",
+  "no forms": "Geen formulieren beschikbaar",
+  "no forms title": "Geen formulier titel beschikbaar"
 }

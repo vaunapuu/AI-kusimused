@@ -5,6 +5,7 @@ import WizardForm from "./components/WizardForm";
 import validator from "@rjsf/validator-ajv8";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 export default function App() {
   const { i18n } = useTranslation();
@@ -16,11 +17,11 @@ export default function App() {
   // Not yet used but very likely to be used in the future.
   const [, setFormData] = useState({});
   const [activeForm, setActiveForm] = useState<RJSFSchema | null>(null);
-  let formsMenu = [{ id: 0, title: "No Form template found." }];
+  let formsMenu = [{ id: 0, title: t("no forms") }];
 
   if (forms[i18n.language] && forms[i18n.language].length > 0) {
     formsMenu = (forms[i18n.language] as RJSFSchema[]).map((item, index) => {
-      return { id: index, title: item.JSONSchema.title ?? "No form title" };
+      return { id: index, title: item.JSONSchema.title ?? t("no forms title") };
     });
   }
 
