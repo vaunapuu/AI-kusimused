@@ -14,13 +14,17 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist", // Output directory for Hugo or S3
+    assetsDir: "", // Place assets in the root of `dist` instead of an `assets` directory
     rollupOptions: {
       output: {
-        // Format the entry file names and chunk file names with the version
-        entryFileNames: `[name]-v${version}.js`,
-        chunkFileNames: `[name]-v${version}.js`,
-        assetFileNames: `[name]-v${version}.[ext]`,
+        // Inline all dynamic imports to ensure a single file output
+        inlineDynamicImports: true,
+        manualChunks: undefined, // Disables code splitting by chunks
+        entryFileNames: `AI-Act-Questionnaire-v${version}.js`, // Output file name for JS with version
+        assetFileNames: `AI-Act-Questionnaire-v${version}.[ext]`, // Output file name for CSS with version
       },
     },
+    assetsInlineLimit: 0, // Prevent asset inlining to avoid extra files
   },
 });
