@@ -50,7 +50,7 @@ yarn install
 
 ```bash
 # If using npm
-npm start
+npm run dev
 
 # Or, if using yarn
 yarn start
