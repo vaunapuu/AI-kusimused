@@ -10,7 +10,7 @@ import "./i18n/config";
 import "./styles/custom.scss";
 import ThemeHandler from "./components/ThemeHandler";
 
-ReactDOM.createRoot(document.getElementById("AIActWizard")!).render(
+ReactDOM.createRoot(document.getElementById("AIActImplementationTool")!).render(
   <React.StrictMode>
     <ThemeHandler>
       <App />
