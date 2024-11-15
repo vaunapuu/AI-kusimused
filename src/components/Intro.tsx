@@ -21,43 +21,25 @@ export default function ({
 
         <div className="mb-4">
           <p>{t("description1")}</p>
-          <p>{t("description2")}</p>
-          <ul>
-            <li>
-              {" "}
-              <a
-                href="https://www.rijksoverheid.nl/documenten/rapporten/2023/07/11/onderzoekskader-algoritmes-adr-2023#:~:text=De%20Auditdienst%20Rijk%20heeft%20een,risico%27s%20beheerst%20%5C(kunnen%5C)%20worden."
-                target="_blank"
-              >
-                {t("framework1_text")}
-              </a>{" "}
-              {t("framework1_author")}
-            </li>
-            <li>
-              {" "}
-              <a
-                href="https://minbzk.github.io/Algoritmekader/"
-                target="_blank"
-              >
-                {t("framework2_text")}
-              </a>{" "}
-              {t("framework2_author")}
-            </li>
-            <li>
-              {" "}
-              <a
-                href="https://www.rijksoverheid.nl/documenten/rapporten/2021/02/25/impact-assessment-mensenrechten-en-algoritmes"
-                target="_blank"
-              >
-                {t("framework3_text")}
-              </a>{" "}
-              {t("framework3_author")}
-            </li>
-          </ul>
+          <p>{t("description2")} 
+            <a
+              href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+              target="_blank"
+            >
+              {t("source1")}
+            </a>
+            {t("description2_1")} 
+            <a
+              href="https://algoritmes.pleio.nl/attachment/entity/f1a35292-7ea6-4e47-93fa-b3358e9ab2e0"
+              target="_blank"
+            >
+              {t("source2")}
+            </a>
+          </p>
           <p>
             {t("feedback")}{" "}
             <a
-              href="https://github.com/NGO-Algorithm-Audit/AlgorithmAudit_website"
+              href="https://github.com/NGO-Algorithm-Audit/AI-Act-Implementation-Tool"
               target="_blank"
             >
               Github
