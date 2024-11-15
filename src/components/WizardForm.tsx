@@ -174,8 +174,6 @@ const WizardForm = ({
 
   const firstQuestion = currentStepSchema?.properties?.[questions[0]];
 
-  console.log("currentStepSchema", currentStepSchema);
-
   return (
     <Card style={{ minHeight: "300px" }}>
       <Card.Header className="d-flex flex-row justify-content-between">

@@ -9,8 +9,8 @@ export default function ({
   forms: { id: number; title: string }[];
   onStart: (index: number) => void;
 }) {
-  const { t, i18n } = useTranslation();
-  console.log(i18n);
+  const { t } = useTranslation();
+
   return (
     <Card style={{ minHeight: "300px" }}>
       <Card.Body className="d-flex flex-column justify-content-between">

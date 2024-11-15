@@ -9,7 +9,7 @@ i18next
   .use(initReactI18next)
   .init({
     fallbackLng: "en", // Default language if detection fails
-    debug: true,
+    // debug: true,
     resources: {
       en: {
         translation: enTranslation,
