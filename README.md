@@ -32,7 +32,7 @@ cd your-repo-name
 # If you’re cloning this repository for the first time, or if you haven't initialized the submodule yet
 git submodule update --init --recursive
 
-# To update the submodule
+# To update the submodule from the remote.
 git submodule update --remote --merge
 ```
 
@@ -53,24 +53,22 @@ yarn install
 npm run dev
 
 # Or, if using yarn
-yarn start
+yarn dev
 ```
 
 This command will compile and serve the application. By default, it should be accessible at http://localhost:5173 in your web browser.
 
 # How it works.
 
-This implementation extends the [React JSON Schema Form (RJSF) library](https://github.com/rjsf-team/react-jsonschema-form) to create a step-by-step wizard interface. Instead of displaying all form fields at once, it presents them one at a time, with validation and navigation controls.
+The actual form schema's are specified in [AI act questions repository.](https://github.com/NGO-Algorithm-Audit/AI-Act-Questions) And this repository is used as a git sub module in this repository.
+
+This rendering implementation extends the [React JSON Schema Form (RJSF) library](https://github.com/rjsf-team/react-jsonschema-form) to create a step-by-step wizard interface. Instead of displaying all form fields at once, it presents them one at a time, with validation and navigation controls.
 
 The original specification is still applicable so please read the [RSJF documentation](https://rjsf-team.github.io/react-jsonschema-form/docs/) for information about how the forms work.
 
 Changes we made to the original specification:
 
-### 1. Multi form support
-
-To show multiple forms on the starting page, we always place our form specifications inside an array. [See our forms](./src/assets/forms.json)
-
-### 2. Output
+### 1. Output
 
 The templates should return an outcome after the questions, to show this result we trigger the results component when the question key is `output`. For example:
 
@@ -86,26 +84,18 @@ This allows us to have multiple different outcomes in one template that each are
 
 In case a form ends without an `output` question we automatically trigger an error component.
 
-### 3. uiSchema integration
+### 2. Intermediate output
 
-To simplify importing the json templates into our front-end we specificy our [uiSchema](https://rjsf-team.github.io/react-jsonschema-form/docs/api-reference/uiSchema) inside the original [object properties](https://rjsf-team.github.io/react-jsonschema-form/docs/json-schema/objects)
-
-Example:
+To show intermediate outputs or simple text messages to the user we trigger a classname on such elements, to prevent the content from rendering as an input. This is done by adding the following uiSchema definition:
 
 ```json
-{
-    "title": "Hello World",
-    "type": "object",
-    "required": ["question1"],
-    "properties": {...},
-    "dependencies": {...},
-    "uiSchema": {
-        "question1": {
-            "ui:autofocus": true
-        }
-    }
+"outputIntermediate": {
+    "ui:widget": "textarea",
+    "ui:classNames": "intermediate-output"
 }
 ```
+
+In this example we trigger this for the input element `outputIntermediate` but this mechanism can be used for any question.
 
 # Styling overrides
 
