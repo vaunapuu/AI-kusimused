@@ -4,6 +4,7 @@ import { GenericObjectType, retrieveSchema, RJSFSchema } from "@rjsf/utils";
 import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import Output from "./Output";
+import { useTranslation } from "react-i18next";
 
 const WizardForm = ({
   id,
@@ -25,6 +26,7 @@ const WizardForm = ({
   onCancel: (index: number) => void;
   validator: FormProps<any, RJSFSchema, any>["validator"];
 }) => {
+  const { t } = useTranslation();
   const [step, setStep] = useState(0);
   const [data, setData] = useState(formData || {});
 
@@ -134,9 +136,9 @@ const WizardForm = ({
       type: "object",
       properties: {
         error: {
-          title: "Foutmelding",
+          title: t("error title"),
           type: "string",
-          default: "Oeps, er is iets misgegaan. Geen uitkomst gevonden.",
+          default: t("error message"),
         },
       },
     };
@@ -150,7 +152,7 @@ const WizardForm = ({
       currentSchema.required?.includes(currentField) &&
       (formData[currentField] === undefined || formData[currentField] === "")
     ) {
-      errors[currentField].addError("Dit veld is verplicht");
+      errors[currentField].addError(t("required field"));
     }
 
     return errors;
@@ -180,7 +182,7 @@ const WizardForm = ({
           type="button"
           onClick={() => onCancel(id)}
           className="close ml-4"
-          aria-label="Sluit"
+          aria-label="Close"
         >
           <span aria-hidden="true">&times;</span>
         </button>
@@ -200,9 +202,13 @@ const WizardForm = ({
           <Form
             schema={currentStepSchema as RJSFSchema}
             uiSchema={uiSchema}
-            formData={{
-              [questions[0]]: data[questions[0]],
-            }}
+            formData={
+              data[questions[0]]
+                ? {
+                    [questions[0]]: data[questions[0]],
+                  }
+                : {}
+            }
             onSubmit={(data) => handleNext(data.formData)}
             validator={validator}
             customValidate={handleValidate}
@@ -210,7 +216,7 @@ const WizardForm = ({
           >
             <div className="d-flex flex-row justify-content-between flex-row-reverse">
               <Button variant="primary" type="submit">
-                Volgende
+                {t("next")}
               </Button>
               {step > 0 && (
                 <Button
@@ -219,7 +225,7 @@ const WizardForm = ({
                   onClick={handlePrev}
                   style={{ marginRight: "8px" }}
                 >
-                  Vorige
+                  {t("back")}
                 </Button>
               )}
             </div>

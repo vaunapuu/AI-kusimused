@@ -4,6 +4,7 @@ import a11yLight from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-light"
 import { dictionaryToCsv } from "../utils/dictionaryToCsv";
 import { FormProps } from "@rjsf/core";
 import { RJSFSchema } from "@rjsf/utils";
+import { useTranslation } from "react-i18next";
 
 export default function Output({
   id,
@@ -25,6 +26,12 @@ export default function Output({
   ) => void;
   data: FormProps<any, RJSFSchema, any>["schema"];
 }) {
+  const { t } = useTranslation();
+  // filter out intermediate output from the form data.
+  data = Object.fromEntries(
+    Object.entries(data).filter(([key]) => !key.startsWith("output"))
+  );
+
   // Enrich the data with the output.
   data = { ...data, output: output.default };
 
@@ -39,7 +46,7 @@ export default function Output({
           </Alert>
           {type === "output" && (
             <>
-              <Card.Text>Sla de uitkomst op voor toekomstig gebruik:</Card.Text>
+              <Card.Text>{t("save output")}</Card.Text>
               <CodeBlock
                 style={a11yLight}
                 code={dictionaryToCsv(data)}
@@ -64,7 +71,7 @@ export default function Output({
           variant="primary"
           type="submit"
         >
-          Gereed
+          {t("done")}
         </Button>
         {step > 0 && (
           <Button
@@ -73,7 +80,7 @@ export default function Output({
             onClick={handlePrev}
             style={{ marginRight: "8px" }}
           >
-            Vorige
+            {t("back")}
           </Button>
         )}
       </div>

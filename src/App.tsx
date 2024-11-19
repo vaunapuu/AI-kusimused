@@ -1,24 +1,27 @@
 import { RJSFSchema } from "@rjsf/utils";
 import { Col, Container, Row } from "react-bootstrap";
 import Intro from "./components/Intro";
-import formSchemas from "./assets/forms.json";
 import WizardForm from "./components/WizardForm";
 import validator from "@rjsf/validator-ajv8";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 export default function App() {
-  const [forms] = useState<RJSFSchema[]>(
-    formSchemas as unknown as RJSFSchema[]
-  );
+  const { i18n } = useTranslation();
+  const [forms, setForms] = useState<{ [key: string]: RJSFSchema[] }>({
+    nl: [],
+    en: [],
+  });
 
   // Not yet used but very likely to be used in the future.
   const [, setFormData] = useState({});
   const [activeForm, setActiveForm] = useState<RJSFSchema | null>(null);
-  let formsMenu = [{ id: 0, title: "No Form template found." }];
+  let formsMenu = [{ id: 0, title: t("no forms") }];
 
-  if (forms.length > 0) {
-    formsMenu = (forms as RJSFSchema[]).map((item, index) => {
-      return { id: index, title: item.title ?? "No form title" };
+  if (forms[i18n.language] && forms[i18n.language].length > 0) {
+    formsMenu = (forms[i18n.language] as RJSFSchema[]).map((item, index) => {
+      return { id: index, title: item.JSONSchema.title ?? t("no forms title") };
     });
   }
 
@@ -27,7 +30,37 @@ export default function App() {
     setActiveForm(null);
   };
 
-  const { uiSchema, ...activeFormProps } = activeForm ?? {};
+  const onFormActivate = (index: number) => {
+    setActiveForm(forms[i18n.language][index]);
+  };
+
+  useEffect(() => {
+    // Use Vite's import.meta.glob to get a map of file paths in nested directories
+    const jsonFiles = import.meta.glob("/src/schemas/*/*.json");
+
+    const loadJsonFiles = async () => {
+      const forms = {} as { [key: string]: RJSFSchema[] };
+
+      const dataEntries: [string, RJSFSchema][] = await Promise.all(
+        Object.entries(jsonFiles).map(async ([path, importFile]) => {
+          const module = await importFile();
+          return [path, (module as { default: RJSFSchema }).default]; // Return file path and content
+        })
+      );
+
+      // Convert array of entries to an array per language
+      for (const [path, data] of dataEntries) {
+        const language: string = path.split("/")[3] ?? "nl";
+        const dataObject = forms[language] ?? [];
+        dataObject.push(data);
+        forms[language] = dataObject;
+      }
+
+      setForms(forms);
+    };
+
+    loadJsonFiles();
+  }, []);
 
   return (
     <Container className="vh-100">
@@ -35,9 +68,9 @@ export default function App() {
         <Col xs={12} className="">
           {activeForm ? (
             <WizardForm
-              id={activeFormProps.id}
-              schema={activeFormProps}
-              uiSchema={uiSchema}
+              id={activeForm.JSONSchema.title}
+              schema={activeForm.JSONSchema}
+              uiSchema={activeForm.uiSchema}
               formData={{}}
               onSubmit={onFormSubmit}
               onCancel={onFormSubmit}
@@ -46,7 +79,7 @@ export default function App() {
           ) : (
             <Intro
               forms={formsMenu}
-              onStart={(id: number) => setActiveForm(forms[id])}
+              onStart={(id: number) => onFormActivate(id)}
             />
           )}
         </Col>

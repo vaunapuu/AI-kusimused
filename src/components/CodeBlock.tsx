@@ -1,6 +1,8 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Button } from "react-bootstrap";
 
 export default function CodeBlock({
   code,
@@ -18,6 +20,7 @@ export default function CodeBlock({
   wrapLongLines?: boolean;
 }) {
   const [copied, setCopied] = useState(false);
+  const { t } = useTranslation();
 
   // Reset the copied state after 2 seconds.
   if (copied) {
@@ -31,9 +34,9 @@ export default function CodeBlock({
       <div className="d-flex flex-row justify-content-between align-items-center p-2">
         <h6 className="mb-0 ml-2 text-white"> {title}</h6>
         <CopyToClipboard text={code}>
-          <a className="btn btn-primary" onClick={() => setCopied(true)}>
-            <small>{copied ? "Gekopieerd" : "Kopieer"}</small>
-          </a>
+          <Button className="btn btn-primary" onClick={() => setCopied(true)}>
+            <small>{copied ? t("copied") : t("copy")}</small>
+          </Button>
         </CopyToClipboard>
       </div>
 
