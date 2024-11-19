@@ -1,6 +1,7 @@
 {
   "cardTitle": "AI-verordening implementatie tool",
   "description1": "Aan de hand van maximaal 7 vragen kun je al een gedegen inschatting maken of een datagedreven toepassing een AI-systeem of impactvol algoritme betreft. Vul de dynamische vragenlijst in. Binnenkort komen meer dynamische vragenlijsten beschikbaar voor onder meer risicoclassificatie van AI-systemen.",
+<<<<<<< HEAD
   "description2": "Deze tool is gebaseerd op eisen uit de AI-verordening en Nederlandse soft law kaders, zoals:",
   "framework1_text": "Onderzoekskader Algoritmes",
   "framework1_author": "van de Audit Dienst Rijk (ADR)",
@@ -9,6 +10,13 @@
   "framework3_text": "Impact Assessment Mensenrechten en Algoritmes",
   "framework3_author": "van het Binnenlandse Zaken...",
   "feedback": "Help mee ontwikkelen en deel feedback middels",
+=======
+  "description2": "Deze open-source template is afgestemd op de definitie van AI uit de ",
+  "source1": "AI-verordening",
+  "description2_1": " en de definitie van impactvol algoritme uit de ",
+  "source2": "Handreiking Algoritme Register van het Ministerie van Binnenlandse Zaken en Koningkrijksrelaties",
+  "feedback": "Help mee ontwikkelen, deel feedback middels",
+>>>>>>> 586ecd5ebd0901a80b7d545cdec8be67f486e67d
   "startButton": "Start",
   "or": "of",
   "copy": "Kopiëren",
