@@ -63,9 +63,15 @@ a {
   }
 }
 
-label,
-small {
-  white-space: pre-wrap;
+.form-group {
+  label,
+  small {
+    white-space: pre-wrap;
+  }
+
+  small {
+    margin-top: 24px;
+  }
 }
 
 // Body background using CSS variables
