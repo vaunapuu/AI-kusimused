@@ -63,6 +63,10 @@ a {
   }
 }
 
+label {
+  white-space: pre-wrap;
+}
+
 // Body background using CSS variables
 body {
   background-color: var(--host-body-bg, #{$body-bg});
