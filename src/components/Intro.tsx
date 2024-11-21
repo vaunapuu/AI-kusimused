@@ -20,10 +20,6 @@ export default function ({
         </div>
 
         <div className="mb-4">
-          <p><u>{t("SubTitle")}</u></p>
-          <p>{t("instructionsAI")}</p>
-          <p>{t("instructionsAlgo")}</p>
-          <p>{t("why")}</p>
           <p>{t("description1")}</p>
           <p>{t("description2")} 
             <a
