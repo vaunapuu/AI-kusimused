@@ -1,6 +1,6 @@
 # AI Act Implementation Tool
 
-Opinionated implementation of [AI act questions](https://github.com/NGO-Algorithm-Audit/AI-Act-Questions) created by the Algorithm Audit team.
+Opinionated implementation of [AI act questions](https://github.com/NGO-Algorithm-Audit/AI-Act-Questions) created by the Algorithm Audit team in collaboration with the muncipality of Amsterdam.
 
 # How to run
 
