@@ -29,12 +29,15 @@ export default function ({
               {t("source1")}
             </a>
             {t("description2_1")} 
+            <i>{t("description2_2")} </i>
+            {t("description2_3")} 
             <a
               href="https://algoritmes.pleio.nl/attachment/entity/f1a35292-7ea6-4e47-93fa-b3358e9ab2e0"
               target="_blank"
             >
               {t("source2")}
             </a>
+            {t("description2_4")} 
           </p>
           <p>
             {t("feedback")}{" "}
