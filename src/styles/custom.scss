@@ -5,9 +5,6 @@ $primary-dark: #003366;
 $primary-darker: #00274d;
 $body-bg: #deecf7;
 
-// Set default value for border-radius, this cannot be overridden by the host.
-$border-radius: 0.5rem;
-
 // Import Bootstrap
 @import "bootstrap/scss/bootstrap";
 
