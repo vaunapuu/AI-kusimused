@@ -1,70 +1,15 @@
-# AI Act Implementation Tool
+# AI Act Questions
 
-Opinionated implementation of [AI act questions](https://github.com/NGO-Algorithm-Audit/AI-Act-Questions) created by the Algorithm Audit team in collaboration with the muncipality of Amsterdam.
+AI Act questions based on AI Act defintions and the definition of High Impact Algorithm in the Algorithm Registery guidance by the Dutch Ministry of the Interior (https://algoritmes.pleio.nl/attachment/entity/f1a35292-7ea6-4e47-93fa-b3358e9ab2e0).
 
-# How to run
+The questions are developed in collaboration with the Muncipality of Amsterdam.
 
-This project includes a Git submodule that references the JSON Schemas repository (LINK), allowing us to keep schema definitions separate while using them within this project. Follow these steps to setup everything correctly.
+The templates are available in JSON format and can be easily customized to fit the specific needs of an organization.
 
-## Prerequisites
+# How it works
 
-Ensure the following are installed on your system:
-
-Node.js (version 14 or later)
-npm (Node Package Manager, comes with Node.js) or yarn (an alternative package manager)
-To check if you have these installed, run the following commands in your terminal:
-
-```bash
-node -v
-npm -v
-```
-
-##### 1. Clone the repository to your local machine. Open your terminal and run:
-
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-```
-
-##### 2. JSON Schemas Submodule
-
-```bash
-# If you’re cloning this repository for the first time, or if you haven't initialized the submodule yet
-git submodule update --init --recursive
-
-# To update the submodule from the remote.
-git submodule update --remote --merge
-```
-
-##### 3. Once inside the project directory, install the necessary packages by running:
-
-```bash
-# If you use npm
-npm install
-
-# Or, if you prefer yarn
-yarn install
-```
-
-##### 4. After the dependencies are installed, start the development server with:
-
-```bash
-# If using npm
-npm run dev
-
-# Or, if using yarn
-yarn dev
-```
-
-This command will compile and serve the application. By default, it should be accessible at http://localhost:5173 in your web browser.
-
-# How it works.
-
-The actual form schema's are specified in [AI act questions repository.](https://github.com/NGO-Algorithm-Audit/AI-Act-Questions) And this repository is used as a git sub module in this repository.
-
-This rendering implementation extends the [React JSON Schema Form (RJSF) library](https://github.com/rjsf-team/react-jsonschema-form) to create a step-by-step wizard interface. Instead of displaying all form fields at once, it presents them one at a time, with validation and navigation controls.
-
-The original specification is still applicable so please read the [RSJF documentation](https://rjsf-team.github.io/react-jsonschema-form/docs/) for information about how the forms work.
+The JSON schema's use the [React JSON Schema Form (RJSF) library](https://github.com/rjsf-team/react-jsonschema-form), this library is built on top of: [Json schema's](https://json-schema.org/) which should make it easy to implement the schema's in your own tech stack.
+Please read the [RSJF documentation](https://rjsf-team.github.io/react-jsonschema-form/docs/) for information about how the forms and dependencies work.
 
 Changes we made to the original specification:
 
@@ -96,6 +41,50 @@ To show intermediate outputs or simple text messages to the user we trigger a cl
 ```
 
 In this example we trigger this for the input element `outputIntermediate` but this mechanism can be used for any question.
+
+# How to run
+
+## Prerequisites
+
+Ensure the following are installed on your system:
+
+Node.js (version 14 or later)
+npm (Node Package Manager, comes with Node.js) or yarn (an alternative package manager)
+To check if you have these installed, run the following commands in your terminal:
+
+```bash
+node -v
+npm -v
+```
+
+##### 1. Clone the repository to your local machine. Open your terminal and run:
+
+```bash
+git clone https://github.com/NGO-Algorithm-Audit/AI-Act-Implementation-Tool.git
+cd your-repo-name
+```
+
+##### 3. Once inside the project directory, install the necessary packages by running:
+
+```bash
+# If you use npm
+npm install
+
+# Or, if you prefer yarn
+yarn install
+```
+
+##### 4. After the dependencies are installed, start the development server with:
+
+```bash
+# If using npm
+npm run dev
+
+# Or, if using yarn
+yarn dev
+```
+
+This command will compile and serve the application. By default, it should be accessible at http://localhost:5173 in your web browser.
 
 # Styling overrides
 
