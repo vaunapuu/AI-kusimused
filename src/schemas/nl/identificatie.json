@@ -34,7 +34,7 @@
         "properties": {
           "q7": {
             "type": "string",
-            "title": "Welke van de volgende opties beschijft het effect van de toepassing op de uitkomst het beste?",
+            "title": "Welke van de volgende opties beschrijft het effect van de toepassing op de uitkomst het beste?",
             "enum": [
               "De uitkomst van het proces wordt direct bepaald door de toepassing (hier is geen menselijke tussenkomst voor nodig). Nadat het proces is voltooid, kunnen mensen nog wel de resultaten controleren of analyseren.",
               "De uitkomst van het proces wordt sterk beïnvloed door de toepassing. Bijvoorbeeld doordat werkvoorschriften bepalen wat het gevolg is van een bepaalde uitkomst van de toepassing. Een medewerker kan in sommige gevallen andere keuzes maken, maar meestal bepaalt het resultaat van het systeem wat het eindresultaat van het proces zal zijn.",
@@ -91,7 +91,7 @@
         "properties": {
           "q7": {
             "type": "string",
-            "title": "Welke van de volgende opties beschijft het effect van de toepassing op de uitkomst het beste?",
+            "title": "Welke van de volgende opties beschrijft het effect van de toepassing op de uitkomst het beste?",
             "enum": [
               "De uitkomst van het proces wordt direct bepaald door de toepassing (er is geen sprake van menselijke tussenkomst). Nadat het proces is voltooid, kunnen mensen nog wel de resultaten controleren of analyseren.",
               "De uitkomst van het proces wordt sterk beïnvloed door de toepassing. Bijvoorbeeld doordat werkvoorschriften bepalen wat het gevolg is van een bepaalde uitkomst van de toepassing. Een medewerker kan in sommige gevallen andere keuzes maken, maar meestal bepaalt het resultaat van het systeem wat het eindresultaat van het proces zal zijn.",
