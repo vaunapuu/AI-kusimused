@@ -1,0 +1,2657 @@
+{
+  "JSONSchema": {
+    "title": "Test2",
+    "type": "object",
+    "definitions": {
+      "outputLow": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden is zijn er geen eisen van toepassing uit de AI-verordening."
+      },
+      "outputHigh": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden is uw toepassing een hoog risico AI-systeem volgens de AI-verordening. Uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI systemen. De omvang van de vereisten voor uw organisatie hangt af van de rol van uw organisatie voor deze toepassing. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of uw organisatie gebruiksverantwoordelijke of aanbieder is."
+      },
+      "outputForbidden": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening. Omdat dit de zwaarste risicocategorie is, met definities waarvan de interpretatie nog niet geheel duidelijk is, kunnen en willen we dit niet op basis van een vragenlijst vaststellen. Schakel juridische expertise in om voor deze casus in overleg te bepalen in welke categorie het valt."    
+      },
+      "outputHighExcept": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden is uw toepassing geen hoog risico AI-systeem volgens de AI-verordening, omdat er een specifieke uitzondering geldt. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Als er geen sprake is van deze uitzondering, dan moet uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI systemen."
+      },
+      "outputForbiddenExcept": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening. Er geldt mogelijk een uitzondering. Omdat dit de zwaarste risicocategorie is, met definities waarvan de interpretatie nog niet geheel duidelijk is, kunnen en willen we dit niet op basis van een vragenlijst vaststellen. Schakel juridische expertise in om voor deze casus in overleg te bepalen in welke categorie het valt."    
+      },
+      "outputTransparency": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden gelden er specifieke transparantie eisen volgens de AI-verordening (artikel 50). Mogelijk bevat de toepassing ook een 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI). Deze modellen moeten voldoen aan specifieke eisen voor GPAI. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of er sprake is van een GPAI model en of uw organisatie gebruiksverantwoordelijke of aanbieder is. "    
+      },
+      "outputGPAI": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden is uw toepassing een zogenaamd 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI). Deze modellen moeten voldoen aan specifieke eisen voor GPAI. De omvang van de vereisten voor uw organisatie hangen af van de rol van uw organisatie voor dit model. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of er sprake is van een GPAI model en of uw organisatie gebruiksverantwoordelijke of aanbieder is."    
+      },
+      "biometrics": {
+        "title": "biometrics",
+        "type": "object",
+        "properties": {   
+          "5.e.1": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt om een database voor gezichtsherkenning aan te leggen of uit te breiden?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["5.e.1"],
+        "dependencies": {  
+          "5.e.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.e.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.e.1": {
+                    "enum": ["Nee"]
+                  },
+                  "5.e.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor het grootschalig verzamelen van gezichtsafbeeldingen van internet of beelden van beveiligingscamera's (scraping)?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.e.2"]
+              }
+            ]
+          },
+          "5.e.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.e.2": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.e.2": {
+                    "enum": ["Nee"]
+                  },
+                  "III.1.1": {
+                    "type": "string",
+                    "title": "Waarvoor worden biometrische gegevens gebruikt?",
+                    "enum": [
+                      "Voor identificatie of verificatie van iemands identiteit. Hierbij worden de camerabeelden dus gebruikt om te controleren wie iemand is. Bij identificatie gaan het over het ontdekken wie iemand is uit een groep mensen. Bijvoorbeeld als je een foto van een gezicht hebt, kun je proberen te vinden wie die persoon is door de foto te vergelijken met een database van gezichten. Verificatie is het proces waarbij je bevestigt dat iemand is wie die zegt te zijn. Bijvoorbeeld als je een telefoon ontgrendelt met je camera, controleert de telefoon of het gezicht overeenkomt met degene die al is opgeslagen.",
+                      "Voor categorisering (labelen) van mensen. Dit betekent dat mensen worden ingedeeld in groepen of een label krijgen toegewezen op basis van bepaalde kenmerken, zoals hoe ze eruitzien of hoe ze zich gedragen. Bijvoorbeeld als een toepassing mensen als 'winkeldief' bestempeld of een inschatting maakt van iemands gender op basis van videobeelden",
+                      "Om emoties of intenties te herkennen of af te leiden.  Emoties zijn bijvoorbeeld geluk, blijheid, droefheid, woede, agressie,  verrassing, weerzin, verlegenheid, opwinding, schaamte, minachting, tevredenheid en plezier.",
+                      "Voor een ander doel"
+                    ]
+                  }
+                },
+                "required": ["III.1.1"]
+              }
+            ]
+          },
+          "III.1.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.1.1": {
+                    "enum": [
+                      "Voor een ander doel"
+                    ]
+                  },
+                  "III.1.1-yes4": {
+                    "type": "string",
+                    "title": "Geef een korte beschrijving van het proces en hoe dit burgers of ambtenaren raakt.",
+                    "default": ""
+                  },
+                  "infra": { "$ref": "#/definitions/infra" }
+                }
+              },
+              {
+                "properties": {
+                  "III.1.1": {
+                    "enum": [
+                      "Voor identificatie of verificatie van iemands identiteit. Hierbij worden de camerabeelden dus gebruikt om te controleren wie iemand is. Bij identificatie gaan het over het ontdekken wie iemand is uit een groep mensen. Bijvoorbeeld als je een foto van een gezicht hebt, kun je proberen te vinden wie die persoon is door de foto te vergelijken met een database van gezichten. Verificatie is het proces waarbij je bevestigt dat iemand is wie die zegt te zijn. Bijvoorbeeld als je een telefoon ontgrendelt met je camera, controleert de telefoon of het gezicht overeenkomt met degene die al is opgeslagen."
+                    ]
+                  },
+                  "III.1.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt om te bevestigen dat iemand echt is wie hij of zij zegt te zijn (verificatie/authenticatie)?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.1.2"]
+              },
+              {
+                "properties": {
+                  "III.1.1": {
+                    "enum": [
+                      "Om emoties of intenties te herkennen of af te leiden.  Emoties zijn bijvoorbeeld geluk, blijheid, droefheid, woede, agressie,  verrassing, weerzin, verlegenheid, opwinding, schaamte, minachting, tevredenheid en plezier."
+                    ]
+                  },
+                  "5.f.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt in de werkomgeving of in het onderwijs?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.f.1"]
+              },
+              {
+                "properties": {
+                  "III.1.1": {
+                    "enum": [
+                      "Voor categorisering (labelen) van mensen. Dit betekent dat mensen worden ingedeeld in groepen of een label krijgen toegewezen op basis van bepaalde kenmerken, zoals hoe ze eruitzien of hoe ze zich gedragen. Bijvoorbeeld als een toepassing mensen als 'winkeldief' bestempeld of een inschatting maakt van iemands gender op basis van videobeelden"
+                    ]
+                  },
+                  "5.g.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om een inschatting te maken van iemands ras, etniciteit of afkomst, politieke opvattingen, lidmaatschap van een vakbond, religieuze of levensbeschouwelijke overtuigingen, seksleven of seksuele gerichtheid?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.g.1"]
+              }
+            ]
+          },
+          "III.1.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.1.2": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "infra": { "$ref": "#/definitions/infra" }
+                }
+              },
+              {
+                "properties": {
+                  "III.1.2": {
+                    "enum": ["Nee"]
+                  },
+                  "5.h.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing ingezet voor de bescherming van de openbare veiligheid, het voorkomen van, onderzoek naar of vervolging van strafbare feiten of binnen de uitvoering van straffen (taak- of gevangenisstraffen)?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.h.1"]
+              }
+            ]
+          },
+          "5.h.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.h.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.h.1": {
+                    "enum": ["Nee"]
+                  },
+                  "III.1.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt om cyberbeveiliging en de bescherming van persoonsgegevens te ondersteunen?",
+                    "enum": [
+                      "Ja, dit is het enige doel",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.1.3"]
+              }
+            ]
+          },
+          "5.g.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.g.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.g.1": {
+                    "enum": ["Nee"]
+                  },
+                  "III.1.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt om cyberbeveiliging en de bescherming van persoonsgegevens te ondersteunen?",
+                    "enum": [
+                      "Ja, dit is het enige doel",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.1.3"]
+              }
+            ]
+          },
+          "5.f.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.f.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.f.1": {
+                    "enum": ["Nee"]
+                  },
+                  "III.1.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt om cyberbeveiliging en de bescherming van persoonsgegevens te ondersteunen?",
+                    "enum": [
+                      "Ja, dit is het enige doel",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.1.3"]
+              }
+            ]
+          },
+          "III.1.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.1.3": {
+                    "enum": [
+                      "Ja, dit is het enige doel"
+                    ]
+                  },
+                  "infra": { "$ref": "#/definitions/infra" }
+                }
+              },
+              {
+                "properties": {
+                  "III.1.3": {
+                    "enum": ["Nee"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          }
+        }  
+      },
+      "infra": {
+        "title": "infra",
+        "type": "object",
+        "properties": {
+          "III.2.1": {
+            "type": "string",
+            "title": "Wordt de toepassing ingezet binnen infrastructuur of processen voor levering van gas, was, verwarming of elektriciteit?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.2.1"],
+        "dependencies": {
+          "III.2.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.2.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.2.4": {
+                    "type": "string",
+                    "title": "Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.2.4"]
+              },
+              {
+                "properties": {
+                  "III.2.1": {
+                    "enum": ["Nee"]
+                  },
+                  "III.2.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor het beheer of de exploitatie van wegen, bruggen of wegverkeer?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.2.2"]
+              }
+            ]
+          },
+          "III.2.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.2.2": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.2.4": {
+                    "type": "string",
+                    "title": "Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.2.4"]
+              },
+              {
+                "properties": {
+                  "III.2.2": {
+                    "enum": ["Nee"]
+                  },
+                  "III.2.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt binnen kritieke digitale infrastructuur?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.2.2"]
+              }
+            ]
+          },
+          "III.2.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.2.3": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.2.4": {
+                    "type": "string",
+                    "title": "Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.2.4"]
+              },
+              {
+                "properties": {
+                  "III.2.3": {
+                    "enum": ["Nee"]
+                  },
+                  "education": { "$ref": "#/definitions/education" }
+                },
+                "required": ["III.2.2"]
+              }
+            ]
+          },
+          "III.2.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.2.4": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.2.5": {
+                    "type": "string",
+                    "title": "Is de toepassing een cybersecuritysysteem?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.2.5"]
+              },
+              {
+                "properties": {
+                  "III.2.4": {
+                    "enum": ["Nee"]
+                  },
+                  "education": { "$ref": "#/definitions/education" }
+                },
+                "required": ["III.2.2"]
+              }
+            ]
+          },
+          "III.2.5": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.2.5": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              },
+              {
+                "properties": {
+                  "III.2.4": {
+                    "enum": ["Ja"]
+                  },
+                  "education": { "$ref": "#/definitions/education" }
+                },
+                "required": ["III.2.2"]
+              }
+            ]
+          }
+        }
+      },
+      "education": {
+        "title": "education",
+        "type": "object",
+        "properties": {  
+          "III.3": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt in het domein van onderwijs en (beroeps)opleiding?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.3"],
+        "dependencies": {
+          "III.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.3": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.3.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor de toewijzing of toelating van personen tot onderwijs, opleiding of scholing?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.3.1"]
+              },
+              {
+                "properties": {
+                  "III.3": {
+                    "enum": ["Nee"]
+                  },
+                  "work": { "$ref": "#/definitions/work" }
+                }
+              }
+            ]
+          },
+          "III.3.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.3.1": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.3.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt bij de beoordeling van het opleidingsniveau dat iemand zal ontvangen of toegang tot krijgt?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.3.2"]
+              },
+              {
+                "properties": {
+                  "III.3.1": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.3.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.3.2": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.3.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor evaluatie van leerresultaten of voor het sturen van het leerproces (gepersonaliseerd leren)",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.3.3"]
+              },
+              {
+                "properties": {
+                  "III.3.2": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.3.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.3.3": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.3.4": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor het monitoren en detecteren van ongeoorloofd gedrag van scholieren, studenten of cursisten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.3.4"]
+              },
+              {
+                "properties": {
+                  "III.3.3": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.3.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.3.4": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "work": { "$ref": "#/definitions/work" }
+                }
+              },
+              {
+                "properties": {
+                  "III.3.4": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          }
+        }  
+      },
+      "work": {
+        "title": "work",
+        "type": "object",
+        "properties": {  
+          "III.4": {
+            "type": "string",
+            "title": "Wordt de toepassing toegepast op medewerkers (ook ZZP'ers, externe medewerkers, stagiaires, vrijwilligers etc.), sollicitanten of werkzoekenden?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.4"],
+        "dependencies": { 
+          "III.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.4.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing ingezet op het gebied van werving en selectie?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.1"]
+              },
+              {
+                "properties": {
+                  "III.4": {
+                    "enum": ["Nee"]
+                  },
+                  "essentialservices1": { "$ref": "#/definitions/essentialservices1" }
+                }
+              }
+            ]
+          },
+          "III.4.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.4.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing ingezet voor het plaatsen van gerichte vacatures?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.2"]
+              },
+              {
+                "properties": {
+                  "III.4.1": {
+                    "enum": ["Nee"]
+                  },
+                  "work2": { "$ref": "#/definitions/work2" }
+                }
+              }
+            ]
+          },
+          "III.4.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.2": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.4.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor het analyseren of filteren van sollicitaties?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.3"]
+              },
+              {
+                "properties": {
+                  "III.4.2": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.4.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.3": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.4.4": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt bij het beoordelen van kandidaten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.4"]
+              },
+              {
+                "properties": {
+                  "III.4.3": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.4.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.4": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "work2": { "$ref": "#/definitions/work2" }
+                }
+              },
+              {
+                "properties": {
+                  "III.4.4": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          }
+        }  
+      },
+      "work2": {
+        "title": "work2",
+        "type": "object",
+        "properties": {  
+          "III.4.5": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt voor beslissingen rondom (gewijzigde) contractuele voorwaarden, of voor selectie of beoordeling rondom promoties of gewijzigde functies?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.4.5"],
+        "dependencies": {  
+          "III.4.5": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.5": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.4.6": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt op het gebied van uitstroom van medewerkers?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.6"]
+              },
+              {
+                "properties": {
+                  "III.4.5": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.4.6": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.6": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.4.7": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt binnen processen waarin de verdeling van taken bepaald wordt?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.7"]
+              },
+              {
+                "properties": {
+                  "III.4.6": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.4.7": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.7": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.4.8": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt in processen waarin activiteiten, gedrag of prestaties van medewerkers worden verwerkt? ",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.8"]
+              },
+              {
+                "properties": {
+                  "III.4.7": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.4.8": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.8": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.4.9": {
+                    "type": "string",
+                    "title": "Is er in dit proces, of in gerelateerde processen, sprake van evaluatie of monitoring van gedrag of prestaties?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.4.9"]
+              },
+              {
+                "properties": {
+                  "III.4.8": {
+                    "enum": ["Nee"]
+                  },
+                  "essentialservices1": { "$ref": "#/definitions/essentialservices1" }
+                }
+              }
+            ]
+          },
+          "III.4.9": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.4.9": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                },
+                "required": ["III.4.9"]
+              },
+              {
+                "properties": {
+                  "III.4.9": {
+                    "enum": ["Nee"]
+                  },
+                  "essentialservices1": { "$ref": "#/definitions/essentialservices1" }
+                }
+              }
+            ]
+          }
+        }  
+      },
+      "essentialservices1": {
+        "title": "essentialservices1",
+        "type": "object",
+        "properties": {  
+          "III.5.1": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt door of namens een overheidsinstantie?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.5.1"],
+        "dependencies": {  
+          "III.5.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.5.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt binnen processen voor uitkeringen, toeslagen, (bijzondere) bijstand of andere financiele voorzieningen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.5.2"]
+              },
+              {
+                "properties": {
+                  "III.5.1": {
+                    "enum": ["Nee"]
+                  },
+                  "essentialservices2": { "$ref": "#/definitions/essentialservices2" }
+                }
+              }
+            ]
+          },
+          "III.5.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.2": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.5.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt in processen voor (sociale) diensten of voorzieningen, zoals schuldhulpverlening, re-integratievoorzieningen, opvang, zorg, hulpverlening, of voorzieningen bij een beperking of ouderdom?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.5.3"]
+              },
+              {
+                "properties": {
+                  "III.5.2": {
+                    "enum": ["Ja"]
+                  },
+                  "III.5.4": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt in een proces om te beoordelen of iemand in aanmerking komt voor een dienst, voorziening of uitkering?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.5.4"]
+              }
+            ]
+          },
+          "III.5.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.3": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "essentialservices2": { "$ref": "#/definitions/essentialservices2" }
+                }
+              },
+              {
+                "properties": {
+                  "III.5.3": {
+                    "enum": ["Ja"]
+                  },
+                  "III.5.4": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt in een proces om te beoordelen of iemand in aanmerking komt voor een dienst, voorziening of uitkering?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.5.4"]
+              }
+            ]
+          },
+          "III.5.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.4": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.5.5": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om te beslissen of een dienst, voorziening of uitkering wordt verleend, geweigerd, beperkt, ingetrokken of teruggevorderd?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.5.5"]
+              },
+              {
+                "properties": {
+                  "III.5.4": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.5.5": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.5": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "essentialservices2": { "$ref": "#/definitions/essentialservices2" }
+                }
+              },
+              {
+                "properties": {
+                  "III.5.5": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          }
+        }  
+      },
+      "essentialservices2": {
+        "title": "essentialservices2",
+        "type": "object",
+        "properties": {  
+          "III.5.6": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt om de kredietwaardigheid van personen te beoordelen of een kredietscore voor personen te bepalen?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.5.6"],
+        "dependencies": {  
+          "III.5.6": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.6": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.5.7": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor risicobeoordeling en prijsstelling voor levens- en ziektekostenverzekeringen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.5.7"]
+              },
+              {
+                "properties": {
+                  "III.5.6": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.5.7": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.7": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.5.8": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt bij het evalueren van noodoproepen, het nemen van beslissingen over de inzet of prioritering van hulpdiensten, of voor de triage van dringende medische zorg?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.5.8"]
+              },
+              {
+                "properties": {
+                  "III.5.7": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.5.8": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.5.8": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "lawEnforcement": { "$ref": "#/definitions/lawEnforcement" }
+                }
+              },
+              {
+                "properties": {
+                  "III.5.8": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          }
+        }  
+      },
+      "lawEnforcement": {
+        "title": "lawEnforcement",
+        "type": "object",
+        "properties": {  
+          "III.6-5.d": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt binnen de beoordeling van het risico dat iemand (opnieuw) een strafbaar feit pleegt?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.6-5.d"],
+        "dependencies": {
+          "III.6-5.d": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6-5.d": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "III.6-5.d": {
+                    "enum": ["Nee"]
+                  },
+                  "III.6a": {
+                    "type": "string",
+                    "title": "Wordt de toepassing ingezet door politie, BOA's, inspectiediensten, gevangenissen, reclassering of andere rechtshandhavingsinstanties?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6a"]
+              }
+            ]
+          },
+          "III.6a": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6a": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.6b": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt door andere diensten, afdelingen of organisatie die verantwoordelijk zijn voor preventie, bescherming van de openbare veiligheid, onderzoek naar en de vervolging van strafbare feiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6b"]
+              },
+              {
+                "properties": {
+                  "III.6a": {
+                    "enum": ["Ja"]
+                  },
+                  "III.6.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om te beoordelen of in te schatten dat iemand het slachtoffer wordt van strafbare feiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6.1"]
+              }
+            ]
+          },
+          "III.6b": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6b": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "migration": { "$ref": "#/definitions/migration" }
+                }
+              },
+              {
+                "properties": {
+                  "III.6b": {
+                    "enum": ["Ja"]
+                  },
+                  "III.6b-yes": {
+                    "type": "string",
+                    "title": "Welke organisatie en dienst of afdeling is hoofdverantwoordelijk voor de toepassing?",
+                    "default": ""
+                  },
+                  "III.6.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om te beoordelen of in te schatten dat iemand het slachtoffer wordt van strafbare feiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6.1"]
+              }
+            ]
+          },
+          "III.6.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6.1": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.6.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt als leugendetector of soortgelijke instrument?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6.2"]
+              },
+              {
+                "properties": {
+                  "III.6.1": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.6.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6.2": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.6.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om de betrouwbaarheid van bewijsmateriaal te beoordelen tijdens het onderzoek of de vervolging van strafbare feiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6.3"]
+              },
+              {
+                "properties": {
+                  "III.6.2": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.6.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6.3": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.6.4": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen binnen het opsporen, onderzoeken of vervolgen van strafbare feiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6.4"]
+              },
+              {
+                "properties": {
+                  "III.6.3": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.6.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6.4": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.6.5": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om persoonlijkheidskenmerken en -eigenschappen of eerder crimineel gedrag van personen of groepen in te schatten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.6.5"]
+              },
+              {
+                "properties": {
+                  "III.6.4": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.6.5": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.6.5": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "migration": { "$ref": "#/definitions/migration" }
+                }
+              },
+              {
+                "properties": {
+                  "III.6.5": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "migration": {
+        "title": "migration",
+        "type": "object",
+        "properties": {  
+          "III.7": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt binnen migratie-, asiel- en grenstoezichtsbeheer?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.7"],
+        "dependencies": {
+          "III.7": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.7": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.7.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt als leugendetector of soortgelijke instrument?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.7.1"]
+              },
+              {
+                "properties": {
+                  "III.7": {
+                    "enum": ["Nee"]
+                  },
+                  "justice": { "$ref": "#/definitions/justice" }
+                }
+              }
+            ]
+          },
+          "III.7.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.7.1": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.7.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt bij de beoordeling van risico's voor een persoon die Nederland binnen wil komen of al is gekomen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.7.2"]
+              },
+              {
+                "properties": {
+                  "III.7.1": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.7.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.7.2": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.7.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt bij de behandeling van aanvragen voor asiel, visa of verblijfsvergunningen, en bij de behandeling van klachten in verband met het al dan niet in aanmerking komen van de persoon die een aanvraag indient?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.7.3"]
+              },
+              {
+                "properties": {
+                  "III.7.2": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.7.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.7.3": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "III.7.4": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor de opsporing, herkenning of identificatie van personen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.7.4"]
+              },
+              {
+                "properties": {
+                  "III.7.3": {
+                    "enum": ["Ja"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.7.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.7.4": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.7.5": {
+                    "type": "string",
+                    "title": "Wordt de toepassing uitsluitend gebruikt voor de verificatie van een paspoort of ander reisdocument, om te bevestigen dat een specifieke persoon daadwerkelijk is wie hij of zij beweert te zijn?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.7.5"]
+              },
+              {
+                "properties": {
+                  "III.7.4": {
+                    "enum": ["Nee"]
+                  },
+                  "justice": { "$ref": "#/definitions/justice" }
+                }
+              }
+            ]
+          },
+          "III.7.5": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.7.5": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "justice": { "$ref": "#/definitions/justice" }
+                }
+              },
+              {
+                "properties": {
+                  "III.7.5": {
+                    "enum": ["Nee"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "justice": {
+        "title": "justice",
+        "type": "object",
+        "properties": {  
+          "III.8.1": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt binnen de rechtspraak of alternatieve geschillenbeslechting?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["III.8.1"],
+        "dependencies": {
+          "III.8.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.8.1": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.8.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt voor ondersteunende administratieve activiteiten die geen gevolgen hebben voor de rechtspraak in afzonderlijke zaken?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.8.2"]
+              },
+              {
+                "properties": {
+                  "III.8.1": {
+                    "enum": ["Nee"]
+                  },
+                  "III.8.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt binnen processen voor verkiezingen of referenda?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.8.3"]
+              }
+            ]
+          },
+          "III.8.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.8.2": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.8.3": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt binnen processen voor verkiezingen of referenda?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.8.3"]
+              },
+              {
+                "properties": {
+                  "III.8.2": {
+                    "enum": ["Nee"]
+                  },
+                  "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
+                }
+              }
+            ]
+          },
+          "III.8.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.8.3": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "III.8.4": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt op een manier die de uitslag of het stemgedrag van mensen bij verkiezingen of referenda kan beinvloeden?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["III.8.4"]
+              },
+              {
+                "properties": {
+                  "III.8.3": {
+                    "enum": ["Nee"]
+                  },
+                  "art5": { "$ref": "#/definitions/art5" }
+                }
+              }
+            ]
+          },
+          "III.8.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "III.8.4": {
+                    "enum": [ "Ja" ]
+                  },
+                  "exceptionHigh":{ "$ref": "#/definitions/exceptionHigh" }
+                },
+                "required": ["III.8.4"]
+              },
+              {
+                "properties": {
+                  "III.8.4": {
+                    "enum": ["Nee"]
+                  },
+                  "art5": { "$ref": "#/definitions/art5" }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "art5": {
+        "title": "art5",
+        "type": "object",
+        "properties": {  
+          "5.a.1": {
+            "type": "string",
+            "title": "Maakt de toepassing gebruik van audio, beeld of video technieken die personen niet bewust kunnen waarnemen?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["5.a.1"],
+        "dependencies": {
+          "5.a.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.a.1": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "5.a.2": {
+                    "type": "string",
+                    "title": "Is de toepassing bedoelt om het gedrag of keuzes van personen te beinvloeden, om zo mensen een beslissing te laten nemen of dingen te laten doen of, die zij zonder de toepassing niet zouden doen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.a.2"]
+              },
+              {
+                "properties": {
+                  "5.a.1": {
+                    "enum": ["Ja"]
+                  },
+                  "5.a.3": {
+                    "type": "string",
+                    "title": "Kan de toepassing mogelijk negatieve gevolgen hebben voor de gebruiker of andere personen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.a.3"]
+              }
+            ]
+          },
+          "5.a.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.a.2": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "5.a.3": {
+                    "type": "string",
+                    "title": "Kan de toepassing mogelijk negatieve gevolgen hebben voor de gebruiker of andere personen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.a.3"]
+              },
+              {
+                "properties": {
+                  "5.a.2": {
+                    "enum": ["Nee"]
+                  },
+                  "5.c.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om mensen te evalueren, scores te berekenen, of om personen in te delen in een groep (classificatie)?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.c.1"]
+              }
+            ]
+          },
+          "5.a.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.a.3": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.a.3": {
+                    "enum": ["Nee"]
+                  },
+                  "5.c.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om mensen te evalueren, scores te berekenen, of om personen in te delen in een groep (classificatie)?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.c.1"]
+              }
+            ]
+          },
+          "5.c.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.c.1": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "other": { "$ref": "#/definitions/other" }
+                }
+              },
+              {
+                "properties": {
+                  "5.c.1": {
+                    "enum": ["Ja"]
+                  },
+                  "5.c.2": {
+                    "type": "string",
+                    "title": "Wordt deze evaluatie of inschatting gedaan op basis van sociaal gedrag of (ingeschatte) persoonlijkheidskenmerken?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.c.2"]
+              }
+            ]
+          },
+          "5.c.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.c.2": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "other": { "$ref": "#/definitions/other" }
+                }
+              },
+              {
+                "properties": {
+                  "5.c.2": {
+                    "enum": ["Ja"]
+                  },
+                  "5.c.3": {
+                    "type": "string",
+                    "title": "Kan de evaluatie of inschatting leiden tot een nadelige behandeling voor de geëvalueerde persoon?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.c.3"]
+              }
+            ]
+          },
+          "5.c.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.c.3": {
+                    "enum": [
+                      "Nee"
+                    ]
+                  },
+                  "other": { "$ref": "#/definitions/other" }
+                }
+              },
+              {
+                "properties": {
+                  "5.c.3": {
+                    "enum": ["Ja"]
+                  },
+                  "5.c.4": {
+                    "type": "string",
+                    "title": "Kan het voorkomen dat het oorspronkelijke gedrag in een heel andere context plaatsvond dan de context van de nadelige behandeling?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.c.4"]
+              }
+            ]
+          },
+          "5.c.4": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.c.4": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.c.4": {
+                    "enum": ["Nee"]
+                  },
+                  "5.c.5": {
+                    "type": "string",
+                    "title": "Kan het voorkomen dat die nadelige behandeling niet proportioneel is met het vertoonde gedrag?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.c.5"]
+              }
+            ]
+          },
+          "5.c.5": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.c.5": {
+                    "enum": [ "Ja" ]
+                  },
+                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
+                }
+              },
+              {
+                "properties": {
+                  "5.c.5": {
+                    "enum": ["Nee"]
+                  },
+                  "other": { "$ref": "#/definitions/other" }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "exceptionHigh": {
+        "title": "exceptionHigh",
+        "type": "object",
+        "properties": {  
+          "6.1": {
+            "type": "string",
+            "title": "Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["6.1"],
+        "dependencies": {
+          "6.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "6.1": {
+                    "enum": [ "Ja" ]
+                  },
+                  "2.6": {
+                    "type": "string",
+                    "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.6"]
+              },
+              {
+                "properties": {
+                  "6.1": {
+                    "enum": ["Nee"]
+                  },
+                  "6.2": {
+                    "type": "string",
+                    "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+                    "enum": [
+                      "Ja, de toepassing wordt gebruikt voor een beperkte procedurele taak. Denk aan een AI-systeem dat ongestructureerde data omzet in gestructureerde data, een AI-systeem dat binnenkomende documenten classificeert in categorieën, of een AI-systeem dat wordt gebruikt om binnen een groot aantal aanvragen dubbels op te sporen.",
+                      "Ja, de toepassing wordt gebruikt om het resultaat van een eerder door een mens uitgevoerde activiteit te verbeteren. Denk aan een AI-systeem dat de taal van eerder opgestelde documenten verbetert, bijvoorbeeld met betrekking tot professionele toon of academische stijl, of door een tekst af te stemmen op een bepaalde merkboodschap.",
+                      "Ja, de toepassing wordt gebruikt om besluitvormingspatronen of afwijkingen van eerdere besluitvormingspatronen op te sporen. Denk aan een AI-systeem dat, nadat een set aan beslissingen is genomen, patronen in de besluitvorming analyseert zodat de menselijke beslissers hiervan kunnen leren.",
+                      "Ja, de toepassing wordt gebruikt in een voorbereidende stap, zonder invloed op de uitkomst. Denk aan slimme oplossingen voor bestandsbeheer, waaronder functies zoals indexering, opzoeking, tekst- en spraakverwerking, of het koppelen van gegevens aan andere gegevensbronnen, of AI-systemen die worden gebruikt voor de vertaling van brondocumenten.",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["6.2"]
+              }
+            ]
+          },
+          "6.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "6.2": {
+                    "enum": [ 
+                        "Ja, de toepassing wordt gebruikt voor een beperkte procedurele taak. Denk aan een AI-systeem dat ongestructureerde data omzet in gestructureerde data, een AI-systeem dat binnenkomende documenten classificeert in categorieën, of een AI-systeem dat wordt gebruikt om binnen een groot aantal aanvragen dubbels op te sporen.",
+                        "Ja, de toepassing wordt gebruikt om het resultaat van een eerder door een mens uitgevoerde activiteit te verbeteren. Denk aan een AI-systeem dat de taal van eerder opgestelde documenten verbetert, bijvoorbeeld met betrekking tot professionele toon of academische stijl, of door een tekst af te stemmen op een bepaalde merkboodschap.",
+                        "Ja, de toepassing wordt gebruikt om besluitvormingspatronen of afwijkingen van eerdere besluitvormingspatronen op te sporen. Denk aan een AI-systeem dat, nadat een set aan beslissingen is genomen, patronen in de besluitvorming analyseert zodat de menselijke beslissers hiervan kunnen leren.",
+                        "Ja, de toepassing wordt gebruikt in een voorbereidende stap, zonder invloed op de uitkomst. Denk aan slimme oplossingen voor bestandsbeheer, waaronder functies zoals indexering, opzoeking, tekst- en spraakverwerking, of het koppelen van gegevens aan andere gegevensbronnen, of AI-systemen die worden gebruikt voor de vertaling van brondocumenten." 
+                    ]
+                  },
+                  "output": { "$ref": "#/definitions/outputHighExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "6.2": {
+                    "enum": ["Nee"]
+                  },
+                  "2.6": {
+                    "type": "string",
+                    "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.6"]
+              }
+            ]
+          },
+          "2.6": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": [ "Ja" ]
+                  },
+                  "2.6-yes": {
+                    "type": "string",
+                    "title": "Geef een korte beschrijving van het onderzoek. Neem in deze beschrijving in ieder geval het doel van het onderzoek, binnen welke afdeling dit onderzoek gedaan wordt en betrokken onderzoeksinstituten en/of andere partners op.",
+                    "default": ""
+                  },
+                  "output": { "$ref": "#/definitions/outputHighExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": ["Nee"]
+                  },
+                  "output": { "$ref": "#/definitions/outputHigh" }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "exceptionForbidden": {
+        "title": "exceptionForbidden",
+        "type": "object",
+        "properties": {  
+          "2.6": {
+            "type": "string",
+            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["2.6"],
+        "dependencies": {
+          "2.6": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": [ "Ja" ]
+                  },
+                  "2.6-yes": {
+                    "type": "string",
+                    "title": "Geef een korte beschrijving van het onderzoek. Neem in deze beschrijving in iedergeval het doel van het onderzoek, binnen welke afdeling dit onderzoek gedaan wordt en betrokken onderzoeksinstituten en/of andere partners op.",
+                    "default": ""
+                  },
+                  "output": { "$ref": "#/definitions/outputForbiddenExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": ["Nee"]
+                  },
+                  "output": { "$ref": "#/definitions/outputForbidden" }
+                }
+              }
+            ]
+          }
+        }
+      },      
+      "other": {
+        "title": "other",
+        "type": "object",
+        "properties": {  
+          "50.1": {
+            "type": "string",
+            "title": "Is de toepassing een chatbot, AI-assistent of ander systeem waarmee de gebruiker een gesprek kan voeren?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["50.1"],
+        "dependencies": {
+          "50.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "50.1": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputTransparency" }
+                }
+              },
+              {
+                "properties": {
+                  "50.1": {
+                    "enum": ["Nee"]
+                  },
+                  "50.2": {
+                    "type": "string",
+                    "title": "Levert de toepassing als resultaat tekst, code, geluid, video of afbeeldingen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["50.2"]
+              }
+            ]
+          },
+          "50.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "50.2": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputTransparency" }
+                }
+              },
+              {
+                "properties": {
+                  "50.1": {
+                    "enum": ["Nee"]
+                  },
+                  "3.63": {
+                    "type": "string",
+                    "title": "Wordt er in de toepassing gebruik gemaakt van een model voor algemene doeleinden, ook wel een foundation model of een general purpose AI (GPAI) model genoemd?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["3.63"]
+              }
+            ]
+          },
+          "3.63": {
+            "oneOf": [
+              {
+                "properties": {
+                  "3.63": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputGPAI" }
+                }
+              },
+              {
+                "properties": {
+                  "50.1": {
+                    "enum": ["Nee"]
+                  },
+                  "output":{ "$ref": "#/definitions/outputGPAI" }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "properties": {
+      "III.1": {
+        "type": "string",
+        "title": "Maakt de toepassing gebruik van biometrische gegevens?",
+        "enum": [
+          "Ja",
+          "Nee"
+        ]
+      }
+    },
+    "required": ["III.1"],
+    "dependencies": {
+      "III.1": {
+        "oneOf": [
+          {
+            "properties": {
+              "III.1": {
+                "enum": [
+                  "Ja"
+                ]
+              },
+              "biometrics": { "$ref": "#/definitions/biometrics" }
+            }
+          },
+          {
+            "properties": {
+              "III.1": {
+                "enum": [
+                  "Nee"
+                ]
+              },
+              "infra": { "$ref": "#/definitions/infra" }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "uiSchema": {
+    "III.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.e.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.e.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.1.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.1.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.h.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.g.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.f.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.1.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.2.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.2.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.2.3": {
+      "ui:widget": "radio",
+      "ui:description": "Kritieke **digitale** infrastructuur omvat onder andere internetknooppunten, DNS-diensten, registratie van topleveldomeinnamen, cloudcomputingdiensten, datacenterdiensten, openbare elektronische communicatienetwerken en elektronische communicatiediensten"
+    },
+    "III.2.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.2.5": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.3.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.3.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.3.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.3.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.5": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.6": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.7": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.8": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.4.9": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.5": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.6": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.7": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.5.8": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6-5.d": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6a": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6b": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.6.5": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.7": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.7.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.7.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.7.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.7.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.7.5": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.8.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.8.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.8.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "III.8.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.a.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.a.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.a.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.c.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.c.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.c.3": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "5.c.4": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "6.1": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "6.2": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    },
+    "2.6": {
+      "ui:widget": "radio",
+      "ui:description": "description"
+    }
+  }
+}
