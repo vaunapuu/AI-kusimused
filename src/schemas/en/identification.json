@@ -16,12 +16,12 @@
       "outputAlgorithm": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application is a high-impact algorithm. The algorithm must be registered in a algorithm register and adhere to internal algorithm policies."
+        "default": "Based on your answers, your application is a high-impact algorithm. It is advised to implement policies and processes to mitigate the risks that stem from these systems. High-impact algorithms emplyed by Dutch government must be registered in the Dutch algorithm register and adhere to internal algorithm policies."
       },
       "outputAlgorithmAndAI": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application is a high-impact algorithm. The algorithm must be registered in a algorithm register and adhere to internal algorithm policies.\nYour application is based on your answers most likely also an AI system according to the AI Act. Complete the following questionnaire to determine which requirements of the AI Act your application must comply with."
+        "default": "Based on your answers, your application is a high-impact algorithm. It is advised to implement policies and processes to mitigate the risks that stem from these systems. High-impact algorithms emplyed by Dutch government must be registered in the Dutch algorithm register and adhere to internal algorithm policies.\n\nYour application is based on your answers most likely also an AI system according to the AI Act. Complete the following questionnaire to determine which requirements of the AI Act your application must comply with."
       },
       "outputIntermediateAISystem": {
         "type": "string",
@@ -34,12 +34,13 @@
         "properties": {
           "q7": {
             "type": "string",
-            "title": "Which of the following options best describes your application's impact on its outcome?",
+            "title": "Which of the following options best describes your application's impact on the outcome of the process?",
             "enum": [
-              "The outcome of the process is generated solely by the application without human intervention. Once the proces is complete, a human analyst can review and evaluate the results.",
-              "The outcome of the process is heavily influenced by the application. For instance, because work prescription determine what the effect is of certain outcomes of the application. A human analyst can deviate from the outcome, but most often does the outcome of the application determine the outcome of the process.",
-              "The outcome of the process is partly influenced by the application. The outcome of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision.",
-              "The outcome of the process is fully determined by a human analyst and is influenced by multiple factors. The result of the application is one of many factors and is not decisive in the decision.",
+              "The outcome of the process is directly determined by the application without human intervention. Once the proces is complete, a human analyst may review and evaluate the results.",
+              "The outcome of the process is heavily influenced by the application. For instance, because work instructions determine what the effect is of certain outtput of the application. A human analyst can deviate from the outcome, but most often does the output of the application determines the outcome of the process.",
+              "The outcome of the process is partly influenced by the application. The output of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision.",
+              "The application determines the process flow, but the outcome of the process is fully determined by a human. For example, when the output of the application is a riskscore which determines whether an investigation is launched or a case should be processed with more scrutiny, but the investigation or processing of the case is performed fully manually.",
+              "The process flow and outcome of the process is fully determined by a human and is influenced by multiple factors. The output of the application is one of many factors and is not decisive in the decision.",
               "Another type of output"
             ]
           }
@@ -52,26 +53,20 @@
                 "properties": {
                   "q7": {
                     "enum": [
-                      "The outcome of the process is fully determined by a human analyst and is influenced by multiple factors. The result of the application is one of many factors and is not decisive in the decision."
+                      "The process flow and outcome of the process is fully determined by a human and is influenced by multiple factors. The output of the application is one of many factors and is not decisive in the decision."
                     ]
                   },
-                  "output": {
-                    "$ref": "#/definitions/outputNoAI"
-                  }
+                  "output": { "$ref": "#/definitions/outputNoAI" }
                 }
               },
               {
                 "properties": {
-                  "q7": {
-                    "enum": ["Another type of output"]
-                  },
+                  "q7": { "enum": ["Another type of output"] },
                   "q7_option5": {
                     "type": "string",
                     "title": "Describe the effect of the application on the process"
                   },
-                  "output": {
-                    "$ref": "#/definitions/outputNoAI"
-                  }
+                  "output": { "$ref": "#/definitions/outputNoAI" }
                 },
                 "required": ["q7_option5"]
               },
@@ -79,14 +74,13 @@
                 "properties": {
                   "q7": {
                     "enum": [
-                      "The outcome of the process is generated solely by the application without human intervention. Once the proces is complete, a human analyst can review and evaluate the results.",
-                      "The outcome of the process is heavily influenced by the application. For instance, because work prescription determine what the effect is of certain outcomes of the application. A human analyst can deviate from the outcome, but most often does the outcome of the application determine the outcome of the process.",
-                      "The outcome of the process is partly influenced by the application. The outcome of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision."
+                      "The outcome of the process is directly determined by the application without human intervention. Once the proces is complete, a human analyst may review and evaluate the results.",
+                      "The outcome of the process is heavily influenced by the application. For instance, because work instructions determine what the effect is of certain outtput of the application. A human analyst can deviate from the outcome, but most often does the output of the application determines the outcome of the process.",
+                      "The outcome of the process is partly influenced by the application. The output of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision.",
+                      "The application determines the process flow, but the outcome of the process is fully determined by a human. For example, when the output of the application is a riskscore which determines whether an investigation is launched or a case should be processed with more scrutiny, but the investigation or processing of the case is performed fully manually."
                     ]
                   },
-                  "output": {
-                    "$ref": "#/definitions/outputAlgorithm"
-                  }
+                  "output": { "$ref": "#/definitions/outputAlgorithm" }
                 }
               }
             ]
@@ -101,10 +95,11 @@
             "type": "string",
             "title": "Which of the following options best describes the effect of your application on the outcome of the application?",
             "enum": [
-              "The outcome of the process is generated solely by the application without human intervention. Once the proces is complete, a human analyst can review and evaluate the results.",
-              "The outcome of the process is heavily influenced by the application. For instance, because work prescription determine what the effect is of certain outcomes of the application. A human analyst can deviate from the outcome, but most often does the outcome of the application determine the outcome of the process.",
-              "The outcome of the process is partly influenced by the application. The outcome of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision.",
-              "The outcome of the process is fully determined by a human analyst and is influenced by multiple factors. The result of the application is one of many factors and is not decisive in the decision.",
+              "The outcome of the process is directly determined by the application without human intervention. Once the proces is complete, a human analyst may review and evaluate the results.",
+              "The outcome of the process is heavily influenced by the application. For instance, because work instructions determine what the effect is of certain outtput of the application. A human analyst can deviate from the outcome, but most often does the output of the application determines the outcome of the process.",
+              "The outcome of the process is partly influenced by the application. The output of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision.",
+              "The application determines the process flow, but the outcome of the process is fully determined by a human. For example, when the output of the application is a riskscore which determines whether an investigation is launched or a case should be processed with more scrutiny, but the investigation or processing of the case is performed fully manually.",
+              "The process flow and outcome of the process is fully determined by a human and is influenced by multiple factors. The output of the application is one of many factors and is not decisive in the decision.",
               "Another type of output"
             ]
           }
@@ -117,26 +112,20 @@
                 "properties": {
                   "q7": {
                     "enum": [
-                      "The outcome of the process is fully determined by a human analyst and is influenced by multiple factors. The result of the application is one of many factors and is not decisive in the decision."
+                      "The process flow and outcome of the process is fully determined by a human and is influenced by multiple factors. The output of the application is one of many factors and is not decisive in the decision."
                     ]
                   },
-                  "output": {
-                    "$ref": "#/definitions/outputAI"
-                  }
+                  "output": { "$ref": "#/definitions/outputAI" }
                 }
               },
               {
                 "properties": {
-                  "q7": {
-                    "enum": ["Another type of output"]
-                  },
+                  "q7": { "enum": ["Another type of output"] },
                   "q7_option5": {
                     "type": "string",
                     "title": "Describe the effect of the application on the process"
                   },
-                  "output": {
-                    "$ref": "#/definitions/outputAI"
-                  }
+                  "output": { "$ref": "#/definitions/outputAI" }
                 },
                 "required": ["q7_option5"]
               },
@@ -144,14 +133,13 @@
                 "properties": {
                   "q7": {
                     "enum": [
-                      "The outcome of the process is generated solely by the application without human intervention. Once the proces is complete, a human analyst can review and evaluate the results.",
-                      "The outcome of the process is heavily influenced by the application. For instance, because work prescription determine what the effect is of certain outcomes of the application. A human analyst can deviate from the outcome, but most often does the outcome of the application determine the outcome of the process.",
-                      "The outcome of the process is partly influenced by the application. The outcome of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision."
+                      "The outcome of the process is directly determined by the application without human intervention. Once the proces is complete, a human analyst may review and evaluate the results.",
+                      "The outcome of the process is heavily influenced by the application. For instance, because work instructions determine what the effect is of certain outtput of the application. A human analyst can deviate from the outcome, but most often does the output of the application determines the outcome of the process.",
+                      "The outcome of the process is partly influenced by the application. The output of the application is important for the outcome, but the ultimate decision is taken by a human analyst. This analyst has sufficient information, knowledge/experience, mandate and available time to take the decision.",
+                      "The application determines the process flow, but the outcome of the process is fully determined by a human. For example, when the output of the application is a riskscore which determines whether an investigation is launched or a case should be processed with more scrutiny, but the investigation or processing of the case is performed fully manually."
                     ]
                   },
-                  "output": {
-                    "$ref": "#/definitions/outputAlgorithmAndAI"
-                  }
+                  "output": { "$ref": "#/definitions/outputAlgorithmAndAI" }
                 }
               }
             ]
@@ -429,11 +417,12 @@
           "type": "string",
           "enum": [
             "An estimated score, ranking or probability",
-            "An estimated label or classification (such as yes/no, high/low) or allocation to groups\n(for instance, for routing, communication purposes or risk classification)",
+            "An estimated label or classification, such as yes/no, high/low or allocation to groups\nfor instance, for routing, communication purposes or risk classification.",
             "A recommendation",
             "A decision",
             "Content, such as written text, video, audio or images",
-            "A dashboard or graph with straight-forward data visualisation\n(if on this dashboard one of the above options are displayed, select this option)",
+            "Object recognition, facial recognition or voice recognition",
+            "A dashboard or graph with straight-forward data visualisation\nIf one of the above options are displayed on this dashboard, select this option.",
             "Another type of output"
           ]
         },
@@ -469,7 +458,7 @@
                 "maxItems": 1,
                 "contains": {
                   "enum": [
-                    "A dashboard or graph with straight-forward data visualisation\n(if on this dashboard one of the above options are displayed, select this option)"
+                    "A dashboard or graph with straight-forward data visualisation\nIf one of the above options are displayed on this dashboard, select this option."
                   ]
                 }
               },
@@ -490,7 +479,7 @@
                   {
                     "contains": {
                       "enum": [
-                        "An estimated label or classification (such as yes/no, high/low) or allocation to groups\n(for instance, for routing, communication purposes or risk classification)"
+                        "An estimated label or classification, such as yes/no, high/low or allocation to groups\nfor instance, for routing, communication purposes or risk classification."
                       ]
                     }
                   },
@@ -510,16 +499,23 @@
                         "Content, such as written text, video, audio or images"
                       ]
                     }
+                  },
+                  {
+                    "contains": {
+                      "enum": [
+                        "Object recognition, facial recognition or voice recognition"
+                      ]
+                    }
                   }
                 ]
               },
               "q2": {
                 "type": "string",
-                "title": "Does the application contain a model or decision rule that is derived from data?",
+                "title": "Is the design of the application based on data?",
                 "enum": [
-                  "Yes, the model or algorithm is manually created, but insights from data-analysis have been used for design choices",
-                  "Yes, the model or algorithm is derived from data with help of statistics, optimalisation, simulation, machine learning or similar methods",
-                  "No"
+                  "Yes, design choices were made manually, but insights from data analysis helped inform the design",
+                  "Yes, the application contains components derived from data. There is fitting or learning of a model or automatic variable selection using statistics, optimization, simulation, machine learning or a similar technique.",
+                  "No, the design is not based on data analyses."
                 ]
               }
             },
@@ -533,7 +529,7 @@
             "properties": {
               "q2": {
                 "enum": [
-                  "Yes, the model or algorithm is manually created, but insights from data-analysis have been used for design choices"
+                  "Yes, design choices were made manually, but insights from data analysis helped inform the design"
                 ]
               },
               "q2_yes1": {
@@ -556,7 +552,7 @@
             "properties": {
               "q2": {
                 "enum": [
-                  "Yes, the model or algorithm is derived from data with help of statistics, optimalisation, simulation, machine learning or similar methods"
+                  "Yes, the application contains components derived from data. There is fitting or learning of a model or automatic variable selection using statistics, optimization, simulation, machine learning or a similar technique."
                 ]
               },
               "outputIntermediate": {
@@ -572,11 +568,11 @@
           {
             "properties": {
               "q2": {
-                "enum": ["No"]
+                "enum": ["No, the design is not based on data analyses."]
               },
               "q3": {
                 "type": "string",
-                "title": "Is the application an automation of rules defined by humans? ",
+                "title": "Is the application an automation of human-defined rules ? ",
                 "enum": [
                   "Yes, the application is a straightforward automation of rules defined in law, regulation, or formal policy",
                   "Yes, automatisation of rules, but these are not explicitly defined in law, regulation, or formal policy",

@@ -39,7 +39,8 @@
               "De uitkomst van het proces wordt direct bepaald door de toepassing (hier is geen menselijke tussenkomst voor nodig). Nadat het proces is voltooid, kunnen mensen nog wel de resultaten controleren of analyseren.",
               "De uitkomst van het proces wordt sterk beïnvloed door de toepassing. Bijvoorbeeld doordat werkvoorschriften bepalen wat het gevolg is van een bepaalde uitkomst van de toepassing. Een medewerker kan in sommige gevallen andere keuzes maken, maar meestal bepaalt het resultaat van het systeem wat het eindresultaat van het proces zal zijn.",
               "De uitkomst van het proces wordt deels beïnvloed door de toepassing. Het resultaat van de toepassing is belangrijk voor het eindresultaat, maar de uiteindelijke beslissing wordt genomen door een medewerker. Deze medewerker heeft de juiste informatie, ervaring/kunde, mandaat en beschikbare tijd om de beslissing te maken.",
-              "De uitkomst van het proces wordt volledig door een mens bepaald en hangt af van meedere factoren. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de keuze.",
+              "De toepassing bepaalt (mede) het procesverloop, maar de uitkomst van het proces wordt volledig door een medewerker bepaald. Bijvoorbeeld wanneer de uitkomst van de toepassing een risicoscore aan de hand waarvan een controle proces wordt gestart of een meer insentieve dossierevalutie plaatsvindt, maar de controle of evaluatie daarna volledig door een medewerker wordt uitgevoerd.",
+              "Het procesverloop en uitkomst van het proces wordt volledig door een mens bepaald. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de keuze.",
               "Een ander soort effect"
             ]
           }
@@ -52,7 +53,7 @@
                 "properties": {
                   "q7": {
                     "enum": [
-                      "De uitkomst van het proces wordt volledig door een mens bepaald en hangt af van meedere factoren. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de keuze."
+                      "Het procesverloop en uitkomst van het proces wordt volledig door een mens bepaald. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de keuze."
                     ]
                   },
                   "output": { "$ref": "#/definitions/outputNoAI" }
@@ -75,7 +76,8 @@
                     "enum": [
                       "De uitkomst van het proces wordt direct bepaald door de toepassing (hier is geen menselijke tussenkomst voor nodig). Nadat het proces is voltooid, kunnen mensen nog wel de resultaten controleren of analyseren.",
                       "De uitkomst van het proces wordt sterk beïnvloed door de toepassing. Bijvoorbeeld doordat werkvoorschriften bepalen wat het gevolg is van een bepaalde uitkomst van de toepassing. Een medewerker kan in sommige gevallen andere keuzes maken, maar meestal bepaalt het resultaat van het systeem wat het eindresultaat van het proces zal zijn.",
-                      "De uitkomst van het proces wordt deels beïnvloed door de toepassing. Het resultaat van de toepassing is belangrijk voor het eindresultaat, maar de uiteindelijke beslissing wordt genomen door een medewerker. Deze medewerker heeft de juiste informatie, ervaring/kunde, mandaat en beschikbare tijd om de beslissing te maken."
+                      "De uitkomst van het proces wordt deels beïnvloed door de toepassing. Het resultaat van de toepassing is belangrijk voor het eindresultaat, maar de uiteindelijke beslissing wordt genomen door een medewerker. Deze medewerker heeft de juiste informatie, ervaring/kunde, mandaat en beschikbare tijd om de beslissing te maken.",
+                      "De toepassing bepaalt (mede) het procesverloop, maar de uitkomst van het proces wordt volledig door een medewerker bepaald. Bijvoorbeeld wanneer de uitkomst van de toepassing een risicoscore aan de hand waarvan een controle proces wordt gestart of een meer insentieve dossierevalutie plaatsvindt, maar de controle of evaluatie daarna volledig door een medewerker wordt uitgevoerd."
                     ]
                   },
                   "output": { "$ref": "#/definitions/outputAlgorithm" }
@@ -96,7 +98,8 @@
               "De uitkomst van het proces wordt direct bepaald door de toepassing (er is geen sprake van menselijke tussenkomst). Nadat het proces is voltooid, kunnen mensen nog wel de resultaten controleren of analyseren.",
               "De uitkomst van het proces wordt sterk beïnvloed door de toepassing. Bijvoorbeeld doordat werkvoorschriften bepalen wat het gevolg is van een bepaalde uitkomst van de toepassing. Een medewerker kan in sommige gevallen andere keuzes maken, maar meestal bepaalt het resultaat van het systeem wat het eindresultaat van het proces zal zijn.",
               "De uitkomst van het proces wordt deels beïnvloed door de toepassing. Het resultaat van de toepassing is belangrijk voor het eindresultaat, maar de uiteindelijke beslissing wordt genomen door een medewerker. Deze medewerker heeft de juiste informatie, ervaring/kunde, mandaat en beschikbare tijd om de beslissing te maken.",
-              "De uitkomst van het proces wordt volledig door een mens bepaald en hangt af van meedere factoren. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de beslissing.",
+              "De toepassing bepaalt (mede) het procesverloop, maar de uitkomst van het proces wordt volledig door een medewerker bepaald. Bijvoorbeeld wanneer de uitkomst van de toepassing een risicoscore aan de hand waarvan een controle proces wordt gestart of een meer insentieve dossierevalutie plaatsvindt, maar de controle of evaluatie daarna volledig door een medewerker wordt uitgevoerd.",
+              "Het procesverloop en uitkomst van het proces wordt volledig door een mens bepaald. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de keuze.",
               "Een ander soort effect"
             ]
           }
@@ -109,7 +112,7 @@
                 "properties": {
                   "q7": {
                     "enum": [
-                      "De uitkomst van het proces wordt volledig door een mens bepaald en hangt af van meedere factoren. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de keuze."
+                      "Het procesverloop en uitkomst van het proces wordt volledig door een mens bepaald. Het resultaat van de toepassing is slechts één van de factoren en is niet doorslaggevend in de keuze."
                     ]
                   },
                   "output": { "$ref": "#/definitions/outputAI" }
@@ -132,7 +135,8 @@
                     "enum": [
                       "De uitkomst van het proces wordt direct bepaald door de toepassing (hier is geen menselijke tussenkomst voor nodig). Nadat het proces is voltooid, kunnen mensen nog wel de resultaten controleren of analyseren.",
                       "De uitkomst van het proces wordt sterk beïnvloed door de toepassing. Bijvoorbeeld doordat werkvoorschriften bepalen wat het gevolg is van een bepaalde uitkomst van de toepassing. Een medewerker kan in sommige gevallen andere keuzes maken, maar meestal bepaalt het resultaat van het systeem wat het eindresultaat van het proces zal zijn.",
-                      "De uitkomst van het proces wordt deels beïnvloed door de toepassing. Het resultaat van de toepassing is belangrijk voor het eindresultaat, maar de uiteindelijke beslissing wordt genomen door een medewerker. Deze medewerker heeft de juiste informatie, ervaring/kunde, mandaat en beschikbare tijd om de beslissing te maken."
+                      "De uitkomst van het proces wordt deels beïnvloed door de toepassing. Het resultaat van de toepassing is belangrijk voor het eindresultaat, maar de uiteindelijke beslissing wordt genomen door een medewerker. Deze medewerker heeft de juiste informatie, ervaring/kunde, mandaat en beschikbare tijd om de beslissing te maken.",
+                      "De toepassing bepaalt (mede) het procesverloop, maar de uitkomst van het proces wordt volledig door een medewerker bepaald. Bijvoorbeeld wanneer de uitkomst van de toepassing een risicoscore aan de hand waarvan een controle proces wordt gestart of een meer insentieve dossierevalutie plaatsvindt, maar de controle of evaluatie daarna volledig door een medewerker wordt uitgevoerd."
                     ]
                   },
                   "output": { "$ref": "#/definitions/outputAlgorithmAndAI" }
@@ -388,16 +392,17 @@
     "properties": {
       "q1": {
         "type": "array",
-        "title": "Welke van de volgende categorieën beschrijft de uitkomst van de toepassing het beste?",
+        "title": "Wat is de uitkomst van de toepassing?",
         "items": {
           "type": "string",
           "enum": [
             "Een ingeschatte score, rangschikking of kans",
-            "Een ingeschat label of classificatie (zoals ja/nee, hoog/laag) of een indeling in groepen\n(bijvoorbeeld ten behoeve van routering, communicatiecampagnes of risicoclassificatie)",
+            "Een ingeschat label of classificatie zoals ja/nee, hoog/laag of een indeling in groepen.\nBijvoorbeeld ten behoeve van routering, communicatiecampagnes of risicoclassificatie.",
             "Een aanbeveling",
             "Een beslissing",
             "Content, zoals geschreven tekst, video, audio of afbeeldingen",
-            "Een dashboard of grafiek met enkel rechtstreekse datavisualisatie\n(wanneer in dit dashboard een van de bovenstaande opties wordt weergeven, kies dan deze optie)",
+            "Objectherkenning, gezichtsherkenning of stemherkenning",
+            "Een dashboard of grafiek, met enkel rechtstreekse datavisualisatie.\nWanneer in dit dashboard een van de eerdere opties wordt weergeven, kies dan de eerdere optie.",
             "Een ander soort output"
           ]
         },
@@ -431,7 +436,7 @@
                 "maxItems": 1,
                 "contains": {
                   "enum": [
-                    "Een dashboard of grafiek met enkel rechtstreekse datavisualisatie\n(wanneer in dit dashboard een van de bovenstaande opties wordt weergeven, kies dan deze optie)"
+                    "Een dashboard of grafiek, met enkel rechtstreekse datavisualisatie.\nWanneer in dit dashboard een van de eerdere opties wordt weergeven, kies dan de eerdere optie."
                   ]
                 }
               },
@@ -450,7 +455,7 @@
                   {
                     "contains": {
                       "enum": [
-                        "Een ingeschat label of classificatie (zoals ja/nee, hoog/laag) of een indeling in groepen\n(bijvoorbeeld ten behoeve van routering, communicatiecampagnes of risicoclassificatie)"
+                        "Een ingeschat label of classificatie zoals ja/nee, hoog/laag of een indeling in groepen.\n\nBijvoorbeeld ten behoeve van routering, communicatiecampagnes of risicoclassificatie."
                       ]
                     }
                   },
@@ -470,16 +475,23 @@
                         "Content, zoals geschreven tekst, video, audio of afbeeldingen"
                       ]
                     }
+                  },
+                  {
+                    "contains": {
+                      "enum": [
+                        "Objectherkenning, gezichtsherkenning of stemherkenning"
+                      ]
+                    }
                   }
                 ]
               },
               "q2": {
                 "type": "string",
-                "title": "Bevat de toepassing een model of algoritme dat uit data is afgeleid?",
+                "title": "Is het ontwerp van de toepassing gebaseerd op data?",
                 "enum": [
-                  "Ja, het model of algoritme is handmatig opgesteld, maar inzichten uit data-analyse hebben geholpen bij het ontwerp",
-                  "Ja, het model of algoritme is afgeleid uit data met behulp van statistiek, optimalisatie, simulatie, machine learning of een vergelijkbare techniek",
-                  "Nee"
+                  "Ja, keuzes over ontwerp zijn handmatig gemaakt, maar inzichten uit data-analyse hebben geholpen bij het ontwerp.",
+                  "Ja, de toepassing bevat componenten die zijn afgeleid uit data. Er is sprake van het fitten of leren van een model of automatische variabele selectie met behulp van statistiek, optimalisatie, simulatie, machine learning of een vergelijkbare techniek.",
+                  "Nee, het ontwerp van de toepassing is niet gebaseerd op data-analyse."
                 ]
               }
             },
@@ -493,7 +505,7 @@
             "properties": {
               "q2": {
                 "enum": [
-                  "Ja, het model of algoritme is handmatig opgesteld, maar inzichten uit data-analyse hebben geholpen bij het ontwerp"
+                  "Ja, keuzes over ontwerp zijn handmatig gemaakt, maar inzichten uit data-analyse hebben geholpen bij het ontwerp."
                 ]
               },
               "q2_yes1": {
@@ -514,7 +526,7 @@
             "properties": {
               "q2": {
                 "enum": [
-                  "Ja, het model of algoritme is afgeleid uit data met behulp van statistiek, optimalisatie, simulatie, machine learning of een vergelijkbare techniek"
+                  "Ja, de toepassing bevat componenten die zijn afgeleid uit data. Er is sprake van het fitten of leren van een model of automatische variabele selectie met behulp van statistiek, optimalisatie, simulatie, machine learning of een vergelijkbare techniek."
                 ]
               },
               "outputIntermediate": {
@@ -528,11 +540,11 @@
           {
             "properties": {
               "q2": {
-                "enum": ["Nee"]
+                "enum": ["Nee, het ontwerp van de toepassing is niet gebaseerd op data-analyse."]
               },
               "q3": {
                 "type": "string",
-                "title": "Is de toepassing automatisering van door mensen opgestelde regels? ",
+                "title": "Is de toepassing automatisering van door mensen opgestelde regels?",
                 "enum": [
                   "Ja, een-op-een automatisering van in wet- of regelgeving of formeel beleid vastgestelde regels",
                   "Ja, automatisering van regels, maar deze zijn niet expliciet vastgesteld in wet- of regelgeving of formeel beleid",
@@ -622,11 +634,11 @@
     },
     "q2": {
       "ui:widget": "radio",
-      "ui:description": "Data omvat alle vormen van elektronische gegevens. Tekst, afbeeldingen, audio zijn ook data. \n\nVerschillende vormen van algoritmes kunnen uit data worden afgeleid. Bij regel-gebasseerde algoritmes kunnen drempelwaardes voor (uitval)regels of weegfactoren voor beslissingen uit data worden berekend.\nOok klassieke statistische modellen, zoals regressiemodellen, worden afgeleid uit data. Machine learning wordt gebruikt om een model te leren uit data. Large language modellen zoals ChatGPT maken gebruik van machine learning."
+      "ui:description": "Data omvat alle vormen van elektronische gegevens. Tekst, afbeeldingen, audio zijn ook data.\n\nVerschillende vormen van algoritmes kunnen uit data worden afgeleid. Bij regel-gebasseerde algoritmes kunnen drempelwaardes voor (uitval)regels of weegfactoren voor beslissingen uit data worden berekend.\nOok klassieke statistische modellen, zoals regressiemodellen, worden afgeleid uit data. Machine learning wordt gebruikt om een model te leren uit data. Large language modellen zoals ChatGPT maken gebruik van machine learning."
     },
     "q3": {
       "ui:widget": "radio",
-      "ui:description": "Een voorbeeld van in wet- of regelgeving vastgestelde regels is een regelgebaseerd algoritme dat bij aanvraag voor een bijstandsuitkering geautomatiseerd aangeeft wanneer niet is voldaan inkomens- en vermogenseisen. De regels in het algoritme zijn in dat geval een letterlijke implementatie van normen gespecificeerd in de Participatiewet.\nWanneer een norm open is gedefninieerd in wet- of regelgeving en deze verder worden gespecificeerd in de toepassing, is de toepassing geen een-op-een automatisering van wet- of regelgeving.\n\nVoorbeelden van door mensen opgestelde regels zijn een regelgebaseerd algoritme waarbij een werkinstructie is vertaald naar een algoritme, een risicoprofiel waarbij de regels met de hand zijn opgesteld op basis van ervaring van medewerkers of wettelijke normen die verder gespecificeerd zijn in regels.\n\nOp logica- en kennis-gebaseerde benaderingen worden ook wel symbolische AI-systemen genoemd (symbolic AI). Onder deze  vorm van AI-systemen vallen kennisrepresentatie, inductief (logisch) programmeren, kennisbanken, inferentie- en deductiemachines, (symbolisch) redeneren. Deze vormen van technologie zijn zeldzaam."
+      "ui:description": "Een voorbeeld van in wet- of regelgeving vastgestelde regels is een regelgebaseerd algoritme dat bij aanvraag voor een bijstandsuitkering geautomatiseerd aangeeft wanneer niet is voldaan inkomens- en vermogenseisen. De regels in het algoritme zijn in dat geval een letterlijke implementatie van normen gespecificeerd in de Participatiewet.\nWanneer een norm open is gedefninieerd in wet- of regelgeving en deze verder worden gespecificeerd in de toepassing, is de toepassing geen een-op-een automatisering van wet- of regelgeving.\n\nVoorbeelden van door mensen opgestelde regels zijn een regelgebaseerd algoritme waarbij een werkinstructie is vertaald naar een algoritme, een risicoprofiel waarbij de regels met de hand zijn opgesteld op basis van ervaring van medewerkers of wettelijke normen die verder gespecificeerd zijn in regels.\n\nOp logica- en kennis-gebaseerde benaderingen worden ook wel symbolische AI-systemen genoemd (symbolic AI). Onder deze  vorm van AI-systemen vallen kennisrepresentatie, inductief (logisch) programmeren, kennisbanken, inferentie- en deductiemachines, (symbolisch) redeneren. Deze technologie wordt bijvoorbeeld ingezet in expert systemen."
     },
     "q4": {
       "ui:widget": "radio",
