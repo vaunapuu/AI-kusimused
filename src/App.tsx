@@ -63,7 +63,7 @@ export default function App() {
   }, []);
 
   return (
-    <Container className="vh-100">
+    <Container fluid className="vh-100 mx-0">
       <Row className="justify-content-center align-items-center h-100">
         <Col xs={12} className="">
           {activeForm ? (
