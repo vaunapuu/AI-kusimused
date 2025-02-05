@@ -19,6 +19,15 @@ export default function App() {
   const [activeForm, setActiveForm] = useState<RJSFSchema | null>(null);
   let formsMenu = [{ id: 0, title: t("no forms") }];
 
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get("lang");
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [i18n]);
+
   if (forms[i18n.language] && forms[i18n.language].length > 0) {
     formsMenu = (forms[i18n.language] as RJSFSchema[]).map((item, index) => {
       return { id: index, title: item.JSONSchema.title ?? t("no forms title") };
@@ -80,6 +89,7 @@ export default function App() {
             <Intro
               forms={formsMenu}
               onStart={(id: number) => onFormActivate(id)}
+              activeLanguage={lang ? true : false}
             />
           )}
         </Col>

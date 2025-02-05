@@ -2,10 +2,10 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import enTranslation from "./en/translation.json";
 import nlTranslation from "./nl/translation.json";
-import LanguageDetector from "i18next-browser-languagedetector";
 
 i18next
-  .use(LanguageDetector) // Add the language detector
+  // currently not using the language detector, since we are using url params.
+  //.use(LanguageDetector)
   .use(initReactI18next)
   .init({
     fallbackLng: "en", // Default language if detection fails
