@@ -1,6 +1,6 @@
 {
   "JSONSchema": {
-    "title": "Test2",
+    "title": "Risicoclassificatie",
     "type": "object",
     "definitions": {
       "outputLow": {
