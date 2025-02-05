@@ -5,9 +5,11 @@ import LanguageSwitcher from "./LanguageSwitcher";
 export default function ({
   forms,
   onStart,
+  activeLanguage = false,
 }: {
   forms: { id: number; title: string }[];
   onStart: (index: number) => void;
+  activeLanguage?: boolean;
 }) {
   const { t } = useTranslation();
 
@@ -16,28 +18,29 @@ export default function ({
       <Card.Body className="d-flex flex-column justify-content-between">
         <div className="d-flex flex-row justify-content-between align-items-top mb-2">
           <Card.Title>{t("cardTitle")}</Card.Title>
-          <LanguageSwitcher />
+          {!activeLanguage && <LanguageSwitcher />}
         </div>
 
         <div className="mb-4">
           <p>{t("description1")}</p>
-          <p>{t("description2")} 
+          <p>
+            {t("description2")}
             <a
               href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
               target="_blank"
             >
               {t("source1")}
             </a>
-            {t("description2_1")} 
+            {t("description2_1")}
             <i>{t("description2_2")} </i>
-            {t("description2_3")} 
+            {t("description2_3")}
             <a
               href="https://algoritmes.pleio.nl/attachment/entity/f1a35292-7ea6-4e47-93fa-b3358e9ab2e0"
               target="_blank"
             >
               {t("source2")}
             </a>
-            {t("description2_4")} 
+            {t("description2_4")}
           </p>
           <p>
             {t("feedback")}{" "}
