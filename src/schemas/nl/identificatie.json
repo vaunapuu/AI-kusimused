@@ -455,7 +455,7 @@
                   {
                     "contains": {
                       "enum": [
-                        "Een ingeschat label of classificatie zoals ja/nee, hoog/laag of een indeling in groepen.\n\nBijvoorbeeld ten behoeve van routering, communicatiecampagnes of risicoclassificatie."
+                        "Een ingeschat label of classificatie zoals ja/nee, hoog/laag of een indeling in groepen.\nBijvoorbeeld ten behoeve van routering, communicatiecampagnes of risicoclassificatie."
                       ]
                     }
                   },
