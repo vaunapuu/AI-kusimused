@@ -555,15 +555,21 @@
                   "Yes, the application contains components derived from data. There is fitting or learning of a model or automatic variable selection using statistics, optimization, simulation, machine learning or a similar technique."
                 ]
               },
+              "q2_yes2": {
+                "type": "string",
+                "title": "Describe the used method.",
+                "default": ""
+              },
               "outputIntermediate": {
                 "type": "string",
-                "title": "Based on your answers, your application is an AI system according to the AI Act. It may also qualify as a high-impact algorithm. Complete the following questionnaire to find out.",
+                "title": "Based on your answers, your application is probably an AI system according to the AI Act. It may also qualify as a high-impact algorithm. Complete the following questionnaire to find out.",
                 "default": "The following questions pertain to the process in which the application is used. For answering these questions, focus on how the application is integrated into the overall process.\n\nFor these questions, the application's role in the decision-making process is not relevant."
               },
               "impact": {
                 "$ref": "#/definitions/impactAI"
               }
-            }
+            },
+            "required": ["q2_yes2"]
           },
           {
             "properties": {
