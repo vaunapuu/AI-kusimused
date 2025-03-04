@@ -171,8 +171,8 @@
                     "enum": [
                       "Decision on the prioritization of applications, requests, complaints, and objections.",
                       "Decision on formal complaints and objections",
-                      "Decision with direct financial consequences for a citizen or civil servant,\nsuch as decisions regarding benefits, allowances, subsidies, fines, refunds, or the possibility of a payment plan.",
-                      "Decision on applications and requests without direct financial consequences,\nsuch as the approval of a service request or the granting of a permit.",
+                      "Decision with direct financial consequences for a citizen or civil servant,\nsuch as decisions regarding benefits, allowances, subsidies, fines, refunds, or the possibility of a payment plan",
+                      "Decision on applications and requests without direct financial consequences,\nsuch as the approval of a service request or the granting of a permit",
                       "Decision on inspection, investigation, or requests for additional information",
                       "Decision on school assignments.",
                       "Decisions on providing advice or (proactively) offering services or provisions.",
@@ -221,8 +221,8 @@
                     "enum": [
                       "Decision on the prioritization of applications, requests, complaints, and objections.",
                       "Decision on formal complaints and objections",
-                      "Decision with direct financial consequences for a citizen or civil servant,\nsuch as decisions regarding benefits, allowances, subsidies, fines, refunds, or the possibility of a payment plan.",
-                      "Decision on applications and requests without direct financial consequences,\nsuch as the approval of a service request or the granting of a permit.",
+                      "Decision with direct financial consequences for a citizen or civil servant,\nsuch as decisions regarding benefits, allowances, subsidies, fines, refunds, or the possibility of a payment plan",
+                      "Decision on applications and requests without direct financial consequences,\nsuch as the approval of a service request or the granting of a permit",
                       "Decision on inspection, investigation, or requests for additional information",
                       "Decision on school assignments.",
                       "Decisions on providing advice or (proactively) offering services or provisions."
@@ -302,8 +302,8 @@
                     "enum": [
                       "Decision on the prioritization of applications, requests, complaints, and objections",
                       "Decision on formal complaints and objections",
-                      "Decision with direct financial consequences for a citizen or civil servant,\nsuch as decisions regarding benefits, allowances, subsidies, fines, refunds, or the possibility of a payment plan.",
-                      "Decision on applications and requests without direct financial consequences,\nsuch as the approval of a service request or the granting of a permit.",
+                      "Decision with direct financial consequences for a citizen or civil servant,\nsuch as decisions regarding benefits, allowances, subsidies, fines, refunds, or the possibility of a payment plan",
+                      "Decision on applications and requests without direct financial consequences,\nsuch as the approval of a service request or the granting of a permit",
                       "Decision on inspection, investigation, or requests for additional information",
                       "Decision on school assignments.",
                       "Decisions on providing advice or (proactively) offering services or provisions.",
