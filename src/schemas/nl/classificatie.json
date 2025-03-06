@@ -1,6 +1,6 @@
 {
   "JSONSchema": {
-    "title": "Test2",
+    "title": "Risicoclassificatie AI systemen",
     "type": "object",
     "definitions": {
       "outputLow": {
@@ -16,17 +16,17 @@
       "outputForbidden": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening. Omdat dit de zwaarste risicocategorie is, met definities waarvan de interpretatie nog niet geheel duidelijk is, kunnen en willen we dit niet op basis van een vragenlijst vaststellen. Schakel juridische expertise in om voor deze casus in overleg te bepalen in welke categorie het valt."    
+        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening. Omdat dit de zwaarste risicocategorie is, waarvan het gevolg is dat de toepassing niet gebruikt zou mogen worden, kunnen en willen we dit niet op basis van een vragenlijst vaststellen. Schakel juridische expertise in om voor deze casus in overleg te bepalen in welke categorie het valt."    
       },
       "outputHighExcept": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden is uw toepassing geen hoog risico AI-systeem volgens de AI-verordening, omdat er een specifieke uitzondering geldt. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Als er geen sprake is van deze uitzondering, dan moet uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI systemen."
+        "default": "Op basis van uw antwoorden is uw toepassing geen hoog risico AI-systeem volgens de AI-verordening, omdat er een specifieke uitzondering geldt. Bepaal in overleg met relevante juridische experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Als er geen sprake is van deze uitzondering, dan moet uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI systemen."
       },
       "outputForbiddenExcept": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening. Er geldt mogelijk een uitzondering. Omdat dit de zwaarste risicocategorie is, met definities waarvan de interpretatie nog niet geheel duidelijk is, kunnen en willen we dit niet op basis van een vragenlijst vaststellen. Schakel juridische expertise in om voor deze casus in overleg te bepalen in welke categorie het valt."    
+        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening, maar geldt er mogelijk ook een een uitzondering. Bepaal in overleg met relevante juridische experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Zo niet, bepaal dan voor deze casus in overleg in welke categorie het valt."    
       },
       "outputTransparency": {
         "type": "string",
@@ -58,17 +58,25 @@
               {
                 "properties": {
                   "5.e.1": {
-                    "enum": [
-                      "Ja"
-                    ]
+                    "enum": [ "Nee" ]
                   },
-                  "exceptionForbidden": { "$ref": "#/definitions/exceptionForbidden" }
-                }
+                  "III.1.1": {
+                    "type": "string",
+                    "title": "Waarvoor worden biometrische gegevens gebruikt?",
+                    "enum": [
+                      "Voor identificatie op afstand. Bij identificatie gaat het over het ontdekken wie iemand is uit een groep mensen. Bijvoorbeeld als je een foto van een gezicht hebt, kun je proberen te vinden wie die persoon is door de foto te vergelijken met een database van gezichten. 'Op afstand' betekent dat deze identificatie plaatsvindt zonder actieve betrokkenheid van de persoon die geïdentificeerd wordt.",
+                      "Voor categorisering (labelen) van mensen. Dit betekent dat mensen worden ingedeeld in groepen of een label krijgen toegewezen op basis van bepaalde kenmerken, zoals hoe ze eruitzien of hoe ze zich gedragen. Bijvoorbeeld als een toepassing mensen als 'winkeldief' bestempeld of een inschatting maakt van iemands gender op basis van videobeelden",
+                      "Om emoties of intenties te herkennen of af te leiden.  Emoties zijn bijvoorbeeld geluk, blijheid, droefheid, woede, agressie,  verrassing, weerzin, verlegenheid, opwinding, schaamte, minachting, tevredenheid en plezier.",
+                      "Voor een ander doel, bijvoorbeeld crowd management waarbij geen individuele personen met AI geidentificeerd, of geclassificeerd worden of verificatie van een paspoortfoto op locatie, met medewerking van de persoon die geïdentificeerd wordt."
+                    ]
+                  }
+                },
+                "required": ["III.1.1"]
               },
               {
                 "properties": {
                   "5.e.1": {
-                    "enum": ["Nee"]
+                    "enum": [ "Ja" ]
                   },
                   "5.e.2": {
                     "type": "string",
@@ -104,10 +112,10 @@
                     "type": "string",
                     "title": "Waarvoor worden biometrische gegevens gebruikt?",
                     "enum": [
-                      "Voor identificatie of verificatie van iemands identiteit. Hierbij worden de camerabeelden dus gebruikt om te controleren wie iemand is. Bij identificatie gaan het over het ontdekken wie iemand is uit een groep mensen. Bijvoorbeeld als je een foto van een gezicht hebt, kun je proberen te vinden wie die persoon is door de foto te vergelijken met een database van gezichten. Verificatie is het proces waarbij je bevestigt dat iemand is wie die zegt te zijn. Bijvoorbeeld als je een telefoon ontgrendelt met je camera, controleert de telefoon of het gezicht overeenkomt met degene die al is opgeslagen.",
+                      "Voor identificatie op afstand. Bij identificatie gaat het over het ontdekken wie iemand is uit een groep mensen. Bijvoorbeeld als je een foto van een gezicht hebt, kun je proberen te vinden wie die persoon is door de foto te vergelijken met een database van gezichten. 'Op afstand' betekent dat deze identificatie plaatsvindt zonder actieve betrokkenheid van de persoon die geïdentificeerd wordt.",
                       "Voor categorisering (labelen) van mensen. Dit betekent dat mensen worden ingedeeld in groepen of een label krijgen toegewezen op basis van bepaalde kenmerken, zoals hoe ze eruitzien of hoe ze zich gedragen. Bijvoorbeeld als een toepassing mensen als 'winkeldief' bestempeld of een inschatting maakt van iemands gender op basis van videobeelden",
                       "Om emoties of intenties te herkennen of af te leiden.  Emoties zijn bijvoorbeeld geluk, blijheid, droefheid, woede, agressie,  verrassing, weerzin, verlegenheid, opwinding, schaamte, minachting, tevredenheid en plezier.",
-                      "Voor een ander doel"
+                      "Voor een ander doel, bijvoorbeeld crowd management waarbij geen individuele personen met AI geidentificeerd of geclassificeerd worden, of verificatie van een paspoortfoto op locatie, met medewerking van de persoon die geïdentificeerd wordt."
                     ]
                   }
                 },
@@ -121,12 +129,12 @@
                 "properties": {
                   "III.1.1": {
                     "enum": [
-                      "Voor een ander doel"
+                      "Voor een ander doel, bijvoorbeeld crowd management waarbij geen individuele personen met AI geidentificeerd, of geclassificeerd worden of verificatie van een paspoortfoto op locatie, met medewerking van de persoon die geïdentificeerd wordt."
                     ]
                   },
                   "III.1.1-yes4": {
                     "type": "string",
-                    "title": "Geef een korte beschrijving van het proces en hoe dit burgers of ambtenaren raakt.",
+                    "title": "Hoe worden biometrische gegevens gebruikt? Geef een korte beschrijving van het proces en hoe dit burgers of ambtenaren raakt.",
                     "default": ""
                   },
                   "infra": { "$ref": "#/definitions/infra" }
@@ -136,7 +144,7 @@
                 "properties": {
                   "III.1.1": {
                     "enum": [
-                      "Voor identificatie of verificatie van iemands identiteit. Hierbij worden de camerabeelden dus gebruikt om te controleren wie iemand is. Bij identificatie gaan het over het ontdekken wie iemand is uit een groep mensen. Bijvoorbeeld als je een foto van een gezicht hebt, kun je proberen te vinden wie die persoon is door de foto te vergelijken met een database van gezichten. Verificatie is het proces waarbij je bevestigt dat iemand is wie die zegt te zijn. Bijvoorbeeld als je een telefoon ontgrendelt met je camera, controleert de telefoon of het gezicht overeenkomt met degene die al is opgeslagen."
+                      "Voor identificatie op afstand. Bij identificatie gaat het over het ontdekken wie iemand is uit een groep mensen. Bijvoorbeeld als je een foto van een gezicht hebt, kun je proberen te vinden wie die persoon is door de foto te vergelijken met een database van gezichten. 'Op afstand' betekent dat deze identificatie plaatsvindt zonder actieve betrokkenheid van de persoon die geïdentificeerd wordt."
                     ]
                   },
                   "III.1.2": {
@@ -1881,7 +1889,7 @@
                   "5.a.1": {
                     "enum": ["Ja"]
                   },
-                  "5.a.3": {
+                  "5.a.4": {
                     "type": "string",
                     "title": "Kan de toepassing mogelijk negatieve gevolgen hebben voor de gebruiker of andere personen?",
                     "enum": [
@@ -1890,7 +1898,7 @@
                     ]
                   }
                 },
-                "required": ["5.a.3"]
+                "required": ["5.a.4"]
               }
             ]
           },
@@ -1903,7 +1911,7 @@
                       "Ja"
                     ]
                   },
-                  "5.a.3": {
+                  "5.a.4": {
                     "type": "string",
                     "title": "Kan de toepassing mogelijk negatieve gevolgen hebben voor de gebruiker of andere personen?",
                     "enum": [
@@ -1912,11 +1920,49 @@
                     ]
                   }
                 },
-                "required": ["5.a.3"]
+                "required": ["5.a.4"]
               },
               {
                 "properties": {
                   "5.a.2": {
+                    "enum": ["Nee"]
+                  },
+                  "5.a.3": {
+                    "type": "string",
+                    "title": "Is het mogelijk dat de toepassing onbedoeld het gedrag of keuzes van personen beïnvloedt, en zo mensen een beslissing laat nemen of dingen laat doen of, die zij zonder de toepassing niet zouden doen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.a.3"]
+              }
+            ]
+          },
+          "5.a.3": {
+            "oneOf": [
+              {
+                "properties": {
+                  "5.a.3": {
+                    "enum": [
+                      "Ja"
+                    ]
+                  },
+                  "5.a.4": {
+                    "type": "string",
+                    "title": "Kan de toepassing mogelijk negatieve gevolgen hebben voor de gebruiker of andere personen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["5.a.4"]
+              },
+              {
+                "properties": {
+                  "5.a.3": {
                     "enum": ["Nee"]
                   },
                   "5.c.1": {
@@ -1932,11 +1978,11 @@
               }
             ]
           },
-          "5.a.3": {
+          "5.a.4": {
             "oneOf": [
               {
                 "properties": {
-                  "5.a.3": {
+                  "5.a.4": {
                     "enum": [
                       "Ja"
                     ]
@@ -1946,7 +1992,7 @@
               },
               {
                 "properties": {
-                  "5.a.3": {
+                  "5.a.4": {
                     "enum": ["Nee"]
                   },
                   "5.c.1": {
@@ -1981,7 +2027,7 @@
                   },
                   "5.c.2": {
                     "type": "string",
-                    "title": "Wordt deze evaluatie of inschatting gedaan op basis van sociaal gedrag of (ingeschatte) persoonlijkheidskenmerken?",
+                    "title": "Wordt deze evaluatie of inschatting gedaan op basis van sociaal gedrag of (ingeschatte) persoonskenmerken?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2041,7 +2087,7 @@
                   },
                   "5.c.4": {
                     "type": "string",
-                    "title": "Kan het voorkomen dat het oorspronkelijke gedrag in een heel andere context plaatsvond dan de context van de nadelige behandeling?",
+                    "title": "Komt het voor dat de nadelige behandeling plaatsvindt in een heel andere context dan het gedrag of het persoonskenmerk waarop de score gebaseerd is?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2180,7 +2226,7 @@
                   },
                   "2.6": {
                     "type": "string",
-                    "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+                    "title": "Wordt de toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2204,11 +2250,95 @@
                     "default": ""
                   },
                   "output": { "$ref": "#/definitions/outputHighExcept" }
-                }
+                },
+                "required": ["2.6-yes"]
               },
               {
                 "properties": {
                   "2.6": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.1"]
+              }
+            ]
+          },
+          "2.3.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.1": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputHighExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.3.1": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.2"]
+              }
+            ]
+          },
+          "2.3.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputHighExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": ["Nee"]
+                  },
+                  "2.10": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "2.10": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.10": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputHighExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.10": {
                     "enum": ["Nee"]
                   },
                   "output": { "$ref": "#/definitions/outputHigh" }
@@ -2242,15 +2372,99 @@
                   },
                   "2.6-yes": {
                     "type": "string",
-                    "title": "Geef een korte beschrijving van het onderzoek. Neem in deze beschrijving in iedergeval het doel van het onderzoek, binnen welke afdeling dit onderzoek gedaan wordt en betrokken onderzoeksinstituten en/of andere partners op.",
+                    "title": "Geef een korte beschrijving van het onderzoek. Neem in deze beschrijving in ieder geval het doel van het onderzoek, binnen welke afdeling dit onderzoek gedaan wordt en betrokken onderzoeksinstituten en/of andere partners op.",
                     "default": ""
+                  },
+                  "output": { "$ref": "#/definitions/outputForbiddenExcept" }
+                },
+                "required": ["2.6-yes"]
+              },
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.1"]
+              }
+            ]
+          },
+          "2.3.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.1": {
+                    "enum": [ "Ja" ]
                   },
                   "output": { "$ref": "#/definitions/outputForbiddenExcept" }
                 }
               },
               {
                 "properties": {
-                  "2.6": {
+                  "2.3.1": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.2"]
+              }
+            ]
+          },
+          "2.3.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputForbiddenExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": ["Nee"]
+                  },
+                  "2.10": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "2.10": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.10": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputForbiddenExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.10": {
                     "enum": ["Nee"]
                   },
                   "output": { "$ref": "#/definitions/outputForbidden" }
@@ -2343,10 +2557,10 @@
               },
               {
                 "properties": {
-                  "50.1": {
+                  "3.63": {
                     "enum": ["Nee"]
                   },
-                  "output":{ "$ref": "#/definitions/outputGPAI" }
+                  "output":{ "$ref": "#/definitions/outputLow" }
                 }
               }
             ]
@@ -2395,263 +2609,287 @@
   "uiSchema": {
     "III.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Biometrische gegevens zijn unieke kenmerken van een persoon zoals afbeeldingen of videobeelden van je gezicht, beelden van je iris(oog),  je vingerafdrukken, hoe je stem klinkt, je handschrift, en andere unieke kenmerken van je lichaam of gedrag. \n\nGetypte tekst is geen biometrische data, iemands unieke manier van typen (toetsaanslagen) wel."
     },
     "5.e.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "5.e.2": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.1.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.1.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Bijvoorbeeld, je telefoon kijkt of je gezicht klopt met wat erin is opgeslagen om te ontgrendelen. Of bij de grens kijkt een camera of je gezicht overeenkomt met de foto in je paspoort.\nHet gaat hier om één-op-één verficatie van een persoon, met actieve betrokkenheid van die persoon."
     },
     "5.h.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "5.g.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "5.f.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Bij de werkomgeving hoort ook werving en selectie, en de thuiswerkomgeving. Bij onderwijs hoort ook toelating tot onderwijs en online onderwijs."
     },
     "III.1.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk bijvoorbeeld aan diensten zoals BaaS (Blurring as a Service), waarbij  gezichtsherkenning wordt gebruikt om gezichten in beelden te vervagen, of aan toegang tot een beveiligde computerserver met vingerafdrukken."
     },
     "III.2.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.2.2": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.2.3": {
       "ui:widget": "radio",
+      "ui:enableMarkdownInDescription": true,
       "ui:description": "Kritieke **digitale** infrastructuur omvat onder andere internetknooppunten, DNS-diensten, registratie van topleveldomeinnamen, cloudcomputingdiensten, datacenterdiensten, openbare elektronische communicatienetwerken en elektronische communicatiediensten"
     },
     "III.2.4": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Een component met een veiligheidsfunctie is bedoeld om een risico weg te nemen of te verminderen.\n\nVoorbeelden van componenten met een veiligheidsfunctie zijn:\n- Een systeem dat automatisch een rijstrook voor een  tunnel sluit bij drukte op de weg, om te voorkomen dat er file in de tunnel ontstaat\n- Brandalarm installaties\n- Andere detectie- of alarm funties die reageren bij over-/onderdruk, temperatuur of spanning\n- Systemen om botsingen te vermijden in een voertuig, waarbij automatisch geremd wordt om een botsting te voorkomen (collision avoidance systems)\n- Firewall of antivirus software\n\nAls het falen of slecht funtioneren van de toepassing de gezondheid en veiligheid van personen of eigendom in gevaar brengt, kies dan ja."
     },
     "III.2.5": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan een firewall of antivirussoftware."
     },
     "III.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan plaatsing en toelating, evaluatie en toetsing, maar ook aan controle zoals plagiaatcontrole en antispiek software.\n\nKies 'ja' wanneer je onzeker bent."
     },
     "III.3.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Kies ook 'ja' wanneer toepassing slechts een onderdeel is van het proces voor toewijzing of toelating. Er hoeft geen sprake te zijn van (volledig) geautomatiseerde beoordeling of besluiten.\n\nVoorbeelden zijn:\n- Een toepassing waarmee toelaatbaarheid tot een school mede bepaald wordt\n- Een toepassing waarmee dat de verdeling van kinderen tussen scholen bepaald wordt."
     },
     "III.3.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Kies ook 'ja' wanneer toepassing bijdraagt aan de beoordeling. Er hoeft geen sprake te zijn van (volledig) geautomatiseerde beoordeling."
     },
     "III.3.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Voorbeelden zijn:\n- Evaluatie van (multiple choice) toetsen\n- Nakijkassistentie\n- Beoordeling van tempo van leren of stijl van leren\n- Personalisatie van de lesstof of leerproces"
     },
     "III.3.4": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Voorbeelden zijn:\n- Plagiaatcontrole\n-Detectie van gebruik van AI-tekstgeneratietools\n- Toezicht bij online toetsing, zoals Proctorio\n- Antispieksoftware bij (online) toetsen"
     },
     "III.4": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Voorbeelden zijn:\n- Vastleggen van uren, meten van KPI's en prestaties\n- Taakverdeling\n- Werving en selectie\n- Instroom en doorstroom (arbeidsvoorwaarden, contractuele voorwaarden)\n- Uitstroom (beëindiging contract)\n\nKies ook 'ja' wanneer de toepassing in de breedste zin onder het bovenstaande valt, zelfs als de toepassing slechts een kleine rol speelt in een verder handmatig proces."
     },
     "III.4.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan het plaatsen van gerichte vacatures, het analyseren en filteren van sollicitaties, en het beoordelen van kandidaten."
     },
     "III.4.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Het gaat hier zowel om gerichte targeting bij werving, als om het schrijven van gerichte vacature teksten."
     },
     "III.4.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan het (automatisch) analyseren en/of filteren van bijvoorbeeld CVs, sollicitatie brieven of ander documentatie, sollicitatie video's en solliciate gesprekken."
     },
     "III.4.4": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan capaciteitentesten, automatische beoordeling op basis van video opnames."
     },
     "III.4.5": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.4.6": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan beslissingen om een contract te beëindigen, maar ook aan beslissingen rondom de voorwaarden en termijn van de beëindiging."
     },
     "III.4.7": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "We bedoelen hier medewerker in de breedste zin, hieronder vallen werknemers maar ook ZZPers en via een derde partij ingehuurde medewerkers (uitzending, detachering)."
     },
     "III.4.8": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan administratieve processen waarin uren, productiviteit, snelheid, pauzes, presaties of gedrag verwerkt worden.\n\nWe bedoelen hier medewerker in de breedste zin, hieronder vallen werknemers maar ook ZZPers en via een derde partij ingehuurde medewerkers (uitzending, detachering)."
     },
     "III.4.9": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan monitoren van productiviteit of snelheid  of andere prestaties."
     },
     "III.5.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Het gaat hier om alle processen rondom uitkeringen of toeslagen, zoals aanvraag, administratie, uitvoering, handhaving, terugvordering en bezwaar. Dit omvat ook kwijtschelding van boetes, terugbetalingen, of het toekennen van een betalingsregeling.\n\nKies ook 'ja' wanneer de toepassing slechts een kleine rol speelt in het proces."
     },
     "III.5.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Het gaat hier om alle processen rondom deze uitkeringen of toeslagen, van aanvraag, administratie, tot uitvoer, handhaving en terugvordering.\n\nKies ook 'ja' wanneer de toepassing slechts een kleine rol speelt in het proces."
     },
     "III.5.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Het gaat hier om alle processen rondom (sociale) diensten, zoals aanbod/aanvraag, administratie, uitvoering, handhaving en bezwaar. Dit omvat sociale diensten in de breedste zin, zoals WMO-voorzieningen, opvang (bijvoorbeeld bij huiselijk geweld, dak- en thuislozenopvang, bed-bad-brood), zorgvoorzieningen, schuldhulpverlening of re-integratievoorzieningen.\n\nKies ook 'ja' wanneer de toepassing slechts een kleine rol speelt in het proces."
     },
     "III.5.4": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Kies ook 'ja' als de toepassing deel is van een voorbereidende stap voor deze beslissingen, zoals selectie voor controle."
     },
     "III.5.5": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Kies ook 'ja' als de toepassing deel is van een voorbereidende stap voor deze beslissingen, zoals selectie voor controle."
     },
     "III.5.6": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Bijvoorbeeld om te bepalen of iemand een betalingsregeling kan krijgen voor het betalen van belasting, een boete, of het terugbetalen van een uitkering."
     },
     "III.5.7": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.5.8": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Hulpdiensten omvatten politie, brandweer en ambulance. Denk ook aan situaties zoals inbewaringstelling door een burgemeester."
     },
     "III.6-5.d": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk ook aan (administratieve) overtredingen en frauderisicoscore's, waarbij een inschatting wordt gemaakt of iemand mogelijk een strafbaar feit pleegt en aan een inschatting van de kans op recidieve."
     },
     "III.6a": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Onder rechtshandhaving vallen preventie van, onderzoek naar en vervolging van strafbare feiten, de uitvoering van straffen, en bescherming van de openbare veiligheid. Denk aan politie, BOA's en de uitvoering van (werk)straffen door reclassering. Ook andere instanties, zoals Halt en specifieke (inspectie)diensten, kunnen aan rechtshandhaving doen.\n\nKies ook 'ja' voor organisaties en instellingen die rechtshandhavingsinstanties ondersteunen, zoals het NFI, en voor activiteiten die namens rechtshandhavingsinstanties plaatsvinden."
     },
     "III.6b": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan:\n- Activiteiten rondom preventie en openbare veiligheid, zoals bij crises en evenementen, aanpak van ondermijning, en de werkzaamheden van het Actiecentrum Veiligheid en Zorg.\n- Diensten of  partners met specifieke handhavings-, onderzoeks- of opsporingsbevoegdheden, zoals FIOD, sociale recherche, omgevingsdiensten, handhavers in het openbaar vervoer, en opsporing door specifieke (inspectie)diensten."
+    },
+    "III.6b-yes": {
+      "ui:description": "Indien het een samenwerkingsverband betreft, benoem dan ook de andere partners."
     },
     "III.6.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.6.2": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.6.3": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.6.4": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk bijvoorbeeld aan het geautomatiseerd evalueren van beroepsprestaties, economische situatie, gezondheid, persoonlijke voorkeuren, interesses, betrouwbaarheid, gedrag, locatie of verplaatsingen van een persoon te analyseren of te voorspellen."
     },
     "III.6.5": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.7": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.7.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.7.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan een veiligheidsrisico of gezondheidsrisico dat een migrant of asielzoeker met zich meebrengt, zoals TBC-screening."
     },
     "III.7.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Kies ook 'ja' wanneer de toepassing wordt gebruikt bij beoordelingen van de betrouwbaarheid van bewijsmateriaal voor aanvragen of klachten."
     },
     "III.7.4": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.7.5": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Kies 'nee' wanneer de toepassing ook wordt gebruikt voor identificatie die breder is dan alleen de controle van een paspoort of ander reisdocument."
     },
     "III.8.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Beroepszaken, waarin een rechter uitspraak doet, vallen onder rechtspraak.\nAlternatieve geschillenbeslechting is bijvoorbeeld tuchtrecht, ombudmannen, arbitrage en klachtencommissies als de Reclame Code Commissie, de Raad voor de Journalistiek en de Landelijke Klachtencommissie Onderwijs."
     },
     "III.8.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan de anonimisering of pseudonimisering van rechterlijke beslissingen, documenten of data, de communicatie tussen personeelsleden en administratieve taken."
     },
     "III.8.3": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "III.8.4": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "5.a.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Bijvoorbeeld door heel kort een beeld te laten zien dat iemand niet bewust kan waarnemen. Deze technieken worden subliminale technieken genoemd."
     },
     "5.a.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk aan toepassingen die gebruikers beinvloeden producten te kopen, abonementen af te sluiten of ervoor zorgen dat mensen geen klacht indienen terwijl zij dat wel van plan waren. Ook toepassingen die verslaving stimuleren horen hierbij."
     },
     "5.a.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Het gaat hier om het (onbedoelde) effect van de toepassing. Dit bijvoorbeeld gebeuren bij AI chatbots die adviezen kunnen geven. Ook wanneer er waarschuwingen bij de toepassing staan, kan het effect zijn dat mensen beïnvloed worden door de toepassing."
+    },
+    "5.a.4": {
+      "ui:widget": "radio",
+      "ui:description": "Denk aan een AI gezondheidschatbot die  bedoeld om tips over een gezonde levensstijl en om op maat gemaakt advies te geven voor psychologische en fysieke oefeningen. Als de chatbot echter aanspoort om ongezonde gewoontes aan te nemen of gevaarlijke activiteiten te ondernemen (bijvoorbeeld buitensporige sporten zonder rust of drinkwater) die ze anders niet zouden hebben gedaan, heeft dat negatieve gevolgen voor de gebruiker."
     },
     "5.c.1": {
-      "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:widget": "radio"
     },
     "5.c.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Voorbeelden van sociaal gedrag zijn bijvoorbeeld rijgedrag, communicatiestijl, het overtreden van (ongeschreven) regels.\nVoorbeelden van persoonskenmerken zijn leeftijd, lengte, geslacht, economische situatie, bewegingspatronen en interesses"
     },
     "5.c.3": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Bijvoorbeeld dat een lage score leidt tot ergens geen toegang toe krijgen, een hogere prijs moeten betalen, onderzocht worden in (fraude)onderzoek."
     },
     "5.c.4": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Een nadelige behandeling in een ongerelateerde context is bijvoorbeeld: een frauderisicoscore die leidt tot een onderzoek, waarbij de frauderisicoscore gebaseerd is op kenmerken zonder duidelijk verband of relevantie voor de beoordeling van fraude, zoals het hebben van een partner met een bepaalde nationaliteit, het hebben van een internetverbinding, gedrag op sociale platforms of prestaties op de werkplek.\nAndere voorbeelden zijn geen sociale huurwoning kunnen krijgen vanwege verkeersovertredingen of afgewezen worden op de sollicitatie, omdat er geluidsoverlast gemeld is op het thuisadres."
+    },
+    "5.c.5": {
+      "ui:widget": "radio",
+      "ui:description": "Een niet proportionele behandeling is bijvoorbeeld: Iemand krijgt een hogere frauderisicoscore en daardoor controle omdat ooit gemeentelijke belastingen te laat betaald zijn. Andere voorbeelden zijn een student die niet wordt toegelaten tot een vervolgopleiding omdat die in de kindertijd eens betrapt is op spieken of een kind dat vanwege een hoge recidiverisicoscore niet in aanmerking komt voor Halt, omdat het kind een broer met een strafblad heeft."
     },
     "6.1": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:description": "Denk bijvoorbeeld aan het geautomatiseerd evalueren van beroepsprestaties, economische situatie, gezondheid, persoonlijke voorkeuren, interesses, betrouwbaarheid, gedrag, locatie of verplaatsingen van een persoon te analyseren of te voorspellen."
     },
     "6.2": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:enableMarkdownInDescription": true,
+      "ui:description": "Denk aan slimme zoekfuncties, data koppeling, automatische transcriptie  of vertaling, tekst verbeteraars en data visulisatie.\n\n**Let op:**:  Wanneer de toepassing (significante) negatieve invloed kan hebben op betrokkenen, kies dan 'nee'."
     },
     "2.6": {
       "ui:widget": "radio",
-      "ui:description": "description"
+      "ui:enableMarkdownInDescription": true,
+      "ui:description": "Het betreft hier bijvoorbeeld AI-systemen die ontwikkelt worden door studenten als onderdeel van hun studie of door wetenschappers verbonden met een universiteit. In dat geval moet het onderzoek de erkende ethische en beroepsnormen voor wetenschappelijk onderzoek volgen. Zo moeten bijvoorbeeld alle betrokkenen geinformeerd worden dat zij deel zijn van wetenschappelijk onderzoek.\n\n**Let op** Wanneer de toepassing getest wordt of in gebruik genomen wordt in operationele processen of reguliere bedrijfsvoering, kies dan 'nee'."
+    },
+    "2.3.1": {
+      "ui:widget": "radio",
+      "ui:enableMarkdownInDescription": true,
+      "ui:description": "**Let op:**  wanneer de toepassing ook gebruikt wordt voor andere activiteiten of doelen, kies dan 'nee'.  "
+    },
+    "2.3.2": {
+      "ui:widget": "radio",
+      "ui:enableMarkdownInDescription": true,
+      "ui:description": "Denk aan ChatGPT, telefonische AI klantservice en assitentie tools zoals co-pilot."
+    },
+    "2.10": {
+      "ui:widget": "radio",
+      "ui:enableMarkdownInDescription": true,
+      "ui:description": "Persoonlijk wil zeggen dat de toepassing niet namens een organisatie wordt ingezet.\nNiet-professioneel wil zeggen dat er geen geld wordt verdient en dat de toepassing niet wordt ingezet voor voor iemands beroep of bedrijf of voor zakenlijke of freelance activiteiten.\nOok vrijwilligerswerk is geen persoonlijke niet-professionele activiteit.\n\n**Let op:**  wanneer de toepassing ook gebruikt wordt voor professionele activiteiten, kies dan 'nee'.\nWanneer een persoon bijvoorbeeld persoonlijk gebruik maakt van een ChatGPT, maar ook af en toe voor diens werk, dan is er geen sprake van alleen persoonlijk, niet-professioneel gebruik."
+    },
+    "50.1": {
+      "ui:widget": "radio",
+      "ui:description": "Persoonlijk wil zeggen dat de toepassing niet namens een organisatie wordt ingezet.\nNiet-professioneel wil zeggen dat er geen geld wordt verdient en dat de toepassing niet wordt ingezet voor voor iemands beroep of bedrijf of voor zakenlijke of freelance activiteiten.\nOok vrijwilligerswerk is geen persoonlijke niet-professionele activiteit.\n\n**Let op:**  wanneer de toepassing ook gebruikt wordt voor professionele activiteiten, kies dan 'nee'.\nWanneer een persoon bijvoorbeeld persoonlijk gebruik maakt van een ChatGPT, maar ook af en toe voor diens werk, dan is er geen sprake van alleen persoonlijk, niet-professioneel gebruik."
     }
+    ,
+    "50.2": {
+      "ui:widget": "radio",
+      "ui:description": "Voorbeelden hiervan zijn slimme zoekmachines, systemen die samenvattingen maken, AI die helpt bij schrijven, AI voor het bewerken van beelden, het maken van nieuwe beelden en deepfakes.\nDenk ook aan toepassingen die nieuwe tekst, geluid of video's maken of aanpassen. "
+    },
+    "3.63": {
+      "ui:widget": "radio",
+      "ui:description": "Denk aan een Large Language Model (LLM) of diffusion (beeld) modellen.\nEen AI-model voor algemene doeleinden, ook wel bekend als ‘General Purpose AI’ of 'foundation model, kan een breed scala aan verschillende taken op een goede manier uitvoeren en kan daardoor worden geïntegreerd in allerlei verschillende AI-systemen. GPT3 en GPT4.o zijn een voorbeelden van modellen voor algemene doeleinden die gebruikt worden voor toepassingen als ChatGPT, maar ook voor een hoeveelheid andere meer specifieke toepassingen."
+    }
+
   }
 }
