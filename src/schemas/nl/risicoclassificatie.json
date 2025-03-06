@@ -1,6 +1,6 @@
 {
   "JSONSchema": {
-    "title": "Risicoclassificatie AI systemen",
+    "title": "Risicoclassificatie AI-systemen",
     "type": "object",
     "definitions": {
       "outputLow": {
@@ -11,7 +11,7 @@
       "outputHigh": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden is uw toepassing een hoog risico AI-systeem volgens de AI-verordening. Uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI systemen. De omvang van de vereisten voor uw organisatie hangt af van de rol van uw organisatie voor deze toepassing. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of uw organisatie gebruiksverantwoordelijke of aanbieder is."
+        "default": "Op basis van uw antwoorden is uw toepassing een hoog risico AI-systeem volgens de AI-verordening. Uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI-systemen. De omvang van de vereisten voor uw organisatie hangt af van de rol van uw organisatie voor deze toepassing. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of uw organisatie gebruiksverantwoordelijke of aanbieder is."
       },
       "outputForbidden": {
         "type": "string",
@@ -21,7 +21,7 @@
       "outputHighExcept": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden is uw toepassing geen hoog risico AI-systeem volgens de AI-verordening, omdat er een specifieke uitzondering geldt. Bepaal in overleg met relevante juridische experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Als er geen sprake is van deze uitzondering, dan moet uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI systemen."
+        "default": "Op basis van uw antwoorden is uw toepassing geen hoog risico AI-systeem volgens de AI-verordening, omdat er een specifieke uitzondering geldt. Bepaal in overleg met relevante juridische experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Als er geen sprake is van deze uitzondering, dan moet uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI-systemen."
       },
       "outputForbiddenExcept": {
         "type": "string",
@@ -2651,7 +2651,7 @@
     },
     "III.2.4": {
       "ui:widget": "radio",
-      "ui:description": "Een component met een veiligheidsfunctie is bedoeld om een risico weg te nemen of te verminderen.\n\nVoorbeelden van componenten met een veiligheidsfunctie zijn:\n- Een systeem dat automatisch een rijstrook voor een  tunnel sluit bij drukte op de weg, om te voorkomen dat er file in de tunnel ontstaat\n- Brandalarm installaties\n- Andere detectie- of alarm funties die reageren bij over-/onderdruk, temperatuur of spanning\n- Systemen om botsingen te vermijden in een voertuig, waarbij automatisch geremd wordt om een botsting te voorkomen (collision avoidance systems)\n- Firewall of antivirus software\n\nAls het falen of slecht funtioneren van de toepassing de gezondheid en veiligheid van personen of eigendom in gevaar brengt, kies dan ja."
+      "ui:description": "Een component met een veiligheidsfunctie is bedoeld om een risico weg te nemen of te verminderen.\n\nVoorbeelden van componenten met een veiligheidsfunctie zijn:\n- Een systeem dat automatisch een rijstrook voor een tunnel sluit bij drukte op de weg, om te voorkomen dat er file in de tunnel ontstaat\n- Brandalarminstallaties\n- Andere detectie- of alarmfuncties die reageren bij over-/onderdruk, temperatuur of spanning\n- Systemen om botsingen te vermijden in een voertuig, waarbij automatisch geremd wordt om een botsting te voorkomen (collision avoidance systems)\n- Firewall of antivirus software\n\nAls het falen of slecht funtioneren van de toepassing de gezondheid en veiligheid van personen of eigendom in gevaar brengt, kies dan ja."
     },
     "III.2.5": {
       "ui:widget": "radio",
@@ -2860,7 +2860,7 @@
     "2.6": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Het betreft hier bijvoorbeeld AI-systemen die ontwikkelt worden door studenten als onderdeel van hun studie of door wetenschappers verbonden met een universiteit. In dat geval moet het onderzoek de erkende ethische en beroepsnormen voor wetenschappelijk onderzoek volgen. Zo moeten bijvoorbeeld alle betrokkenen geinformeerd worden dat zij deel zijn van wetenschappelijk onderzoek.\n\n**Let op** Wanneer de toepassing getest wordt of in gebruik genomen wordt in operationele processen of reguliere bedrijfsvoering, kies dan 'nee'."
+      "ui:description": "Het betreft hier bijvoorbeeld AI-systemen die ontwikkeld worden door studenten als onderdeel van hun studie of door wetenschappers verbonden met een universiteit. In dat geval moet het onderzoek de erkende ethische en beroepsnormen voor wetenschappelijk onderzoek volgen. Zo moeten bijvoorbeeld alle betrokkenen geinformeerd worden dat zij deel zijn van wetenschappelijk onderzoek.\n\n**Let op:** Wanneer de toepassing getest wordt of in gebruik genomen wordt in operationele processen of reguliere bedrijfsvoering, kies dan 'nee'."
     },
     "2.3.1": {
       "ui:widget": "radio",
