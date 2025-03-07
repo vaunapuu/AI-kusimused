@@ -11,7 +11,7 @@
       "outputHigh": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden is uw toepassing een hoog risico AI-systeem volgens de AI-verordening. Uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI-systemen. De omvang van de vereisten voor uw organisatie hangt af van de rol van uw organisatie voor deze toepassing. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of uw organisatie gebruiksverantwoordelijke of aanbieder is."
+        "default": "Op basis van uw antwoorden is uw toepassing een hoog risico AI-systeem volgens de AI-verordening. Uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI-systemen. De omvang van de vereisten voor uw organisatie hangt af van de rol van uw organisatie voor deze toepassing. Bepaal in overleg met relevante juridische experts of uw organisatie gebruiksverantwoordelijke of aanbieder is."
       },
       "outputForbidden": {
         "type": "string",
@@ -21,22 +21,32 @@
       "outputHighExcept": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden is uw toepassing geen hoog risico AI-systeem volgens de AI-verordening, omdat er een specifieke uitzondering geldt. Bepaal in overleg met relevante juridische experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Als er geen sprake is van deze uitzondering, dan moet uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI-systemen."
+        "default": "Op basis van uw antwoorden is uw toepassing een hoog risico AI-systeem volgens de AI-verordening, maar geldt er mogelijk ook een een uitzondering. Bepaal in overleg met relevante juridische experts of er daadwerkelijk een uitzondering geldt. Als er geen sprake is van deze uitzondering, dan moet uw AI systeem moet voldoen aan de eisen die gelden voor hoog-risico AI-systemen."
       },
       "outputForbiddenExcept": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening, maar geldt er mogelijk ook een een uitzondering. Bepaal in overleg met relevante juridische experts binnen uw organisatie of er daadwerkelijk een uitzondering geldt. Zo niet, bepaal dan voor deze casus in overleg in welke categorie het valt."    
+        "default": "Op basis van uw antwoorden voldoet uw toepassing (gedeeltelijk) aan de definitie van verboden AI-systeem volgens de AI-verordening, maar geldt er mogelijk ook een een uitzondering. Bepaal in overleg met relevante juridische experts of er daadwerkelijk een uitzondering geldt. Zo niet, bepaal dan voor deze casus in overleg in welke categorie het valt."    
       },
       "outputTransparency": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden gelden er specifieke transparantie eisen volgens de AI-verordening (artikel 50). Mogelijk bevat de toepassing ook een 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI). Deze modellen moeten voldoen aan specifieke eisen voor GPAI. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of er sprake is van een GPAI model en of uw organisatie gebruiksverantwoordelijke of aanbieder is. "    
+        "default": "Op basis van uw antwoorden gelden er specifieke transparantie eisen volgens de AI-verordening (artikel 50). Mogelijk bevat de toepassing ook een 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI). Deze modellen moeten voldoen aan specifieke eisen voor GPAI. Bepaal in overleg met relevante juridische experts of er sprake is van een GPAI model en of uw organisatie gebruiksverantwoordelijke of aanbieder is. "    
+      },
+      "outputTransparencyExcept": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden gelden er specifieke transparantie eisen volgens de AI-verordening (artikel 50), maar er geldt mogelijk ook een uitzondering. Bepaal in overleg met relevante juridische experts of er daadwerkelijk een uitzondering geldt. Wanneer er geen uitzondering geldt, ga dan ook na of de toepassing een 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI) bevat en in dat geval ook of uw organisatie gebruiksverantwoordelijke of aanbieder is."    
       },
       "outputGPAI": {
         "type": "string",
         "title": "Uitslag",
-        "default": "Op basis van uw antwoorden is uw toepassing een zogenaamd 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI). Deze modellen moeten voldoen aan specifieke eisen voor GPAI. De omvang van de vereisten voor uw organisatie hangen af van de rol van uw organisatie voor dit model. Bepaal in overleg met relevante (juridische) experts binnen uw organisatie of er sprake is van een GPAI model en of uw organisatie gebruiksverantwoordelijke of aanbieder is."    
+        "default": "Op basis van uw antwoorden is uw toepassing een zogenaamd 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI). Deze modellen moeten voldoen aan specifieke eisen voor GPAI. De vereisten voor uw organisatie hangen af van de rol van uw organisatie voor dit model. Bepaal in overleg met relevante juridische experts of er sprake is van een GPAI model en of uw organisatie gebruiksverantwoordelijke of aanbieder is."    
+      },
+      "outputGPAIExcept": {
+        "type": "string",
+        "title": "Uitslag",
+        "default": "Op basis van uw antwoorden is uw toepassing een zogenaamd 'AI-model voor algemene doeleinden' (General Purpose AI model, GPAI), maar er geldt mogelijk ook een uitzondering. Bepaal in overleg met relevante juridische experts of er daadwerkelijk een uitzondering geldt.\n Wanneer er geen uitzondering geldt, gelden er specifieke eisen voor GPAI."    
       },
       "biometrics": {
         "title": "biometrics",
@@ -138,7 +148,8 @@
                     "default": ""
                   },
                   "infra": { "$ref": "#/definitions/infra" }
-                }
+                },
+                "required": ["III.1.1-yes4"]
               },
               {
                 "properties": {
@@ -427,7 +438,7 @@
                     ]
                   }
                 },
-                "required": ["III.2.2"]
+                "required": ["III.2.3"]
               }
             ]
           },
@@ -457,8 +468,7 @@
                     "enum": ["Nee"]
                   },
                   "education": { "$ref": "#/definitions/education" }
-                },
-                "required": ["III.2.2"]
+                }
               }
             ]
           },
@@ -488,8 +498,7 @@
                     "enum": ["Nee"]
                   },
                   "education": { "$ref": "#/definitions/education" }
-                },
-                "required": ["III.2.2"]
+                }
               }
             ]
           },
@@ -511,8 +520,7 @@
                     "enum": ["Ja"]
                   },
                   "education": { "$ref": "#/definitions/education" }
-                },
-                "required": ["III.2.2"]
+                }
               }
             ]
           }
@@ -2154,89 +2162,17 @@
         "title": "exceptionHigh",
         "type": "object",
         "properties": {  
-          "6.1": {
+          "2.6": {
             "type": "string",
-            "title": "Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen?",
+            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
             "enum": [
               "Ja",
               "Nee"
             ]
           }
         },
-        "required": ["6.1"],
+        "required": ["2.6"],
         "dependencies": {
-          "6.1": {
-            "oneOf": [
-              {
-                "properties": {
-                  "6.1": {
-                    "enum": [ "Ja" ]
-                  },
-                  "2.6": {
-                    "type": "string",
-                    "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
-                    "enum": [
-                      "Ja",
-                      "Nee"
-                    ]
-                  }
-                },
-                "required": ["2.6"]
-              },
-              {
-                "properties": {
-                  "6.1": {
-                    "enum": ["Nee"]
-                  },
-                  "6.2": {
-                    "type": "string",
-                    "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
-                    "enum": [
-                      "Ja, de toepassing wordt gebruikt voor een beperkte procedurele taak. Denk aan een AI-systeem dat ongestructureerde data omzet in gestructureerde data, een AI-systeem dat binnenkomende documenten classificeert in categorieën, of een AI-systeem dat wordt gebruikt om binnen een groot aantal aanvragen dubbels op te sporen.",
-                      "Ja, de toepassing wordt gebruikt om het resultaat van een eerder door een mens uitgevoerde activiteit te verbeteren. Denk aan een AI-systeem dat de taal van eerder opgestelde documenten verbetert, bijvoorbeeld met betrekking tot professionele toon of academische stijl, of door een tekst af te stemmen op een bepaalde merkboodschap.",
-                      "Ja, de toepassing wordt gebruikt om besluitvormingspatronen of afwijkingen van eerdere besluitvormingspatronen op te sporen. Denk aan een AI-systeem dat, nadat een set aan beslissingen is genomen, patronen in de besluitvorming analyseert zodat de menselijke beslissers hiervan kunnen leren.",
-                      "Ja, de toepassing wordt gebruikt in een voorbereidende stap, zonder invloed op de uitkomst. Denk aan slimme oplossingen voor bestandsbeheer, waaronder functies zoals indexering, opzoeking, tekst- en spraakverwerking, of het koppelen van gegevens aan andere gegevensbronnen, of AI-systemen die worden gebruikt voor de vertaling van brondocumenten.",
-                      "Nee"
-                    ]
-                  }
-                },
-                "required": ["6.2"]
-              }
-            ]
-          },
-          "6.2": {
-            "oneOf": [
-              {
-                "properties": {
-                  "6.2": {
-                    "enum": [ 
-                        "Ja, de toepassing wordt gebruikt voor een beperkte procedurele taak. Denk aan een AI-systeem dat ongestructureerde data omzet in gestructureerde data, een AI-systeem dat binnenkomende documenten classificeert in categorieën, of een AI-systeem dat wordt gebruikt om binnen een groot aantal aanvragen dubbels op te sporen.",
-                        "Ja, de toepassing wordt gebruikt om het resultaat van een eerder door een mens uitgevoerde activiteit te verbeteren. Denk aan een AI-systeem dat de taal van eerder opgestelde documenten verbetert, bijvoorbeeld met betrekking tot professionele toon of academische stijl, of door een tekst af te stemmen op een bepaalde merkboodschap.",
-                        "Ja, de toepassing wordt gebruikt om besluitvormingspatronen of afwijkingen van eerdere besluitvormingspatronen op te sporen. Denk aan een AI-systeem dat, nadat een set aan beslissingen is genomen, patronen in de besluitvorming analyseert zodat de menselijke beslissers hiervan kunnen leren.",
-                        "Ja, de toepassing wordt gebruikt in een voorbereidende stap, zonder invloed op de uitkomst. Denk aan slimme oplossingen voor bestandsbeheer, waaronder functies zoals indexering, opzoeking, tekst- en spraakverwerking, of het koppelen van gegevens aan andere gegevensbronnen, of AI-systemen die worden gebruikt voor de vertaling van brondocumenten." 
-                    ]
-                  },
-                  "output": { "$ref": "#/definitions/outputHighExcept" }
-                }
-              },
-              {
-                "properties": {
-                  "6.2": {
-                    "enum": ["Nee"]
-                  },
-                  "2.6": {
-                    "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
-                    "enum": [
-                      "Ja",
-                      "Nee"
-                    ]
-                  }
-                },
-                "required": ["2.6"]
-              }
-            ]
-          },
           "2.6": {
             "oneOf": [
               {
@@ -2322,7 +2258,8 @@
                       "Nee"
                     ]
                   }
-                }
+                },
+                "required": ["2.10"]
               }
             ]
           },
@@ -2341,8 +2278,72 @@
                   "2.10": {
                     "enum": ["Nee"]
                   },
+                  "6.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "6.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "6.1": {
+                    "enum": [ "Ja" ]
+                  },
                   "output": { "$ref": "#/definitions/outputHigh" }
                 }
+              },
+              {
+                "properties": {
+                  "6.1": {
+                    "enum": ["Nee"]
+                  },
+                  "6.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor beperkte procedurele taken of voorbereidende taken zonder invloed op de uitkomsten van een (beslissings)proces?",
+                    "enum": [
+                      "Ja, de toepassing wordt gebruikt voor een beperkte procedurele taak. Denk aan een AI-systeem dat ongestructureerde data omzet in gestructureerde data, een AI-systeem dat binnenkomende documenten classificeert in categorieën, of een AI-systeem dat wordt gebruikt om binnen een groot aantal aanvragen dubbels op te sporen.",
+                      "Ja, de toepassing wordt gebruikt om het resultaat van een eerder door een mens uitgevoerde activiteit te verbeteren. Denk aan een AI-systeem dat de taal van eerder opgestelde documenten verbetert, bijvoorbeeld met betrekking tot professionele toon of academische stijl, of door een tekst af te stemmen op een bepaalde merkboodschap.",
+                      "Ja, de toepassing wordt gebruikt om besluitvormingspatronen of afwijkingen van eerdere besluitvormingspatronen op te sporen. Denk aan een AI-systeem dat, nadat een set aan beslissingen is genomen, patronen in de besluitvorming analyseert zodat de menselijke beslissers hiervan kunnen leren.",
+                      "Ja, de toepassing wordt gebruikt in een voorbereidende stap, zonder invloed op de uitkomst. Denk aan slimme oplossingen voor bestandsbeheer, waaronder functies zoals indexering, opzoeking, tekst- en spraakverwerking, of het koppelen van gegevens aan andere gegevensbronnen, of AI-systemen die worden gebruikt voor de vertaling van brondocumenten.",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["6.2"]
+              }
+            ]
+          },
+          "6.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "6.2": {
+                    "enum": [ 
+                        "Ja, de toepassing wordt gebruikt voor een beperkte procedurele taak. Denk aan een AI-systeem dat ongestructureerde data omzet in gestructureerde data, een AI-systeem dat binnenkomende documenten classificeert in categorieën, of een AI-systeem dat wordt gebruikt om binnen een groot aantal aanvragen dubbels op te sporen.",
+                        "Ja, de toepassing wordt gebruikt om het resultaat van een eerder door een mens uitgevoerde activiteit te verbeteren. Denk aan een AI-systeem dat de taal van eerder opgestelde documenten verbetert, bijvoorbeeld met betrekking tot professionele toon of academische stijl, of door een tekst af te stemmen op een bepaalde merkboodschap.",
+                        "Ja, de toepassing wordt gebruikt om besluitvormingspatronen of afwijkingen van eerdere besluitvormingspatronen op te sporen. Denk aan een AI-systeem dat, nadat een set aan beslissingen is genomen, patronen in de besluitvorming analyseert zodat de menselijke beslissers hiervan kunnen leren.",
+                        "Ja, de toepassing wordt gebruikt in een voorbereidende stap, zonder invloed op de uitkomst. Denk aan slimme oplossingen voor bestandsbeheer, waaronder functies zoals indexering, opzoeking, tekst- en spraakverwerking, of het koppelen van gegevens aan andere gegevensbronnen, of AI-systemen die worden gebruikt voor de vertaling van brondocumenten." 
+                    ]
+                  },
+                  "output": { "$ref": "#/definitions/outputHighExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "6.2": {
+                    "enum": ["Nee"]
+                  },
+                  "output": { "$ref": "#/definitions/outputHigh" }
+                },
+                "required": ["2.6"]
               }
             ]
           }
@@ -2448,7 +2449,8 @@
                       "Nee"
                     ]
                   }
-                }
+                },
+                "required": ["2.10"]
               }
             ]
           },
@@ -2468,6 +2470,260 @@
                     "enum": ["Nee"]
                   },
                   "output": { "$ref": "#/definitions/outputForbidden" }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "exceptionTransparency": {
+        "title": "exceptionTransparency",
+        "type": "object",
+        "properties": {  
+          "2.6": {
+            "type": "string",
+            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["2.6"],
+        "dependencies": {
+          "2.6": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": [ "Ja" ]
+                  },
+                  "2.6-yes": {
+                    "type": "string",
+                    "title": "Geef een korte beschrijving van het onderzoek. Neem in deze beschrijving in ieder geval het doel van het onderzoek, binnen welke afdeling dit onderzoek gedaan wordt en betrokken onderzoeksinstituten en/of andere partners op.",
+                    "default": ""
+                  },
+                  "output": { "$ref": "#/definitions/outputTransparencyExcept" }
+                },
+                "required": ["2.6-yes"]
+              },
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.1"]
+              }
+            ]
+          },
+          "2.3.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.1": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputTransparencyExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.3.1": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.2"]
+              }
+            ]
+          },
+          "2.3.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputTransparencyExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": ["Nee"]
+                  },
+                  "2.10": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.10"]
+              }
+            ]
+          },
+          "2.10": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.10": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputTransparencyExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.10": {
+                    "enum": ["Nee"]
+                  },
+                  "output": { "$ref": "#/definitions/outputTransparency" }
+                }
+              }
+            ]
+          }
+        }
+      }, 
+      "exceptionGPAI": {
+        "title": "exceptionGPAI",
+        "type": "object",
+        "properties": {  
+          "2.6": {
+            "type": "string",
+            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+            "enum": [
+              "Ja",
+              "Nee"
+            ]
+          }
+        },
+        "required": ["2.6"],
+        "dependencies": {
+          "2.6": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": [ "Ja" ]
+                  },
+                  "2.6-yes": {
+                    "type": "string",
+                    "title": "Geef een korte beschrijving van het onderzoek. Neem in deze beschrijving in ieder geval het doel van het onderzoek, binnen welke afdeling dit onderzoek gedaan wordt en betrokken onderzoeksinstituten en/of andere partners op.",
+                    "default": ""
+                  },
+                  "output": { "$ref": "#/definitions/outputGPAIExcept" }
+                },
+                "required": ["2.6-yes"]
+              },
+              {
+                "properties": {
+                  "2.6": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.1": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.1"]
+              }
+            ]
+          },
+          "2.3.1": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.1": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputGPAIExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.3.1": {
+                    "enum": ["Nee"]
+                  },
+                  "2.3.2": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.3.2"]
+              }
+            ]
+          },
+          "2.3.2": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputGPAIExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.3.2": {
+                    "enum": ["Nee"]
+                  },
+                  "2.10": {
+                    "type": "string",
+                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "enum": [
+                      "Ja",
+                      "Nee"
+                    ]
+                  }
+                },
+                "required": ["2.10"]
+              }
+            ]
+          },
+          "2.10": {
+            "oneOf": [
+              {
+                "properties": {
+                  "2.10": {
+                    "enum": [ "Ja" ]
+                  },
+                  "output": { "$ref": "#/definitions/outputGPAIExcept" }
+                }
+              },
+              {
+                "properties": {
+                  "2.10": {
+                    "enum": ["Nee"]
+                  },
+                  "output": { "$ref": "#/definitions/outputGPAI" }
                 }
               }
             ]
@@ -2496,7 +2752,7 @@
                   "50.1": {
                     "enum": [ "Ja" ]
                   },
-                  "output": { "$ref": "#/definitions/outputTransparency" }
+                  "output": { "$ref": "#/definitions/exceptionTransparency" }
                 }
               },
               {
@@ -2524,12 +2780,12 @@
                   "50.2": {
                     "enum": [ "Ja" ]
                   },
-                  "output": { "$ref": "#/definitions/outputTransparency" }
+                  "output": { "$ref": "#/definitions/exceptionTransparency" }
                 }
               },
               {
                 "properties": {
-                  "50.1": {
+                  "50.2": {
                     "enum": ["Nee"]
                   },
                   "3.63": {
@@ -2552,7 +2808,7 @@
                   "3.63": {
                     "enum": [ "Ja" ]
                   },
-                  "output": { "$ref": "#/definitions/outputGPAI" }
+                  "output": { "$ref": "#/definitions/exceptionGPAI" }
                 }
               },
               {
@@ -2865,7 +3121,7 @@
     "2.3.1": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "**Let op:**  wanneer de toepassing ook gebruikt wordt voor andere activiteiten of doelen, kies dan 'nee'.  "
+      "ui:description": "**Let op:**  wanneer de toepassing ook gebruikt wordt voor andere activiteiten of doelen, kies dan 'nee'."
     },
     "2.3.2": {
       "ui:widget": "radio",
@@ -2875,11 +3131,11 @@
     "2.10": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Persoonlijk wil zeggen dat de toepassing niet namens een organisatie wordt ingezet.\nNiet-professioneel wil zeggen dat er geen geld wordt verdient en dat de toepassing niet wordt ingezet voor voor iemands beroep of bedrijf of voor zakenlijke of freelance activiteiten.\nOok vrijwilligerswerk is geen persoonlijke niet-professionele activiteit.\n\n**Let op:**  wanneer de toepassing ook gebruikt wordt voor professionele activiteiten, kies dan 'nee'.\nWanneer een persoon bijvoorbeeld persoonlijk gebruik maakt van een ChatGPT, maar ook af en toe voor diens werk, dan is er geen sprake van alleen persoonlijk, niet-professioneel gebruik."
+      "ui:description": "Nationale veiligheidsdoeleinden wil zeggen het voorkomen en bestraffen van activiteiten die grondwettelijke, politieke, economische of sociale structuren van een land ernstig kunnen destabiliseren. Denk daarbij aan  rechtstreekse bedreigingen voor de samenleving, de bevolking of de staat zelf, zoals terroristische activiteiten.\n\n**Let op:**  wanneer de toepassing ook gebruikt wordt voor andere activiteiten of doelen, zoals reguliere preventie, opsporing en onderzoek naar strafbare feiten, kies dan 'nee'."
     },
     "50.1": {
       "ui:widget": "radio",
-      "ui:description": "Persoonlijk wil zeggen dat de toepassing niet namens een organisatie wordt ingezet.\nNiet-professioneel wil zeggen dat er geen geld wordt verdient en dat de toepassing niet wordt ingezet voor voor iemands beroep of bedrijf of voor zakenlijke of freelance activiteiten.\nOok vrijwilligerswerk is geen persoonlijke niet-professionele activiteit.\n\n**Let op:**  wanneer de toepassing ook gebruikt wordt voor professionele activiteiten, kies dan 'nee'.\nWanneer een persoon bijvoorbeeld persoonlijk gebruik maakt van een ChatGPT, maar ook af en toe voor diens werk, dan is er geen sprake van alleen persoonlijk, niet-professioneel gebruik."
+      "ui:description": "Denk aan ChatGPT, telefonische AI klantservice en assitentie tools zoals co-pilot"
     }
     ,
     "50.2": {
