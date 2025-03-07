@@ -2865,7 +2865,7 @@
   "uiSchema": {
     "III.1": {
       "ui:widget": "radio",
-      "ui:description": "Biometrische gegevens zijn unieke kenmerken van een persoon zoals afbeeldingen of videobeelden van je gezicht, beelden van je iris(oog),  je vingerafdrukken, hoe je stem klinkt, je handschrift, en andere unieke kenmerken van je lichaam of gedrag. \n\nGetypte tekst is geen biometrische data, iemands unieke manier van typen (toetsaanslagen) wel."
+      "ui:description": "Biometrische gegevens zijn unieke kenmerken van een persoon zoals afbeeldingen of videobeelden van gezichten, irisscan, vingerafdrukken, stemgeluiden, handschrift en andere unieke kenmerken van lichamen of gedragingen. \n\nGetypte tekst is geen biometrische data, iemands unieke manier van typen (toetsaanslagen) wel."
     },
     "5.e.1": {
       "ui:widget": "radio"
