@@ -21,26 +21,28 @@ export default function ({
           {!activeLanguage && <LanguageSwitcher />}
         </div>
 
-        <div className="mb-4">
-          <p>{t("description1")}</p>
+        <div className="mb-4"> 
           <p>
-            {t("description2")}
+            {/* first sentence */}
+            {t("description1")}
             <a
               href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
               target="_blank"
             >
-              {t("source1")}
+              {t("AI_Act_link")}
             </a>
-            {t("description2_1")}
-            <i>{t("description2_2")} </i>
-            {t("description2_3")}
+            {/* second sentence */}
+            {t("description2")}
             <a
               href="https://algoritmes.pleio.nl/attachment/entity/f1a35292-7ea6-4e47-93fa-b3358e9ab2e0"
               target="_blank"
             >
-              {t("source2")}
+              {t("Handreiking_link")}
             </a>
-            {t("description2_4")}
+            {t("description3")}
+            {/* third sentence */}
+            {t("description4")}
+            {t("description5")}
           </p>
           <p>
             {t("feedback")}{" "}
