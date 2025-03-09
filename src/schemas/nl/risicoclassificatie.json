@@ -516,7 +516,7 @@
               },
               {
                 "properties": {
-                  "III.2.4": {
+                  "III.2.5": {
                     "enum": ["Ja"]
                   },
                   "education": { "$ref": "#/definitions/education" }

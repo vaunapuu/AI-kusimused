@@ -516,7 +516,7 @@
               },
               {
               "properties": {
-                "III.2.4": {
+                "III.2.5": {
                 "enum": ["Yes"]
                 },
                 "education": { "$ref": "#/definitions/education" }
@@ -1399,7 +1399,7 @@
           },
           "III.6.2": {
             "type": "string",
-            "title": "Is the application used as a lie detector or similar instrument?",
+            "title": "Is the application used as a polygraph (lie detector) or similar instrument?",
             "enum": [
               "Yes",
               "No"
@@ -1558,7 +1558,7 @@
                 },
                 "III.7.1": {
                 "type": "string",
-                "title": "Is the application used as a lie detector or similar instrument?",
+                "title": "Is the application used as a polygraph (lie detector) or similar instrument?",
                 "enum": [
                   "Yes",
                   "No"
@@ -1588,7 +1588,7 @@
                 },
                 "III.7.2": {
                 "type": "string",
-                "title": "Is the application used in the assessment of risks for a person entering or already in the Netherlands?",
+                "title": "Is the application used in the assessment of risks for a person entering territory of a member state of the European Union?",
                 "enum": [
                   "Yes",
                   "No"
@@ -2065,7 +2065,7 @@
                 },
                 "5.c.3": {
                 "type": "string",
-                "title": "Can the evaluation or estimation lead to adverse treatment for the evaluated person?",
+                "title": "Can the evaluation or estimation lead to unfavourable treatment for the evaluated person?",
                 "enum": [
                   "Yes",
                   "No"
@@ -2095,7 +2095,7 @@
                 },
                 "5.c.4": {
                 "type": "string",
-                "title": "Does it occur that the adverse treatment takes place in a completely different context than the behavior or personal characteristic on which the score is based?",
+                "title": "Does it occur that the unfavourable treatment takes place in a completely different context than the behavior or personal characteristic on which the score is based?",
                 "enum": [
                   "Yes",
                   "No"
@@ -2125,7 +2125,7 @@
                 },
                 "5.c.5": {
                 "type": "string",
-                "title": "Can it occur that the adverse treatment is not proportional to the exhibited behavior?",
+                "title": "Can it occur that the unfavourable treatment is not proportional to the exhibited behavior?",
                 "enum": [
                   "Yes",
                   "No"
@@ -3098,11 +3098,11 @@
     },
     "5.c.4": {
       "ui:widget": "radio",
-      "ui:description": "Adverse treatment in an unrelated context is, for example: a fraud risk score that leads to an investigation, where the fraud risk score is based on characteristics without clear relevance to the assessment of fraud, such as having a partner with a certain nationality, having an internet connection, behavior on social platforms, or performance at work.\nOther examples are not being able to get social housing due to traffic violations or being rejected for a job application because noise complaints were reported at the home address."
+      "ui:description": "Unfavourable treatment in an unrelated context is, for example, a fraud risk score that leads to an investigation, where the fraud risk score is based on characteristics without clear relevance to the assessment of fraud, such as having a partner with a certain nationality, having an internet connection, behavior on social platforms, or performance at work.\nOther examples are not being able to get social housing due to traffic violations or being rejected for a job application because noise complaints were reported at the home address."
     },
     "5.c.5": {
       "ui:widget": "radio",
-      "ui:description": "Disproportionate treatment is, for example: Someone gets a higher fraud risk score and therefore control because municipal taxes were once paid late. Other examples are a student not being admitted to further education because they were once caught cheating in childhood or a child not being eligible for Halt due to a high recidivism risk score because the child has a brother with a criminal record."
+      "ui:description": "Disproportionate treatment is, for example, Someone gets a higher fraud risk score and therefore control because municipal taxes were once paid late. Other examples are a student not being admitted to further education because they were once caught cheating in childhood or a child not being eligible for Halt due to a high recidivism risk score because the child has a brother with a criminal record."
     },
     "6.1": {
       "ui:widget": "radio",
