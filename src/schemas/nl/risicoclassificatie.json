@@ -2878,7 +2878,7 @@
     },
     "III.1.2": {
       "ui:widget": "radio",
-      "ui:description": "Bijvoorbeeld, je telefoon kijkt of je gezicht klopt met wat erin is opgeslagen om te ontgrendelen. Of bij de grens kijkt een camera of je gezicht overeenkomt met de foto in je paspoort.\nHet gaat hier om één-op-één verficatie van een persoon, met actieve betrokkenheid van die persoon."
+      "ui:description": "Bijvoorbeeld, je telefoon kijkt of je gezicht overeenkomt met eerder opgeslagen afbeeldingen van je gezicht om te ontgrendelen. Of bij de grens kijkt een camera of je gezicht overeenkomt met de foto in je paspoort.\nHet gaat hier om één-op-één verficatie van een persoon, met actieve betrokkenheid van die persoon."
     },
     "5.h.1": {
       "ui:widget": "radio"
@@ -2892,7 +2892,7 @@
     },
     "III.1.3": {
       "ui:widget": "radio",
-      "ui:description": "Denk bijvoorbeeld aan diensten zoals BaaS (Blurring as a Service), waarbij  gezichtsherkenning wordt gebruikt om gezichten in beelden te vervagen, of aan toegang tot een beveiligde computerserver met vingerafdrukken."
+      "ui:description": "Denk bijvoorbeeld aan een systeem dat videobeelden geanonimiseert door gezichten in beelden te vervagen met behulp van gezichtsherkenning, of aan toegang tot een beveiligde computerserver met vingerafdrukken"
     },
     "III.2.1": {
       "ui:widget": "radio"
@@ -2907,7 +2907,7 @@
     },
     "III.2.4": {
       "ui:widget": "radio",
-      "ui:description": "Een component met een veiligheidsfunctie is bedoeld om een risico weg te nemen of te verminderen.\n\nVoorbeelden van componenten met een veiligheidsfunctie zijn:\n- Een systeem dat automatisch een rijstrook voor een tunnel sluit bij drukte op de weg, om te voorkomen dat er file in de tunnel ontstaat\n- Brandalarminstallaties\n- Andere detectie- of alarmfuncties die reageren bij over-/onderdruk, temperatuur of spanning\n- Systemen om botsingen te vermijden in een voertuig, waarbij automatisch geremd wordt om een botsting te voorkomen (collision avoidance systems)\n- Firewall of antivirus software\n\nAls het falen of slecht funtioneren van de toepassing de gezondheid en veiligheid van personen of eigendom in gevaar brengt, kies dan ja."
+      "ui:description": "Een component met een veiligheidsfunctie is bedoeld om een risico weg te nemen of te verminderen.\n\nVoorbeelden van componenten met een veiligheidsfunctie zijn:\n- Brandalarminstallaties\n- Andere detectie- of alarmfuncties die reageren bij over-/onderdruk, temperatuur of spanning\n- Systemen om botsingen te vermijden in een voertuig, waarbij automatisch geremd wordt om een botsting te voorkomen (collision avoidance systems)\n- Een systeem dat automatisch een rijstrook voor een tunnel sluit bij drukte op de weg, om te voorkomen dat er file in de tunnel ontstaat\n- Firewall of antivirus software\n\nAls het falen of slecht funtioneren van de toepassing de gezondheid en veiligheid van personen of eigendom in gevaar brengt, kies dan ja."
     },
     "III.2.5": {
       "ui:widget": "radio",
@@ -3042,7 +3042,7 @@
     },
     "III.7.2": {
       "ui:widget": "radio",
-      "ui:description": "Denk aan een veiligheidsrisico of gezondheidsrisico dat een migrant of asielzoeker met zich meebrengt, zoals TBC-screening."
+      "ui:description": "Denk aan een veiligheidsrisico of gezondheidsrisico dat een migrant of asielzoeker met zich meebrengt, zoals tuberculose screening."
     },
     "III.7.3": {
       "ui:widget": "radio",
@@ -3126,12 +3126,12 @@
     "2.3.2": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Denk aan ChatGPT, telefonische AI klantservice en assitentie tools zoals co-pilot."
+      "ui:description": "Nationale veiligheidsdoeleinden wil zeggen het voorkomen en bestraffen van activiteiten die grondwettelijke, politieke, economische of sociale structuren van een land ernstig kunnen destabiliseren. Denk daarbij aan  rechtstreekse bedreigingen voor de samenleving, de bevolking of de staat zelf, zoals terroristische activiteiten.\n\n**Let op:**  wanneer de toepassing ook gebruikt wordt voor andere activiteiten of doelen, zoals reguliere preventie, opsporing en onderzoek naar strafbare feiten, kies dan 'nee'."
     },
     "2.10": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Nationale veiligheidsdoeleinden wil zeggen het voorkomen en bestraffen van activiteiten die grondwettelijke, politieke, economische of sociale structuren van een land ernstig kunnen destabiliseren. Denk daarbij aan  rechtstreekse bedreigingen voor de samenleving, de bevolking of de staat zelf, zoals terroristische activiteiten.\n\n**Let op:**  wanneer de toepassing ook gebruikt wordt voor andere activiteiten of doelen, zoals reguliere preventie, opsporing en onderzoek naar strafbare feiten, kies dan 'nee'."
+      "ui:description": "Persoonlijk wil zeggen dat de toepassing niet namens een organisatie wordt ingezet.\nNiet-professioneel wil zeggen dat er geen geld wordt verdient en dat de toepassing niet wordt ingezet voor voor iemands beroep of bedrijf of voor zakenlijke of freelance activiteiten. Ook vrijwilligerswerk is geen persoonlijke niet-professionele activiteit.\n\n**Let op:** wanneer de toepassing ook gebruikt wordt voor professionele activiteiten, kies dan 'nee'.\nWanneer een persoon bijvoorbeeld persoonlijk gebruik maakt van een ChatGPT, maar ook af en toe voor diens werk, dan is er geen sprake van alleen persoonlijk, niet-professioneel gebruik."
     },
     "50.1": {
       "ui:widget": "radio",
