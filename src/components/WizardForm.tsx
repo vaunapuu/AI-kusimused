@@ -35,9 +35,15 @@ const WizardForm = ({
     rootSchema: any
   ): GenericObjectType => {
     const flattenedProperties: any = {};
+    const requiredFields: string[] = [];
 
     // Helper to add properties from a schema object
     const addProperties = (schemaObject: any) => {
+      // Add required fields from this schema object
+      if (schemaObject.required) {
+        requiredFields.push(...schemaObject.required);
+      }
+
       // Handle regular properties
       Object.entries(schemaObject.properties || {}).forEach(
         ([key, value]: [string, any]) => {
@@ -79,6 +85,11 @@ const WizardForm = ({
                 data
               );
 
+              // Add required fields from the dependency schema
+              if (resolvedDependencySchema.required) {
+                requiredFields.push(...resolvedDependencySchema.required);
+              }
+
               // Add properties from the resolved dependency schema
               Object.entries(resolvedDependencySchema.properties || {}).forEach(
                 ([depKey, depValue]) => {
@@ -99,6 +110,7 @@ const WizardForm = ({
     return {
       ...resolvedSchema,
       properties: flattenedProperties,
+      required: requiredFields,
     };
   };
 
