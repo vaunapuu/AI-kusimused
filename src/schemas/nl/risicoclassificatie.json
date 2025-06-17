@@ -357,7 +357,7 @@
         "properties": {
           "III.2.1": {
             "type": "string",
-            "title": "Wordt de toepassing ingezet binnen infrastructuur of processen voor levering van gas, was, verwarming of elektriciteit?",
+            "title": "III.2.1 Wordt de toepassing ingezet binnen infrastructuur of processen voor levering van gas, water, verwarming of elektriciteit?",
             "enum": [
               "Ja",
               "Nee"
@@ -377,7 +377,7 @@
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
+                    "title": "III.2.4 Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -415,7 +415,7 @@
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
+                    "title": "III.2.4 Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -453,7 +453,7 @@
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
+                    "title": "III.2.4 Vervult de toepassing een veiligheidsfunctie binnen het beheer of de exploitatie van deze infrastructuur?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -483,7 +483,7 @@
                   },
                   "III.2.5": {
                     "type": "string",
-                    "title": "Is de toepassing een cybersecuritysysteem?",
+                    "title": "III.2.5 Is de toepassing een cybersecuritysysteem?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -1863,7 +1863,7 @@
         "properties": {  
           "5.a.1": {
             "type": "string",
-            "title": "Maakt de toepassing gebruik van audio, beeld of video technieken die personen niet bewust kunnen waarnemen?",
+            "title": "Maakt de toepassing gebruik van audio-, beeld- of videotechnieken die personen niet bewust kunnen waarnemen?",
             "enum": [
               "Ja",
               "Nee"
@@ -1883,7 +1883,7 @@
                   },
                   "5.a.2": {
                     "type": "string",
-                    "title": "Is de toepassing bedoelt om het gedrag of keuzes van personen te beinvloeden, om zo mensen een beslissing te laten nemen of dingen te laten doen of, die zij zonder de toepassing niet zouden doen?",
+                    "title": "Is de toepassing bedoeld om het gedrag of keuzes van personen te beïnvloeden, om zo mensen een beslissing te laten nemen of dingen te laten doen of, die zij zonder de toepassing niet zouden doen?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2164,7 +2164,7 @@
         "properties": {  
           "2.6": {
             "type": "string",
-            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+            "title": "2.6 Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
             "enum": [
               "Ja",
               "Nee"
@@ -2196,7 +2196,7 @@
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "title": "2.3.1 Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2224,7 +2224,7 @@
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "title": "2.3.2 Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2252,7 +2252,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "title": "2.10 Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2280,7 +2280,7 @@
                   },
                   "6.1": {
                     "type": "string",
-                    "title": "Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen?",
+                    "title": "2.10 Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2307,7 +2307,7 @@
                   },
                   "6.2": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor beperkte procedurele taken of voorbereidende taken zonder invloed op de uitkomsten van een (beslissings)proces?",
+                    "title": "6.2 Wordt de toepassing alleen gebruikt voor beperkte procedurele taken of voorbereidende taken zonder invloed op de uitkomsten van een (beslissings)proces?",
                     "enum": [
                       "Ja, de toepassing wordt gebruikt voor een beperkte procedurele taak. Denk aan een AI-systeem dat ongestructureerde data omzet in gestructureerde data, een AI-systeem dat binnenkomende documenten classificeert in categorieën, of een AI-systeem dat wordt gebruikt om binnen een groot aantal aanvragen dubbels op te sporen.",
                       "Ja, de toepassing wordt gebruikt om het resultaat van een eerder door een mens uitgevoerde activiteit te verbeteren. Denk aan een AI-systeem dat de taal van eerder opgestelde documenten verbetert, bijvoorbeeld met betrekking tot professionele toon of academische stijl, of door een tekst af te stemmen op een bepaalde merkboodschap.",
@@ -2355,7 +2355,7 @@
         "properties": {  
           "2.6": {
             "type": "string",
-            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+            "title": "2.6 Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
             "enum": [
               "Ja",
               "Nee"
@@ -2387,7 +2387,7 @@
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "title": "2.3.1 Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2415,7 +2415,7 @@
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "title": "2.3.2 Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2443,7 +2443,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "title": "2.10 Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2482,7 +2482,7 @@
         "properties": {  
           "2.6": {
             "type": "string",
-            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+            "title": "2.6 Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
             "enum": [
               "Ja",
               "Nee"
@@ -2514,7 +2514,7 @@
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "title": "2.3.1 Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2542,7 +2542,7 @@
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "title": "2.3.2 Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2570,7 +2570,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "title": "2.10 Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2609,7 +2609,7 @@
         "properties": {  
           "2.6": {
             "type": "string",
-            "title": "Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
+            "title": "2.6 Wordt deze toepassing alleen gebruikt voor wetenschappelijk onderzoek en wetenschappelijke ontwikkeling?",
             "enum": [
               "Ja",
               "Nee"
@@ -2641,7 +2641,7 @@
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
+                    "title": "2.3.1 Wordt de toepassing alleen gebruikt voor defensie of voor militaire doelen?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2669,7 +2669,7 @@
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden",
+                    "title": "2.3.2 Wordt de toepassing alleen gebruikt voor nationale veiligheidsdoeleinden?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2697,7 +2697,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
+                    "title": "2.10 Wordt de toepassing alleen gebruikt voor persoonlijke niet-professionele activiteiten?",
                     "enum": [
                       "Ja",
                       "Nee"
@@ -2827,7 +2827,7 @@
     "properties": {
       "III.1": {
         "type": "string",
-        "title": "Maakt de toepassing gebruik van biometrische gegevens?",
+        "title": "III.1 Maakt de toepassing gebruik van biometrische gegevens?",
         "enum": [
           "Ja",
           "Nee"
