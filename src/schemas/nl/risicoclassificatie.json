@@ -2280,7 +2280,7 @@
                   },
                   "6.1": {
                     "type": "string",
-                    "title": "2.10 Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen?",
+                    "title": "6.1 Wordt de toepassing gebruikt om geautomatiseerd kenmerken, gedrag of persoonlijke aspecten te evalueren of voorspellen?",
                     "enum": [
                       "Ja",
                       "Nee"
