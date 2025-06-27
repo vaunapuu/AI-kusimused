@@ -1,61 +1,61 @@
 {
   "JSONSchema": {
-    "title": "Riski klassifitseerimine AI süsteemidele",
+    "title": "Tehisarusüsteemide riskiklassifikatsioon",
     "type": "object",
     "definitions": {
-      "outputLow": {
+      "tulemusMadal": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, no requirements from the AI Act apply."
+        "default": "Esitatud vastuste põhjal teie asutuse süsteemile EL tehisaru määrus ei laiene"
       },
-      "outputHigh": {
+      "tulemusKõrge": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application is a high-risk AI system according to the AI Act. Your AI system must comply with the requirements for high-risk AI systems. The extent of the requirements for your organization depends on your organization's role for this application. Determine in consultation with relevant legal experts whether your organization is a user or provider."
+        "default": "Esitatud vastuste alusel on teie lahendus EL tehisaru määruse mõistes kõrge riskiga süsteem ning see peab täitma kõrge riskiga süsteemidele kehtivaid nõudeid. Nende nõuete täpne ulatus sõltub sellest, kas teie organisatsioon on selle tehisaru süsteemi kasutaja või pakkuja. Arutage õigusekspertidega, kumba rolli teie asutus antud juhul täidab."
       },
-      "outputForbidden": {
+      "tulemusKeelatud": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application (partially) meets the definition of a prohibited AI system according to the AI Act. Since this is the highest risk category, which means the application should not be used, we cannot and do not want to determine this based on a questionnaire. Engage legal expertise to determine in consultation which category this case falls into."
+        "default": "Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse. Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse. Kuna tegemist on kõrgeima riskitasemega (süsteemi kasutamine keelatud), ei piisa lõpliku hinnangu andmiseks küsimustiku tulemustest. Vajalik on detailne õiguslik analüüs - konsulteerige spetsialistidega."
       },
-      "outputHighExcept": {
+      "tulemusKõrgeErandiga": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application is a high-risk AI system according to the AI Act, but there may also be an exception. Determine in consultation with relevant legal experts whether an exception actually applies. If there is no exception, your AI system must comply with the requirements for high-risk AI systems."
+        "default": "Teie lahendus liigitub kõrge riskiga tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Kindluse saamiseks konsulteeriga õiguseksperdiga. Kui erand ei kehti, tuleb järgida EL määruses kehtestatud kõrge riskiga süsteemidele ette nähtud kohustusi."
       },
-      "outputForbiddenExcept": {
+      "tulemusKeelatudErandiga": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application (partially) meets the definition of a prohibited AI system according to the AI Act, but there may also be an exception. Determine in consultation with relevant legal experts whether an exception actually applies. If not, determine in consultation which category this case falls into."
+        "default": "Teie lahendus liigitub (osaliselt) keelatud tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Täpseks hindamiseks konsulteerige õiguseksperdiga. Kui erand ei kehti,  määratlege, millisesse kategooriasse see juhtum kuulub."
       },
-      "outputTransparency": {
+      "tulemusLäbipaistvus": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, specific transparency requirements apply according to the AI Act (Article 50). The application may also contain a 'General Purpose AI model' (GPAI). These models must comply with specific requirements for GPAI. Determine in consultation with relevant legal experts whether a GPAI model is involved and whether your organization is a user or provider."
+        "default": "Esitatud vastuste järgi peab teie süsteem täitma EL tehisarumääruse artikli 50 läbipaistvusnõudeid. Teie lahenduses võib olla kasutusel üldotstarbeline tehisaru mudel (General Purpose AI - GPAI), millele kehtivad eraldi nõuded. Nende nõuete täitmine on kohustuslik. Pöörduge juristide poole, et välja selgitada: 1) kas kasutate GPAI mudelit, 2) milline on teie roll - kasutaja või teenusepakkuja."
       },
-      "outputTransparencyExcept": {
+      "tulemusLäbipaistvusErandiga": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, specific transparency requirements apply according to the AI Act (Article 50), but there may also be an exception. Determine in consultation with relevant legal experts whether an exception actually applies. If there is no exception, also check whether the application contains a 'General Purpose AI model' (GPAI) and whether your organization is a user or provider."
+        "default": "Teie lahendus võib vajada EL määruse artikli 50 läbipaistvusnõuete täitmist, kuid võimalike erandite kohalduvust tuleb hinnata koos õigusekspertidega. Kui erand ei kehti, tuleb järgmisena välja selgitada: 1) kas kasutate GPAI-mudelit, 2) milline on teie asutuse roll - kasutaja või pakkuja)."
       },
-      "outputGPAI": {
+      "tulemusGPAI": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application is a so-called 'General Purpose AI model' (GPAI). These models must comply with specific requirements for GPAI. The requirements for your organization depend on your organization's role for this model. Determine in consultation with relevant legal experts whether a GPAI model is involved and whether your organization is a user or provider."
+        "default": "Teie lahendus liigitub üldotstarbeliseks tehisarumudeliks (GPAI) ja peab seetõttu täitma EL tehisarumääruses kehtestatud spetsiifilisi nõudeid. Teie asutuse kohustuste täpne ulatus sõltub GPAI-mudeli olemusest ning teie rollist - kas tegutsete mudeli kasutaja või teenusepakkuja positsioonis. Nende aspektide selgitamiseks soovitame pöörduda õigusekspertide poole."
       },
-      "outputGPAIExcept": {
+      "tulemusGPAIErandiga": {
         "type": "string",
         "title": "Result",
-        "default": "Based on your answers, your application is a so-called 'General Purpose AI model' (GPAI), but there may also be an exception. Determine in consultation with relevant legal experts whether an exception actually applies. If there is no exception, specific requirements for GPAI apply."
+        "default": "Esitatud vastuste järgi liigitub teie lahendus GPAI-mudeliks, kuid EL määrus võib lubada erandeid. Erandite kontrollimiseks pöörduge õiguseksperdi poole. Erandite puudumisel kehtivad GPAI-mudelitele ette nähtud erinõuded."
       },
-      "biometrics": {
+      "biomeetrika": {
         "title": "biometrics",
         "type": "object",
         "properties": {
           "5.e.1": {
             "type": "string",
-            "title": "Is the application used to create or expand a facial recognition database?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse näotuvastussüsteemi loomiseks või laiendamiseks?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["5.e.1"],
@@ -65,16 +65,16 @@
               {
                 "properties": {
                   "5.e.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.1.1": {
                     "type": "string",
-                    "title": "What are biometric data used for?",
+                    "title": "Mis otstarbel biomeetrilisi andmeid kasutatakse?",
                     "enum": [
-                      "For remote identification. Identification is about discovering who someone is from a group of people. For example, if you have a photo of a face, you can try to find out who that person is by comparing the photo with a database of faces. 'Remote' means that this identification takes place without the active involvement of the person being identified.",
-                      "For categorizing (labeling) people. This means that people are grouped or assigned a label based on certain characteristics, such as how they look or behave. For example, if an application labels people as 'shoplifters' or makes an estimate of someone's gender based on video images.",
-                      "To recognize or infer emotions or intentions. Emotions include happiness, joy, sadness, anger, aggression, surprise, disgust, shyness, excitement, shame, contempt, satisfaction, and pleasure.",
-                      "For another purpose, such as crowd management where no individual persons are identified or classified with AI, or verification of a passport photo on location, with the cooperation of the person being identified."
+                      "Kaugtuvastuseks. Tuvastamine tähendab isiku kindlakstegemist teiste inimeste hulgast. Näiteks saab isikut tuvastada näofoto alusel, võrreldes seda olemasoleva nägude andmebaasiga. Kaugtuvastus tähendab, et isikutuvastus toimub ilma tuvastatava inimese aktiivse osaluseta, nt kaamerapildi või heli põhjal.",
+                      "Inimeste kategoriseerimiseks (märgendamiseks). See tähendab isikute rühmitamist või neile märgendi (ing k label) omistamist kindlate tunnuste alusel, näiteks välimuse või käitumismustrite põhjal. Näiteks võib lahendus määrata inimesele märgendi 'poevaras' või hinnata tema sugu videopildi alusel.",
+                      "Emotsioonide või kavatsuste tuvastamiseks. Emotsioonide hulka kuuluvad näiteks rõõm, kurbus, viha, agressiivsus, üllatus, vastikus, häbelikkus, erutus, häbi, põlgus, rahulolu ja nauding.",
+                      "Muul eesmärgil, näiteks rahvahulga juhtimiseks, kus tehisaru ei tuvasta ega klassifitseeri konkreetseid isikuid, või passifoto kontrollimiseks kohapeal koostöös inimesega, keda tuvastatakse."
                     ]
                   }
                 },
@@ -83,12 +83,12 @@
               {
                 "properties": {
                   "5.e.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "5.e.2": {
                     "type": "string",
-                    "title": "Is the application used for large-scale collection of facial images from the internet or security camera footage (scraping)?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse näopiltide ulatuslikuks kogumiseks internetist või turvakaamerate salvestistest, kasutades automaatset andmekogumist (ing k scraping)?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.e.2"]
@@ -100,7 +100,7 @@
               {
                 "properties": {
                   "5.e.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -110,16 +110,16 @@
               {
                 "properties": {
                   "5.e.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.1.1": {
                     "type": "string",
-                    "title": "What are biometric data used for?",
+                    "title": "Milleks biomeetrilisi andmeid kasutatakse?",
                     "enum": [
-                      "For remote identification. Identification is about discovering who someone is from a group of people. For example, if you have a photo of a face, you can try to find out who that person is by comparing the photo with a database of faces. 'Remote' means that this identification takes place without the active involvement of the person being identified.",
-                      "For categorizing (labeling) people. This means that people are grouped or assigned a label based on certain characteristics, such as how they look or behave. For example, if an application labels people as 'shoplifters' or makes an estimate of someone's gender based on video images.",
-                      "To recognize or infer emotions or intentions. Emotions include happiness, joy, sadness, anger, aggression, surprise, disgust, shyness, excitement, shame, contempt, satisfaction, and pleasure.",
-                      "For another purpose, such as crowd management where no individual persons are identified or classified with AI, or verification of a passport photo on location, with the cooperation of the person being identified."
+                      "Kaugtuvastuseks. Tuvastamine tähendab isiku kindlakstegemist teiste inimeste hulgast. Näiteks saab isikut tuvastada näofoto alusel, võrreldes seda olemasoleva nägude andmebaasiga. Kaugtuvastus tähendab, et isikutuvastus toimub ilma tuvastatava inimese aktiivse osaluseta, nt kaamerapildi või heli põhjal. Kaugtuvastus tähendab, et isikutuvastus toimub ilma tuvastatava inimese aktiivse osaluseta, nt kaamerapildi või heli põhjal.",
+                      "Inimeste kategoriseerimiseks (märgendamiseks). Kategoriseerimine tähendab isikute rühmitamist või neile märgendi (ing k label) omistamist kindlate tunnuste alusel, näiteks välimuse või käitumismustrite põhjal. Näiteks võib lahendus määrata inimesele märgendi 'poevaras' või hinnata tema sugu videopildi alusel.",
+                      "Emotsioonide või kavatsuste tuvastamiseks. Emotsioonide hulka kuuluvad näiteks rõõm, kurbus, viha, agressiivsus, üllatus, vastikus, häbelikkus, erutus, häbi, põlgus, rahulolu ja nauding.",
+                      "Muul eesmärgil, näiteks rahvahulga juhtimiseks, kus tehisaru ei tuvasta ega klassifitseeri konkreetseid isikuid, või passifoto kontrollimiseks kohapeal koostöös inimesega, keda tuvastatakse."
                     ]
                   }
                 },
@@ -133,12 +133,12 @@
                 "properties": {
                   "III.1.1": {
                     "enum": [
-                      "For another purpose, such as crowd management where no individual persons are identified or classified with AI, or verification of a passport photo on location, with the cooperation of the person being identified."
+                      "Muul eesmärgil, näiteks rahvahulga juhtimiseks, kus tehisaru ei tuvasta ega klassifitseeri konkreetseid isikuid, või passifoto kontrollimiseks kohapeal koostöös inimesega, keda tuvastatakse."
                     ]
                   },
                   "III.1.1-yes4": {
                     "type": "string",
-                    "title": "How are biometric data used? Provide a brief description of the process and how it affects citizens or officials.",
+                    "title": "Kuidas biomeetrilisi andmeid kasutatakse? Kirjelda lühidalt protsessi ja selle mõju kodanikele või ametnikele.",
                     "default": ""
                   },
                   "infra": { "$ref": "#/definitions/infra" }
@@ -149,13 +149,13 @@
                 "properties": {
                   "III.1.1": {
                     "enum": [
-                      "For remote identification. Identification is about discovering who someone is from a group of people. For example, if you have a photo of a face, you can try to find out who that person is by comparing the photo with a database of faces. 'Remote' means that this identification takes place without the active involvement of the person being identified."
+                      "Kaugtuvastuseks. Tuvastamine tähendab isiku kindlakstegemist teiste inimeste hulgast. Näiteks saab isikut tuvastada näofoto alusel, võrreldes seda olemasoleva nägude andmebaasiga. Kaugtuvastus tähendab, et isikutuvastus toimub ilma tuvastatava inimese aktiivse osaluseta, nt kaamerapildi või heli põhjal."
                     ]
                   },
                   "III.1.2": {
                     "type": "string",
-                    "title": "Is the application only used to confirm that someone is who they say they are (verification/authentication)?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas teie lahenduse ainus eesmärk on isikusamasuse kinnitamine, st isiku autentimine või verifitseerimine?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.1.2"]
@@ -164,13 +164,13 @@
                 "properties": {
                   "III.1.1": {
                     "enum": [
-                      "To recognize or infer emotions or intentions. Emotions include happiness, joy, sadness, anger, aggression, surprise, disgust, shyness, excitement, shame, contempt, satisfaction, and pleasure."
+                      "Emotsioonide või kavatsuste tuvastamiseks. Emotsioonide hulka kuuluvad näiteks rõõm, kurbus, viha, agressiivsus, üllatus, vastikus, häbelikkus, erutus, häbi, põlgus, rahulolu ja nauding."
                     ]
                   },
                   "5.f.1": {
                     "type": "string",
-                    "title": "Is the application used in the workplace or in education?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse töökohal või hariduses?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.f.1"]
@@ -179,13 +179,13 @@
                 "properties": {
                   "III.1.1": {
                     "enum": [
-                      "For categorizing (labeling) people. This means that people are grouped or assigned a label based on certain characteristics, such as how they look or behave. For example, if an application labels people as 'shoplifters' or makes an estimate of someone's gender based on video images."
+                      "Inimeste kategoriseerimiseks (märgendamiseks). Kategoriseerimine tähendab isikute rühmitamist või neile märgendi (ing k label) omistamist kindlate tunnuste alusel, näiteks välimuse või käitumismustrite põhjal. Näiteks võib lahendus määrata inimesele märgendi 'poevaras' või hinnata tema sugu videopildi alusel."
                     ]
                   },
                   "5.g.1": {
                     "type": "string",
-                    "title": "Is the application used to estimate someone's race, ethnicity or origin, political opinions, membership of a trade union, religious or philosophical beliefs, sex life or sexual orientation?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus kasutatakse kellegi rassi, etnilise päritolu, poliitiliste vaadete, ametiühingusse kuulumise, usuliste või filosoofiliste veendumuste, seksuaalelu või seksuaalse sättumuse hindamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.g.1"]
@@ -197,7 +197,7 @@
               {
                 "properties": {
                   "III.1.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "infra": { "$ref": "#/definitions/infra" }
                 }
@@ -205,12 +205,12 @@
               {
                 "properties": {
                   "III.1.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "5.h.1": {
                     "type": "string",
-                    "title": "Is the application used for public safety, preventing, investigating or prosecuting criminal offenses, or executing sentences (community service or imprisonment)?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse avaliku julgeoleku tagamiseks, sh kuritegude ennetamiseks, uurimiseks või süüdistuse esitamiseks või karistuste (nt ühiskondlik kasulik töö või vangistus) täideviimiseks)?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.h.1"]
@@ -222,7 +222,7 @@
               {
                 "properties": {
                   "5.h.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -232,12 +232,12 @@
               {
                 "properties": {
                   "5.h.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.1.3": {
                     "type": "string",
-                    "title": "Is the application only used to support cybersecurity and data protection?",
-                    "enum": ["Yes, this is the only purpose", "No"]
+                    "title": "Kas lahendust kasutatakse üksnes küberturbe ja andmekaitse eesmärgil?",
+                    "enum": ["Jah, see on lahenduse ainus eesmärk", "Ei"]
                   }
                 },
                 "required": ["III.1.3"]
@@ -249,7 +249,7 @@
               {
                 "properties": {
                   "5.g.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -259,12 +259,12 @@
               {
                 "properties": {
                   "5.g.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.1.3": {
                     "type": "string",
-                    "title": "Is the application only used to support cybersecurity and data protection?",
-                    "enum": ["Yes, this is the only purpose", "No"]
+                    "title": "Kas lahendust kasutatakse üksnes küberturbe ja andmekaitse eesmärgil?",
+                    "enum": ["Jah, see on lahenduse ainus eesmärk", "Ei"]
                   }
                 },
                 "required": ["III.1.3"]
@@ -276,7 +276,7 @@
               {
                 "properties": {
                   "5.f.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -286,12 +286,12 @@
               {
                 "properties": {
                   "5.f.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.1.3": {
                     "type": "string",
-                    "title": "Is the application only used to support cybersecurity and data protection?",
-                    "enum": ["Yes, this is the only purpose", "No"]
+                    "title": "Kas lahendust kasutatakse üksnes küberturbe ja andmekaitse eesmärgil?",
+                    "enum": ["Jah, see on lahenduse ainus eesmärk", "Ei"]
                   }
                 },
                 "required": ["III.1.3"]
@@ -303,7 +303,7 @@
               {
                 "properties": {
                   "III.1.3": {
-                    "enum": ["Yes, this is the only purpose"]
+                    "enum": ["Jah, see on lahenduse ainus eesmärk"]
                   },
                   "infra": { "$ref": "#/definitions/infra" }
                 }
@@ -311,7 +311,7 @@
               {
                 "properties": {
                   "III.1.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -326,8 +326,8 @@
         "properties": {
           "III.2.1": {
             "type": "string",
-            "title": "Is the application used within infrastructure or processes for the supply of gas, water, heating, or electricity?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse gaasi, vee, kütte või elektri varustamise taristutes või protsessides?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.2.1"],
@@ -337,12 +337,12 @@
               {
                 "properties": {
                   "III.2.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Does the application fulfill a safety function within the management or operation of this infrastructure?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus aitab tagada selle taristu juhtimise või toimimise ohutust?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.2.4"]
@@ -350,12 +350,12 @@
               {
                 "properties": {
                   "III.2.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.2.2": {
                     "type": "string",
-                    "title": "Is the application used for the management or operation of roads, bridges, or road traffic?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse teede, sildade või liikluse juhtimise või toimimise tagamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.2.2"]
@@ -367,12 +367,12 @@
               {
                 "properties": {
                   "III.2.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Does the application fulfill a safety function within the management or operation of this infrastructure?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus aitab tagada selle taristu juhtimise või toimimise ohutust?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.2.4"]
@@ -380,12 +380,12 @@
               {
                 "properties": {
                   "III.2.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.2.3": {
                     "type": "string",
-                    "title": "Is the application used within critical digital infrastructure?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on osa kriitilise tähtsusega digitaristust?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.2.3"]
@@ -397,12 +397,12 @@
               {
                 "properties": {
                   "III.2.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Does the application fulfill a safety function within the management or operation of this infrastructure?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus aitab tagada taristu juhtimise või toimimise ohutust?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.2.4"]
@@ -410,7 +410,7 @@
               {
                 "properties": {
                   "III.2.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "education": { "$ref": "#/definitions/education" }
                 }
@@ -422,12 +422,12 @@
               {
                 "properties": {
                   "III.2.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.2.5": {
                     "type": "string",
-                    "title": "Is the application a cybersecurity system?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus täidab küberturbe süsteemi rolli?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.2.5"]
@@ -435,7 +435,7 @@
               {
                 "properties": {
                   "III.2.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "education": { "$ref": "#/definitions/education" }
                 }
@@ -447,7 +447,7 @@
               {
                 "properties": {
                   "III.2.5": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -455,7 +455,7 @@
               {
                 "properties": {
                   "III.2.5": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "education": { "$ref": "#/definitions/education" }
                 }
@@ -464,14 +464,14 @@
           }
         }
       },
-      "education": {
-        "title": "education",
+      "haridus": {
+        "title": "haridus",
         "type": "object",
         "properties": {
           "III.3": {
             "type": "string",
-            "title": "Is the application used in the domain of education and (vocational) training?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse hariduse või kutseõppe valdkonnas?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.3"],
@@ -481,12 +481,12 @@
               {
                 "properties": {
                   "III.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.3.1": {
                     "type": "string",
-                    "title": "Is the application used for the allocation or admission of individuals to education, training, or schooling?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse hariduse, koolituse või õppeasutustesse suunamise või vastuvõtu otsuste tegemisel?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.3.1"]
@@ -494,7 +494,7 @@
               {
                 "properties": {
                   "III.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "work": { "$ref": "#/definitions/work" }
                 }
@@ -506,12 +506,12 @@
               {
                 "properties": {
                   "III.3.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.3.2": {
                     "type": "string",
-                    "title": "Is the application used in assessing the level of education that someone will receive or have access to?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus aitab hinnata, millisele haridustasemele on inimesel juurdepääs või millise taseme hariduse ta saab?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.3.2"]
@@ -519,7 +519,7 @@
               {
                 "properties": {
                   "III.3.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -531,12 +531,12 @@
               {
                 "properties": {
                   "III.3.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.3.3": {
                     "type": "string",
-                    "title": "Is the application used for evaluating learning outcomes or for guiding the learning process (personalized learning)?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse õpitulemuste hindamiseks või õppeprotsessi suunamiseks (nt personaliseeritud õpe)?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.3.3"]
@@ -544,7 +544,7 @@
               {
                 "properties": {
                   "III.3.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -556,12 +556,12 @@
               {
                 "properties": {
                   "III.3.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.3.4": {
                     "type": "string",
-                    "title": "Is the application used for monitoring and detecting unauthorized behavior of pupils, students, or trainees?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse õpilaste, üliõpilaste või koolitatavate ebasobiva käitumise jälgimiseks ja tuvastamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.3.4"]
@@ -569,7 +569,7 @@
               {
                 "properties": {
                   "III.3.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -581,7 +581,7 @@
               {
                 "properties": {
                   "III.3.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "work": { "$ref": "#/definitions/work" }
                 }
@@ -589,7 +589,7 @@
               {
                 "properties": {
                   "III.3.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -598,14 +598,14 @@
           }
         }
       },
-      "work": {
-        "title": "work",
+      "töö": {
+        "title": "töö",
         "type": "object",
         "properties": {
           "III.4": {
             "type": "string",
-            "title": "Is the application applied to employees (including freelancers, external staff, interns, volunteers, etc.), applicants, or job seekers?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse töötajate (sh vabakutseliste, väliste koostööpartnerite, praktikantide, vabatahtlike jne), tööle kandideerijate või tööotsijate puhul?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.4"],
@@ -615,12 +615,12 @@
               {
                 "properties": {
                   "III.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.4.1": {
                     "type": "string",
-                    "title": "Is the application used in the field of recruitment and selection?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse värbamisel ja töötajate valiku tegemisel?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.1"]
@@ -628,7 +628,7 @@
               {
                 "properties": {
                   "III.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "essentialservices1": {
                     "$ref": "#/definitions/essentialservices1"
@@ -642,12 +642,12 @@
               {
                 "properties": {
                   "III.4.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.4.2": {
                     "type": "string",
-                    "title": "Is the application used for placing targeted job advertisements?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse tööpakkumiste suunamiseks kindlatele sihtgruppidele?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.2"]
@@ -655,7 +655,7 @@
               {
                 "properties": {
                   "III.4.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "work2": { "$ref": "#/definitions/work2" }
                 }
@@ -667,12 +667,12 @@
               {
                 "properties": {
                   "III.4.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.4.3": {
                     "type": "string",
-                    "title": "Is the application used for analyzing or filtering applications?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse kandideerimisavalduste hindamiseks ja eelvalikuks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.3"]
@@ -680,7 +680,7 @@
               {
                 "properties": {
                   "III.4.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -692,12 +692,12 @@
               {
                 "properties": {
                   "III.4.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.4.4": {
                     "type": "string",
-                    "title": "Is the application used in assessing candidates?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse tööle kandideerijate hindamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.4"]
@@ -705,7 +705,7 @@
               {
                 "properties": {
                   "III.4.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -717,7 +717,7 @@
               {
                 "properties": {
                   "III.4.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "work2": { "$ref": "#/definitions/work2" }
                 }
@@ -725,7 +725,7 @@
               {
                 "properties": {
                   "III.4.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -734,14 +734,14 @@
           }
         }
       },
-      "work2": {
-        "title": "work2",
+      "töö2": {
+        "title": "töö2",
         "type": "object",
         "properties": {
           "III.4.5": {
             "type": "string",
-            "title": "Is the application used for decisions regarding (changed) contractual terms, or for selection or assessment regarding promotions or changed positions?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse lepingutingimuste või nende muutmise otsuste tegemisel või ametikõrgenduste ja ametikoha muutustega seotud valikute või hindamiste jaoks?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.4.5"],
@@ -751,12 +751,12 @@
               {
                 "properties": {
                   "III.4.5": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.4.6": {
                     "type": "string",
-                    "title": "Is the application used in the area of employee outflow?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse töötajate lahkumisega seotud küsimustes?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.6"]
@@ -764,7 +764,7 @@
               {
                 "properties": {
                   "III.4.5": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -776,12 +776,12 @@
               {
                 "properties": {
                   "III.4.6": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.4.7": {
                     "type": "string",
-                    "title": "Is the application used in processes where the distribution of tasks is determined?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse protsessides, kus otsustatakse tööülesannete jaotamise üle?",
+                    "enum": ["Jah", "No"]
                   }
                 },
                 "required": ["III.4.7"]
@@ -789,7 +789,7 @@
               {
                 "properties": {
                   "III.4.6": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -805,8 +805,8 @@
                   },
                   "III.4.8": {
                     "type": "string",
-                    "title": "Is the application used in processes where activities, behavior, or performance of employees are processed?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse protsessides, kus analüüsitakse või hinnatakse töötajate tegevusi, käitumismustreid või tulemuslikkust?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.8"]
@@ -814,7 +814,7 @@
               {
                 "properties": {
                   "III.4.7": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -826,12 +826,12 @@
               {
                 "properties": {
                   "III.4.8": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.4.9": {
                     "type": "string",
-                    "title": "Is there evaluation or monitoring of behavior or performance in this process, or in related processes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas selle protsessi või sellega seonduvate protsesside käigus hinnatakse või jälgitakse käitumist või tulemuslikkust?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.9"]
@@ -839,7 +839,7 @@
               {
                 "properties": {
                   "III.4.8": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "essentialservices1": {
                     "$ref": "#/definitions/essentialservices1"
@@ -853,7 +853,7 @@
               {
                 "properties": {
                   "III.4.9": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 },
@@ -862,7 +862,7 @@
               {
                 "properties": {
                   "III.4.9": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "essentialservices1": {
                     "$ref": "#/definitions/essentialservices1"
@@ -874,13 +874,13 @@
         }
       },
       "essentialservices1": {
-        "title": "essentialservices1",
+        "title": "olulisedteenused",
         "type": "object",
         "properties": {
           "III.5.1": {
             "type": "string",
-            "title": "Is the application used by or on behalf of a government agency?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutab valitsusasutus või selle volitatud esindaja?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.5.1"],
@@ -890,12 +890,12 @@
               {
                 "properties": {
                   "III.5.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.5.2": {
                     "type": "string",
-                    "title": "Is the application used in processes for benefits, allowances, (special) assistance, or other financial provisions?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse toetuste, hüvitiste, (eri)abi või teiste rahaliste vahendite määramisel?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.5.2"]
@@ -903,7 +903,7 @@
               {
                 "properties": {
                   "III.5.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "essentialservices2": {
                     "$ref": "#/definitions/essentialservices2"
@@ -917,12 +917,12 @@
               {
                 "properties": {
                   "III.5.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.5.3": {
                     "type": "string",
-                    "title": "Is the application used in processes for (social) services or provisions, such as debt counseling, reintegration services, shelters, care, assistance, or provisions for disability or old age?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse (sotsiaal)teenuste osutamisel, sealhulgas võlanõustamine, tööellu naasmise toetamine, varjupaigad, hooldamine, abistamine või puuete ja vanadusega seotud teenused?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.5.3"]
@@ -930,12 +930,12 @@
               {
                 "properties": {
                   "III.5.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.5.4": {
                     "type": "string",
-                    "title": "Is the application used in a process to assess whether someone is eligible for a service, provision, or benefit?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendusega hinnatakse isiku õigust teenusele, soodustustele või toetusele?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.5.4"]
@@ -947,7 +947,7 @@
               {
                 "properties": {
                   "III.5.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "essentialservices2": {
                     "$ref": "#/definitions/essentialservices2"
@@ -957,12 +957,12 @@
               {
                 "properties": {
                   "III.5.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.5.4": {
                     "type": "string",
-                    "title": "Is the application used in a process to assess whether someone is eligible for a service, provision, or benefit?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendusega hinnatakse isiku õigust teenusele, soodustustele või toetusele??",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.5.4"]
@@ -974,12 +974,12 @@
               {
                 "properties": {
                   "III.5.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.5.5": {
                     "type": "string",
-                    "title": "Is the application used to decide whether a service, provision, or benefit is granted, denied, limited, withdrawn, or reclaimed?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendusega tehakse otsuseid teenuse, soodustuse või toetuse andmise, keeldumise, piiramise, tagasivõtmise või tagasinõudmise kohta?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.5.5"]
@@ -987,7 +987,7 @@
               {
                 "properties": {
                   "III.5.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -999,7 +999,7 @@
               {
                 "properties": {
                   "III.5.5": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "essentialservices2": {
                     "$ref": "#/definitions/essentialservices2"
@@ -1009,7 +1009,7 @@
               {
                 "properties": {
                   "III.5.5": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1024,8 +1024,8 @@
         "properties": {
           "III.5.6": {
             "type": "string",
-            "title": "Is the application used to assess the creditworthiness of individuals or to determine a credit score for individuals?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse isikute krediidivõimekuse hindamiseks või krediidiskoori määramiseks?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.5.6"],
@@ -1035,12 +1035,12 @@
               {
                 "properties": {
                   "III.5.6": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.5.7": {
                     "type": "string",
-                    "title": "Is the application used for risk assessment and pricing for life and health insurance?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse elu- ja tervisekindlustuse riskihindamiseks ja kindustusmaksete määramiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.5.7"]
@@ -1048,7 +1048,7 @@
               {
                 "properties": {
                   "III.5.6": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1060,12 +1060,12 @@
               {
                 "properties": {
                   "III.5.7": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.5.8": {
                     "type": "string",
-                    "title": "Is the application used in evaluating emergency calls, making decisions about the deployment or prioritization of emergency services, or for the triage of urgent medical care?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse hädaabikõnede analüüsimisel, hädaabiteenuste väljasaatmise või prioriseerimise otsuste tegemisel ning erakorralise meditsiiniabi vajaduse hindamisel (triaaž)?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.5.8"]
@@ -1073,7 +1073,7 @@
               {
                 "properties": {
                   "III.5.7": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1085,7 +1085,7 @@
               {
                 "properties": {
                   "III.5.8": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "lawEnforcement": { "$ref": "#/definitions/lawEnforcement" }
                 }
@@ -1093,7 +1093,7 @@
               {
                 "properties": {
                   "III.5.8": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1108,8 +1108,8 @@
         "properties": {
           "III.6-5.d": {
             "type": "string",
-            "title": "Is the application used in assessing the risk that someone will (re)commit a criminal offense?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendus hindab kuriteo (uuesti) sooritamise riski?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.6-5.d"],
@@ -1119,7 +1119,7 @@
               {
                 "properties": {
                   "III.6-5.d": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -1129,12 +1129,12 @@
               {
                 "properties": {
                   "III.6-5.d": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.6a": {
                     "type": "string",
-                    "title": "Is the application used by police, special enforcement officers, inspection services, prisons, probation services, or other law enforcement agencies?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutavad politsei, eriõigustega korrakaitsjad, järelevalveametid, vanglad, kriminaalhooldusteenistused või muud õiguskaitseorganid?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6a"]
@@ -1146,12 +1146,12 @@
               {
                 "properties": {
                   "III.6a": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.6b": {
                     "type": "string",
-                    "title": "Is the application used by other services, departments, or organizations responsible for prevention, public safety protection, investigation, and prosecution of criminal offenses?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on kasutusel teistes teenistustes või asutustes, mis vastutavad kuritegude ennetuse, avaliku julgeoleku, kriminaaluurimise ja prokuratuuri töö eest?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6b"]
@@ -1159,12 +1159,12 @@
               {
                 "properties": {
                   "III.6a": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.6.1": {
                     "type": "string",
-                    "title": "Is the application used to assess or estimate that someone will become a victim of criminal offenses?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse isiku kuriteoohvriks sattumise riski hindamiseks või ennustamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6.1"]
@@ -1176,7 +1176,7 @@
               {
                 "properties": {
                   "III.6b": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "migration": { "$ref": "#/definitions/migration" }
                 }
@@ -1184,17 +1184,17 @@
               {
                 "properties": {
                   "III.6b": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
-                  "III.6b-yes": {
+                  "III.6b-Jah": {
                     "type": "string",
-                    "title": "Which organization and department or service is primarily responsible for the application?",
+                    "title": "Milline asutus või osakond/teenistus on lahenduse peamine vastutaja?",
                     "default": ""
                   },
                   "III.6.1": {
                     "type": "string",
-                    "title": "Is the application used to assess or estimate that someone will become a victim of criminal offenses?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendusega hinnatakse isikute ohvriks muutumise riski?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6.1"]
@@ -1206,12 +1206,12 @@
               {
                 "properties": {
                   "III.6.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.6.2": {
                     "type": "string",
-                    "title": "Is the application used as a polygraph (lie detector) or similar instrument?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse valedetektori või muu sarnase tõeversiooni kontrollimise vahendina?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6.2"]
@@ -1219,7 +1219,7 @@
               {
                 "properties": {
                   "III.6.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1231,12 +1231,12 @@
               {
                 "properties": {
                   "III.6.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.6.3": {
                     "type": "string",
-                    "title": "Is the application used to assess the reliability of evidence during the investigation or prosecution of criminal offenses?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendusega kontrollitakse tõendusmaterjali usaldusväärsust uurimise või süüdistuse esitamise faasis?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6.3"]
@@ -1244,7 +1244,7 @@
               {
                 "properties": {
                   "III.6.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1256,12 +1256,12 @@
               {
                 "properties": {
                   "III.6.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.6.4": {
                     "type": "string",
-                    "title": "Is the application used to automatically evaluate or predict characteristics, behavior, or personal aspects within the detection, investigation, or prosecution of criminal offenses?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse kuritegude avastamise, uurimise või süüdistuse esitamise käigus isikuomaduste, käitumise või muude isiklike aspektide automaatseks hindamiseks või ennustamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6.4"]
@@ -1269,7 +1269,7 @@
               {
                 "properties": {
                   "III.6.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1281,12 +1281,12 @@
               {
                 "properties": {
                   "III.6.4": {
-                    "enum": ["No"]
+                    "enum": ["E"]
                   },
                   "III.6.5": {
                     "type": "string",
-                    "title": "Is the application used to assess personality traits and characteristics or previous criminal behavior of individuals or groups?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse üksikisikute või gruppide isiksuseomaduste, käitumisprofiili või varasemate õigusrikkumiste analüüsimiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.6.5"]
@@ -1294,7 +1294,7 @@
               {
                 "properties": {
                   "III.6.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1306,7 +1306,7 @@
               {
                 "properties": {
                   "III.6.5": {
-                    "enum": ["No"]
+                    "enum": ["E"]
                   },
                   "migration": { "$ref": "#/definitions/migration" }
                 }
@@ -1314,7 +1314,7 @@
               {
                 "properties": {
                   "III.6.5": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1329,8 +1329,8 @@
         "properties": {
           "III.7": {
             "type": "string",
-            "title": "Is the application used within migration, asylum, and border control management?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse rände-, varjupaiga- ja piirikontrolli haldamisel?",
+            "enum": ["Jah", "No"]
           }
         },
         "required": ["III.7"],
@@ -1340,12 +1340,12 @@
               {
                 "properties": {
                   "III.7": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.7.1": {
                     "type": "string",
-                    "title": "Is the application used as a polygraph (lie detector) or similar instrument?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse polügraafi ehk valedetektori või muu sarnase seadmena?",
+                    "enum": ["Jah", "No"]
                   }
                 },
                 "required": ["III.7.1"]
@@ -1353,7 +1353,7 @@
               {
                 "properties": {
                   "III.7": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "justice": { "$ref": "#/definitions/justice" }
                 }
@@ -1365,12 +1365,12 @@
               {
                 "properties": {
                   "III.7.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.7.2": {
                     "type": "string",
-                    "title": "Is the application used in the assessment of risks for a person entering territory of a member state of the European Union?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse EL-i liikmesriiki siseneva isiku riskide hindamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.7.2"]
@@ -1378,7 +1378,7 @@
               {
                 "properties": {
                   "III.7.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1390,12 +1390,12 @@
               {
                 "properties": {
                   "III.7.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.7.3": {
                     "type": "string",
-                    "title": "Is the application used in the processing of asylum, visa, or residence permit applications, and in handling complaints related to the eligibility of the applicant?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse varjupaiga-, viisa- või elamislubade avalduste menetlemisel ning taotleja abikõlblikkusega seotud vaidluste käsitlemisel?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.7.3"]
@@ -1403,7 +1403,7 @@
               {
                 "properties": {
                   "III.7.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1415,12 +1415,12 @@
               {
                 "properties": {
                   "III.7.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.7.4": {
                     "type": "string",
-                    "title": "Is the application used for the detection, recognition, or identification of individuals?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse isikute leidmiseks, tuvastamiseks või kindlakstegemiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.7.4"]
@@ -1428,7 +1428,7 @@
               {
                 "properties": {
                   "III.7.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1440,12 +1440,12 @@
               {
                 "properties": {
                   "III.7.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.7.5": {
                     "type": "string",
-                    "title": "Is the application solely used for the verification of a passport or other travel document to confirm that a specific person is who they claim to be?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahenduse ainus otstarve on passi või teiste reisidokumentide kontrollimine isiku identiteedi kindlaks tegemiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.7.5"]
@@ -1453,7 +1453,7 @@
               {
                 "properties": {
                   "III.7.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "justice": { "$ref": "#/definitions/justice" }
                 }
@@ -1465,7 +1465,7 @@
               {
                 "properties": {
                   "III.7.5": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "justice": { "$ref": "#/definitions/justice" }
                 }
@@ -1473,7 +1473,7 @@
               {
                 "properties": {
                   "III.7.5": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1482,14 +1482,14 @@
           }
         }
       },
-      "justice": {
-        "title": "justice",
+      "õigusekspert": {
+        "title": "Kas lahendusega hinnatakse isiku õigust teenusele, soodustustele või toetusele?",
         "type": "object",
         "properties": {
           "III.8.1": {
             "type": "string",
-            "title": "Is the application used within the judiciary or alternative dispute resolution?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendust kasutatakse kohtusüsteemis või alternatiivsete vaidluste lahendamise menetlustes?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.8.1"],
@@ -1499,12 +1499,12 @@
               {
                 "properties": {
                   "III.8.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.8.2": {
                     "type": "string",
-                    "title": "Is the application used for supporting administrative activities that do not affect the judiciary in individual cases?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse haldusülesannete täitmisel, millel puudub otsene mõju kohtuvõimu teostamisele konkreetsetes kohtuasjades?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.8.2"]
@@ -1512,12 +1512,12 @@
               {
                 "properties": {
                   "III.8.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.8.3": {
                     "type": "string",
-                    "title": "Is the application used within processes for elections or referenda?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse valimiste või rahvahääletuste läbiviimisel?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.8.3"]
@@ -1529,12 +1529,12 @@
               {
                 "properties": {
                   "III.8.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.8.3": {
                     "type": "string",
-                    "title": "Is the application used within processes for elections or referenda?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse valimiste või rahvahääletuste läbiviimisel?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.8.3"]
@@ -1554,12 +1554,12 @@
               {
                 "properties": {
                   "III.8.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "III.8.4": {
                     "type": "string",
-                    "title": "Is the application used in a way that can influence the outcome or voting behavior of people in elections or referenda?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus võib mõjutada valimiste või rahvahääletuste tulemust või inimeste hääletuskäitumist?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.8.4"]
@@ -1567,7 +1567,7 @@
               {
                 "properties": {
                   "III.8.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "art5": { "$ref": "#/definitions/art5" }
                 }
@@ -1579,7 +1579,7 @@
               {
                 "properties": {
                   "III.8.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 },
@@ -1588,7 +1588,7 @@
               {
                 "properties": {
                   "III.8.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "art5": { "$ref": "#/definitions/art5" }
                 }
@@ -1597,14 +1597,14 @@
           }
         }
       },
-      "art5": {
+      "kunst5": {
         "title": "art5",
         "type": "object",
         "properties": {
           "5.a.1": {
             "type": "string",
-            "title": "Does the application use audio, image, or video techniques that people cannot consciously perceive?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendus kasutab heli-, pildi- või videotöötluse tehnikaid, mida inimesed teadlikult ei taju?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["5.a.1"],
@@ -1614,12 +1614,12 @@
               {
                 "properties": {
                   "5.a.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "5.a.2": {
                     "type": "string",
-                    "title": "Is the application intended to influence the behavior or choices of people, to make them take actions or decisions they would not take without the application?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahenduse otstarve on kallutada inimeste käitumist või valikuid, et nad tegutseksid või otsustaksid viisil, nagu nad muidu ei teeks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.a.2"]
@@ -1627,12 +1627,12 @@
               {
                 "properties": {
                   "5.a.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "5.a.4": {
                     "type": "string",
-                    "title": "Can the application potentially have negative consequences for the user or other people?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus võib põhjustada kahjulikke tagajärgi kasutajale või teistele isikutele?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.a.4"]
@@ -1644,12 +1644,12 @@
               {
                 "properties": {
                   "5.a.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "5.a.4": {
                     "type": "string",
-                    "title": "Can the application potentially have negative consequences for the user or other people?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus võib põhjustada kahjulikke tagajärgi kasutajale või teistele isikutele?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.a.4"]
@@ -1657,12 +1657,12 @@
               {
                 "properties": {
                   "5.a.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "5.a.3": {
                     "type": "string",
                     "title": "Is it possible that the application unintentionally influences the behavior or choices of people, making them take actions or decisions they would not take without the application?",
-                    "enum": ["Yes", "No"]
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.a.3"]
@@ -1674,12 +1674,12 @@
               {
                 "properties": {
                   "5.a.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "5.a.4": {
                     "type": "string",
-                    "title": "Can the application potentially have negative consequences for the user or other people?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus võib põhjustada kahjulikke tagajärgi kasutajale või teistele isikutele?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.a.4"]
@@ -1687,12 +1687,12 @@
               {
                 "properties": {
                   "5.a.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "5.c.1": {
                     "type": "string",
-                    "title": "Is the application used to evaluate people, calculate scores, or classify individuals into groups?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse inimeste hindamiseks, punktide arvutamiseks (sh reitingute määramiseks) või isikute rühmitamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.c.1"]
@@ -1704,7 +1704,7 @@
               {
                 "properties": {
                   "5.a.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -1718,8 +1718,8 @@
                   },
                   "5.c.1": {
                     "type": "string",
-                    "title": "Is the application used to evaluate people, calculate scores, or classify individuals into groups?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse inimeste hindamiseks, punktide arvutamiseks (sh reitingute määramiseks) või isikute rühmitamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.c.1"]
@@ -1731,7 +1731,7 @@
               {
                 "properties": {
                   "5.c.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "other": { "$ref": "#/definitions/other" }
                 }
@@ -1739,12 +1739,12 @@
               {
                 "properties": {
                   "5.c.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "5.c.2": {
                     "type": "string",
-                    "title": "Is this evaluation or estimation based on social behavior or (estimated) personal characteristics?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas see hindamine põhineb sotsiaalsel käitumisel või (hinnangulistel) isikuomadustel?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.c.2"]
@@ -1756,7 +1756,7 @@
               {
                 "properties": {
                   "5.c.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "other": { "$ref": "#/definitions/other" }
                 }
@@ -1764,12 +1764,12 @@
               {
                 "properties": {
                   "5.c.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "5.c.3": {
                     "type": "string",
-                    "title": "Can the evaluation or estimation lead to unfavourable treatment for the evaluated person?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas see hinnang või prognoos võib viia hinnatava isiku ebasoodsa kohtlemiseni?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.c.3"]
@@ -1781,7 +1781,7 @@
               {
                 "properties": {
                   "5.c.3": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "other": { "$ref": "#/definitions/other" }
                 }
@@ -1789,12 +1789,12 @@
               {
                 "properties": {
                   "5.c.3": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "5.c.4": {
                     "type": "string",
-                    "title": "Does it occur that the unfavourable treatment takes place in a completely different context than the behavior or personal characteristic on which the score is based?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas võib juhtuda, et inimest koheldakse ebasoodsalt täiesti muus olukorras kui käitumine või isikuomadus, millele talle antud punktisumma (skoor) põhineb?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.c.4"]
@@ -1806,7 +1806,7 @@
               {
                 "properties": {
                   "5.c.4": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -1816,12 +1816,12 @@
               {
                 "properties": {
                   "5.c.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "5.c.5": {
                     "type": "string",
-                    "title": "Can it occur that the unfavourable treatment is not proportional to the exhibited behavior?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas võib juhtuda, et inimese ebasoodne kohtlemine ei ole kooskõlas tema käitumisega?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["5.c.5"]
@@ -1833,7 +1833,7 @@
               {
                 "properties": {
                   "5.c.5": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "exceptionForbidden": {
                     "$ref": "#/definitions/exceptionForbidden"
@@ -1843,7 +1843,7 @@
               {
                 "properties": {
                   "5.c.5": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "other": { "$ref": "#/definitions/other" }
                 }
@@ -1852,14 +1852,14 @@
           }
         }
       },
-      "exceptionHigh": {
+      "erandKõrge": {
         "title": "exceptionHigh",
         "type": "object",
         "properties": {
           "2.6": {
             "type": "string",
-            "title": "Is this application only used for scientific research and scientific development?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendus on mõeldud ainult teadusuuringuteks ja teaduslikuks arendustööks?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["2.6"],
@@ -1869,26 +1869,26 @@
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
-                  "2.6-yes": {
+                  "2.6-Jah": {
                     "type": "string",
-                    "title": "Provide a brief description of the research. Include in this description at least the purpose of the research, the department within which this research is conducted, and the involved research institutes and/or other partners.",
+                    "title": "Kirjeldage uuringut lühidalt. Tooge välja vähemalt uurimistöö eesmärk, vastutav osakond ning kaasatud uurimisasutused ja/või muud osapooled.",
                     "default": ""
                   },
                   "output": { "$ref": "#/definitions/outputHighExcept" }
                 },
-                "required": ["2.6-yes"]
+                "required": ["2.6-Jah"]
               },
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Is the application only used for defense or military purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult kaitse- või sõjalistel eesmärkidel kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.1"]
@@ -1900,7 +1900,7 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputHighExcept" }
                 }
@@ -1908,12 +1908,12 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Is the application only used for national security purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse ainult riikliku julgeoleku tagamise eesmärgil?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.2"]
@@ -1925,7 +1925,7 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputHighExcept" }
                 }
@@ -1933,12 +1933,12 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Is the application only used for personal non-professional activities?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult isiklikuks, mitte tööga seotud kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.10"]
@@ -1950,7 +1950,7 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputHighExcept" }
                 }
@@ -1958,12 +1958,12 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "6.1": {
                     "type": "string",
-                    "title": "Is the application used to automatically evaluate or predict characteristics, behavior, or personal aspects?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus hindab või ennustab automaatselt inimese omadusi, käitumist või muid isiklikke aspekte?",
+                    "enum": ["Jah", "Ei"]
                   }
                 }
               }
@@ -1974,7 +1974,7 @@
               {
                 "properties": {
                   "6.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputHigh" }
                 }
@@ -1982,17 +1982,17 @@
               {
                 "properties": {
                   "6.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "6.2": {
                     "type": "string",
-                    "title": "Is the application only used for limited procedural tasks or preparatory tasks without influencing the outcomes of a (decision-making) process?",
+                    "title": "Kas lahenduse kasutamine piirdub ainult menetluslike või abistavate toimingutega, millel puudub mõju lõplikele otsustele või protsessi sisule?",
                     "enum": [
-                      "Yes, the application is used for a limited procedural task. Think of an AI system that converts unstructured data into structured data, an AI system that classifies incoming documents into categories, or an AI system used to detect duplicates within a large number of applications.",
-                      "Yes, the application is used to improve the result of a previously human-performed activity. Think of an AI system that improves the language of previously drafted documents, for example, regarding professional tone or academic style, or by tailoring a text to a specific brand message.",
-                      "Yes, the application is used to detect decision-making patterns or deviations from previous decision-making patterns. Think of an AI system that, after a set of decisions has been made, analyzes patterns in decision-making so that human decision-makers can learn from them.",
-                      "Yes, the application is used in a preparatory step, without influencing the outcome. Think of smart solutions for file management, including functions such as indexing, searching, text and speech processing, or linking data to other data sources, or AI systems used for translating source documents.",
-                      "No"
+                      "Jah, lahendus täidab lihtsaid tehnilisi ülesandeid. Näiteks võib see olla tehisaru lahendus, mis muudab struktureerimata andmed struktureeritud andmeteks, liigitab saabuvad dokumendid kategooriatesse või tuvastab taotluste hulgast duplikaate.",
+                      "Jah, lahenduse paranda inimese tehtud töö kvaliteeti. Näiteks võib see olla tehisaru lahendus, mis täiustab dokumentide keelekasutust, muutes selle professionaalsemaks, akadeemilisemaks või kohandades teksti vastavalt brändi sõnumile.",
+                      "Jah, lahendust kasutatakse otsustusmustrite või varasematest otsustusmustritest kõrvalekallete tuvastamiseks. Näiteks võib see olla tehisaru lahendus, mis pärast otsuste tegemist analüüsib mustreid, et inimesed saaksid neist õppida.",
+                      "Jah, lahendus täidab toetavat funktsiooni otsustusprotsessi eelses etapis, mõjutamata otsuse sisu. Näiteks võib see olla nutikas failihalduse lahendus, mis võimaldab indekseerimist, otsingut, teksti- ja kõnetöötlust või andmete seostamist teiste andmeallikatega, või tehisaru süsteem, mida kasutatakse allikdokumentide tõlkimiseks.",
+                      "Ei"
                     ]
                   }
                 },
@@ -2006,10 +2006,10 @@
                 "properties": {
                   "6.2": {
                     "enum": [
-                      "Yes, the application is used for a limited procedural task. Think of an AI system that converts unstructured data into structured data, an AI system that classifies incoming documents into categories, or an AI system used to detect duplicates within a large number of applications.",
-                      "Yes, the application is used to improve the result of a previously human-performed activity. Think of an AI system that improves the language of previously drafted documents, for example, regarding professional tone or academic style, or by tailoring a text to a specific brand message.",
-                      "Yes, the application is used to detect decision-making patterns or deviations from previous decision-making patterns. Think of an AI system that, after a set of decisions has been made, analyzes patterns in decision-making so that human decision-makers can learn from them.",
-                      "Yes, the application is used in a preparatory step, without influencing the outcome. Think of smart solutions for file management, including functions such as indexing, searching, text and speech processing, or linking data to other data sources, or AI systems used for translating source documents."
+                      "Jah, lahendus täidab lihtsaid tehnilisi ülesandeid. Näiteks võib see olla tehisaru lahendus, mis muudab struktureerimata andmed struktureeritud andmeteks, liigitab saabuvad dokumendid kategooriatesse või tuvastab taotluste hulgast duplikaate.",
+                      "Jah, lahenduse paranda inimese tehtud töö kvaliteeti. Näiteks võib see olla tehisaru lahendus, mis täiustab dokumentide keelekasutust, muutes selle professionaalsemaks, akadeemilisemaks või kohandades teksti vastavalt brändi sõnumile.",
+                      "Jah. lahendust kasutatakse otsustusmustrite või varasematest otsustusmustritest kõrvalekallete tuvastamiseks. Näiteks võib see olla tehisaru lahendus, mis pärast otsuste tegemist analüüsib mustreid, et inimesed saaksid neist õppida.",
+                      "Jah. lahendus täidab toetavat funktsiooni otsustusprotsessi eelses etapis, mõjutamata otsuse sisu. Näiteks võib see olla nutikas failihalduse lahendus, mis võimaldab indekseerimist, otsingut, teksti- ja kõnetöötlust või andmete seostamist teiste andmeallikatega, või tehisaru süsteem, mida kasutatakse allikdokumentide tõlkimiseks."
                     ]
                   },
                   "output": { "$ref": "#/definitions/outputHighExcept" }
@@ -2018,7 +2018,7 @@
               {
                 "properties": {
                   "6.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "output": { "$ref": "#/definitions/outputHigh" }
                 },
@@ -2028,14 +2028,14 @@
           }
         }
       },
-      "exceptionForbidden": {
+      "erandKeelatud": {
         "title": "exceptionForbidden",
         "type": "object",
         "properties": {
           "2.6": {
             "type": "string",
-            "title": "Is this application only used for scientific research and scientific development?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendus on mõeldud ainult teadusuuringuteks ja teaduslikuks arendustööks?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["2.6"],
@@ -2045,26 +2045,26 @@
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
-                  "2.6-yes": {
+                  "2.6-Jah": {
                     "type": "string",
-                    "title": "Provide a brief description of the research. Include in this description at least the purpose of the research, the department within which this research is conducted, and the involved research institutes and/or other partners.",
+                    "title": "Kirjeldage uuringut lühidalt. Tooge välja vähemalt uurimistöö eesmärk, vastutav osakond ning kaasatud uurimisasutused ja/või muud osapooled.",
                     "default": ""
                   },
                   "output": { "$ref": "#/definitions/outputForbiddenExcept" }
                 },
-                "required": ["2.6-yes"]
+                "required": ["2.6-Jah"]
               },
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Is the application only used for defense or military purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult kaitse- või sõjalistel eesmärkidel kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.1"]
@@ -2076,7 +2076,7 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputForbiddenExcept" }
                 }
@@ -2084,12 +2084,12 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Is the application only used for national security purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse ainult riikliku julgeoleku tagamise eesmärgil?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.2"]
@@ -2101,7 +2101,7 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputForbiddenExcept" }
                 }
@@ -2109,12 +2109,12 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Is the application only used for personal non-professional activities?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult isiklikuks, mitte tööga seotud kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.10"]
@@ -2126,7 +2126,7 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputForbiddenExcept" }
                 }
@@ -2134,7 +2134,7 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "output": { "$ref": "#/definitions/outputForbidden" }
                 }
@@ -2143,14 +2143,14 @@
           }
         }
       },
-      "exceptionTransparency": {
+      "erandLäbipaistvus": {
         "title": "exceptionTransparency",
         "type": "object",
         "properties": {
           "2.6": {
             "type": "string",
-            "title": "Is this application only used for scientific research and scientific development?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendus on mõeldud ainult teadusuuringuteks ja teaduslikuks arendustööks?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["2.6"],
@@ -2160,26 +2160,26 @@
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
-                  "2.6-yes": {
+                  "2.6-Jah": {
                     "type": "string",
-                    "title": "Provide a brief description of the research. Include in this description at least the purpose of the research, the department within which this research is conducted, and the involved research institutes and/or other partners.",
+                    "title": "Kirjeldage uuringut lühidalt. Tooge välja vähemalt uurimistöö eesmärk, vastutav osakond ning kaasatud uurimisasutused ja/või muud osapooled.",
                     "default": ""
                   },
                   "output": { "$ref": "#/definitions/outputTransparencyExcept" }
                 },
-                "required": ["2.6-yes"]
+                "required": ["2.6-Jah"]
               },
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Is the application only used for defense or military purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult kaitse- või sõjalistel eesmärkidel kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.1"]
@@ -2191,7 +2191,7 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputTransparencyExcept" }
                 }
@@ -2199,12 +2199,12 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Is the application only used for national security purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse ainult riikliku julgeoleku tagamise eesmärgil??",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.2"]
@@ -2216,7 +2216,7 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputTransparencyExcept" }
                 }
@@ -2224,12 +2224,12 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Is the application only used for personal non-professional activities?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult isiklikuks, mitte tööga seotud kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.10"]
@@ -2241,7 +2241,7 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputTransparencyExcept" }
                 }
@@ -2249,7 +2249,7 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "output": { "$ref": "#/definitions/outputTransparency" }
                 }
@@ -2258,14 +2258,14 @@
           }
         }
       },
-      "exceptionGPAI": {
+      "erand": {
         "title": "exceptionGPAI",
         "type": "object",
         "properties": {
           "2.6": {
             "type": "string",
-            "title": "Is this application only used for scientific research and scientific development?",
-            "enum": ["Yes", "No"]
+            "title": "Kas lahendus on mõeldud ainult teadusuuringuteks ja teaduslikuks arendustööks?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["2.6"],
@@ -2275,26 +2275,26 @@
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
-                  "2.6-yes": {
+                  "2.6-Jah": {
                     "type": "string",
-                    "title": "Provide a brief description of the research. Include in this description at least the purpose of the research, the department within which this research is conducted, and the involved research institutes and/or other partners.",
+                    "title": "Kirjeldage uuringut lühidalt. Tooge välja vähemalt uurimistöö eesmärk, vastutav osakond ning kaasatud uurimisasutused ja/või muud osapooled.",
                     "default": ""
                   },
                   "output": { "$ref": "#/definitions/outputGPAIExcept" }
                 },
-                "required": ["2.6-yes"]
+                "required": ["2.6-Jah"]
               },
               {
                 "properties": {
                   "2.6": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.3.1": {
                     "type": "string",
-                    "title": "Is the application only used for defense or military purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult kaitse- või sõjalistel eesmärkidel kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.1"]
@@ -2306,7 +2306,7 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputGPAIExcept" }
                 }
@@ -2314,12 +2314,12 @@
               {
                 "properties": {
                   "2.3.1": {
-                    "enum": ["No"]
+                    "enum": ["Jah"]
                   },
                   "2.3.2": {
                     "type": "string",
-                    "title": "Is the application only used for national security purposes?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendust kasutatakse ainult riikliku julgeoleku tagamise eesmärgil?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.3.2"]
@@ -2331,7 +2331,7 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputGPAIExcept" }
                 }
@@ -2339,12 +2339,12 @@
               {
                 "properties": {
                   "2.3.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Is the application only used for personal non-professional activities?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus on mõeldud ainult isiklikuks, mitte tööga seotud kasutamiseks?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["2.10"]
@@ -2356,7 +2356,7 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/outputGPAIExcept" }
                 }
@@ -2364,7 +2364,7 @@
               {
                 "properties": {
                   "2.10": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "output": { "$ref": "#/definitions/outputGPAI" }
                 }
@@ -2373,14 +2373,14 @@
           }
         }
       },
-      "other": {
+      "othermuu": {
         "title": "other",
         "type": "object",
         "properties": {
           "50.1": {
             "type": "string",
-            "title": "Is the application a chatbot, AI assistant, or other system with which the user can have a conversation?",
-            "enum": ["Yes", "No"]
+            "title": "Kas tegu on vestlusroboti, tehisarui assistendi või muu süsteemiga, millega on võimalik vestelda?",
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["50.1"],
@@ -2390,7 +2390,7 @@
               {
                 "properties": {
                   "50.1": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/exceptionTransparency" }
                 }
@@ -2398,12 +2398,12 @@
               {
                 "properties": {
                   "50.1": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "50.2": {
                     "type": "string",
-                    "title": "Does the application produce text, code, sound, video, or images as a result?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahenduse väljundiks on tekst, programmikood, helifailid, videomaterjal või visuaalsed kujutised?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["50.2"]
@@ -2415,7 +2415,7 @@
               {
                 "properties": {
                   "50.2": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/exceptionTransparency" }
                 }
@@ -2423,12 +2423,12 @@
               {
                 "properties": {
                   "50.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "3.63": {
                     "type": "string",
-                    "title": "Does the application use a general-purpose model, also known as a foundation model or general-purpose AI (GPAI) model?",
-                    "enum": ["Yes", "No"]
+                    "title": "Kas lahendus kasutab üldotstarbelist mudelit, mida tuntakse ka alusmudeli või üldotstarbelise tehisaru (GPAI) mudelina?",
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["3.63"]
@@ -2440,7 +2440,7 @@
               {
                 "properties": {
                   "3.63": {
-                    "enum": ["Yes"]
+                    "enum": ["Jah"]
                   },
                   "output": { "$ref": "#/definitions/exceptionGPAI" }
                 }
@@ -2448,7 +2448,7 @@
               {
                 "properties": {
                   "3.63": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "output": { "$ref": "#/definitions/outputLow" }
                 }
@@ -2461,8 +2461,8 @@
     "properties": {
       "III.1": {
         "type": "string",
-        "title": "Does the application use biometric data?",
-        "enum": ["Yes", "No"]
+        "title": "Kas lahendus kasutab biomeetrilisi andmeid?",
+        "enum": ["Jah", "Ei"]
       }
     },
     "required": ["III.1"],
@@ -2472,7 +2472,7 @@
           {
             "properties": {
               "III.1": {
-                "enum": ["Yes"]
+                "enum": ["Jah"]
               },
               "biometrics": { "$ref": "#/definitions/biometrics" }
             }
@@ -2492,7 +2492,7 @@
   "uiSchema": {
     "III.1": {
       "ui:widget": "radio",
-      "ui:description": "Biometric data are unique characteristics of a person such as images or video footage of faces, iris scans, fingerprints, voice sounds, handwriting, and other unique characteristics of bodies and/or behavior. \n\nTyped text is not biometric data, but someone's unique way of typing (keystrokes) is."
+      "ui:description": "Biomeetrilised andmed on inimese unikaalsed omadused, nagu näiteks näopildid või -videod, vikerkesta skaneeringud, sõrmejäljed, häälekõla, käekiri ja teised kehalised ja/või käitumuslikud eripärad. \n\nKlaviatuuril trükitud tekst ei ole biomeetriline andmestik, kuid inimese unikaalne trükkimisviis (nt klahvivajutuste sagedus ja rütm) on."
     },
     "5.e.1": {
       "ui:widget": "radio"
@@ -2505,7 +2505,7 @@
     },
     "III.1.2": {
       "ui:widget": "radio",
-      "ui:description": "For example, your phone checks if your face matches what is stored to unlock it. Or at the border, a camera checks if your face matches the photo in your passport.\nThis is about one-on-one verification of a person, with active involvement of that person."
+      "ui:description": "Näiteks kontrollib su telefon seadme avamisel, kas sinu nägu vastab salvestatud kujutisele. Või piiripunktis kontrollib kaamera, kas sinu nägu vastab passis olevale fotole.\nSiin on tegu inimese üks-ühele isikutuvastusega, kus inimene ise aktiivselt osaleb."
     },
     "5.h.1": {
       "ui:widget": "radio"
@@ -2515,11 +2515,11 @@
     },
     "5.f.1": {
       "ui:widget": "radio",
-      "ui:description": "The work environment also includes recruitment and selection, and the home work environment. Education also includes admission to education and online education."
+      "ui:description": "Töökeskkonna alla kuuluvad nii värbamis- ja valikuprotsessid kui ka kodune töökeskkond. Hariduse mõiste hõlmab ka haridusse vastuvõttu ning kaug- ja veebipõhist õpet."
     },
     "III.1.3": {
       "ui:widget": "radio",
-      "ui:description": "Think of services such as BaaS (Blurring as a Service), where facial recognition is used to blur faces in images, or access to a secure computer server with fingerprints."
+      "ui:description": "Näiteks BaaS-tüüpi teenused (Blurring as a Service), kus näotuvastust kasutatakse nägude hägustamiseks piltidel, või turvalisele serverile ligipääsu andmine sõrmejälje alusel."
     },
     "III.2.1": {
       "ui:widget": "radio"
@@ -2530,120 +2530,120 @@
     "III.2.3": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Critical **digital** infrastructure includes, among other things, internet nodes, DNS services, top-level domain name registration, cloud computing services, data center services, public electronic communication networks, and electronic communication services."
+      "ui:description": "Kriitiline digitaristu hõlmab muu hulgas interneti sõlmpunkte, domeeninimede süsteemi (DNS) teenuseid, tippdomeeni registreerimist, pilveteenuseid, andmekeskuste teenuseid, avalikke elektroonilise side võrke ja elektroonilise side teenuseid."
     },
     "III.2.4": {
       "ui:widget": "radio",
-      "ui:description": "A component with a safety function is intended to eliminate or reduce a risk.\n\nExamples of components with a safety function are:\n- A system that automatically closes a lane for a tunnel during road congestion to prevent traffic jams in the tunnel\n- Fire alarm systems\n- Other detection or alarm functions that respond to over/under pressure, temperature, or voltage\n- Collision avoidance systems in vehicles that automatically brake to prevent a collision\n- Firewall or antivirus software\n\nIf the failure or malfunction of the application endangers the health and safety of people or property, choose yes."
+      "ui:description": "Turvalisust tagav komponent on mõeldud ohu kõrvaldamiseks või vähendamiseks.\n\nTurvakomponentide näiteks on:\n- Süsteem, mis tuvastab teetõkked ning sulgeb liiklustiheduse korral automaatselt tunneliraja, et ennetada ummikuid\n- Tulekahju häiresüsteemid\n- Muud seire- või häiresüsteemid, mis reageerivad üle- või alarõhule, temperatuurile või pingele\n- Kokkupõrgete vältimise süsteemid sõidukites, mis pidurdavad automaatselt\n- Tulemüür või viirusetõrjetarkvara\n\nKui lahenduse rike või talitlushäire tõrge võib seada ohtu inimeste elu, tervise või vara, tuleb vastuseks märkida Jah."
     },
     "III.2.5": {
       "ui:widget": "radio",
-      "ui:description": "Think of a firewall or antivirus software."
+      "ui:description": "Näiteks tulemüür või viirusetõrjetarkvara."
     },
     "III.3": {
       "ui:widget": "radio",
-      "ui:description": "Think of placement and admission, evaluation and testing, but also control such as plagiarism detection and anti-cheating software.\n\nChoose 'yes' when you are unsure."
+      "ui:description": "Näiteks õppurite paigutamine ja vastuvõtt, hindamis- ja testimismeetodid ning kontrollimehhanismid, nagu plagiaadi tuvastamine või spikerdamise ennetamise tarkvara.\n\nVali 'Jah', kui oled ebakindel."
     },
     "III.3.1": {
       "ui:widget": "radio",
-      "ui:description": "Also choose 'yes' when the application is only part of the process for allocation or admission. There does not need to be (fully) automated assessment or decisions.\n\nExamples are:\n- An application that helps determine school eligibility\n- An application that determines the distribution of children between schools."
+      "ui:description": "Vali 'Jah' ka siis, kui lahendusel on vaid teatav roll inimeste jaotamise ja vastuvõtu protsessis. Hindamine või otsustamine ei pea olema (täielikult) automatiseeritud.\n\nNäiteks:\n- lahendus, mis aitab otsustada, kas inimene vastab kooli vastuvõtutingimustele\n- Lahendus, mis määrab laste jaotuse koolide vahel."
     },
     "III.3.2": {
       "ui:widget": "radio",
-      "ui:description": "Also choose 'yes' when the application contributes to the assessment. There does not need to be (fully) automated assessment."
+      "ui:description": "Märgi vastuseks 'Jah' ka juhul, kui lahendus osaleb hindamisprotsessis abivahendina. Hindamine ei pea olema täielikult automatiseeritud."
     },
     "III.3.3": {
       "ui:widget": "radio",
-      "ui:description": "Examples are:\n- Evaluation of (multiple choice) tests\n- Grading assistance\n- Assessment of learning pace or style\n- Personalization of the curriculum or learning process."
+      "ui:description": "Näiteks:\n- Valikvastustega testide hindamine\n- Hindamisprotsessi toetamine\n- Õpitempo ja -stiili hindamine\n- Õppekava või õppeprotsessi personaliseerimine."
     },
     "III.3.4": {
       "ui:widget": "radio",
-      "ui:description": "Examples are:\n- Plagiarism detection\n- Detection of AI text generation tools\n- Supervision during online testing, such as Proctorio\n- Anti-cheating software for (online) exams."
+      "ui:description": "Näiteks:\n- Plagiaadi tuvastamine\n-Tehisarul põhinevate tekstiloomevahendite kasutamise tuvastamine\n- Veebitestide järelevalve lahendused (nt Proctorio)\n- Spikerdamisvastane tarkvara (veebi)eksamite jaoks."
     },
     "III.4": {
       "ui:widget": "radio",
-      "ui:description": "Examples are:\n- Recording hours, measuring KPIs and performance\n- Task distribution\n- Recruitment and selection\n- Inflow and progression (employment conditions, contractual terms)\n- Outflow (termination of contract)\n\nAlso choose 'yes' when the application broadly falls under the above, even if the application plays a small role in an otherwise manual process."
+      "ui:description": "Näiteks:\n- Tööaja registreerimine, võtmenäitajate (KPI-de) ja töötulemuste mõõtmine\n- Tööülesannete jaotamine\n- Värbamine ja valik\n- Personali sissevool: töölevõtt ja karjääri areng (töötingimused, lepingutingimused)\n- Personali väljavool: töötajate lahkumine, nt lepingu lõpetamine)\n\nMärgi vastuseks 'Jah' ka juhul, kui lahendus on osa mõnest eelmainitud protsessist, isegi kui see täidab üksnes toetavat rolli manuaalses töövoos."
     },
     "III.4.1": {
       "ui:widget": "radio",
-      "ui:description": "Think of placing targeted job advertisements, analyzing and filtering applications, and assessing candidates."
+      "ui:description": "Näiteks konkreetsele sihtgrupile suunatud töökuulutuste postitamine, kandideerimisavalduste analüüs ja filtreerimine, ning kandidaatide hindamine."
     },
     "III.4.2": {
       "ui:widget": "radio",
-      "ui:description": "This includes both targeted recruitment and writing targeted job descriptions."
+      "ui:description": "Siia kuulub nii suunatud värbamine kui ka suunatud ametikirjelduste kirjutamine."
     },
     "III.4.3": {
       "ui:widget": "radio",
-      "ui:description": "Think of (automatically) analyzing and/or filtering CVs, cover letters, or other documentation, application videos, and interviews."
+      "ui:description": "Näiteks kandideerimisdokumentide - CV-de, motivatsioonikirjade või muu kandideerimisdokumentatsiooni, videosalvestiste ja intervjuude - automaatne analüüs või eelsõelumine."
     },
     "III.4.4": {
       "ui:widget": "radio",
-      "ui:description": "Think of aptitude tests, automatic assessment based on video recordings."
+      "ui:description": "Näiteks võimekustestid ning kandidaatide automaatne hindamine videosalvestiste alusel."
     },
     "III.4.5": {
       "ui:widget": "radio"
     },
     "III.4.6": {
       "ui:widget": "radio",
-      "ui:description": "Think of decisions to terminate a contract, but also decisions regarding the terms and duration of the termination."
+      "ui:description": "Näiteks töölepingute lõpetamise otsused ning lepingu lõpetamise tingimuste ja etteteatamistähtaegade määramine."
     },
     "III.4.7": {
       "ui:widget": "radio",
-      "ui:description": "We mean employees in the broadest sense, including employees but also freelancers and employees hired through a third party (temporary, secondment)."
+      "ui:description": "Peame töötajate all silmas kõige laiemat mõistet: sinna kuuluvad lisaks tavatöötajatele ka vabakutselised ja kolmandate osapoolte kaudu kaasatud töötajad (nt ajutised töötajad, lähetatud töötajad)."
     },
     "III.4.8": {
       "ui:widget": "radio",
-      "ui:description": "Think of administrative processes where hours, productivity, speed, breaks, performance, or behavior are processed.\n\nWe mean employees in the broadest sense, including employees but also freelancers and employees hired through a third party (temporary, secondment)."
+      "ui:description": "Näiteks haldusprotsessid, mis keskenduvad töötundidele, tootlikkusele, töökiirusele, pausidele, töösooritusele või käitumisele.\n\nPeame töötajate all silmas kõige laiemat mõistet: sinna kuuluvad lisaks tavatöötajatele ka vabakutselised ja kolmandate osapoolte kaudu kaasatud töötajad (nt ajutised töötajad, lähetatud töötajad)."
     },
     "III.4.9": {
       "ui:widget": "radio",
-      "ui:description": "Think of monitoring productivity or speed or other performance."
+      "ui:description": "Näiteks tootlikkuse, töökiiruse või muu töösoorituse jälgimine."
     },
     "III.5.1": {
       "ui:widget": "radio",
-      "ui:description": "This includes all processes around benefits or allowances, such as application, administration, execution, enforcement, recovery, and objection. This also includes waiving fines, repayments, or granting a payment arrangement.\n\nAlso choose 'yes' when the application plays a small role in the process."
+      "ui:description": "See hõlmab kõiki toetuste ja hüvitistega seotud protsesse, nagu taotlemine, menetlemine, maksete teostamine, täitmine, tagasinõudmine ja vaidlustamine. Samuti kuuluvad siia trahvinõuetest loobumine, tagasimaksete kustutamine või maksegraafiku võimaldamine.\n\nMärgi vastuseks 'Jah' ka juhul, kui lahendus täidab protsessis vaid toetavat või piiratud funktsiooni."
     },
     "III.5.2": {
       "ui:widget": "radio",
-      "ui:description": "This includes all processes around these benefits or allowances, from application, administration, to execution, enforcement, and recovery.\n\nAlso choose 'yes' when the application plays a small role in the process."
+      "ui:description": "See hõlmab kõiki toetuste ja hüvitistega seotud protsesse, nagu taotlemine, menetlemine, maksete teostamine, täitmine, tagasinõudmine ja vaidlustamine.\n\nMärgi vastuseks 'Jah' ka juhul, kui lahendus täidab protsessis vaid toetavat või piiratud funktsiooni."
     },
     "III.5.3": {
       "ui:widget": "radio",
-      "ui:description": "This includes all processes around (social) services, such as offering/applying, administration, execution, enforcement, and objection. This includes social services in the broadest sense, such as WMO provisions, shelters (e.g., for domestic violence, homeless shelters, bed-bath-bread), care provisions, debt counseling, or reintegration services.\n\nAlso choose 'yes' when the application plays a small role in the process."
+      "ui:description": "See hõlmab kõiki (sotsiaal)teenustega seotud protsesse - alates teenuste pakkumisest ja taotlemisest kuni menetlemise, osutamise, täitmise ja vaidlustamiseni. Sotsiaalteenuseid käsitletakse siin kõige laiemas tähenduses - toetused, varjupaigad (nt nt perevägivalla ohvritele või kodututele), hooldusteenused, võlanõustamine või tööturule naasmise toetamine.\n\nMärgi vastuseks 'Jah' ka juhul, kui lahendus täidab protsessis vaid toetavat või piiratud funktsiooni."
     },
     "III.5.4": {
       "ui:widget": "radio",
-      "ui:description": "Also choose 'yes' if the application is part of a preparatory step for these decisions, such as selection for control."
+      "ui:description": "Märgi vastuseks 'Jah' ka siis, kui lahendus aitab otsust ainult ette valmistada - näiteks otsustab, keda kontrollida."
     },
     "III.5.5": {
       "ui:widget": "radio",
-      "ui:description": "Also choose 'yes' if the application is part of a preparatory step for these decisions, such as selection for control."
+      "ui:description": "Märgi vastuseks 'Jah' ka siis, kui lahendus aitab otsust ainult ette valmistada - näiteks otsustab, keda kontrollida."
     },
     "III.5.6": {
       "ui:widget": "radio",
-      "ui:description": "For example, to determine if someone can get a payment arrangement for paying taxes, a fine, or repaying a benefit."
+      "ui:description": "Näiteks selleks, et otsustada, kas inimesele saab võimaldada maksegraafikut maksude, trahvi või toetuse tagasimaksmiseks."
     },
     "III.5.7": {
       "ui:widget": "radio"
     },
     "III.5.8": {
       "ui:widget": "radio",
-      "ui:description": "Emergency services include police, fire brigade, and ambulance. Also think of situations such as detention by a mayor."
+      "ui:description": "Hädaabiteenuste hulka kuuluvad politsei, päästeteenistus ja kiirabi. Samuti kuuluvad siia alla juhtumid nagu inimese kinnipidamine kohaliku omavalitsuse juhi (nt linnapea) otsusel."
     },
     "III.6-5.d": {
       "ui:widget": "radio",
-      "ui:description": "Also think of (administrative) offenses and fraud risk scores, where an estimate is made of whether someone might commit a criminal offense and an estimate of the likelihood of recidivism."
+      "ui:description": "Ka näiteks haldusõigusrikkumised ja pettuseriski hinnangud, kus prognoositakse isiku võimalikku kuritegelikku käitumist ja selle kordumise tõenäosust."
     },
     "III.6a": {
       "ui:widget": "radio",
-      "ui:description": "Law enforcement includes the prevention, investigation, and prosecution of criminal offenses, the execution of sentences, and the protection of public safety. Think of police, special enforcement officers, and the execution of (community) sentences by probation services. Other agencies, such as Halt and specific (inspection) services, can also engage in law enforcement.\n\nAlso choose 'yes' for organizations and institutions that support law enforcement agencies, such as the NFI, and for activities carried out on behalf of law enforcement agencies."
+      "ui:description": "Õiguskaitse hõlmab kuritegude ennetamist, uurimist ja süüdistuse esitamist, karistuste täideviimist ning avaliku korra ja turvalisuse kaitset. Näideteks on politsei, munitsipaalpolitsei ja kriminaalhoolduse kaudu määratud (ühiskondlike) karistuste täideviimine. Samuti võivad õiguskaitses osaleda teised asutused nagu… NÄITED, kui relevant.\n\nMärkige 'Jah' vastuseks ka siis, kui tegemist on organisatsioonide või asutustega, mis toetavad õiguskaitseorganeid (nt Hollandi Kohtuekspertiisi Instituut – NFI), või tegevustega, mida tehakse õiguskaitseorganite ülesandel või volitusel."
     },
     "III.6b": {
       "ui:widget": "radio",
-      "ui:description": "Think of:\n- Activities around prevention and public safety, such as during crises and events, tackling undermining, and the work of the Safety and Care Action Center.\n- Services or partners with specific enforcement, investigative, or prosecutorial powers, such as FIOD, social investigation, environmental services, public transport enforcers, and investigation by specific (inspection) services."
+      "ui:description": "Näiteks:\n- Tegevused, mis aitavad hoida korda ja turvalisust - näiteks kriiside ajal, suurüritustel või kui tuleb ennetada õigusriiki õõnestavaid tegevusi.\n- Asutused, kellel on konkreetsed volitused, uurida, trahvida või süüdistust esitada - näiteks maksu- või sotsiaaluurijad, keskkonnateenistused, ühistranspordi kontrollijad ja eriseadustest tulenevad järelevalveasutused."
     },
     "III.6b-yes": {
-      "ui:description": "If it is a partnership, also name the other partners."
+      "ui:description": "Kui tegemist on partnerlusega, loetle ka teised osapooled."
     },
     "III.6.1": {
       "ui:widget": "radio"
@@ -2656,7 +2656,7 @@
     },
     "III.6.4": {
       "ui:widget": "radio",
-      "ui:description": "Think of automatically evaluating professional performance, economic situation, health, personal preferences, interests, reliability, behavior, location, or movements of a person to analyze or predict."
+      "ui:description": "Näiteks olukorrad, kus antakse automatiseeritud hinnang isiku tööalasele sooritusele, majanduslikule seisule, tervisele, isiklikele eelistustele, huvidele, usaldusväärsususele, käitumisele, asukohale või liikumisele."
     },
     "III.6.5": {
       "ui:widget": "radio"
@@ -2669,26 +2669,26 @@
     },
     "III.7.2": {
       "ui:widget": "radio",
-      "ui:description": "Think of a safety or health risk that a migrant or asylum seeker brings, such as TB screening."
+      "ui:description": "Näiteks ohutus- või rahvatervise riskid, mis kaasnevad sisserändajate või varjupaigataotlejate saabumisega, näiteks tuberkuloosi sõeluuringu vajadus."
     },
     "III.7.3": {
       "ui:widget": "radio",
-      "ui:description": "Also choose 'yes' when the application is used in assessing the reliability of evidence for applications or complaints."
+      "ui:description": "Märgi vastuseks 'Jah' ka juhul, kui lahendus aitab hinnata taotluste või kaebustega seotud tõendite usaldusväärsust."
     },
     "III.7.4": {
       "ui:widget": "radio"
     },
     "III.7.5": {
       "ui:widget": "radio",
-      "ui:description": "Choose 'no' when the application is also used for identification that is broader than just checking a passport or other travel document."
+      "ui:description": "Vali 'Ei', kui lahendust kasutatakse isikusamasuse tuvastamiseks laiemalt kui ainult passi või muu reisidokumendi kontrollimiseks."
     },
     "III.8.1": {
       "ui:widget": "radio",
-      "ui:description": "Professional matters, in which a judge makes a ruling, fall under the judiciary.\nAlternative dispute resolution includes disciplinary law, ombudsmen, arbitration, and complaints committees such as the Advertising Code Committee, the Council for Journalism, and the National Complaints Committee for Education."
+      "ui:description": "Kutsealased küsimused, kus otsuse langetab kohtunik, kuuluvad kohtusüsteemi pädevusse. Alternatiivsed vaidluste lahendamise viisid hõlmavad distsiplinaarmenetlust, ombudsmani poole pöördumist, vahekohtumenetlust ning erikomisjone (NAGU NÄITEKS)."
     },
     "III.8.2": {
       "ui:widget": "radio",
-      "ui:description": "Think of anonymizing or pseudonymizing judicial decisions, documents, or data, communication between staff members, and administrative tasks."
+      "ui:description": "Näiteks kohtulahendite, dokumentide ja andmete anonüümimine või pseudonüümimine, töötajatevaheline suhtlus ning administratiivsed tegevused."
     },
     "III.8.3": {
       "ui:widget": "radio"
@@ -2698,79 +2698,79 @@
     },
     "5.a.1": {
       "ui:widget": "radio",
-      "ui:description": "For example, by showing an image very briefly that someone cannot consciously perceive. These techniques are called subliminal techniques."
+      "ui:description": "Näiteks kui kujutist kuvatakse nii lühidalt, et inimene seda teadlikult ei märka. Selliseid võtteid nimetatakse alateadlikeks ehk subliminaalseteks mõjutustehnikateks."
     },
     "5.a.2": {
       "ui:widget": "radio",
-      "ui:description": "Think of applications that influence users to buy products, subscribe to services, or prevent them from filing a complaint while they intended to. Applications that stimulate addiction also fall under this."
+      "ui:description": "Näiteks lahendused, mis mõjutavad kasutajaid tooteid ostma, teenuseid tellima või loobuma kaebuse esitamisest hoolimata varasemast kavatsusest. Siia alla kuuluvad ka lahendused, mis soodustavad sõltuvuse teket."
     },
     "5.a.3": {
       "ui:widget": "radio",
-      "ui:description": "This concerns the (unintended) effect of the application. This can happen, for example, with AI chatbots that can give advice. Even when there are warnings with the application, the effect can be that people are influenced by the application."
+      "ui:description": "Siin on tegemist lahenduse (tahtmatu) mõjuga. See võib juhtuda näiteks tehisarui vestlusrobotitega, mis suudavad nõu anda. Isegi kui lahendusega kaasnevad hoiatused, võib mõju olla selline, et inimesed lasevad end lahendusest mõjutada."
     },
     "5.a.4": {
       "ui:widget": "radio",
-      "ui:description": "Think of an AI health chatbot intended to give tips on a healthy lifestyle and tailored advice for psychological and physical exercises. However, if the chatbot encourages unhealthy habits or dangerous activities (e.g., excessive exercise without rest or drinking water) that they would not have done otherwise, it has negative consequences for the user."
+      "ui:description": "Näiteks tehisarul põhinev tervisevaldkonna vestlusrobot, mis annab soovitusi tervislikuks elustiiliks ning pakub isikupärastatud harjutusi nii vaimse kui ka füüsilise tervise jaoks. Kui see robot soovitab aga midagi, mis pole tegelikult tervislik – näiteks liiga palju trenni ilma puhkepausideta või vett joomata –, võib see kasutajale kahju teha, eriti kui inimene muidu ei oleks nii käitunud."
     },
     "5.c.1": {
       "ui:widget": "radio"
     },
     "5.c.2": {
       "ui:widget": "radio",
-      "ui:description": "Examples of social behavior are driving behavior, communication style, breaking (unwritten) rules.\nExamples of personal characteristics are age, height, gender, economic situation, movement patterns, and interests."
+      "ui:description": "Sotsiaalset käitumist iseloomustavad liikluskäitumine, suhtlusstiil või ning (kirjutamata) reeglite rikkumine. Isikuomaduste alla kuuluvad näiteks vanus, kasv, sugu, majanduslik seis, liikumisharjumused ja huvid."
     },
     "5.c.3": {
       "ui:widget": "radio",
-      "ui:description": "For example, a low score leads to not getting access to something, having to pay a higher price, being investigated in (fraud) research."
+      "ui:description": "Näiteks võib madal skoor kaasa tuua ligipääsu keelu, kõrgema hinna maksmise kohustuse või sattumise (pettuse)uurimise alla."
     },
     "5.c.4": {
       "ui:widget": "radio",
-      "ui:description": "Unfavourable treatment in an unrelated context is, for example, a fraud risk score that leads to an investigation, where the fraud risk score is based on characteristics without clear relevance to the assessment of fraud, such as having a partner with a certain nationality, having an internet connection, behavior on social platforms, or performance at work.\nOther examples are not being able to get social housing due to traffic violations or being rejected for a job application because noise complaints were reported at the home address."
+      "ui:description": "Ebasoodne kohtlemine asjasse mitte puutuvas kontekstis on näiteks olukord, kus pettuseriski skoor viib uurimise algatamiseni, kuigi skoor põhineb tunnustel, millel puudub pettuseriski hindamisega selge seos. Näiteks see, et inimesel on teatud rahvusest elukaaslane, tal on internetiühendus, tema käitumine sotsiaalmeedias või tööalane sooritus.\nTeised näited ebasoodsast kohtlemisest on näiteks see, kui inimesele ei anta sotsiaalelamispinda, sest tal on olnud liiklusrikkumisi, või kui tööavaldus lükatakse tagasi, kuna tema kodu kohta on esitatud mürakaebusi."
     },
     "5.c.5": {
       "ui:widget": "radio",
-      "ui:description": "Disproportionate treatment is, for example, Someone gets a higher fraud risk score and therefore control because municipal taxes were once paid late. Other examples are a student not being admitted to further education because they were once caught cheating in childhood or a child not being eligible for Halt due to a high recidivism risk score because the child has a brother with a criminal record."
+      "ui:description": "Ebaproportsionaalne kohtlemine võib tähendada näiteks seda, et inimene saab kõrgema pettuseriski skoori ja teda hakatakse kontrollima seetõttu, et ta kunagi hilines kohalike maksude maksmisega. Samuti võib juhtuda, et õpilast ei võeta edasi õppima, kuna ta jäi kord lapsena spikerdamisega vahele, või et last ei lubata taastavasse õigusprogrammi, kuna tema vennal on kriminaalne taust ja selle tõttu peetakse ka teda riskantseks."
     },
     "6.1": {
       "ui:widget": "radio",
-      "ui:description": "Think of automatically evaluating professional performance, economic situation, health, personal preferences, interests, reliability, behavior, location, or movements of a person to analyze or predict."
+      "ui:description": "Näiteks inimese tööalase soorituse, rahalise seisu, tervise, huvide, käitumise või liikumise automaathindamine, et teda paremini analüüsida või tema tulevikukäitumist ennustada."
     },
     "6.2": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Think of smart search functions, data linking, automatic transcription or translation, text enhancers, and data visualization.\n\n**Note:** When the application can have a (significant) negative impact on those involved, choose 'no'."
+      "ui:description": "Näiteks nutikad otsingufunktsioonid, andmete seostamine (linking), automaatne transkribeerimine või tõlkimine, tekstiparandustööriistad ja andmete visualiseerimine.\n\n**Märkus:** Kui lahendusel võib asjaosalistele olla (märkimisväärne) negatiivne mõju, vali 'Ei'."
     },
     "2.6": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "This includes AI systems developed by students as part of their studies or by scientists affiliated with a university. In that case, the research must follow recognized ethical and professional standards for scientific research. For example, all participants must be informed that they are part of scientific research.\n\n**Note:** When the application is tested or used in operational processes or regular business operations, choose 'no'."
+      "ui:description": "See käib ka nende tehisaru süsteemide kohta, mida arendavad üliõpilased oma õpingute raames või ülikooliga seotud teadlased. Sellisel juhul peab teadustöö uurimistöö järgima tunnustatud teaduseetika ja hea teadustava reegleid. Näiteks tuleb kõiki osalejaid teavitada, et nad osalevad teadusuuringus.\n\n**Märkus:** Kui lahendust testitakse või kasutatakse tegelikes tööprotsessides või igapäevases äritegevuses, märgi vastuseks 'Ei'."
     },
     "2.3.1": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "**Note:** When the application is also used for other activities or purposes, choose 'no'."
+      "ui:description": "**Märkus:** Kui lahendust kasutatakse ka muudel eesmärkide, vali 'Ei'."
     },
     "2.3.2": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Think of ChatGPT, telephone AI customer service, and assistance tools such as co-pilot."
+      "ui:description": "Näiteks ChatGPT, tehisaru baasil töötav telefonigutgi või nutikad abivahendid nagu Co-Pilot."
     },
     "2.10": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "National security purposes mean preventing and punishing activities that can seriously destabilize the constitutional, political, economic, or social structures of a country. Think of direct threats to society, the population, or the state itself, such as terrorist activities.\n\n**Note:** When the application is also used for other activities or purposes, such as regular prevention, detection, and investigation of criminal offenses, choose 'no'."
+      "ui:description": "Riikliku julgeoleku eesmärkide all mõistetakse selliste tegevuste ennetamist ja karistamist, mis võivad tõsiselt õõnestada riigi põhiseaduslikku, poliitilist, majanduslikku või sotsiaalset korraldust. Siia kuuluvad otsesed ohud ühiskonnale, elanikkonnale või riigi olemusele, näiteks terroristlik tegevus.\n\n**Märkus:** Kui lahendust kasutatakse ka muudel eesmärkidel, näiteks kuritegude tavapäraseks ennetamiseks, avastamiseks ja uurimiseks, vali 'Ei'."
     },
     "50.1": {
       "ui:widget": "radio",
-      "ui:description": "Think of ChatGPT, telephone AI customer service, and assistance tools such as co-pilot."
+      "ui:description": "Näiteks ChatGPT, tehisaru baasil töötav telefonigutgi või nutikad abivahendid nagu Co-Pilot."
     },
     "50.2": {
       "ui:widget": "radio",
-      "ui:description": "Examples include smart search engines, systems that create summaries, AI that helps with writing, AI for editing images, creating new images, and deepfakes.\nAlso think of applications that create or edit new text, sound, or videos."
+      "ui:description": "Näiteks nutikad otsingumootorid, tekstist kokkuvõtteid tegevad tööriistad, kirjutamist abistav tehisaru, piltide muutmise ja loomise lahendused ning deepfake-videoid loov AI.\nSiia kuuluvad ka lahendused, mis loovad või töötlevad uut teksti, heli või videot."
     },
     "3.63": {
       "ui:widget": "radio",
-      "ui:description": "Think of a Large Language Model (LLM) or diffusion (image) models.\nA general-purpose AI model, also known as a 'General Purpose AI' or 'foundation model,' can perform a wide range of different tasks well and can therefore be integrated into various AI systems. GPT3 and GPT4.o are examples of general-purpose models used for applications like ChatGPT, but also for many other more specific applications."
+      "ui:description": "Näiteks suured keelemudelid (Large Langugae Models - LLMid) või piltide loomiseks kasutatavad difusioonimudelid.\nÜldotstarbeline tehisaru mudel ehk GPAI, mida kutsutakse ka alusmudeliks, on selline tehisaru süsteem, mis saab hakkama paljude väga erinevate ülesannetega ja mida saab integreerida väga erinevatesse tehisaru lahendustesse. GPT-3 ja GPT-4.o on näited üldotstarbelistest mudelitest, mida kasutatakse nii ChatGPTs kui ka paljudes muudes, spetsiifilisemates lahendustes."
     }
   }
 }
