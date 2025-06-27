@@ -781,7 +781,7 @@
                   "III.4.7": {
                     "type": "string",
                     "title": "Kas lahendust kasutatakse protsessides, kus otsustatakse tööülesannete jaotamise üle?",
-                    "enum": ["Jah", "No"]
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.4.7"]
@@ -801,7 +801,7 @@
               {
                 "properties": {
                   "III.4.7": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "III.4.8": {
                     "type": "string",
@@ -1281,7 +1281,7 @@
               {
                 "properties": {
                   "III.6.4": {
-                    "enum": ["E"]
+                    "enum": ["Ei"]
                   },
                   "III.6.5": {
                     "type": "string",
@@ -1306,7 +1306,7 @@
               {
                 "properties": {
                   "III.6.5": {
-                    "enum": ["E"]
+                    "enum": ["Ei"]
                   },
                   "migration": { "$ref": "#/definitions/migration" }
                 }
@@ -1330,7 +1330,7 @@
           "III.7": {
             "type": "string",
             "title": "Kas lahendust kasutatakse rände-, varjupaiga- ja piirikontrolli haldamisel?",
-            "enum": ["Jah", "No"]
+            "enum": ["Jah", "Ei"]
           }
         },
         "required": ["III.7"],
@@ -1345,7 +1345,7 @@
                   "III.7.1": {
                     "type": "string",
                     "title": "Kas lahendust kasutatakse polügraafi ehk valedetektori või muu sarnase seadmena?",
-                    "enum": ["Jah", "No"]
+                    "enum": ["Jah", "Ei"]
                   }
                 },
                 "required": ["III.7.1"]
@@ -1542,7 +1542,7 @@
               {
                 "properties": {
                   "III.8.2": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "exceptionHigh": { "$ref": "#/definitions/exceptionHigh" }
                 }
@@ -1714,7 +1714,7 @@
               {
                 "properties": {
                   "5.a.4": {
-                    "enum": ["No"]
+                    "enum": ["Ei"]
                   },
                   "5.c.1": {
                     "type": "string",
@@ -2480,7 +2480,7 @@
           {
             "properties": {
               "III.1": {
-                "enum": ["No"]
+                "enum": ["Ei"]
               },
               "infra": { "$ref": "#/definitions/infra" }
             }
