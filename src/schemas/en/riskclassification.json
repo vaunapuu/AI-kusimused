@@ -13,7 +13,7 @@
         "title": "Result",
         "default": "Esitatud vastuste alusel on teie lahendus EL tehisaru määruse mõistes kõrge riskiga süsteem ning see peab täitma kõrge riskiga süsteemidele kehtivaid nõudeid. Nende nõuete täpne ulatus sõltub sellest, kas teie organisatsioon on selle tehisaru süsteemi kasutaja või pakkuja. Arutage õigusekspertidega, kumba rolli teie asutus antud juhul täidab."
       },
-      "tulemusKeelatud": {
+      "outputForbidden": {
         "type": "string",
         "title": "Result",
         "default": "Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse. Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse. Kuna tegemist on kõrgeima riskitasemega (süsteemi kasutamine keelatud), ei piisa lõpliku hinnangu andmiseks küsimustiku tulemustest. Vajalik on detailne õiguslik analüüs - konsulteerige spetsialistidega."
@@ -464,7 +464,7 @@
           }
         }
       },
-      "haridus": {
+      "education": {
         "title": "haridus",
         "type": "object",
         "properties": {
@@ -598,7 +598,7 @@
           }
         }
       },
-      "töö": {
+      "work": {
         "title": "töö",
         "type": "object",
         "properties": {
@@ -734,7 +734,7 @@
           }
         }
       },
-      "töö2": {
+      "work2": {
         "title": "töö2",
         "type": "object",
         "properties": {
@@ -874,7 +874,7 @@
         }
       },
       "essentialservices1": {
-        "title": "olulisedteenused",
+        "title": "põhiteenused",
         "type": "object",
         "properties": {
           "III.5.1": {
@@ -961,7 +961,7 @@
                   },
                   "III.5.4": {
                     "type": "string",
-                    "title": "Kas lahendusega hinnatakse isiku õigust teenusele, soodustustele või toetusele??",
+                    "title": "Kas lahendusega hinnatakse isiku õigust teenusele, soodustustele või toetusele?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1482,7 +1482,7 @@
           }
         }
       },
-      "õigusekspert": {
+      "justice": {
         "title": "Kas lahendusega hinnatakse isiku õigust teenusele, soodustustele või toetusele?",
         "type": "object",
         "properties": {
@@ -1597,7 +1597,7 @@
           }
         }
       },
-      "kunst5": {
+      "art5": {
         "title": "art5",
         "type": "object",
         "properties": {
@@ -1852,7 +1852,7 @@
           }
         }
       },
-      "erandKõrge": {
+      "exceptionHigh": {
         "title": "exceptionHigh",
         "type": "object",
         "properties": {
@@ -2028,7 +2028,7 @@
           }
         }
       },
-      "erandKeelatud": {
+      "exceptionForbidden": {
         "title": "exceptionForbidden",
         "type": "object",
         "properties": {
@@ -2143,7 +2143,7 @@
           }
         }
       },
-      "erandLäbipaistvus": {
+      "exceptionTransparency": {
         "title": "exceptionTransparency",
         "type": "object",
         "properties": {
@@ -2258,7 +2258,7 @@
           }
         }
       },
-      "erand": {
+      "exceptionGPAI": {
         "title": "exceptionGPAI",
         "type": "object",
         "properties": {
@@ -2373,13 +2373,13 @@
           }
         }
       },
-      "othermuu": {
+      "other": {
         "title": "other",
         "type": "object",
         "properties": {
           "50.1": {
             "type": "string",
-            "title": "Kas tegu on vestlusroboti, tehisarui assistendi või muu süsteemiga, millega on võimalik vestelda?",
+            "title": "Kas tegu on vestlusroboti, tehisaru assistendi või muu süsteemiga, millega on võimalik vestelda?",
             "enum": ["Jah", "Ei"]
           }
         },
