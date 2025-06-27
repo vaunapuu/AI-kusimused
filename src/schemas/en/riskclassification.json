@@ -1,14 +1,14 @@
 {
   "JSONSchema": {
-    "title": "Tehisarusüsteemide riskiklassifikatsioon",
+    "title": "Risk classification of AI systems",
     "type": "object",
     "definitions": {
-      "tulemusMadal": {
+      "outputLow": {
         "type": "string",
         "title": "Result",
         "default": "Esitatud vastuste põhjal teie asutuse süsteemile EL tehisaru määrus ei laiene"
       },
-      "tulemusKõrge": {
+      "outputHigh": {
         "type": "string",
         "title": "Result",
         "default": "Esitatud vastuste alusel on teie lahendus EL tehisaru määruse mõistes kõrge riskiga süsteem ning see peab täitma kõrge riskiga süsteemidele kehtivaid nõudeid. Nende nõuete täpne ulatus sõltub sellest, kas teie organisatsioon on selle tehisaru süsteemi kasutaja või pakkuja. Arutage õigusekspertidega, kumba rolli teie asutus antud juhul täidab."
@@ -18,32 +18,32 @@
         "title": "Result",
         "default": "Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse. Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse. Kuna tegemist on kõrgeima riskitasemega (süsteemi kasutamine keelatud), ei piisa lõpliku hinnangu andmiseks küsimustiku tulemustest. Vajalik on detailne õiguslik analüüs - konsulteerige spetsialistidega."
       },
-      "tulemusKõrgeErandiga": {
+      "outputHighExcept": {
         "type": "string",
         "title": "Result",
         "default": "Teie lahendus liigitub kõrge riskiga tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Kindluse saamiseks konsulteeriga õiguseksperdiga. Kui erand ei kehti, tuleb järgida EL määruses kehtestatud kõrge riskiga süsteemidele ette nähtud kohustusi."
       },
-      "tulemusKeelatudErandiga": {
+      "outputForbiddenExcept": {
         "type": "string",
         "title": "Result",
         "default": "Teie lahendus liigitub (osaliselt) keelatud tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Täpseks hindamiseks konsulteerige õiguseksperdiga. Kui erand ei kehti,  määratlege, millisesse kategooriasse see juhtum kuulub."
       },
-      "tulemusLäbipaistvus": {
+      "outputTransparency": {
         "type": "string",
         "title": "Result",
         "default": "Esitatud vastuste järgi peab teie süsteem täitma EL tehisarumääruse artikli 50 läbipaistvusnõudeid. Teie lahenduses võib olla kasutusel üldotstarbeline tehisaru mudel (General Purpose AI - GPAI), millele kehtivad eraldi nõuded. Nende nõuete täitmine on kohustuslik. Pöörduge juristide poole, et välja selgitada: 1) kas kasutate GPAI mudelit, 2) milline on teie roll - kasutaja või teenusepakkuja."
       },
-      "tulemusLäbipaistvusErandiga": {
+      "outputTransparencyExcept": {
         "type": "string",
         "title": "Result",
         "default": "Teie lahendus võib vajada EL määruse artikli 50 läbipaistvusnõuete täitmist, kuid võimalike erandite kohalduvust tuleb hinnata koos õigusekspertidega. Kui erand ei kehti, tuleb järgmisena välja selgitada: 1) kas kasutate GPAI-mudelit, 2) milline on teie asutuse roll - kasutaja või pakkuja)."
       },
-      "tulemusGPAI": {
+      "outputGPAI": {
         "type": "string",
         "title": "Result",
         "default": "Teie lahendus liigitub üldotstarbeliseks tehisarumudeliks (GPAI) ja peab seetõttu täitma EL tehisarumääruses kehtestatud spetsiifilisi nõudeid. Teie asutuse kohustuste täpne ulatus sõltub GPAI-mudeli olemusest ning teie rollist - kas tegutsete mudeli kasutaja või teenusepakkuja positsioonis. Nende aspektide selgitamiseks soovitame pöörduda õigusekspertide poole."
       },
-      "tulemusGPAIErandiga": {
+      "outputGPAIExcept": {
         "type": "string",
         "title": "Result",
         "default": "Esitatud vastuste järgi liigitub teie lahendus GPAI-mudeliks, kuid EL määrus võib lubada erandeid. Erandite kontrollimiseks pöörduge õiguseksperdi poole. Erandite puudumisel kehtivad GPAI-mudelitele ette nähtud erinõuded."
