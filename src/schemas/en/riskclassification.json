@@ -48,7 +48,7 @@
         "title": "Result",
         "default": "Esitatud vastuste järgi liigitub teie lahendus GPAI-mudeliks, kuid EL määrus võib lubada erandeid. Erandite kontrollimiseks pöörduge õiguseksperdi poole. Erandite puudumisel kehtivad GPAI-mudelitele ette nähtud erinõuded."
       },
-      "biomeetrika": {
+      "biometrics": {
         "title": "biometrics",
         "type": "object",
         "properties": {
