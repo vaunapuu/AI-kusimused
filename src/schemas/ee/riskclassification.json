@@ -1,6 +1,6 @@
 {
   "JSONSchema": {
-    "title": "Risk classification of AI systems",
+    "title": "AI süsteemide riskide klassifitseerimine",
     "type": "object",
     "definitions": {
       "outputLow": {

@@ -19,6 +19,7 @@ export default function LanguageSwitcher() {
         EE
       </a>
       {/*
+      |
       <a
         className={
           (i18n.language == "nl" ? "font-weight-bold" : "") +
