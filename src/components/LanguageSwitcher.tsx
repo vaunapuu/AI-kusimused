@@ -11,6 +11,16 @@ export default function LanguageSwitcher() {
       {/* Make the active language bold */}
       <a
         className={
+          (i18n.language == "ee" ? "font-weight-bold" : "") +
+          " mx-2 text-nowrap"
+        }
+        onClick={() => changeLanguage("ee")}
+      >
+        EE
+      </a>
+      {/*
+      <a
+        className={
           (i18n.language == "nl" ? "font-weight-bold" : "") +
           " mx-2 text-nowrap"
         }
@@ -28,6 +38,7 @@ export default function LanguageSwitcher() {
       >
         EN
       </a>
+      */}
     </div>
   );
 }
