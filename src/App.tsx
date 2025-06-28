@@ -59,7 +59,7 @@ export default function App() {
 
       // Convert array of entries to an array per language
       for (const [path, data] of dataEntries) {
-        const language: string = path.split("/")[3] ?? "nl";
+        const language: string = path.split("/")[3] ?? "ee";
         const dataObject = forms[language] ?? [];
         dataObject.push(data);
         forms[language] = dataObject;
