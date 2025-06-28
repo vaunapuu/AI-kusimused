@@ -1,5 +1,6 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
+import eeTranslation from "./ee/translation.json";
 import enTranslation from "./en/translation.json";
 import nlTranslation from "./nl/translation.json";
 
@@ -8,9 +9,12 @@ i18next
   //.use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "en", // Default language if detection fails
+    fallbackLng: "ee", // Default language if detection fails
     // debug: true,
     resources: {
+      ee: {
+        translation: eeTranslation,
+      },
       en: {
         translation: enTranslation,
       },
