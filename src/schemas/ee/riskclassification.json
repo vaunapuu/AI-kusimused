@@ -2491,8 +2491,8 @@
   },
   "uiSchema": {
     "III.1": {
-      "ui:widget": "radio",
-      "ui:description": "Biomeetrilised andmed on inimese unikaalsed omadused, nagu näiteks näopildid või -videod, vikerkesta skaneeringud, sõrmejäljed, häälekõla, käekiri ja teised kehalised ja/või käitumuslikud eripärad. \n\nKlaviatuuril trükitud tekst ei ole biomeetriline andmestik, kuid inimese unikaalne trükkimisviis (nt klahvivajutuste sagedus ja rütm) on."
+      "ui:description": "Biomeetrilised andmed on inimese unikaalsed omadused, nagu näiteks näopildid või -videod, vikerkesta skaneeringud, sõrmejäljed, häälekõla, käekiri ja teised kehalised ja/või käitumuslikud eripärad. \n\nKlaviatuuril trükitud tekst ei ole biomeetriline andmestik, kuid inimese unikaalne trükkimisviis (nt klahvivajutuste sagedus ja rütm) on.",
+      "ui:widget": "radio"
     },
     "5.e.1": {
       "ui:widget": "radio"
