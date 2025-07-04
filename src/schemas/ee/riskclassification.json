@@ -54,7 +54,7 @@
         "properties": {
           "5.e.1": {
             "type": "string",
-            "title": "Kas lahendust kasutatakse näotuvastussüsteemi loomiseks või laiendamiseks? Biomeetrilised andmed on inimese unikaalsed omadused, nagu näiteks näopildid või -videod, vikerkesta skaneeringud, sõrmejäljed, häälekõla, käekiri ja teised kehalised ja/või käitumuslikud eripärad. \n\nKlaviatuuril trükitud tekst ei ole biomeetriline andmestik, kuid inimese unikaalne trükkimisviis (nt klahvivajutuste sagedus ja rütm) on.",
+            "title": "Kas lahendust kasutatakse näotuvastussüsteemi loomiseks või laiendamiseks?",
             "enum": ["Jah", "Ei"]
           }
         },
@@ -2462,6 +2462,7 @@
       "III.1": {
         "type": "string",
         "title": "Kas lahendus kasutab biomeetrilisi andmeid?",
+        "title_hint": "Biomeetrilised andmed on inimese unikaalsed omadused, nagu näiteks näopildid või -videod, vikerkesta skaneeringud, sõrmejäljed, häälekõla, käekiri ja teised kehalised ja/või käitumuslikud eripärad. Klaviatuuril trükitud tekst ei ole biomeetriline andmestik, kuid inimese unikaalne trükkimisviis (nt klahvivajutuste sagedus ja rütm) on.",
         "enum": ["Jah", "Ei"]
       }
     },
