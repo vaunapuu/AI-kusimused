@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 export default function Output({
   id,
   type,
-  title,
   output,
   step,
   handlePrev,
@@ -18,7 +17,6 @@ export default function Output({
 }: {
   id: number;
   type: "output" | "error";
-  title: string;
   output: Record<string, string>;
   step: number;
   handlePrev: () => void;
