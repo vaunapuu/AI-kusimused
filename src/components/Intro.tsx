@@ -21,7 +21,7 @@ export default function ({
           {!activeLanguage && <LanguageSwitcher />}
         </div>
 
-        <div className="mb-4"> 
+        <div className="mb-4">
           <p>
             {/* first sentence */}
             {t("description1")}
@@ -33,26 +33,24 @@ export default function ({
             </a>
             {/* second sentence */}
             {t("description2")}
-            <a
-              href="https://algoritmes.pleio.nl/attachment/entity/f1a35292-7ea6-4e47-93fa-b3358e9ab2e0"
-              target="_blank"
-            >
-              {t("Handreiking_link")}
-            </a>
             {t("description3")}
             {/* third sentence */}
+          </p>
+          <p>
             {t("description4")}
+
             {t("description5")}
           </p>
           <p>
-            {t("feedback")}{" "}
+            <b>{t("feedback_PS")}</b>
+            {t("feedback_0")}
             <a
-              href="https://github.com/NGO-Algorithm-Audit/AI-Act-Implementation-Tool"
+              href="https://algorithmaudit.eu/technical-tools/implementation-tool/#tool"
               target="_blank"
             >
-              Github
-            </a>{" "}
-            {t("or")}{" "}
+              {t("feedback_AA")}
+            </a>
+            {t("feedback")}{" "}
             <a href="mailto:info@algorithmaudit.eu">info@algorithmaudit.eu</a>.
           </p>
         </div>
