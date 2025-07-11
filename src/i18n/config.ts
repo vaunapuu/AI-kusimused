@@ -2,7 +2,6 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import eeTranslation from "./ee/translation.json";
 import enTranslation from "./en/translation.json";
-import nlTranslation from "./nl/translation.json";
 
 i18next
   // currently not using the language detector, since we are using url params.
@@ -17,9 +16,6 @@ i18next
       },
       en: {
         translation: enTranslation,
-      },
-      nl: {
-        translation: nlTranslation,
       },
     },
     detection: {
