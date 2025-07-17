@@ -29,7 +29,6 @@ export default function LanguageSwitcher() {
       >
         NL
       </a>
-      */}
       |
       <a
         className={
@@ -40,6 +39,7 @@ export default function LanguageSwitcher() {
       >
         EN
       </a>
+      */}
     </div>
   );
 }

@@ -51,7 +51,7 @@ export default function ({
               {t("feedback_AA")}
             </a>
             {t("feedback")}{" "}
-            <a href="mailto:info@algorithmaudit.eu">info@algorithmaudit.eu</a>.
+            <a href="mailto:andmed@justdigi.ee">andmed@justdigi.ee</a>.
           </p>
         </div>
 
