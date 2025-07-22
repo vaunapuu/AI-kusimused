@@ -11,42 +11,42 @@
       "outputHigh": {
         "type": "string",
         "title": "Result",
-        "default": "Esitatud vastuste alusel on teie lahendus EL AI määruse mõistes kõrge riskiga süsteem ning täitma kõrge riskiga süsteemidele kehtivaid nõudeid. Nõuete täpne ulatus sõltub sellest, kas teie asutus on tehisarusüsteemi kasutaja või pakkuja. Pidage nõu õigusekspertidega, kumba rolli teie asutus antud juhul täidab."
+        "default": "Esitatud vastuste alusel on teie lahendus EL AI määruse mõistes kõrge riskiga süsteem. Suure riskiga tehisintellektisüsteemi arendamisel ja kasutamisel sõltuvad teie kohustused sellest, kas te olete pakkuja või juurutaja.\n\nPakkuja on isik, kes 1) tehisarusüsteemi arendab ja turule toob või 2) toob turule kellegi teise arendatud süsteemi oma nime või kaubamärgi all. Enamasti käivad siia alla tehisarulahendusi pakkuvad tehnoloogiaettevõtted. Pakkuja kohustused on kirjeldatud EL AI määruse artiklites 9-21.\n\nJuurutaja on põhimõtteliselt iga isik, organisatsioon või asutus, kes kasutab tehisarusüsteemi oma tegevuses või teenuste pakkumisel. Siia kuuluvad üldjuhul avaliku sektori asutused, kes kasutavad AI-süsteeme teenuste pakkumisel või otsuste tegemisel, aga samuti pangad, tootmisettevõtted, tervishoiu- ja haridusasutused, kes tehisarulahendusi oma töös rakendavad. Juurutaja kohustused on kirjeldatud AI määruse artiklites 26-27.\n\nAsutus võib olla nii juurutaja kui ka pakkuja, kui ta on ise tehisarusüsteemi arendaja, mille ta seejärel oma tegevuses või pakutavate teenuste osana ise kasutusele võtab.\n\nPidage nõu õigusekspertidega, kumba rolli teie asutus antud juhul täidab."
       },
       "outputForbidden": {
         "type": "string",
         "title": "Result",
-        "default": "Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse. Kuna tegemist on kõrgeima riskitasemega (süsteemi kasutamine keelatud), ei piisa lõpliku hinnangu andmiseks küsimustiku tulemustest. Vajalik on detailne õiguslik analüüs - konsulteerige spetsialistidega."
+        "default": "Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse (vt EL AI määruse artikkel 5), mille rakendamine, pakkumine ja kasutamine on keelatud alates veebruarist 2025. Kuna tegemist on kõrgeima riskitasemega (süsteemi kasutamine keelatud), ei piisa lõpliku hinnangu andmiseks küsimustiku tulemustest. Vajalik on detailne õiguslik analüüs - pidage nõu oma õigusekspertidega."
       },
       "outputHighExcept": {
         "type": "string",
         "title": "Result",
-        "default": "Teie lahendus liigitub kõrge riskiga tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Kindluse saamiseks pidage nõu õiguseksperdiga. Kui erand ei kehti, tuleb järgida EL AI määruses kehtestatud kõrge riskiga süsteemidele ette nähtud kohustusi."
+        "default": "Teie lahendus liigitub kõrge riskiga tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Kõrge riskiga tehisarusüsteemid on määratletud EL AI määruse Lisas III ning artiklis 6. Erandid on esitatud artikli 6 lõikes 3 (nt kui süsteem täidab mõnda kitsast menetlusülesannet, on toetab üksnes otsust ettevalmistavaid tegevusi või parandab inimese varasemat tegevust).\n\nSelleks, et aru saada, kas teie lahendus liigitub erandi alla või mitte, soovitame nõu pidada õiguseksperdiga. Kui erand ei kehti, tuleb järgida EL AI määruses kehtestatud kõrge riskiga süsteemidele ette nähtud kohustusi (artiklid 16-29 ning Lisa III)."
       },
       "outputForbiddenExcept": {
         "type": "string",
         "title": "Result",
-        "default": "Teie lahendus liigitub (osaliselt) keelatud tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Täpse hinnangu saamiseks pidage nõu õiguseksperdiga. Kui erand ei kehti, määratlege, millisesse riskikategooriasse teie juhtum kuulub."
+        "default": "Teie lahendus liigitub (osaliselt) keelatud tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Nii keelatud tehisarusüsteemid kui ka neile kehtivad erandid (kui süsteemi kasutamine on rangelt vajalik õiguskaitse, riigi julgeoleku või muudel seaduses sätestatud erakorralistel juhtudel) on sätestatud EL AI määruse artiklis 5.\n\nTäpse hinnangu saamiseks pidage nõu õiguseksperdiga. Kui teie süsteemile erand ei kehti, määratlege, millisesse riskikategooriasse teie juhtum kuulub."
       },
       "outputTransparency": {
         "type": "string",
         "title": "Result",
-        "default": "Esitatud vastuste järgi peab teie süsteem täitma EL AI määruse artikli 50 läbipaistvusnõudeid. Teie lahenduses võib olla kasutusel üldotstarbeline tehisaru mudel (General Purpose AI - GPAI), millele kehtivad eraldi nõuded. Nende nõuete täitmine on kohustuslik. Pidage nõu õigusekspertidega, et välja selgitada: 1) kas kasutate GPAI-mudelit, 2) milline on teie asutuse roll - kasutaja või teenusepakkuja."
+        "default": "Esitatud vastuste järgi peab teie süsteem täitma EL AI määruse artikli 50 läbipaistvusnõudeid. Artiklis 50 sätestatud läbipaistvusnõuded (nt kohustus teavitada kasutajaid tehisarusüsteemiga suhtlemisest ja teatud AI-ga loodud sisutüüpide märgistamine) kehtivad piiratud riskiga tehisarusüsteemidele, kus läbipaistvus on vajalik kasutajate teadlikkuse ja turvalisuse tagamiseks.\n\nTeie lahenduses võib olla kasutusel üldotstarbeline AI-mudel (General Purpose AI ehk GPAI), millele kehtivad eraldi nõuded. Nende nõuete täitmine on kohustuslik. Pidage nõu õigusekspertidega, et välja selgitada: 1) kas kasutate GPAI mudelit, 2) milline on teie roll - juurutaja (kasutaja) või pakkuja (arendaja)."
       },
       "outputTransparencyExcept": {
         "type": "string",
         "title": "Result",
-        "default": "Teie lahendus võib vajada EL AI määruse artikli 50 läbipaistvusnõuete täitmist, kuid pidage võimalike erandite kohalduvuse osas nõu õigusekspertidega. Kui erand ei kehti, tuleb järgmisena välja selgitada: 1) kas kasutate GPAI-mudelit, 2) milline on teie asutuse roll - kasutaja või teenusepakkuja)."
+        "default": "Teie lahendus võib vajada EL AI määruse artikli 50 läbipaistvusnõuete täitmist, kuid pidage võimalike erandite kohalduvuse osas nõu õiguseksperdiga. Erandid läbipaistvusnõuetele on sätestatud EL AI määruse artiklis 50 (eriti selle lõigetes, mis kirjeldavad olukordi, kus teavitamine pole vajalik või kus see on õiguslikult välistatud). \n\nKui erand ei kehti, tuleb järgmisena välja selgitada: 1) kas kasutate GPAI-mudelit, 2) milline on teie asutuse roll - juurutaja (kasutaja) või pakkuja. Seda aitab määrata EL AI määruse artikkel 3."
       },
       "outputGPAI": {
         "type": "string",
         "title": "Result",
-        "default": "Teie lahendus liigitub üldotstarbeliseks tehisarumudeliks (GPAI) ja peab seetõttu täitma EL AI määruses kehtestatud spetsiifilisi nõudeid. Teie asutuse kohustuste täpne ulatus sõltub GPAI-mudeli olemusest ning teie rollist - kas tegutsete mudeli kasutaja või teenusepakkujana. Selle täpsustamiseks soovitame nõu pidada õigusekspertidega."
+        "default": "Teie lahendus liigitub üldotstarbeliseks AI-mudeliks (GPAI), mille puhul tuleb täita EL AI-määruses kehtestatud spetsiifilisi nõudeid. Teie asutuse kohustuste täpne ulatus sõltub GPAI-mudeli olemusest ning teie rollist - kas olete mudeli juurutaja (kasutaja) või pakkuja (arendaja). GPAI mõiste, samuti “pakkuja” ja “juurutaja” rollid, on määratletud EL AI määruse artiklis 3.\n\nHindamaks teie GPAI-mudeli olemust ning asutuse rolli selles soovitame nõu pidada õiguseksperdiga."
       },
       "outputGPAIExcept": {
         "type": "string",
         "title": "Result",
-        "default": "Esitatud vastuste järgi liigitub teie lahendus GPAI-mudeliks, kuid EL AI määrus võib lubada erandeid. Erandite kontrollimiseks pidage nõu õiguseksperdiga. Kui erand ei kehti, kohalduvad teie lahendusele GPAI-mudelitele ette nähtud erinõuded."
+        "default": "Esitatud vastuste järgi liigitub teie lahendus GPAI-mudeliks, kuid EL määrus (eeskätt artiklid 2 ja 3) võib lubada erandeid. Erandite kehtimise kontrollimiseks soovitame nõu pidada õiguseksperdiga. Kui teie lahendus erandi alla ei liigitu, tuleb lähtuda GPAI-mudelitele ette nähtud erinõuetest."
       },
       "biometrics": {
         "title": "biometrics",
@@ -54,7 +54,7 @@
         "properties": {
           "5.e.1": {
             "type": "string",
-            "title": "Kas lahendust kasutatakse näotuvastussüsteemi loomiseks või laiendamiseks?",
+            "title": "Kas lahendust kasutatakse näotuvastuse andmebaasi loomiseks või laiendamiseks?",
             "enum": ["Jah", "Ei"]
           }
         },
@@ -72,7 +72,7 @@
                     "title": "Millisel otstarbel biomeetrilisi andmeid kasutatakse?",
                     "enum": [
                       "Kaugtuvastuseks: inimese identiteedi kindlakstegemiseks ilma füüsilise kohalolekuta, kasutades tehnilisi vahendeid (nt kaamerapilti või heli).",
-                      "Inimeste kategoriseerimiseks: isikute jaotamiseks gruppidesse või neile märgiste (ingl k 'label') omistamiseks teatud tunnuste alusel (nt välimus või käitumine). Näiteks võib süsteem määrata inimesele märgise 'poevaras' või tuvastada tema sugu video põhjal.",
+                      "Inimeste liigitamiseks: isikute jaotamiseks gruppidesse või neile märgiste (ingl k 'label') omistamiseks teatud tunnuste alusel (nt välimus või käitumine). Näiteks võib süsteem määrata inimesele märgise 'poevaras' või tuvastada tema sugu video põhjal.",
                       "Emotsioonide või kavatsuste tuvastamiseks. Emotsioonide hulka kuuluvad näiteks rõõm, kurbus, viha, agressiivsus, üllatus, vastikus, häbelikkus, erutus, häbi, põlgus, rahulolu ja nauding.",
                       "Muudel eesmärkidel: näiteks rahvahulkade suunamisel, kus tehisaru ei tuvasta ega liigita konkreetseid isikuid, või passifoto kohapeal kontrollimisel."
                     ]
@@ -117,7 +117,7 @@
                     "title": "Millisel otstarbel biomeetrilisi andmeid kasutatakse?",
                     "enum": [
                       "Kaugtuvastuseks: inimese identiteedi kindlaks tegemiseks ilma füüsilise kohalolekuta, kasutades tehnilisi vahendeid (nt kaamerapilti või heli).",
-                      "Inimeste kategoriseerimiseks: isikute jaotamiseks gruppidesse või neile märgiste (ingl k 'label') omistamiseks teatud tunnuste alusel (nt välimus või käitumine). Näiteks võib süsteem määrata inimesele märgise 'poevaras' või tuvastada tema sugu video põhjal.",
+                      "Inimeste liigitamiseks: isikute jaotamiseks gruppidesse või neile märgiste (ingl k 'label') omistamiseks teatud tunnuste alusel (nt välimus või käitumine). Näiteks võib süsteem määrata inimesele märgise 'poevaras' või tuvastada tema sugu video põhjal.",
                       "Emotsioonide või kavatsuste tuvastamiseks. Emotsioonide hulka kuuluvad näiteks rõõm, kurbus, viha, agressiivsus, üllatus, vastikus, häbelikkus, erutus, häbi, põlgus, rahulolu ja nauding.",
                       "Muudel eesmärkidel: näiteks rahvahulkade suunamisel, kus tehisaru ei tuvasta ega liigita konkreetseid isikuid, või passifoto kohapealsel võrdlemisel tuvastatava inimesega."
                     ]
@@ -179,7 +179,7 @@
                 "properties": {
                   "III.1.1": {
                     "enum": [
-                      "Inimeste kategoriseerimiseks: isikute jaotamiseks gruppidesse või neile märgiste (ingl k 'label') omistamiseks teatud tunnuste alusel (nt välimus või käitumine). Näiteks võib süsteem määrata inimesele märgise 'poevaras' või tuvastada tema sugu video põhjal."
+                      "Inimeste liigitamiseks: isikute jaotamiseks gruppidesse või neile märgiste (ingl k 'label') omistamiseks teatud tunnuste alusel (nt välimus või käitumine). Näiteks võib süsteem määrata inimesele märgise 'poevaras' või tuvastada tema sugu video põhjal."
                     ]
                   },
                   "5.g.1": {
@@ -341,7 +341,7 @@
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Kas lahendus aitab tagada taristu juhtimise või toimimise ohutust?",
+                    "title": "Kas lahendus aitab tagada taristu korraldamise või käitamise turvalisust?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -354,7 +354,7 @@
                   },
                   "III.2.2": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse teede, sildade või liikluse juhtimise või toimimise tagamiseks?",
+                    "title": "Kas lahendust kasutatakse maanteede, sildade või liikluse korraldamise või käitamise tagamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -371,7 +371,7 @@
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Kas lahendus aitab tagada selle taristu juhtimise või toimimise ohutust?",
+                    "title": "Kas lahendus aitab tagada selle taristu korraldamise või käitamise turvalisust?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -384,7 +384,7 @@
                   },
                   "III.2.3": {
                     "type": "string",
-                    "title": "Kas lahendus on osa kriitilise tähtsusega digitaristust?",
+                    "title": "Kas lahendus on osa elutähtsast digitaristust?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -401,7 +401,7 @@
                   },
                   "III.2.4": {
                     "type": "string",
-                    "title": "Kas lahendus aitab tagada taristu juhtimise või toimimise ohutust?",
+                    "title": "Kas lahendus aitab tagada taristu korraldamise või käitamise turvalisust?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -470,7 +470,7 @@
         "properties": {
           "III.3": {
             "type": "string",
-            "title": "Kas lahendust kasutatakse hariduse või (kutse)õppe valdkonnas?",
+            "title": "Kas lahendust kasutatakse hariduse või kutseõppe valdkonnas?",
             "enum": ["Jah", "Ei"]
           }
         },
@@ -560,7 +560,7 @@
                   },
                   "III.3.4": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse õpilaste, üliõpilaste või koolitusel osalejate ebasobiva käitumise tuvastamiseks?",
+                    "title": "Kas lahendust kasutatakse õpilaste, üliõpilaste või koolitusel osalejate keelatud käitumise tuvastamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -671,7 +671,7 @@
                   },
                   "III.4.3": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse kandideerimisavalduste hindamiseks ja eelvalikuks?",
+                    "title": "Kas lahendust kasutatakse tööle kandideerimise taotluste hindamiseks ja eelvalikuks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -830,7 +830,7 @@
                   },
                   "III.4.9": {
                     "type": "string",
-                    "title": "Kas selle protsessi või sellega seonduvate protsesside käigus hinnatakse või jälgitakse käitumist või tulemuslikkust?",
+                    "title": "Kas selle protsessi või sellega seonduvate protsesside käigus hinnatakse või jälgitakse töötajate käitumist või nende töö tulemuslikkust?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1024,7 +1024,7 @@
         "properties": {
           "III.5.6": {
             "type": "string",
-            "title": "Kas lahendust kasutatakse isikute krediidivõimekuse hindamiseks või krediidiskoori määramiseks?",
+            "title": "Kas lahendust kasutatakse isikute krediidikõlblikkuse hindamiseks või neile krediidihinnangu andmiseks?",
             "enum": ["Jah", "Ei"]
           }
         },
@@ -1039,7 +1039,7 @@
                   },
                   "III.5.7": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse elu- ja tervisekindlustuse riskihindamisel ja kindlustusmaksete määramiseks?",
+                    "title": "Kas lahendust kasutatakse elu- ja tervisekindlustusega seotud riskihindamiseks ja kindlustusmaksete suuruse määramiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1064,7 +1064,7 @@
                   },
                   "III.5.8": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse hädaabikõnede analüüsimisel, hädaabiteenuste väljasaatmise või prioriseerimise otsuste tegemisel või erakorralise meditsiiniabi vajaduse hindamisel (triaaž)?",
+                    "title": "Kas lahendust kasutatakse hädaabikõnede hindamisel, hädaabiteenuste väljasaatmise ja väljasaatmisprioriteetide seadmisel ning erakorralise arstiabi vajaduse hindamisel (triaaž)?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1163,7 +1163,7 @@
                   },
                   "III.6.1": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse selleks, et ennustada inimese võimalikku sattumist kuriteo ohvriks?",
+                    "title": "Kas lahendust kasutatakse selleks, et hinnata või ennustada isiku riski langeda kuriteo ohvriks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1193,7 +1193,7 @@
                   },
                   "III.6.1": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse selleks, et ennustada inimese võimalikku sattumist kuriteo ohvriks?",
+                    "title": "Kas lahendust kasutatakse selleks, et ennustada inimese võimalikku langemist kuriteo ohvriks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1235,7 +1235,7 @@
                   },
                   "III.6.3": {
                     "type": "string",
-                    "title": "Kas lahendusega kontrollitakse tõendusmaterjali usaldusväärsust uurimise või süüdistuse esitamise faasis?",
+                    "title": "Kas lahendusega kontrollitakse tõendite usaldusväärsust kuritegude uurimise või nende eest vastutusele võtmise käigus?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1285,7 +1285,7 @@
                   },
                   "III.6.5": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse üksikisikute või gruppide isikuomaduste, käitumisprofiili või varasemate õigusrikkumiste analüüsimiseks?",
+                    "title": "Kas lahendust kasutatakse üksikisikute või inimgruppide isikuomaduste, käitumisprofiili või varasemate õigusrikkumiste analüüsimiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1344,7 +1344,7 @@
                   },
                   "III.7.1": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse polügraafi ehk valedetektori või muu sarnase seadmena?",
+                    "title": "Kas lahendust kasutatakse valedetektori või muu sarnase seadmena?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1419,7 +1419,7 @@
                   },
                   "III.7.4": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse isikute leidmiseks, tuvastamiseks või kindlakstegemiseks?",
+                    "title": "Kas lahendust kasutatakse isikute avastamiseks, äratundmiseks või tuvastamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1691,7 +1691,7 @@
                   },
                   "5.c.1": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse inimeste hindamiseks, neile antavate punktiskooride arvutamiseks (sh reitingute määramiseks) või isikute rühmitamiseks?",
+                    "title": "Kas lahendust kasutatakse inimeste hindamiseks, neile antavate punktiskooride arvutamiseks või isikute liigitamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1718,7 +1718,7 @@
                   },
                   "5.c.1": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse inimeste hindamiseks, neile antavate punktiskooride arvutamiseks (sh reitingute määramiseks) või isikute rühmitamiseks?",
+                    "title": "Kas lahendust kasutatakse inimeste hindamiseks, neile antavate punktiskooride arvutamiseks (sh reitingute määramiseks) või isikute liigitamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1768,7 +1768,7 @@
                   },
                   "5.c.3": {
                     "type": "string",
-                    "title": "Kas see hinnang või prognoos võib viia hinnatava isiku ebaõiglase kohtlemiseni?",
+                    "title": "Kas see hinnang või prognoos võib viia hinnatava isiku ebasoodsa kohtlemiseni?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1793,7 +1793,7 @@
                   },
                   "5.c.4": {
                     "type": "string",
-                    "title": "Kas võib juhtuda, et inimest koheldakse ebaõiglaselt hoopis teises kontekstis kui see käitumine või isikuomadus, millele talle antud punktisumma (skoor) põhineb?",
+                    "title": "Kas võib juhtuda, et inimest koheldakse ebasoodsalt hoopis teises kontekstis kui see käitumine või isikuomadus, millele talle antud punktisumma (skoor) põhineb?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1820,7 +1820,7 @@
                   },
                   "5.c.5": {
                     "type": "string",
-                    "title": "Kas võib juhtuda, et ebaõiglane kohtlemine ei ole proportsionaalne inimese käitumisega?",
+                    "title": "Kas võib juhtuda, et ebasoodne kohtlemine ei ole proportsionaalne inimese käitumisega?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1937,7 +1937,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Kas AI-lahendus on mõeldud ainult isiklikuks (mitte tööalaseks) kasutamiseks?",
+                    "title": "Kas AI-lahendus on mõeldud ainult isiklikuks (mitte ametialaseks) kasutamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -1986,12 +1986,12 @@
                   },
                   "6.2": {
                     "type": "string",
-                    "title": "Kas lahendust kasutatakse ainult piiratud tehnilisteks või ettevalmistavateks toiminguteks, millel puudub mõju otsustusprotsessi tulemustele?",
+                    "title": "Kas lahendust kasutatakse ainult kitsasteks menetluslikeks või ettevalmistavateks toiminguteks, millel puudub mõju otsustusprotsessi tulemustele?",
                     "enum": [
-                      "Jah, lahendus täidab piiratud tehnilisi ülesandeid. Näiteks võib see olla tehisaru süsteem, mis muudab struktureerimata andmed struktureeritud andmeteks, liigitab saabuvad dokumendid kategooriatesse või tuvastab suure hulga taotluste seast duplikaate.",
-                      "Jah, lahendust kasutatakse selleks, et tõsta inimese tehtud töö kvaliteeti. Näiteks võib see olla tehisarusüsteem, mis täiustab varasemalt koostatud dokumentide keelekasutust, muudab tekstis professionaalsemaks või akadeemilisemaks või kohandab teksti vastavalt kindlale brändisõnumile.",
-                      "Jah, lahendust kasutatakse otsustusmustrite või kõrvalekallete tuvastamiseks varasematest otsustusmustritest. Näiteks võib see olla tehisaru lahendus, mis pärast otsuste tegemist analüüsib otsustusmustreid, et inimotsustajad saaksid neist õppida.",
-                      "Jah, lahendust kasutatakse ettevalmistavas etapis, ilma et see mõjutaks lõpptulemust (otsuse sisu). Näiteks võib see olla nutikas failihalduse lahendus, mis võimaldab indekseerimist, otsingut, teksti- ja kõnetöötlust, andmete seostamist teiste andmeallikatega, või tehisaru süsteeme, mida kasutatakse allikdokumentide tõlkimiseks.",
+                      "Jah, lahendus täidab kitsaid menetluslikke (protseduurilisi) ülesandeid. Näiteks võib see olla tehisaru süsteem, mis muudab struktureerimata andmed struktureeritud andmeteks, liigitab sissetulevad dokumendid kategooriatesse või mida kasutatakse duplikaatide tuvastamiseks paljude avalduste seast.",
+                      "Jah, lahendust kasutatakse selleks, et parandada inimese tehtud töö kvaliteeti. Näiteks võib see olla tehisarusüsteem, mis täiustab varasemalt koostatud dokumentide keelekasutust, muudab teksti professionaalsemaks või akadeemilisemaks või kohandab teksti vastavalt kindlale kaubamärgisõnumile.",
+                      "Jah, lahendust kasutatakse otsustuste tegemise mustrite või varasematest otsustusmustritest kõrvalekallete tuvastamiseks. Näiteks võib see olla tehisaru lahendus, mis pärast otsuste tegemist analüüsib otsustusmustreid, et inimotsustajad saaksid neist õppida.",
+                      "Jah, lahendust kasutatakse hindamiste ettevalmistavas etapis, ilma et see mõjutaks lõpptulemust (otsuse sisu). Näiteks võib see olla nutikas failihalduse lahendus, mis võimaldab indekseerimist, otsingut, teksti- ja kõnetöötlust, andmete seostamist teiste andmeallikatega, või tehisaru süsteemid, mida kasutatakse algdokumentide tõlkimiseks.",
                       "Ei"
                     ]
                   }
@@ -2006,10 +2006,10 @@
                 "properties": {
                   "6.2": {
                     "enum": [
-                      "Jah, lahendus täidab piiratud tehnilisi ülesandeid. Näiteks võib see olla tehisaru süsteem, mis muudab struktureerimata andmed struktureeritud andmeteks, liigitab saabuvad dokumendid kategooriatesse või tuvastab suure hulga taotluste seast duplikaate.",
-                      "Jah, lahendust kasutatakse selleks, et tõsta inimese tehtud töö kvaliteeti. Näiteks võib see olla tehisarusüsteem, mis täiustab varasemalt koostatud dokumentide keelekasutust, muudab tekstis professionaalsemaks või akadeemilisemaks või kohandab teksti vastavalt kindlale brändisõnumile.",
-                      "Jah, lahendust kasutatakse otsustusmustrite või kõrvalekallete tuvastamiseks varasematest otsustusmustritest. Näiteks võib see olla tehisaru lahendus, mis pärast otsuste tegemist analüüsib otsustusmustreid, et inimotsustajad saaksid neist õppida.",
-                      "Jah, lahendust kasutatakse ettevalmistavas etapis, ilma et see mõjutaks lõpptulemust (otsuse sisu). Näiteks võib see olla nutikas failihalduse lahendus, mis võimaldab indekseerimist, otsingut, teksti- ja kõnetöötlust, andmete seostamist teiste andmeallikatega, või tehisaru süsteeme, mida kasutatakse allikdokumentide tõlkimiseks."
+                      "Jah, lahendus täidab piiratud menetluslikke (protseduurilisi) ülesandeid. Näiteks võib see olla tehisaru süsteem, mis muudab struktureerimata andmed struktureeritud andmeteks, liigitab saabuvad dokumendid kategooriatesse või tuvastab suure hulga taotluste seast duplikaate.",
+                      "Jah, lahendust kasutatakse selleks, et parandada inimese tehtud töö kvaliteeti. Näiteks võib see olla tehisarusüsteem, mis täiustab varasemalt koostatud dokumentide keelekasutust, muudab teksti professionaalsemaks või akadeemilisemaks või kohandab teksti vastavalt kindlale kaubamärgisõnumile.",
+                      "Jah, lahendust kasutatakse otsustuste tegemise mustrite või varasematest otsustusmustritest kõrvalekallete tuvastamiseks. Näiteks võib see olla tehisaru lahendus, mis pärast otsuste tegemist analüüsib otsustusmustreid, et inimotsustajad saaksid neist õppida.",
+                      "Jah, lahendust kasutatakse hindamiste ettevalmistavas etapis, ilma et see mõjutaks lõpptulemust (otsuse sisu). Näiteks võib see olla nutikas failihalduse lahendus, mis võimaldab indekseerimist, otsingut, teksti- ja kõnetöötlust, andmete seostamist teiste andmeallikatega, või tehisaru süsteemid, mida kasutatakse algdokumentide tõlkimiseks."
                     ]
                   },
                   "output": { "$ref": "#/definitions/outputHighExcept" }
@@ -2113,7 +2113,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Kas AI-lahendus on mõeldud ainult isiklikuks (mitte tööalaseks) kasutamiseks?",
+                    "title": "Kas AI-lahendus on mõeldud ainult isiklikuks (mitte ametialaseks) kasutamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -2228,7 +2228,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Kas lahendus on mõeldud ainult isiklikuks (mitte tööalaseks) kasutamiseks?",
+                    "title": "Kas lahendus on mõeldud ainult isiklikuks (mitte ametialaseks) kasutamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -2343,7 +2343,7 @@
                   },
                   "2.10": {
                     "type": "string",
-                    "title": "Kas AI-lahendus on mõeldud ainult isiklikuks (mitte tööalaseks) kasutamiseks?",
+                    "title": "Kas AI-lahendus on mõeldud ainult isiklikuks (mitte ametialaseks) kasutamiseks?",
                     "enum": ["Jah", "Ei"]
                   }
                 },
@@ -2530,11 +2530,11 @@
     "III.2.3": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Kriitilise tähtsusega digitaristu hõlmab muu hulgas interneti sõlmpunkte, domeeninimede süsteemi (DNS) teenuseid, tippdomeeni registreerimist, pilveteenuseid, andmekeskuste teenuseid, avalikke elektroonilise side võrke ja elektroonilise side teenuseid."
+      "ui:description": "Elutähtis digitaristu hõlmab muu hulgas interneti sõlmpunkte, domeeninimede süsteemi (DNS) teenuseid, tippdomeeni registreerimist, pilveteenuseid, andmekeskuste teenuseid, avalikke elektroonilise side võrke ja elektroonilise side teenuseid."
     },
     "III.2.4": {
       "ui:widget": "radio",
-      "ui:description": "Ohutusfunktsiooniga süsteemid on näiteks:\n- Süsteem, mis sulgeb tiheda liikluse korral automaatselt ummikute ennetamiseks tunneliraja\n- Tulekahju häiresüsteemid\n- Muud seire- või häiresüsteemid, mis reageerivad üle- või alarõhule, temperatuurile või pingele\n- Automaatset pidurdamist võimaldavad kokkupõrgete vältimise süsteemid sõidukites\n- Tulemüür või viirusetõrjetarkvara\nMärkus: Kui AI-lahenduse rike või talitlushäire tõrge võib seada ohtu inimeste elu, tervise või vara, märgi vastuseks 'Jah'."
+      "ui:description": "Turvakomponendiga süsteemid on näiteks:\n- Süsteem, mis sulgeb tiheda liikluse korral automaatselt ummikute ennetamiseks tunneliraja\n- Tulekahju häiresüsteemid\n- Muud seire- või häiresüsteemid, mis reageerivad üle- või alarõhule, temperatuurile või pingele\n- Automaatset pidurdamist võimaldavad kokkupõrgete vältimise süsteemid sõidukites\n- Tulemüür või viirusetõrjetarkvara\nMärkus: Kui AI-lahenduse rike või talitlushäire tõrge võib seada ohtu inimeste elu, tervise või vara, märgi vastuseks 'Jah'."
     },
     "III.2.5": {
       "ui:widget": "radio"
@@ -2633,7 +2633,7 @@
     },
     "III.6a": {
       "ui:widget": "radio",
-      "ui:description": "Õiguskaitse hõlmab kuritegude ennetamist, uurimist ja süüdistuse esitamist, karistuste täideviimist ning avaliku korra ja turvalisuse kaitset. Lisaks võivad õiguskaitses osaleda teised asutused nagu… NÄITED... .\nMärgi vastuseks 'Jah' ka siis, kui tegemist on asutusega, mille tegevus toetab õiguskaitseorganeid (LISADA NÄIDE, hollandlastel Kohtuekspertiisi Instituut) või mis tegutseb õiguskaitseorganite ülesandel või volitusel."
+      "ui:description": "Õiguskaitse hõlmab kuritegude ennetamist, uurimist ja süüdistuse esitamist, karistuste täideviimist ning avaliku korra ja turvalisuse kaitset. Lisaks võivad õiguskaitses osaleda teised asutused.\nMärgi vastuseks 'Jah' ka siis, kui tegemist on asutusega, mille tegevus toetab õiguskaitseorganeid või mis tegutseb õiguskaitseorganite ülesandel või volitusel."
     },
     "III.6b": {
       "ui:widget": "radio",
@@ -2681,7 +2681,7 @@
     },
     "III.8.1": {
       "ui:widget": "radio",
-      "ui:description": "Alternatiivsed vaidluste lahendamise viisid on distsiplinaarmenetlus, ombudsmani poole pöördumine, vahekohtumenetlus ning erikomisjonid (LISADA NÄITED)."
+      "ui:description": "Alternatiivsed vaidluste lahendamise viisid on distsiplinaarmenetlus, ombudsmani poole pöördumine, vahekohtumenetlus ning erikomisjonid."
     },
     "III.8.2": {
       "ui:widget": "radio",
@@ -2722,7 +2722,7 @@
     },
     "5.c.4": {
       "ui:widget": "radio",
-      "ui:description": "Ebaõiglane kohtlemine asjasse mitte puutuvas kontekstis on näiteks olukord, kus pettuseriski skoor viib uurimise algatamiseni, kuigi skoor põhineb tunnustel, millel puudub pettuseriski hindamisega selge seos (inimesel on teatud rahvusest elukaaslane, tema käitumine sotsiaalmeedias või tööalane sooritus).\nEbaõiglane kohtlemine on ka see, kui inimesele ei anta sotsiaalelamispinda, sest tal on olnud liiklusrikkumisi, või kui tööavaldus lükatakse tagasi, kuna tema kodu kohta on esitatud mürakaebusi."
+      "ui:description": "Ebasoodne kohtlemine asjasse mitte puutuvas kontekstis on näiteks olukord, kus pettuseriski skoor viib uurimise algatamiseni, kuigi skoor põhineb tunnustel, millel puudub pettuseriski hindamisega selge seos (inimesel on teatud rahvusest elukaaslane, tema käitumine sotsiaalmeedias või tööalane sooritus).\nEbasoodne kohtlemine on ka see, kui inimesele ei anta sotsiaalelamispinda, sest tal on olnud liiklusrikkumisi, või kui tööavaldus lükatakse tagasi, kuna tema kodu kohta on esitatud mürakaebusi."
     },
     "5.c.5": {
       "ui:widget": "radio",
@@ -2750,12 +2750,12 @@
     "2.3.2": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "Rahvusliku julgeoleku eesmärgid tähendavad selliste tegevuste ennetamist ja karistamist, mis võivad tõsiselt destabiliseerida riigi põhiseaduslikku, poliitilist, majanduslikku või sotsiaalset korraldust. Siia kuuluvad tegevused, mis kujutavad ühiskonnale, elanikkonnale või riigile endale otsest ohtu (nt terroristlik tegevus).\n\n **Märkus:** Märkus: Kui lahendust kasutatakse ka muudel eesmärkidel, näiteks tavapäraseks kuritegude ennetamiseks avastamiseks ja uurimiseks, märgi vastuseks 'Ei'."
+      "ui:description": "Riikliku julgeoleku eesmärgid tähendavad selliste tegevuste ennetamist ja karistamist, mis võivad tõsiselt destabiliseerida riigi põhiseaduslikku, poliitilist, majanduslikku või sotsiaalset korraldust. Siia kuuluvad tegevused, mis kujutavad ühiskonnale, elanikkonnale või riigile endale otsest ohtu (nt terroristlik tegevus).\n\n **Märkus:** Märkus: Kui lahendust kasutatakse ka muudel eesmärkidel, näiteks tavapäraseks kuritegude ennetamiseks avastamiseks ja uurimiseks, märgi vastuseks 'Ei'."
     },
     "2.10": {
       "ui:widget": "radio",
       "ui:enableMarkdownInDescription": true,
-      "ui:description": "'Isiklikuks kasutuseks' tähendab, et rakendust ei kasutata asutuse nimel. 'Mitte tööalaseks' tähendab, et lahenduse kasutamisega ei teenita raha ning seda ei kasutata ameti, ettevõtte, äritegevuse või vabakutselise töö jaoks. Mitte-tööalaseks tegevuseks ei kvalifitseeru ka vabatahtlik töö. Kui rakendust kasutatakse ka tööalaselt, märgi vastuseks 'Ei'. Näiteks kui inimene kasutab ChatGPT-d isiklikul otstarbel, ent aeg-ajalt ka töö jaoks, ei ole tegemist üksnes isikliku ja mitte tööalase kasutusega."
+      "ui:description": "'Isiklikuks kasutuseks' tähendab, et rakendust ei kasutata asutuse nimel. 'Mitte ametialaseks' tähendab, et lahenduse kasutamisega ei teenita raha ning seda ei kasutata ameti, ettevõtte, äritegevuse või vabakutselise töö jaoks. Mitte ametialaseks tegevuseks ei kvalifitseeru ka vabatahtlik töö. Kui rakendust kasutatakse ka tööalaselt, märgi vastuseks 'Ei'. Näiteks kui inimene kasutab ChatGPT-d isiklikul otstarbel, ent aeg-ajalt ka töö jaoks, ei ole tegemist üksnes isikliku, mitte ametialase kasutusega."
     },
     "50.1": {
       "ui:widget": "radio",
