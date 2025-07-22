@@ -5,6 +5,7 @@ import { dictionaryToCsv } from "../utils/dictionaryToCsv";
 import { FormProps } from "@rjsf/core";
 import { RJSFSchema } from "@rjsf/utils";
 import { useTranslation } from "react-i18next";
+import { getFlattenedTitles } from "../utils/flattenSchemaTitles";
 
 export default function Output({
   id,
@@ -14,6 +15,8 @@ export default function Output({
   handlePrev,
   onSubmit,
   data,
+  fullSchema,
+  validator,
 }: {
   id: number;
   type: "output" | "error";
@@ -25,12 +28,15 @@ export default function Output({
     data: FormProps<any, RJSFSchema, any>["formData"]
   ) => void;
   data: FormProps<any, RJSFSchema, any>["schema"];
+  fullSchema: FormProps<any, RJSFSchema, any>["schema"];
+  validator: FormProps<any, RJSFSchema, any>["validator"];
 }) {
   const { t } = useTranslation();
   // filter out intermediate output from the form data.
   data = Object.fromEntries(
     Object.entries(data).filter(([key]) => !key.startsWith("output"))
   );
+  const flattenedTitles = getFlattenedTitles(fullSchema, validator, data);
 
   // Enrich the data with the output.
   data = { ...data, output: output.default };
@@ -49,15 +55,26 @@ export default function Output({
               <Card.Text>{t("save output")}</Card.Text>
               <CodeBlock
                 style={a11yLight}
-                code={dictionaryToCsv(data)}
+                code={dictionaryToCsv(data, flattenedTitles)}
                 language={"typescript"}
                 title={"CSV"}
                 wrapLongLines={false}
               />
               <CodeBlock
                 style={a11yLight}
-                code={JSON.stringify(data, null, 2)}
-                language={"json"}
+                code={JSON.stringify(
+                  Object.fromEntries(
+                    Object.entries(data).map(([key, value]) => [
+                      key === "output"
+                        ? "Tulemus"
+                        : flattenedTitles[key] ?? key,
+                      value,
+                    ])
+                  ),
+                  null,
+                  2
+                )}
+                language="json"
                 title="JSON"
                 wrapLongLines={false}
               />

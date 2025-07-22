@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import Output from "./Output";
 import { useTranslation } from "react-i18next";
+import CustomFieldTemplate from "./CustomFieldTemplate";
 
 const WizardForm = ({
   id,
@@ -209,6 +210,8 @@ const WizardForm = ({
             handlePrev={handlePrev}
             onSubmit={onSubmit}
             data={data}
+            fullSchema={schema}
+            validator={validator}
           />
         ) : (
           <Form
@@ -224,6 +227,7 @@ const WizardForm = ({
             onSubmit={(data) => handleNext(data.formData)}
             validator={validator}
             customValidate={handleValidate}
+            templates={{ FieldTemplate: CustomFieldTemplate }}
             className="d-flex flex-column justify-content-between flex-grow-1"
           >
             <div className="d-flex flex-row justify-content-between flex-row-reverse">
