@@ -1,7 +1,6 @@
 import { Alert, Button, Card } from "react-bootstrap";
 import CodeBlock from "./CodeBlock";
 import a11yLight from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-light";
-import { dictionaryToCsv } from "../utils/dictionaryToCsv";
 import { FormProps } from "@rjsf/core";
 import { RJSFSchema } from "@rjsf/utils";
 import { useTranslation } from "react-i18next";
