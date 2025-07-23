@@ -37,9 +37,30 @@ export default function ({
             {/* third sentence */}
           </p>
           <p>
+            <b>{t("bold1")}</b>
             {t("description4")}
 
+            <b>{t("bold2")}</b>
             {t("description5")}
+          </p>
+          <p>
+            <b>{t("bold3")}</b>
+            {t("description6")}
+            <b>{t("bold3")}</b>
+            {t("description7")}
+          </p>
+          <p>
+            <b>{t("subheading")}</b>
+          </p>
+          <p>
+            {t("description8")}
+            <a
+              href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+              target="_blank"
+            >
+              {t("AI_bot_link")}
+            </a>
+            {t("description9")}
           </p>
           <p>
             <b>{t("feedback_PS")}</b>
