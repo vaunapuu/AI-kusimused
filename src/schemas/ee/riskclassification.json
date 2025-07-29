@@ -5,48 +5,48 @@
     "definitions": {
       "outputLow": {
         "type": "string",
-        "title": "Tulemus",
+        "title": "Result",
         "default": "Esitatud vastuste põhjal teie asutuse süsteemile EL AI määrus ei laiene"
       },
       "outputHigh": {
         "type": "string",
-        "title": "Tulemus",
-        "default": "Esitatud vastuste alusel on teie lahendus EL AI määruse mõistes kõrge riskiga süsteem. Suure riskiga tehisintellektisüsteemi arendamisel ja kasutamisel sõltuvad teie kohustused sellest, kas te olete pakkuja või juurutaja.\n\nPakkuja on isik, kes 1) tehisarusüsteemi arendab ja turule toob või 2) toob turule kellegi teise arendatud süsteemi oma nime või kaubamärgi all. Enamasti käivad siia alla tehisarulahendusi pakkuvad tehnoloogiaettevõtted. Pakkuja kohustused on kirjeldatud EL AI määruse artiklites 9-21.\n\nJuurutaja on põhimõtteliselt iga isik, organisatsioon või asutus, kes kasutab tehisarusüsteemi oma tegevuses või teenuste pakkumisel. Siia kuuluvad üldjuhul avaliku sektori asutused, kes kasutavad AI-süsteeme teenuste pakkumisel või otsuste tegemisel, aga samuti pangad, tootmisettevõtted, tervishoiu- ja haridusasutused, kes tehisarulahendusi oma töös rakendavad. Juurutaja kohustused on kirjeldatud AI määruse artiklites 26-27.\n\nAsutus võib olla nii juurutaja kui ka pakkuja, kui ta on ise tehisarusüsteemi arendaja, mille ta seejärel oma tegevuses või pakutavate teenuste osana ise kasutusele võtab.\n\nPidage nõu õigusekspertidega, kumba rolli teie asutus antud juhul täidab."
+        "title": "Result",
+        "default": "Esitatud vastuste alusel on teie lahendus EL AI määruse mõistes kõrge riskiga süsteem. Suure riskiga tehisintellektisüsteemi arendamisel ja kasutamisel sõltuvad teie kohustused sellest, kas te olete pakkuja või juurutaja.\n\nPakkuja on isik, kes 1) tehisarusüsteemi arendab ja turule toob või 2) toob turule kellegi teise arendatud süsteemi oma nime või kaubamärgi all. Tavaliselt hõlmab see tehisarulahendusi pakkuvaid tehnoloogiaettevõtteid kui ka organisatsioone, kes arendavad AI-süsteeme oma sisemiseks operatiivseks kasutamiseks. Pakkuja kohustused on kirjeldatud EL AI määruse artiklites 9-21.\n\nJuurutaja on põhimõtteliselt iga isik, organisatsioon või asutus, kes kasutab tehisarusüsteemi oma tegevuses või teenuste pakkumisel. Siia kuuluvad üldjuhul avaliku sektori asutused, kes kasutavad AI-süsteeme teenuste pakkumisel või otsuste tegemisel, aga samuti pangad, tootmisettevõtted, tervishoiu- ja haridusasutused, kes tehisarulahendusi oma töös rakendavad. Juurutaja kohustused on kirjeldatud AI määruse artiklites 26-27.\n\nAsutus võib olla samaaegselt nii juurutaja kui ka pakkuja. Selline stsenaarium tekib tavaliselt siis, kui organisatsioon arendab tehisarusüsteemi sisemiselt (tegutsedes pakkujana ning võttes süsteemi oma nime all kasutusele) ja seejärel integreerib ja kasutab seda sama süsteemi oma tegevuses või pakutavate teenuste lahutamatu osana (tegutsedes seega juurutajana).\n\nPidage nõu õigusekspertidega, kumba rolli teie asutus antud juhul täidab."
       },
       "outputForbidden": {
         "type": "string",
-        "title": "Tulemus",
+        "title": "Result",
         "default": "Esitatud vastuste alusel võib teie lahendus (osaliselt) kuuluda keelatud tehisarusüsteemide kategooriasse (vt EL AI määruse artikkel 5), mille rakendamine, pakkumine ja kasutamine on keelatud alates veebruarist 2025. Kuna tegemist on kõrgeima riskitasemega (süsteemi kasutamine keelatud), ei piisa lõpliku hinnangu andmiseks küsimustiku tulemustest. Vajalik on detailne õiguslik analüüs - pidage nõu oma õigusekspertidega."
       },
       "outputHighExcept": {
         "type": "string",
-        "title": "Tulemus",
-        "default": "Teie lahendus liigitub kõrge riskiga tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Kõrge riskiga tehisarusüsteemid on määratletud EL AI määruse Lisas III ning artiklis 6. Erandid on esitatud artikli 6 lõikes 3 (nt kui süsteem täidab mõnda kitsast menetlusülesannet, on toetab üksnes otsust ettevalmistavaid tegevusi või parandab inimese varasemat tegevust).\n\nSelleks, et aru saada, kas teie lahendus liigitub erandi alla või mitte, soovitame nõu pidada õiguseksperdiga. Kui erand ei kehti, tuleb järgida EL AI määruses kehtestatud kõrge riskiga süsteemidele ette nähtud kohustusi (artiklid 16-29 ning Lisa III)."
+        "title": "Result",
+        "default": "Esitatud vastuste põhjal liigitub teie lahendus **kõrge riskiga tehisarusüsteemiks**, ent konkreetne kasutusjuht võib teatud tingimustel kuuluda erandite alla.\n\nKKõrge riskiga tehisarusüsteemid on määratletud EL AI määruse artiklis 6 ning Lisas III. Erandid on esitatud artikli 6 lõikes 3. Erandi kehtimise eeltingimus on, et tehisaru lahendus ei tohi kujutada ohtu inimeste tervisele, ohutusele või põhiõigustele ega mõjutada oluliselt otsustusprotsessi tulemust. Lisaks peab olema täidetud üks järgmistest tingimustest: 1) tehisaru lahendus täidab mõnda kitsast menetlusülesannet 2) toetab üksnes otsust ettevalmistavaid tegevusi või 3) parandab inimese varasemat tegevust).\n\nNB! Kui AI-lahendus teostab füüsiliste isikute profileerimist, loetakse seda alati kõrge riskiga süsteemiks, olenemata eeltoodud erandite tingimustest).\n\nSelleks, et välja selgitada, kas teie lahendus liigitub erandi alla või mitte, soovitame nõu pidada õiguseksperdiga. Kui erand ei kehti, tuleb järgida EL AI määruses kehtestatud kõrge riskiga süsteemidele ette nähtud kohustusi (eelkõige artiklid 16-29, ent ka asjakohased Lisad - nt Lisa IV tehnilise dokumentatsiooni kohta)."
       },
       "outputForbiddenExcept": {
         "type": "string",
-        "title": "Tulemus",
-        "default": "Teie lahendus liigitub (osaliselt) keelatud tehisarusüsteemiks, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Nii keelatud tehisarusüsteemid kui ka neile kehtivad erandid (kui süsteemi kasutamine on rangelt vajalik õiguskaitse, riigi julgeoleku või muudel seaduses sätestatud erakorralistel juhtudel) on sätestatud EL AI määruse artiklis 5.\n\nTäpse hinnangu saamiseks pidage nõu õiguseksperdiga. Kui teie süsteemile erand ei kehti, määratlege, millisesse riskikategooriasse teie juhtum kuulub."
+        "title": "Result",
+        "default": "Esitatud vastuste põhjal vastab teie lahendus (osaliselt) keelatud tehisarusüsteemi määratlusele, ent konkreetne kasutusjuht võib kuuluda ka erandite alla. Nii keelatud tehisarusüsteemid kui ka neile kehtivad erandid (kui süsteemi kasutamine on rangelt vajalik õiguskaitse, riigi julgeoleku või muudel seaduses sätestatud erakorralistel juhtudel) on sätestatud EL AI määruse artiklis 5.\n\nTäpse hinnangu saamiseks pidage nõu õiguseksperdiga. Kui teie süsteemile erand ei kehti, määratlege, millisesse riskikategooriasse teie juhtum kuulub."
       },
       "outputTransparency": {
         "type": "string",
-        "title": "Tulemus",
-        "default": "Esitatud vastuste järgi peab teie süsteem täitma EL AI määruse artikli 50 läbipaistvusnõudeid. Artiklis 50 sätestatud läbipaistvusnõuded (nt kohustus teavitada kasutajaid tehisarusüsteemiga suhtlemisest ja teatud AI-ga loodud sisutüüpide märgistamine) kehtivad piiratud riskiga tehisarusüsteemidele, kus läbipaistvus on vajalik kasutajate teadlikkuse ja turvalisuse tagamiseks.\n\nTeie lahenduses võib olla kasutusel üldotstarbeline AI-mudel (General Purpose AI ehk GPAI), millele kehtivad eraldi nõuded. Nende nõuete täitmine on kohustuslik. Pidage nõu õigusekspertidega, et välja selgitada: 1) kas kasutate GPAI mudelit, 2) milline on teie roll - juurutaja (kasutaja) või pakkuja (arendaja)."
+        "title": "Result",
+        "default": "Esitatud vastuste põhjal peab teie süsteem täitma EL AI määruse artiklis sätestatud 50 läbipaistvusnõudeid. Need hõlmavad eelkõige kohustust teavitada kasutajaid, et nad suhtlevad tehisarusüsteemiga (välja arvatud juhul, kui see on ilmselge) ning märgistada teatud tehisaruga loodud sisu (sünteetiline heli-, pildi-, video- või tekstisisu) teavitamaks kasutajaid, et tegu on tehislikult loodud materjaliga.\n\nTeie lahenduses võib olla kasutusel ka üldotstarbeline AI-mudel (General Purpose AI, GPAI), mis on defineeritud artikli 3 lõikes 63 kui tehisintellektimudel, mis on võimeline täitma mitmesuguseid ülesandeid ja mida saab integreerida paljudesse erinevatesse süsteemidesse ja rakendustesse.\n\nKui GPAI mudel ei liigitu süsteemse riskiga mudeliks (vt artikkel 51), tuleb GPAI mudelite puhul nii pakkujate kui juurutajate poolt, eelkõige järgida dokumenteerimisnõudeid ning autoriõiguse alaseid nõudeid. Need nõuded on kehtestatud artiklis 53 ning nende täitmine on kohustuslik.\n\nPidage nõu õiguseksperdiga, et välja selgitada: 1) kas kasutate GPAI-mudelit 2) milline on teie roll: kas olete **juurutaja** (kasutate olemasolevat GPAI-mudelit oma teenuses) või pakkuja (arendate või turustate GPAI-mudelit)."
       },
       "outputTransparencyExcept": {
         "type": "string",
-        "title": "Tulemus",
-        "default": "Teie lahendus võib vajada EL AI määruse artikli 50 läbipaistvusnõuete täitmist, kuid pidage võimalike erandite kohalduvuse osas nõu õiguseksperdiga. Erandid läbipaistvusnõuetele on sätestatud EL AI määruse artiklis 50 (eriti selle lõigetes, mis kirjeldavad olukordi, kus teavitamine pole vajalik või kus see on õiguslikult välistatud). \n\nKui erand ei kehti, tuleb järgmisena välja selgitada: 1) kas kasutate GPAI-mudelit, 2) milline on teie asutuse roll - juurutaja (kasutaja) või pakkuja. Seda aitab määrata EL AI määruse artikkel 3."
+        "title": "Result",
+        "default": "Esitatud vastuste põhjal kehtivad teie lahendusele EL AI määruse artiklis sätestatud 50 läbipaistvusnõuded. Samas artiklis on määratletud ka erandid, mille kohaldumist tuleb eraldi hinnata.\n\nArtiklis 50 määratletud läbipaistvusnõuded hõlmavad eelkõige kohustust teavitada kasutajaid tehisarusüsteemiga suhtlemisest (v.a juhul, kui see on ilmselge) ning nõuet märgistada teatud AI-ga loodud sisu (sünteetiline heli-, pildi-, video- või tekstisisu) teavitamaks kasutajaid, et tegu on tehislikult loodud materjaliga)\n\nArtikkel 50 toob välja ka erandid, mille puhul läbipaistvusnõudeid ei kohaldata või kohaldatakse piiratud ulatuses. Siia kuuluvad näiteks: teatud juhud õiguskaitse- ja kriminaalõiguse valdkonnas; kunstiline, satiiriline või fiktsionaalne kontekst; juhud, kui tehisaru täidab üksnes abistavat funktsiooni standardse redigeerimise puhul ega muuda oluliselt sisendandmeid ega nende semantikat; ning teadus- ja arendustegevuseks või testimiseks loodud süsteemid enne turule laskmist või teenusesse võtmist.\n\nPidage nõu oma õiguseksperdiga, kas teile laieneb mõni neist eranditest. Kui te lahendus ei liigitu ühegi erandi alla, selgitage välja: 1) kas teie lahendus sisaldab üldotstarbelist AI-mudelit (General Purpose AI, GPAI) 2) milline on teie asutuse roll: kas olete juurutaja (kasutate olemasolevat GPAI-mudelit oma teenuses) või pakkuja (arendate ja turustate GPAI-mudelit). Teie roll määrab ära konkreetsed kohustused määruse raames."
       },
       "outputGPAI": {
         "type": "string",
-        "title": "Tulemus",
-        "default": "Teie lahendus liigitub üldotstarbeliseks AI-mudeliks (GPAI), mille puhul tuleb täita EL AI-määruses kehtestatud spetsiifilisi nõudeid. Teie asutuse kohustuste täpne ulatus sõltub GPAI-mudeli olemusest ning teie rollist - kas olete mudeli juurutaja (kasutaja) või pakkuja (arendaja). GPAI mõiste, samuti “pakkuja” ja “juurutaja” rollid, on määratletud EL AI määruse artiklis 3.\n\nHindamaks teie GPAI-mudeli olemust ning asutuse rolli selles soovitame nõu pidada õiguseksperdiga."
+        "title": "Result",
+        "default": "Esitatud vastuste põhjal liigitub teie lahendus üldotstarbeliseks AI-mudeliks (General Purpose AI, GPAI), millele kehtivad spetsiifilised nõuded. Teie asutuse kohustused sõltuvad GPAI-mudeli olemusest ning teie rollist - kas olete mudeli juurutaja (kasutate olemasolevat GPAI-mudelit oma teenuses) või pakkuja (arendate ja turustate seda). Kindluse saamiseks soovitame nõu pidada õiguseksperdiga, et selgitada: 1) kas tegu on GPAI-mudeliga 2) milline on teie asutuse roll (juurutaja vs pakkuja).\n\nGPAI-mudeli määratlus on esitatud artikli  3 lõikes 63 ning selle all mõistetakse tehisaru mudelit, mis: 1) on välja arendatud suure andmestiku põhjal, kasutades laiaulatuslikku iseseisva õppe meetodit  2) on laialdaselt kasutatav ning suudab täita erinevaid ülesandeid 3) on integreeritav teistesse süsteemidesse ja rakendustesse 4) ei hõlma mudeleid, mida kasutatakse üksnes teadusuuringuteks, arenduseks või prototüüpide testimiseks.\n\nÜldotstarbelisele AI-mudelile kehtivad kohustused on määratud EL AI määruse artiklites 50-56, mis käsitlevad erinevaid aspekte: üldised läbipaistvuskohustused (Artikkel 50), süsteemse riski klassifitseerimine (Artikkel 51) ja selle menetlus (Artikkel 52), GPAI mudelite pakkujate põhikohustused (Artikkel 53), volitatud esindajad (Artikkel 54), süsteemse riskiga GPAI mudelite erikohustused (Artikkel 55) ja tegevusjuhendid (Artikkel 56). Täpsemat kohustuste ja vastutuste jaotust juurutaja ning pakkuja vahel täpsustab artikkel 25."
       },
       "outputGPAIExcept": {
         "type": "string",
-        "title": "Tulemus",
-        "default": "Esitatud vastuste järgi liigitub teie lahendus GPAI-mudeliks, kuid EL määrus (eeskätt artiklid 2 ja 3) võib lubada erandeid. Erandite kehtimise kontrollimiseks soovitame nõu pidada õiguseksperdiga. Kui teie lahendus erandi alla ei liigitu, tuleb lähtuda GPAI-mudelitele ette nähtud erinõuetest."
+        "title": "Result",
+        "default": "Esitatud vastuste põhjal liigitub teie lahendus üldotstarbeliseks AI-mudeliks (General Purpose AI, GPAI), millele kehtivate kohustuste osas kehtib ka erandeid. Pidage nõu õiguseksperdiga, et kontrollida, kas mõni neist eranditest kehtib teile. Kui teie lahendus ei liigitu ühegi erandi alla, tuleb lähtuda GPAI-mudelile lähtuvatest erinõuetest.\n\nGPAI-mudeli määratlus on esitatud artikli  3 lõikes 63 ning selle all mõistetakse tehisaru mudelit, mis: 1) on välja arendatud suure andmestiku põhjal, kasutades laiaulatuslikku iseseisva õppe meetodit  2) on laialdaselt kasutatav ning suudab täita erinevaid ülesandeid 3) on integreeritav teistesse süsteemidesse ja rakendustesse 4) ei hõlma mudeleid, mida kasutatakse üksnes teadusuuringuteks, arenduseks või prototüüpide testimiseks.\n\nÜldotstarbelisele AI-mudelile kehtivad kohustused on määratud EL AI määruse artiklites 50-56, mis käsitlevad erinevaid aspekte: üldised läbipaistvuskohustused (Artikkel 50), süsteemse riski klassifitseerimine (Artikkel 51) ja selle menetlus (Artikkel 52), GPAI mudelite pakkujate põhikohustused (Artikkel 53), volitatud esindajad (Artikkel 54), süsteemse riskiga GPAI mudelite erikohustused (Artikkel 55) ja tegevusjuhendid (Artikkel 56). Täpsemat kohustuste ja vastutuste jaotust juurutaja ning pakkuja vahel täpsustab artikkel 25.\n\nNeis artiklites on sätestatud ka erandid GPAI-mudelitele kehtivate kohustuste osas - näiteks juhul, kui mudelit kasutatakse õiguskaitses, teadus- või arendustegevuseks; kui GPAI-l põhinev lahendus toimib üksnes abistava redigeerimistöösriistana või täidab laiapõhjalisi üldist laadid ülesandeid; või kui kasutajale on suhtlus tehisaruga ilmne ka täiendava teavituseta."
       },
       "biometrics": {
         "title": "biometrics",
@@ -2462,8 +2462,7 @@
       "III.1": {
         "type": "string",
         "title": "Kas lahendus kasutab biomeetrilisi andmeid?",
-        "enum": ["Jah", "Ei"],
-        "description": "Biomeetrilised andmed on unikaalsed füüsilised või käitumuslikud omadused, mida saab kasutada isiku tuvastamiseks. Näiteks näo- ja sõrmejäljed, hääleproovid, silma iirise mustrid jms."
+        "enum": ["Jah", "Ei"]
       }
     },
     "required": ["III.1"],
@@ -2492,7 +2491,8 @@
   },
   "uiSchema": {
     "III.1": {
-      "ui:widget": "radio"
+      "ui:widget": "radio",
+      "ui:description": "Biomeetrilised andmed on füüsilised või käitumuslikud tunnused, mida saab kasutada inimeste tuvastamiseks: näiteks näo- ja sõrmejäljekujutised, silmaiiris ja võrkkest, hääl, miimika, kehakuju, allkiri (käekiri) jne. \n\nArvutiklaviatuuril trükitud tekst ei ole biomeetriline andmestik, kuid trükkimismuster (nt klahvivajutuste sagedus ja rütm) on."
     },
     "5.e.1": {
       "ui:widget": "radio"
