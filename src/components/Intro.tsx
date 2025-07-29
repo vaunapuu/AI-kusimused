@@ -24,7 +24,6 @@ export default function ({
         <div className="mb-4">
           <p>
             {/* first sentence */}
-            {t("description1")}
             <a
               href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
               target="_blank"
@@ -39,31 +38,40 @@ export default function ({
           <p>
             <b>{t("bold1")}</b>
             {t("description4")}
-
-            <b>{t("bold2")}</b>
-            {t("description5")}
           </p>
           <p>
-            <b>{t("bold3")}</b>
+            {t("description5")}
+            <b>{t("bold2")}</b>
             {t("description6")}
+          </p>
+          <p>
             <b>{t("bold3")}</b>
             {t("description7")}
           </p>
           <p>
-            <b>{t("subheading")}</b>
-          </p>
-          <p>
             {t("description8")}
-            <a
-              href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
-              target="_blank"
-            >
-              {t("AI_bot_link")}
-            </a>
+            <b>{t("bold4")}</b>
             {t("description9")}
           </p>
           <p>
-            <b>{t("feedback_PS")}</b>
+            <b>
+              {t("description10")}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfsc-VX64veFhhEeNZs6XrmZ9d03dJndSlBnow3Jv1zsySsRw/viewform?usp=header"
+                target="_blank"
+              >
+                {t("kusimustiku_link")}
+              </a>
+              {t("description11")}
+            </b>
+          </p>
+          <p>
+            {t("description12")}
+            <b>{t("bold5")}</b>
+            {t("description13")}
+          </p>
+          <p>
+            {t("feedback_PS")}
             {t("feedback_0")}
             <a
               href="https://algorithmaudit.eu/technical-tools/implementation-tool/#tool"
@@ -71,8 +79,7 @@ export default function ({
             >
               {t("feedback_AA")}
             </a>
-            {t("feedback")}{" "}
-            <a href="mailto:andmed@justdigi.ee">andmed@justdigi.ee</a>.
+            {t("feedback")}
           </p>
         </div>
 
