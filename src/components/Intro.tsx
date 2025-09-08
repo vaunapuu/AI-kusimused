@@ -20,8 +20,11 @@ export default function ({
           <Card.Title>{t("cardTitle")}</Card.Title>
           {!activeLanguage && <LanguageSwitcher />}
         </div>
-
         <div className="mb-4">
+          <h3>
+            <b>{t("Title")}</b>
+          </h3>
+          <br />
           <p>
             {/* first sentence */}
             <a
@@ -70,32 +73,47 @@ export default function ({
             <b>{t("bold4")}</b>
             {t("description9")}
           </p>
+          <h5>
+            <b>{t("Tagasiside")}</b>
+          </h5>
+          <p>{t("description10")}</p>
           <p>
+            {t("See")} <b>{t("bold5")}</b> {t("tagasiside_info")}
             <b>
-              {t("description10")}
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfsc-VX64veFhhEeNZs6XrmZ9d03dJndSlBnow3Jv1zsySsRw/viewform?usp=header"
                 target="_blank"
               >
                 {t("kusimustiku_link")}
               </a>
-              {t("description11")}
             </b>
+            {t("description11")}
           </p>
+          <h5>
+            <b>{t("bold6")}</b>
+          </h5>
+          <p>{t("description12")}</p>
+          <p>{t("description13")}</p>
           <p>
-            {t("description12")}
-            <b>{t("bold5")}</b>
-            {t("description13")}
+            <b>
+              <i>{t("bold7")}</i>
+            </b>
+            {t("description14")}
+            <i>{t("cursive1")}</i>
+            {t("description15")}
           </p>
+          <p style={{ color: "red" }}>{t("description16")}</p>
           <p>
-            {t("feedback_0")}
-            <a
-              href="https://algorithmaudit.eu/technical-tools/implementation-tool/#tool"
-              target="_blank"
-            >
-              {t("feedback_AA")}
-            </a>
-            {t("feedback")}
+            <i>
+              {t("feedback_0")}
+              <a
+                href="https://algorithmaudit.eu/technical-tools/implementation-tool/#tool"
+                target="_blank"
+              >
+                {t("feedback_AA")}
+              </a>
+              {t("feedback")}
+            </i>
           </p>
         </div>
 
