@@ -32,20 +32,37 @@ export default function ({
             </a>
             {/* second sentence */}
             {t("description2")}
+            <ul>
+              <li>{t("prohibited")}</li>
+              <li>{t("high_risk")}</li>
+              <li>{t("limited_risk")}</li>
+              <li>{t("general_purpose")}</li>
+              <li>{t("minimal_risk")}</li>
+            </ul>
             {t("description3")}
             {/* third sentence */}
           </p>
           <p>
-            <b>{t("bold1")}</b>
+            <h5>
+              <b>{t("bold1")}</b>
+            </h5>
             {t("description4")}
           </p>
           <p>
             {t("description5")}
             <b>{t("bold2")}</b>
             {t("description6")}
+            <ol>
+              <li>{t("interactive_pages")}</li>
+              <li>{t("vestlusrobot")}</li>
+              <li>{t("algoritmiregister")}</li>
+              <li>{t("riskihinnangute_register")}</li>
+            </ol>
           </p>
           <p>
-            <b>{t("bold3")}</b>
+            <h5>
+              <b>{t("bold3")}</b>
+            </h5>
             {t("description7")}
           </p>
           <p>
@@ -71,7 +88,6 @@ export default function ({
             {t("description13")}
           </p>
           <p>
-            {t("feedback_PS")}
             {t("feedback_0")}
             <a
               href="https://algorithmaudit.eu/technical-tools/implementation-tool/#tool"
